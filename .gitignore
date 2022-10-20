@@ -9,6 +9,11 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+.env
+src/main/java/resources/application.properties
+src/main/java/resources/application-dev.properties
+src/main/java/resources/application-prod.properties
+
 
 # Package Files #
 *.jar
