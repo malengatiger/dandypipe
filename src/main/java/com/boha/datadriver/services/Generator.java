@@ -9,7 +9,9 @@ import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.firebase.cloud.FirestoreClient;
-//import org.springframework.cloud.gcp.pubsub.PubSubAdmin;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -31,6 +33,8 @@ public class Generator {
     private  ArrayList<Subscriber> allSubscribers = new ArrayList<>();
     private final CityService cityService;
     private final PlacesService placesService;
+    @Autowired
+    private EventSubscriber eventSubscriber;
 
     Random random = new Random(System.currentTimeMillis());
     Timer timer;
@@ -73,8 +77,9 @@ public class Generator {
         for (int i = 0; i < count; i++) {
             int mIndex = random.nextInt(places.size() - 1);
             CityPlace cityPlace = places.get(mIndex);
-            writeData(cityPlace);
-            sendToPubSub(cityPlace);
+            Event event = getEvent(cityPlace);
+            writeEventToFirestore(event,city);
+            sendToPubSub(event,city);
             totalCount++;
         }
 
@@ -83,27 +88,36 @@ public class Generator {
             totalCount = 0;
         }
     }
-    Firestore firestore = FirestoreClient.getFirestore();
 
-    void writeData(CityPlace cityPlace) throws Exception{
+    private Event getEvent(CityPlace cityPlace) throws Exception {
         Event event = new Event();
         event.setCityPlace(cityPlace);
-        event.setEventId(UUID.randomUUID().toString());
-        int rating = random.nextInt(5);
-        if (rating == 0) rating = 1;
-        event.setRating(rating);
-        int m = random.nextInt(200);
-        double amt = Double.parseDouble("" + m);
-        if (m == 0) amt = 10.00;
-        event.setAmount(amt);
+        int m = random.nextInt(300);
+        if (m == 0) m = 150;
+        event.setAmount(Double.parseDouble("" + m));
+        int r = random.nextInt(5);
+        if (r == 0) r = 5;
+        event.setRating(r);
         event.setDate(new Date().toString());
         event.setLongDate(new Date().getTime());
-
-        ApiFuture<DocumentReference> future = firestore.collection("events").add(event);
-        LOGGER.info(E.LEAF+E.LEAF+ " Event added to Firestore: "
-                + E.ORANGE_HEART + cityPlace.name);
+        event.setEventId(UUID.randomUUID().toString());
+        return event;
     }
-    void sendToPubSub(CityPlace cityPlace) {
 
+    Firestore firestore = FirestoreClient.getFirestore();
+
+    void writeEventToFirestore(Event event, City city) throws Exception{
+        ApiFuture<DocumentReference> future = firestore.collection("events").add(event);
+        LOGGER.info(E.LEAF+E.LEAF+ " Firestore event: "
+                + E.ORANGE_HEART + event.getCityPlace().name + ", " + city.getCity()
+                + " " + E.LEAF);
+    }
+    @Autowired
+    private EventPublisher eventPublisher;
+    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    public void sendToPubSub(Event event, City city) throws Exception {
+        eventPublisher.publish(GSON.toJson(event));
+        LOGGER.info(E.BLUE_HEART+E.BLUE_HEART+
+                " PubSub Event: " + E.AMP + event.getCityPlace().name + ", " + city.getCity());
     }
 }

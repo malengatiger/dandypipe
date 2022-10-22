@@ -14,7 +14,7 @@ public class CityPlace {
     public String scope;
     public ArrayList<String> types;
     public String vicinity;
-    public String cityId;
+    public String cityId, cityName, province;
 }
 
 

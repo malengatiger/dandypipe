@@ -8,6 +8,7 @@ public class Event {
     private int rating;
     private long longDate;
 
+
     public long getLongDate() {
         return longDate;
     }

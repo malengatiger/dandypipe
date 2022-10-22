@@ -93,6 +93,25 @@ public class CityService {
         LOGGER.info(E.CHECK + E.CHECK + " Found " + resultCities.size()  + " cities from Firestore");
         return resultCities;
     }
+    public City getCityById(String cityId) throws Exception {
+        Firestore firestore = FirestoreClient.getFirestore();
+        ApiFuture<QuerySnapshot> future = firestore.collection("cities")
+                .whereEqualTo("id", cityId)
+                .get();
+        QuerySnapshot snapshot = future.get();
+        List<QueryDocumentSnapshot> docs = snapshot.getDocuments();
+        City city = null;
+        for (QueryDocumentSnapshot doc : docs) {
+            city = doc.toObject(City.class);
+        }
+        if (city == null) {
+            LOGGER.info("City not found!");
+        } else {
+            LOGGER.info(E.CHECK + E.CHECK + " Found " + city.getCity() + " from Firestore");
+        }
+        return city;
+    }
+
     void initFirebase() {
         FirebaseOptions options = null;
         try {

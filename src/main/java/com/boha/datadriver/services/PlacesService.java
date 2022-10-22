@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.squareup.okhttp.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,13 +26,14 @@ public class PlacesService {
     private static final String prefix =
             "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
     private static final Logger LOGGER = Logger.getLogger(PlacesService.class.getSimpleName());
-
+    @Value("${placesAPIKey}")
+    private String placesAPIKey;
     String buildLink(double lat, double lng, int radiusInMetres) {
         StringBuilder sb = new StringBuilder();
         sb.append(prefix);
         sb.append("location=").append(lat).append(",").append(lng);
         sb.append("&radius=").append(radiusInMetres);
-        sb.append("&key=AIzaSyCDiIBwKgGf2z9rseOFn8GjkrJluHpCDl4");
+        sb.append("&key=").append(placesAPIKey);
         return sb.toString();
     }
     OkHttpClient client = new OkHttpClient();
@@ -100,6 +102,7 @@ public class PlacesService {
     public List<CityPlace> getPlacesByCity(String cityId) throws Exception {
         List<CityPlace> cityPlaces = new ArrayList<>();
         Firestore c = FirestoreClient.getFirestore();
+        City city = cityService.getCityById(cityId);
         ApiFuture<QuerySnapshot> future = c.collection("cityPlaces")
                 .whereEqualTo("cityId", cityId)
                 .get();
@@ -111,7 +114,8 @@ public class PlacesService {
             cityPlaces.add(cityPlace);
         }
 
-        LOGGER.info(E.RED_DOT + E.RED_DOT + " City has " + cityPlaces.size() + " places" );
+        LOGGER.info(E.RED_DOT + E.RED_DOT + E.RED_DOT + E.RED_DOT +
+                " " + city.getCity() + " has " + cityPlaces.size() + " places on file" );
         return cityPlaces;
     }
     public String loadCityPlaces() throws Exception {
