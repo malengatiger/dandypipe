@@ -13,6 +13,7 @@ com/boha/datadriver/services/EventPublisher.class
 com/boha/datadriver/controllers/MainController.class
 com/boha/datadriver/models/Geometry.class
 com/boha/datadriver/models/Viewport.class
+com/boha/datadriver/models/FlatEvent.class
 com/boha/datadriver/models/Root.class
 com/boha/datadriver/DataDriverApplication.class
 com/boha/datadriver/models/Northeast.class

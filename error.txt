@@ -1,0 +1,129 @@
+{
+  "protoPayload": {
+    "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+    "status": {
+      "code": 9,
+      "message": "Ready condition status changed to False for Service datadriver1 with message: Revision 'datadriver1-00001-qog' is not ready
+      and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment
+      variable. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=thermal-effort-366015&resource=cloud_run_revision/service_name/datadriver1/revision_name/datadriver1-00001-qog&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22datadriver1%22%0Aresource.labels.revision_name%3D%22datadriver1-00001-qog%22
+      \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start"
+    },
+    "serviceName": "run.googleapis.com",
+    "resourceName": "namespaces/thermal-effort-366015/services/datadriver1",
+    "response": {
+      "metadata": {
+        "name": "datadriver1",
+        "namespace": "79998394043",
+        "selfLink": "/apis/serving.knative.dev/v1/namespaces/79998394043/services/datadriver1",
+        "uid": "0930eefc-a875-48a8-91fd-8bdac4e5575b",
+        "resourceVersion": "AAXsAx5sKfM",
+        "generation": 1,
+        "creationTimestamp": "2022-10-27T12:16:13.438791Z",
+        "labels": {
+          "cloud.googleapis.com/location": "europe-west1"
+        },
+        "annotations": {
+          "run.googleapis.com/client-name": "cloud-console",
+          "run.googleapis.com/binary-authorization": "default",
+          "serving.knative.dev/creator": "malengadev@gmail.com",
+          "serving.knative.dev/lastModifier": "malengadev@gmail.com",
+          "client.knative.dev/user-image": "gcr.io/thermal-effort-366015/datadriver@sha256:a55217e6aacfa1fe7d66098e272aa6dbd18fdb36c87f611f14d2a4bc3022ea55",
+          "run.googleapis.com/ingress": "all",
+          "run.googleapis.com/ingress-status": "all"
+        }
+      },
+      "apiVersion": "serving.knative.dev/v1",
+      "kind": "Service",
+      "spec": {
+        "template": {
+          "metadata": {
+            "name": "datadriver1-00001-qog",
+            "annotations": {
+              "run.googleapis.com/client-name": "cloud-console",
+              "autoscaling.knative.dev/maxScale": "100"
+            }
+          },
+          "spec": {
+            "containerConcurrency": 80,
+            "timeoutSeconds": 300,
+            "serviceAccountName": "firebase-adminsdk-8y4e9@thermal-effort-366015.iam.gserviceaccount.com",
+            "containers": [
+              {
+                "image": "gcr.io/thermal-effort-366015/datadriver@sha256:a55217e6aacfa1fe7d66098e272aa6dbd18fdb36c87f611f14d2a4bc3022ea55",
+                "ports": [
+                  {
+                    "name": "http1",
+                    "containerPort": 8080
+                  }
+                ],
+                "resources": {
+                  "limits": {
+                    "cpu": "1000m",
+                    "memory": "512Mi"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "traffic": [
+          {
+            "percent": 100,
+            "latestRevision": true
+          }
+        ]
+      },
+      "status": {
+        "observedGeneration": 1,
+        "conditions": [
+          {
+            "type": "Ready",
+            "status": "False",
+            "reason": "HealthCheckContainerError",
+            "message": "Revision 'datadriver1-00001-qog' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080
+            environment variable. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=thermal-effort-366015&resource=cloud_run_revision/service_name/datadriver1/revision_name/datadriver1-00001-qog&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22datadriver1%22%0Aresource.labels.revision_name%3D%22datadriver1-00001-qog%22 \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start",
+            "lastTransitionTime": "2022-10-27T12:17:03.015411Z"
+          },
+          {
+            "type": "ConfigurationsReady",
+            "status": "False",
+            "reason": "HealthCheckContainerError",
+            "message": "The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=thermal-effort-366015&resource=cloud_run_revision/service_name/datadriver1/revision_name/datadriver1-00001-qog&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22datadriver1%22%0Aresource.labels.revision_name%3D%22datadriver1-00001-qog%22 \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start",
+            "lastTransitionTime": "2022-10-27T12:17:03.015411Z"
+          },
+          {
+            "type": "RoutesReady",
+            "status": "False",
+            "reason": "HealthCheckContainerError",
+            "message": "Revision 'datadriver1-00001-qog' is not ready and cannot serve traffic. The user-provided container failed to start and listen on the port defined provided by the PORT=8080 environment variable. Logs for this revision might contain more information.\n\nLogs URL: https://console.cloud.google.com/logs/viewer?project=thermal-effort-366015&resource=cloud_run_revision/service_name/datadriver1/revision_name/datadriver1-00001-qog&advancedFilter=resource.type%3D%22cloud_run_revision%22%0Aresource.labels.service_name%3D%22datadriver1%22%0Aresource.labels.revision_name%3D%22datadriver1-00001-qog%22 \nFor more troubleshooting guidance, see https://cloud.google.com/run/docs/troubleshooting#container-failed-to-start",
+            "lastTransitionTime": "2022-10-27T12:17:02.953437Z"
+          }
+        ],
+        "latestCreatedRevisionName": "datadriver1-00001-qog",
+        "traffic": [
+          {
+            "revisionName": "datadriver1-00001-qog",
+            "percent": 100,
+            "latestRevision": true
+          }
+        ]
+      },
+      "@type": "type.googleapis.com/google.cloud.run.v1.Service"
+    }
+  },
+  "insertId": "-c7ehklcsby",
+  "resource": {
+    "type": "cloud_run_revision",
+    "labels": {
+      "location": "europe-west1",
+      "service_name": "datadriver1",
+      "configuration_name": "",
+      "revision_name": "",
+      "project_id": "thermal-effort-366015"
+    }
+  },
+  "timestamp": "2022-10-27T12:17:02.999135Z",
+  "severity": "ERROR",
+  "logName": "projects/thermal-effort-366015/logs/cloudaudit.googleapis.com%2Fsystem_event",
+  "receiveTimestamp": "2022-10-27T12:17:03.949359105Z"
+}

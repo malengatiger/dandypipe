@@ -1,8 +1,6 @@
+server.port=8094
 projectId=thermal-effort-366015
 topicId=projects/thermal-effort-366015/topics/eventTopic
-flatTopicId=projects/thermal-effort-366015/topics/flatEventTopic
-bigQueryTopicId=projects/thermal-effort-366015/topics/toBigQueryTopic
-pullTopicId=projects/thermal-effort-366015/topics/ToBigQueryPull
 subscriptionId=mainSubscription
 placesAPIKey=AIzaSyCDiIBwKgGf2z9rseOFn8GjkrJluHpCDl4
 secretId=projects/79998394043/secrets/places_api_key

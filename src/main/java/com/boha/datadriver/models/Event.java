@@ -56,4 +56,23 @@ public class Event {
     public void setAmount(double amount) {
         this.amount = amount;
     }
+    
+    public FlatEvent getFlatEvent() {
+        FlatEvent  f = new FlatEvent();
+        f.setAmount(this.getAmount());
+        f.setCityId(this.getCityPlace().cityId);
+        f.setCityName(this.getCityPlace().cityName);
+        f.setDate(this.getDate());
+        f.setEventId(this.getEventId());
+        f.setLatitude(this.getCityPlace().geometry.location.lat);
+        f.setLongDate(this.getLongDate());
+        f.setLongitude(this.getCityPlace().geometry.location.lng);
+        f.setPlaceId(this.getCityPlace().place_id);
+        f.setPlaceName(this.getCityPlace().name);
+        f.setRating(this.getRating());
+        f.setTypes(this.getCityPlace().types);
+        f.setVicinity(this.getCityPlace().vicinity);
+        return f;
+
+    }
 }

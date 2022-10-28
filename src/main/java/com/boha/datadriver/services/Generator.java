@@ -3,6 +3,7 @@ package com.boha.datadriver.services;
 import com.boha.datadriver.models.City;
 import com.boha.datadriver.models.CityPlace;
 import com.boha.datadriver.models.Event;
+import com.boha.datadriver.models.FlatEvent;
 import com.boha.datadriver.util.E;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
@@ -104,9 +105,12 @@ public class Generator {
         return event;
     }
 
-    Firestore firestore = FirestoreClient.getFirestore();
+    Firestore firestore;
 
     void writeEventToFirestore(Event event, City city) throws Exception{
+        if (firestore == null) {
+            firestore = FirestoreClient.getFirestore();
+        }
         ApiFuture<DocumentReference> future = firestore.collection("events").add(event);
         LOGGER.info(E.LEAF+E.LEAF+ " Firestore event: "
                 + E.ORANGE_HEART + event.getCityPlace().name + ", " + city.getCity()
@@ -116,8 +120,14 @@ public class Generator {
     private EventPublisher eventPublisher;
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     public void sendToPubSub(Event event, City city) throws Exception {
+
         eventPublisher.publish(GSON.toJson(event));
+        FlatEvent fe = event.getFlatEvent();
+        eventPublisher.publishFlatEvent(GSON.toJson(fe));
+        eventPublisher.publishBigQueryEvent(GSON.toJson(fe));
+        eventPublisher.publishPull(GSON.toJson(fe));
         LOGGER.info(E.BLUE_HEART+E.BLUE_HEART+
                 " PubSub Event: " + E.AMP + event.getCityPlace().name + ", " + city.getCity());
+//        LOGGER.info(GSON.toJson(fe));
     }
 }

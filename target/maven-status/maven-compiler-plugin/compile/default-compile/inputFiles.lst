@@ -12,6 +12,7 @@
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/services/PlacesService.java
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/models/Location.java
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/models/Geometry.java
+/Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/models/FlatEvent.java
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/services/EventPublisher.java
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/models/Northeast.java
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/controllers/MainController.java

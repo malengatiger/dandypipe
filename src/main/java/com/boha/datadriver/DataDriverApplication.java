@@ -4,7 +4,6 @@ import com.boha.datadriver.services.EventSubscriber;
 import com.boha.datadriver.util.E;
 import com.boha.datadriver.util.Secrets;
 import com.google.api.gax.paging.Page;
-import com.google.cloud.spring.core.GcpProjectIdProvider;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Storage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.cloud.gcp.core.GcpProjectIdProvider;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 
@@ -39,6 +39,8 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 	private EventSubscriber eventSubscriber;
 	@Autowired
 	private Secrets secrets;
+//	@Autowired
+//	private StorageService storageService;
 	@Override
 	public void onApplicationEvent(ApplicationReadyEvent event) {
 		LOGGER.info(E.RED_DOT+E.RED_DOT+ " Data Driver ApplicationReadyEvent - Timestamp: "
@@ -52,24 +54,25 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 			String apiKey = secrets.getSecret();
 			LOGGER.info(E.RED_DOT+E.RED_DOT
 					+  " ApiKey?: " + apiKey  + " " + E.YELLOW_STAR );
+			//storageService.init();
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 
 
 	}
-	@Bean
-	ApplicationRunner storageRunner(Storage storage, GcpProjectIdProvider projectIdProvider) {
-		AtomicInteger count = new AtomicInteger();
-		return (args) -> {
-			Page<Blob> list = storage.list(projectIdProvider.getProjectId());
-
-			list.iterateAll().forEach(blob -> {
-				LOGGER.info(E.BLUE_HEART+E.BLUE_HEART + " " + blob.getName());
-				count.getAndIncrement();
-			});
-			LOGGER.info(E.BLUE_HEART+E.BLUE_HEART + E.RED_APPLE+
-					" " + count.get() + " cloud storage files " + E.RED_APPLE+E.RED_APPLE+E.RED_APPLE);
-		};
-	}
+//	@Bean
+//	ApplicationRunner storageRunner(Storage storage, GcpProjectIdProvider projectIdProvider) {
+//		AtomicInteger count = new AtomicInteger();
+//		return (args) -> {
+//			Page<Blob> list = storage.list(projectIdProvider.getProjectId());
+//
+//			list.iterateAll().forEach(blob -> {
+//				//LOGGER.info(E.BLUE_HEART+E.BLUE_HEART + " " + blob.getName());
+//				count.getAndIncrement();
+//			});
+//			LOGGER.info(E.BLUE_HEART+E.BLUE_HEART + E.RED_APPLE+
+//					" " + count.get() + " cloud storage files " + E.RED_APPLE+E.RED_APPLE+E.RED_APPLE);
+//		};
+//	}
 }
