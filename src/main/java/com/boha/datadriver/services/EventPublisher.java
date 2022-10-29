@@ -6,7 +6,9 @@ import com.google.cloud.pubsub.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -18,10 +20,11 @@ import java.util.logging.Logger;
 public class EventPublisher {
     static final Logger LOGGER = Logger.getLogger(EventPublisher.class.getSimpleName());
 
-    @Value("${projectId}")
+
+
     private String projectId;
-    @Value("${topicId}")
-    private String topicId;
+    @Value("${eventTopicId}")
+    private String eventTopicId;
     @Value("${flatTopicId}")
     private String flatTopicId;
     @Value("${bigQueryTopicId}")
@@ -34,18 +37,24 @@ public class EventPublisher {
     Publisher bigQueryPublisher;
     Publisher pullPublisher;
 
+    @Autowired
+    private Environment environment;
+    void setProjectId() {
+        projectId = environment.getProperty("PROJECT_ID");
+    }
+
 
     public void publish(String message)
             throws Exception {
-        TopicName topicName = TopicName.of(projectId, topicId);
-
+        setProjectId();
+        String name = "projects/"+ projectId + "/topics/"+eventTopicId;
+        TopicName topicName = TopicName.of(projectId, name);
 
         if (publisher == null) {
             publisher = Publisher.newBuilder(topicName.getTopic()).build();
             LOGGER.info(E.BLUE_DOT + E.BLUE_DOT +
                     " Published toTopic: " + topicName.getTopic()
                     + " " + E.GREEN_APPLE);
-
         }
         ByteString data = ByteString.copyFromUtf8(message);
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
@@ -57,7 +66,10 @@ public class EventPublisher {
 
     public void publishFlatEvent(String message)
             throws Exception {
-        TopicName topicName = TopicName.of(projectId, flatTopicId);
+        setProjectId();
+        String name = "projects/"+ projectId + "/topics/"+flatTopicId;
+
+        TopicName topicName = TopicName.of(projectId, name);
 
         if (flatPublisher == null) {
             flatPublisher = Publisher.newBuilder(topicName.getTopic()).build();
@@ -71,12 +83,15 @@ public class EventPublisher {
         // Once published, returns a server-assigned message id (unique within the topic)
         ApiFuture<String> messageIdFuture = flatPublisher.publish(pubsubMessage);
         LOGGER.info("PubSub flat message published " + E.RED_APPLE + E.RED_APPLE + E.RED_APPLE
-                + " id: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
+                + " messageId: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
 
     }
     public void publishPull(String message)
             throws Exception {
-        TopicName topicName = TopicName.of(projectId, pullTopicId);
+        setProjectId();
+        String name = "projects/"+ projectId + "/topics/"+pullTopicId;
+
+        TopicName topicName = TopicName.of(projectId, name);
 
         if (pullPublisher == null) {
             pullPublisher = Publisher.newBuilder(topicName.getTopic()).build();
@@ -90,12 +105,14 @@ public class EventPublisher {
         // Once published, returns a server-assigned message id (unique within the topic)
         ApiFuture<String> messageIdFuture = pullPublisher.publish(pubsubMessage);
         LOGGER.info("PubSub Pull message published " + E.RED_APPLE + E.RED_APPLE + E.RED_APPLE
-                + " id: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
+                + " messageId: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
 
     }
     public void publishBigQueryEvent(String message)
             throws Exception {
-        TopicName topicName = TopicName.of(projectId, bigQueryTopicId);
+        setProjectId();
+        String name = "projects/"+ projectId + "/topics/"+bigQueryTopicId;
+        TopicName topicName = TopicName.of(projectId, name);
 
         if (bigQueryPublisher == null) {
             bigQueryPublisher = Publisher.newBuilder(topicName.getTopic()).build();
@@ -109,7 +126,7 @@ public class EventPublisher {
         // Once published, returns a server-assigned message id (unique within the topic)
         ApiFuture<String> messageIdFuture = bigQueryPublisher.publish(pubsubMessage);
         LOGGER.info("PubSub BigQuery message published " + E.ORANGE_HEART + E.ORANGE_HEART + E.ORANGE_HEART
-                + " topic: " + topicName.getTopic());
+                + " messageId: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
 
     }
 

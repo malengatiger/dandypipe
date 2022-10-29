@@ -1,0 +1,17 @@
+{
+  "eventId" : "eventId",
+  "cityId" : "cityId",
+  "cityName" : "cityName",
+  "placeId" : "placeId",
+  "placeName" : "placeName",
+  "amount" : 54635.09,
+  "rating": 5,
+  "latitude": -27.0998765,
+  "longitude": 25.4583322,
+  "date": "a date",
+  "longDate": 87437893874,
+  "types": [
+    "type1", "type2", "type3"
+  ],
+  "vicinity": "this is in the hood"
+}

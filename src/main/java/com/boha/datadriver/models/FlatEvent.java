@@ -6,33 +6,15 @@ import java.util.ArrayList;
 
 @Data
 public class FlatEvent {
-    private String eventId;
-    private String date;
+    private String eventId, cityId, cityName;
+    private String placeId, placeName;
     private double amount;
     private int rating;
-    private long longDate;
-
     private double latitude, longitude;
-    private String placeId, vicinity, cityId, cityName, placeName;
+    private String date;
+    private long longDate;
     private ArrayList<String> types;
-
-
-
-    public long getLongDate() {
-        return longDate;
-    }
-
-    public void setLongDate(long longDate) {
-        this.longDate = longDate;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
+    private String vicinity;
 
     public String getEventId() {
         return eventId;
@@ -42,12 +24,36 @@ public class FlatEvent {
         this.eventId = eventId;
     }
 
-    public String getDate() {
-        return date;
+    public String getCityId() {
+        return cityId;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setCityId(String cityId) {
+        this.cityId = cityId;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getPlaceId() {
+        return placeId;
+    }
+
+    public void setPlaceId(String placeId) {
+        this.placeId = placeId;
+    }
+
+    public String getPlaceName() {
+        return placeName;
+    }
+
+    public void setPlaceName(String placeName) {
+        this.placeName = placeName;
     }
 
     public double getAmount() {
@@ -56,6 +62,14 @@ public class FlatEvent {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
     public double getLatitude() {
@@ -74,43 +88,20 @@ public class FlatEvent {
         this.longitude = longitude;
     }
 
-    public String getPlaceId() {
-        return placeId;
+    public String getDate() {
+        return date;
     }
 
-    public void setPlaceId(String placeId) {
-        this.placeId = placeId;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getVicinity() {
-        return vicinity;
+    public long getLongDate() {
+        return longDate;
     }
 
-    public void setVicinity(String vicinity) {
-        this.vicinity = vicinity;
-    }
-
-    public String getCityId() {
-        return cityId;
-    }
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
-    }
-
-    public String getCityName() {
-        return cityName;
-    }
-
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-
-    public String getPlaceName() {
-        return placeName;
-    }
-
-    public void setPlaceName(String placeName) {
-        this.placeName = placeName;
+    public void setLongDate(long longDate) {
+        this.longDate = longDate;
     }
 
     public ArrayList<String> getTypes() {
@@ -119,5 +110,13 @@ public class FlatEvent {
 
     public void setTypes(ArrayList<String> types) {
         this.types = types;
+    }
+
+    public String getVicinity() {
+        return vicinity;
+    }
+
+    public void setVicinity(String vicinity) {
+        this.vicinity = vicinity;
     }
 }

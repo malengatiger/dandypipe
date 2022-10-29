@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: com.boha.datadriver.DatadriverApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.986 s - in com.boha.datadriver.DatadriverApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 9.529 s <<< FAILURE! - in com.boha.datadriver.DatadriverApplicationTests
+contextLoads  Time elapsed: 0.003 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.RuntimeException: java.lang.NullPointerException
+Caused by: java.lang.NullPointerException
+

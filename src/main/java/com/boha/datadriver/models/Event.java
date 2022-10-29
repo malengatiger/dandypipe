@@ -70,7 +70,9 @@ public class Event {
         f.setPlaceId(this.getCityPlace().place_id);
         f.setPlaceName(this.getCityPlace().name);
         f.setRating(this.getRating());
-        f.setTypes(this.getCityPlace().types);
+        if (this.getCityPlace().types != null) {
+            f.setTypes(this.getCityPlace().types);
+        }
         f.setVicinity(this.getCityPlace().vicinity);
         return f;
 

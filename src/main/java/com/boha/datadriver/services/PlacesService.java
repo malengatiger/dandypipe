@@ -4,6 +4,7 @@ import com.boha.datadriver.models.City;
 import com.boha.datadriver.models.CityPlace;
 import com.boha.datadriver.models.Root;
 import com.boha.datadriver.util.E;
+import com.boha.datadriver.util.SecretMgr;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
@@ -26,10 +27,11 @@ public class PlacesService {
     private static final String prefix =
             "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
     private static final Logger LOGGER = Logger.getLogger(PlacesService.class.getSimpleName());
-    @Value("${placesAPIKey}")
-    private String placesAPIKey;
-    String buildLink(double lat, double lng, int radiusInMetres) {
+    @Autowired
+    private SecretMgr secretMgr;
+    String buildLink(double lat, double lng, int radiusInMetres) throws Exception {
         StringBuilder sb = new StringBuilder();
+        String placesAPIKey = secretMgr.getPlacesAPIKey();
         sb.append(prefix);
         sb.append("location=").append(lat).append(",").append(lng);
         sb.append("&radius=").append(radiusInMetres);

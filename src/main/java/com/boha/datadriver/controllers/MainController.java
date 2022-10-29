@@ -86,6 +86,7 @@ public class MainController {
 //                    "  Generator completed: " + " " + E.CHECK);
             return ResponseEntity.ok("Generator has started. Check logs and Firestore");
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
         }
     }

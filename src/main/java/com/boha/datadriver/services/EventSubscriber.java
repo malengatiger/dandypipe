@@ -4,7 +4,9 @@ import com.boha.datadriver.models.Event;
 import com.boha.datadriver.util.E;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.v1.MessageReceiver;
@@ -18,14 +20,21 @@ import java.util.logging.Logger;
 
 @Service
 public class EventSubscriber {
+
+
     static final Logger LOGGER = Logger.getLogger(EventSubscriber.class.getSimpleName());
-    @Value("${projectId}")
     private String projectId;
+    @Autowired
+    private Environment environment;
+    void setProjectId() {
+        projectId = environment.getProperty("PROJECT_ID");
+    }
     @Value("${subscriptionId}")
     private String subscriptionId;
 
     private static Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     public void subscribe() throws Exception {
+        setProjectId();
         Subscriber subscriber;
         ProjectSubscriptionName subscriptionName =
                 ProjectSubscriptionName.of(projectId, subscriptionId);

@@ -12,6 +12,8 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
 import com.google.gson.Gson;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
@@ -60,6 +62,7 @@ public class CityService {
         return realCities;
     }
     public List<City> addCitiesToFirestore() throws IOException{
+
         List<City> cities = getCitiesFromFile();
         Firestore c = FirestoreClient.getFirestore();
 
@@ -111,21 +114,34 @@ public class CityService {
         }
         return city;
     }
-
+    @Autowired
+    private Environment environment;
+    private String projectId;
+    void setProjectId() {
+        projectId = environment.getProperty("PROJECT_ID");
+    }
     void initFirebase() {
+        LOGGER.info(E.AMP+E.AMP+E.AMP+ " initializing Firebase ....");
         FirebaseOptions options = null;
+        projectId = System.getenv().get("PROJECT_ID");
+        if (projectId == null) {
+            return;
+        }
+        LOGGER.info(E.AMP+E.AMP+E.AMP+
+                " Project Id from System.getenv: "+E.RED_APPLE + " " + projectId);
         try {
             options = FirebaseOptions.builder()
                     .setCredentials(GoogleCredentials.getApplicationDefault())
-                    .setDatabaseUrl("https://thermal-effort-366015.firebaseio.com/")
+                    .setDatabaseUrl("https://" +  projectId  + ".firebaseio.com/")
                     .build();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
-        FirebaseApp.initializeApp(options);
-        LOGGER.info(E.GREEN_APPLE+E.GREEN_APPLE+E.GREEN_APPLE+
-                "Firebase has been initialized");
+        FirebaseApp app = FirebaseApp.initializeApp(options);
+        LOGGER.info(E.AMP+E.AMP+E.AMP+
+                " Firebase has been initialized: " + app.getOptions().getDatabaseUrl()
+                + " " + E.RED_APPLE);
 
     }
 }
