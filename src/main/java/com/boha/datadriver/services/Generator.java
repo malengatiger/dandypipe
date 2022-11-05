@@ -12,6 +12,7 @@ import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.firebase.cloud.FirestoreClient;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +32,7 @@ public class Generator {
 
 //    private final PubSubAdmin pubSubAdmin;
 
-    private ArrayList<Subscriber> allSubscribers = new ArrayList<>();
+    private final ArrayList<Subscriber> allSubscribers = new ArrayList<>();
     private final CityService cityService;
     private final PlacesService placesService;
     @Autowired
@@ -46,13 +47,13 @@ public class Generator {
     public void generateEvents(long intervalInSeconds, int upperCountPerPlace, int maxCount) throws Exception {
         this.maxCount = maxCount;
         LOGGER.info(E.BLUE_DOT + E.BLUE_DOT +
-                "  generateEvents: intervalInSeconds: " + intervalInSeconds
+                " Generator: intervalInSeconds: " + intervalInSeconds
                 + " upperCountPerPlace: " +
                 +upperCountPerPlace + " maxCount: " + maxCount +  " " + E.BLUE_DOT);
         if (cityList == null || cityList.isEmpty()) {
             cityList = cityService.getCitiesFromFirestore();
         }
-        LOGGER.info(E.BLUE_DOT + E.BLUE_DOT + " starting Timer  to control work ...");
+        LOGGER.info(E.BLUE_DOT + E.BLUE_DOT + " starting Timer to control work ...");
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -66,12 +67,13 @@ public class Generator {
         }, 1000, intervalInSeconds * 1000);
 
     }
-
-    void stopTimer() {
-        timer.cancel();
-        timer = null;
-        LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
-                " Generator Timer stopped; events: " + E.LEAF + " " + totalCount);
+    public void stopTimer() {
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+            LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
+                    " Generator Timer stopped; events: " + E.LEAF + " " + totalCount);
+        }
     }
 
     void performWork(int upperCountPerPlace) throws Exception {
@@ -86,9 +88,29 @@ public class Generator {
             int mIndex = random.nextInt(places.size() - 1);
             CityPlace cityPlace = places.get(mIndex);
             Event event = getEvent(cityPlace);
-            writeEventToFirestore(event, city);
-            sendToPubSub(event, city);
-            totalCount++;
+
+            try {
+                int seconds = random.nextInt(5);
+                if (seconds == 0) {
+                    seconds = 2;
+                }
+                LOGGER.info(E.BLUE_HEART+".... sleeping for " + seconds
+                + " seconds");
+                Thread.sleep(seconds * 1000);
+            } catch (Exception e) {
+                //ignore
+            }
+            if (!event.getCityPlace().cityName.equalsIgnoreCase(event.getCityPlace().name)) {
+                event.setDate(DateTime.now().toDateTimeISO().toString());
+                event.setLongDate(DateTime.now().getMillis());
+                writeEventToFirestore(event, city);
+                sendToPubSub(event, city);
+                totalCount++;
+            } else {
+                LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+
+                        " Event ignored, city and place name are the same" +
+                        E.AMP+E.AMP);
+            }
         }
 
         if (totalCount > maxCount) {
@@ -100,13 +122,13 @@ public class Generator {
     private Event getEvent(CityPlace cityPlace) throws Exception {
         Event event = new Event();
         event.setCityPlace(cityPlace);
-        int m = random.nextInt(300);
+        int m = random.nextInt(500);
         if (m == 0) m = 150;
         event.setAmount(Double.parseDouble("" + m));
         int r = random.nextInt(5);
         if (r == 0) r = 5;
         event.setRating(r);
-        event.setDate(new Date().toString());
+        event.setDate(new DateTime().toDateTimeISO().toString());
         event.setLongDate(new Date().getTime());
         event.setEventId(UUID.randomUUID().toString());
         return event;
@@ -118,10 +140,11 @@ public class Generator {
         if (firestore == null) {
             firestore = FirestoreClient.getFirestore();
         }
-        ApiFuture<DocumentReference> future = firestore.collection("events").add(event);
+        ApiFuture<DocumentReference> future =
+                firestore.collection("events").add(event);
         LOGGER.info(E.LEAF + E.LEAF + " Firestore event: "
                 + E.ORANGE_HEART + event.getCityPlace().name + ", " + city.getCity()
-                + " " + E.LEAF);
+                + " path: " + future.get().getPath() + E.LEAF);
     }
 
     @Autowired

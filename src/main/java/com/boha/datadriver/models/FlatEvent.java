@@ -13,7 +13,7 @@ public class FlatEvent {
     private double latitude, longitude;
     private String date;
     private long longDate;
-    private ArrayList<String> types;
+    private String types;
     private String vicinity;
 
     public String getEventId() {
@@ -104,11 +104,11 @@ public class FlatEvent {
         this.longDate = longDate;
     }
 
-    public ArrayList<String> getTypes() {
+    public String getTypes() {
         return types;
     }
 
-    public void setTypes(ArrayList<String> types) {
+    public void setTypes(String types) {
         this.types = types;
     }
 

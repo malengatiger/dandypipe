@@ -71,7 +71,17 @@ public class Event {
         f.setPlaceName(this.getCityPlace().name);
         f.setRating(this.getRating());
         if (this.getCityPlace().types != null) {
-            f.setTypes(this.getCityPlace().types);
+            StringBuilder bf = new StringBuilder();
+            int index = 0;
+            for (String t: getCityPlace().types) {
+                bf.append(t);
+                if (index < getCityPlace().types.size() - 1) {
+                    bf.append(", ");
+                }
+
+                index++;
+            }
+            f.setTypes(bf.toString());
         }
         f.setVicinity(this.getCityPlace().vicinity);
         return f;
