@@ -89,6 +89,17 @@ public class MainController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
         }
     }
+    @GetMapping("/getCitiesFromFile")
+    private ResponseEntity<Object> getCitiesFromFile() {
+        try {
+            List<City> citiesFromFile = cityService.getCitiesFromFile();
+            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
+                    "  Cities from  file Found: " + citiesFromFile.size() + " " + E.CHECK);
+            return ResponseEntity.ok(citiesFromFile);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
+        }
+    }
 
     @Autowired
     Generator generator;
