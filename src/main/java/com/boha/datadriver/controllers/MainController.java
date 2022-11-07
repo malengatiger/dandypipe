@@ -30,6 +30,12 @@ public class MainController {
 
     private final CityService cityService;
 
+    @GetMapping("/")
+    private String hello()  {
+        return E.BLUE_DOT+E.BLUE_DOT+
+                "DataDriver is running at " + new DateTime().toDateTimeISO().toString();
+    }
+
     @GetMapping("/saveCities")
     private ResponseEntity<Object> saveCities() {
         try {
@@ -98,7 +104,7 @@ public class MainController {
                     upperCountPerPlace, maxCount);
             Message  message = new Message();
             message.setStatusCode(200);
-            message.setMessage("Generator has started. Check logs and Firestore");
+            message.setMessage("Generator has started. Check logs Firestore, PubSub, BigQuery and GCS");
             message.setDate(String.valueOf(new DateTime()));
 
             return ResponseEntity.ok(
@@ -118,7 +124,7 @@ public class MainController {
         generator.stopTimer();
         Message  message = new Message();
         message.setStatusCode(200);
-        message.setMessage("Generator has STOPPED. Check logs and Firestore");
+        message.setMessage("Generator has STOPPED. Check logs Firestore, PubSub, BigQuery and GCS");
         message.setDate(String.valueOf(new DateTime()));
 
         return ResponseEntity.ok(

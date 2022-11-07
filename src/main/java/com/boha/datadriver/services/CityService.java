@@ -49,8 +49,7 @@ public class CityService {
         City[] cities = gson.fromJson(json, City[].class);
         LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+ " Found " + cities.length + " cities from file");
         int ind= 0;
-        List<City> realCities = new ArrayList<>();
-        realCities.addAll(Arrays.asList(cities));
+        List<City> realCities = new ArrayList<>(Arrays.asList(cities));
         for (City city : realCities) {
             city.setLatitude(Double.parseDouble(city.getLat()));
             city.setLongitude(Double.parseDouble(city.getLng()));
