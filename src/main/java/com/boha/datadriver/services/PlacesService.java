@@ -22,6 +22,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+/**
+ * Manages the CityPlace resource. Creates CityPlaces on Firestore using the Places API
+ */
 @Service
 public class PlacesService {
     private static final String prefix =

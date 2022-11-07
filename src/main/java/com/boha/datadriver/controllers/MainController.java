@@ -19,6 +19,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
 
+/**
+ * Manages the DataDriver API. All public app routes are defined here
+ */
 @RestController
 public class MainController {
     private static final Logger LOGGER = Logger.getLogger(MainController.class.getSimpleName());

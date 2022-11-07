@@ -19,6 +19,9 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.logging.Logger;
 
+/**
+ * Manages the creation of streaming data to PubSub and Firestore. Events are generated and sent forth
+ */
 @Service
 public class Generator {
     static final Logger LOGGER = Logger.getLogger(Generator.class.getSimpleName());

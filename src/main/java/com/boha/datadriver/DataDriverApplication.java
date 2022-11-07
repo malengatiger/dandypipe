@@ -13,6 +13,9 @@ import org.springframework.core.env.Environment;
 
 import java.util.logging.Logger;
 
+/**
+ * The DataDriver app hosts the services that enable the creation of a data streaming demo
+ */
 @SpringBootApplication
 public class DataDriverApplication implements ApplicationListener<ApplicationReadyEvent> {
 

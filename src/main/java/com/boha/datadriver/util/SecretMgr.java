@@ -13,6 +13,9 @@ import java.util.logging.Logger;
 import java.util.zip.CRC32C;
 import java.util.zip.Checksum;
 
+/**
+ * Works with the GCP Secret Manager to retrieve keys
+ */
 @Service
 public class SecretMgr {
     static final Logger LOGGER = Logger.getLogger(SecretMgr.class.getSimpleName());

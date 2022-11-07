@@ -27,6 +27,9 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 
+/**
+ * Manages the cities needed for the demo. Cities are written to Firestore from a file
+ */
 @Service
 public class CityService {
     private static final Logger LOGGER = Logger.getLogger(CityService.class.getSimpleName());

@@ -16,6 +16,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
+/**
+ * Publishes events to PubSub topics
+ */
 @Service
 public class EventPublisher {
     static final Logger LOGGER = Logger.getLogger(EventPublisher.class.getSimpleName());
