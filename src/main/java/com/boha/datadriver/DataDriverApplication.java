@@ -23,7 +23,7 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 		SpringApplication.run(DataDriverApplication.class, args);
 		LOGGER.info(
 				E.CHECK + E.CHECK +
-				" DataDriver completed starting. " + E.CHECK+E.CHECK);
+				" DataDriver completed starting process. " + E.CHECK+E.CHECK);
 	}
 
 	@Value("${eventTopicId}")
@@ -43,7 +43,7 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 		String projectId = environment.getProperty("PROJECT_ID");
 		LOGGER.info(E.RED_DOT+E.RED_DOT+ " Data Driver ApplicationReadyEvent - Timestamp: "
 				+ E.YELLOW_STAR + event.getTimestamp());
-		LOGGER.info(E.RED_DOT+E.RED_DOT+ " Project: " + projectId + " "
+		LOGGER.info(E.RED_DOT+E.RED_DOT+ " onApplicationEvent Project: " + projectId + " "
 				+ E.YELLOW_STAR );
 		LOGGER.info(E.RED_DOT+E.RED_DOT
 				+  " Topic: " + eventTopicId  + " " + E.YELLOW_STAR );
@@ -52,11 +52,12 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 			String apiKey = secrets.getPlacesAPIKey();
 			if (apiKey.contains("AIza")) {
 				LOGGER.info(E.CHECK + E.CHECK + E.CHECK +
-						" Places API Key starts with AIza .... ");
+						" Places API Key starts with AIza and  should be OK .... ");
 			}
 					//storageService.init();
 		} catch (Exception e) {
-			throw new RuntimeException(e);
+			LOGGER.info(E.RED_DOT + "  We have a problem: " + e.getMessage());
+			e.printStackTrace();
 		}
 
 
