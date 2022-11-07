@@ -123,10 +123,12 @@ public class CityService {
         projectId = environment.getProperty("PROJECT_ID");
     }
     void initFirebase() {
-        LOGGER.info(E.AMP+E.AMP+E.AMP+ " initializing Firebase ....");
+        LOGGER.info(E.AMP+E.AMP+E.AMP+ " .... initializing Firebase ....");
         FirebaseOptions options = null;
         projectId = System.getenv().get("PROJECT_ID");
         if (projectId == null) {
+            LOGGER.info(E.RED_DOT+E.RED_DOT+E.AMP+ " .... missing ProjectId WTF? ....");
+
             return;
         }
         LOGGER.info(E.AMP+E.AMP+E.AMP+

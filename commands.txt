@@ -19,7 +19,9 @@ PROJECT_ID=$(gcloud config get-value project)
  gcloud run deploy datadriver \
    --region=europe-west1 \
    --platform=managed \
+   --project=thermal-effort-366015 \
    --allow-unauthenticated \
+   --update-env-vars "GOOGLE_CLOUD_PROJECT=thermal-effort-366015" \
    --image=gcr.io/thermal-effort-366015/datadriver
 
 url is  https://datadriver-umrjnxdnuq-ew.a.run.app

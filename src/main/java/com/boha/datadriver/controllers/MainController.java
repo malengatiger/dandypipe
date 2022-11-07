@@ -116,7 +116,8 @@ public class MainController {
             e.printStackTrace();
             Message  message = new Message();
             message.setStatusCode(500);
-            message.setMessage("Something smells! Gone badly wrong");
+            message.setMessage(E.RED_DOT+
+                    "Something smells! Gone badly wrong: " + e.getMessage());
             message.setDate(String.valueOf(new DateTime()));
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
                     message);
