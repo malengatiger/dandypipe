@@ -126,6 +126,7 @@ public class Generator {
             }
         }
 
+        LOGGER.info(E.LEAF+E.LEAF + " Total Events generated: " + totalCount + " at " + DateTime.now().toDateTimeISO().toString());
         if (totalCount > maxCount) {
             stopTimer();
             totalCount = 0;
