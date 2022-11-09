@@ -65,7 +65,8 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 			int number = 1;
 			List<GCSBlob> list = storageService.listObjects(number);
 			List<FlatEvent> flatEvents  = storageService.getRecentFlatEvents(number);
-			LOGGER.info(E.CHECK + E.CHECK + E.CHECK + "Google Cloud Storage service blobs(3 hours): " + list.size());
+			LOGGER.info(E.CHECK + E.CHECK + E.CHECK + "Google Cloud Storage number of blobs in: " +
+					number + " hours: " + E.PEAR+ " " + list.size());
 			for (GCSBlob blob : list) {
 				LOGGER.info(E.BLUE_HEART
 						+ blob.getCreateTime()

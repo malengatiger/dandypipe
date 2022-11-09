@@ -84,9 +84,10 @@ public class StorageService {
         Page<Blob> blobs = storage.list(bucketName);
         List<GCSBlob> list = new ArrayList<GCSBlob>();
 
+        long now = DateTime.now().minusHours(hours).getMillis();
         for (Blob blob : blobs.iterateAll()) {
             if (blob.getName().contains("events/page")) {
-                if (blob.getCreateTime() > DateTime.now().minusHours(hours).getMillis()) {
+                if (blob.getCreateTime() > now) {
                     GCSBlob g = new GCSBlob();
                     g.setCreateTime(new DateTime(blob.getCreateTime()).toDateTimeISO().toString());
                     g.setName(blob.getName());
