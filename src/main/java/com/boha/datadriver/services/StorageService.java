@@ -45,7 +45,7 @@ public class StorageService {
                 .build()
                 .getService();
         byte[] content = storage.readAllBytes(bucketName, objectName);
-        LOGGER.info(E.PEAR+" Downloaded object from GCS: " + objectName);
+//        LOGGER.info(E.PEAR+" Downloaded object from GCS: " + objectName);
         return new String(content, StandardCharsets.UTF_8);
     }
 
@@ -64,7 +64,7 @@ public class StorageService {
             try {
                 List<FlatEvent> flats = GSON.fromJson(json, listType);
                 flatEvents.addAll(flats);
-                LOGGER.info(E.ORANGE_HEART
+                LOGGER.info(E.ORANGE_HEART  + " "
                         + new DateTime(blob.getCreateTime()) + " "
                         + blob.getName() + " events: " + E.RED_DOT + " " + flats.size());
             } catch (Exception e) {

@@ -135,14 +135,14 @@ public class Generator {
     private  Event getEvent(CityPlace cityPlace)  {
         Event event = new Event();
         event.setCityPlace(cityPlace);
-        int m = random.nextInt(500);
+        int m = random.nextInt(2500);
         if (m == 0) m = 150;
         event.setAmount(Double.parseDouble("" + m));
         int r = random.nextInt(5);
         if (r == 0) r = 5;
         event.setRating(r);
-        event.setDate(new DateTime().toDateTimeISO().toString());
-        event.setLongDate(new Date().getTime());
+        event.setDate(DateTime.now().toDateTimeISO().toString());
+        event.setLongDate(DateTime.now().getMillis());
         event.setEventId(UUID.randomUUID().toString());
         return event;
     }
