@@ -17,6 +17,7 @@
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/models/FlatEvent.java
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/services/EventPublisher.java
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/models/Northeast.java
+/Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/models/GCSBlob.java
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/controllers/MainController.java
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/models/Event.java
 /Users/mac/WORK/dandypipe/src/main/java/com/boha/datadriver/models/Root.java

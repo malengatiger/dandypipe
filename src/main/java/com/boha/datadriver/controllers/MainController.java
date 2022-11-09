@@ -46,7 +46,7 @@ public class MainController {
             LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
                     " MainController Returning " + cities.size() + " cities");
             return ResponseEntity.ok(cities);
-        } catch (IOException e) {
+        } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
         }
     }
@@ -97,7 +97,7 @@ public class MainController {
                     "  Cities from  file Found: " + citiesFromFile.size() + " " + E.CHECK);
             return ResponseEntity.ok(citiesFromFile);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
 

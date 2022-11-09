@@ -11,6 +11,6 @@ public class E {
     public static final String AMP = "\uD83C\uDF00"; //🌀
     public static final String LEAF = "\uD83E\uDD6C"; // 🥬
     public static final String CHECK = "✅"; //✅
-    public static final String PEAR = " \uD83C\uDF50"; // 🍐
+    public static final String PEAR = "\uD83C\uDF50"; // 🍐
 
 }

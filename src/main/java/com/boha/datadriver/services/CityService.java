@@ -13,16 +13,12 @@ import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
-import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -37,36 +33,41 @@ import java.util.logging.Logger;
 public class CityService {
     private static final Logger LOGGER = Logger.getLogger(CityService.class.getSimpleName());
 
+    @Autowired
+    private StorageService storageService;
+    @Value("${citiesFile}")
+    private String citiesFile;
     public CityService() {
         LOGGER.info(E.AMP+E.AMP+E.AMP + " CityService constructed");
         initFirebase();
     }
     @Autowired
     ResourceLoader resourceLoader;
-    public List<City>  getCitiesFromFile() throws IOException{
+    public List<City>  getCitiesFromFile() throws Exception{
+        LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+ " getCitiesFromFile running ... ");
+        try {
+            String json = storageService.downloadObject(citiesFile);
+            Gson gson = new Gson();
+            City[] cities = gson.fromJson(json, City[].class);
+            LOGGER.info(E.BLUE_DOT + E.BLUE_DOT + " Found " + cities.length + " cities from json file");
+            int ind = 0;
+            List<City> realCities = new ArrayList<>(Arrays.asList(cities));
+            for (City city : realCities) {
+                city.setLatitude(Double.parseDouble(city.getLat()));
+                city.setLongitude(Double.parseDouble(city.getLng()));
+                city.setId(UUID.randomUUID().toString());
+            }
 
-        Resource resource = resourceLoader.getResource("classpath:za.json");
-        File mFile = resource.getFile();
-        LOGGER.info(E.ORANGE_HEART+E.ORANGE_HEART+
-                " Cities File, length: " + mFile.length());
+            LOGGER.info(E.BLUE_DOT + E.BLUE_DOT + " Found " + realCities.size()
+                    + " real cities from file");
+            return realCities;
 
-        String json = Files.readString(mFile.toPath());
-        Gson gson = new Gson();
-        City[] cities = gson.fromJson(json, City[].class);
-        LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+ " Found " + cities.length + " cities from json file");
-        int ind= 0;
-        List<City> realCities = new ArrayList<>(Arrays.asList(cities));
-        for (City city : realCities) {
-            city.setLatitude(Double.parseDouble(city.getLat()));
-            city.setLongitude(Double.parseDouble(city.getLng()));
-            city.setId(UUID.randomUUID().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+ " Found " + realCities.size() + " real cities from file");
-
-        return realCities;
+        return null;
     }
-    public List<City> addCitiesToFirestore() throws IOException{
+    public List<City> addCitiesToFirestore() throws Exception{
 
         List<City> cities = getCitiesFromFile();
         Firestore c = FirestoreClient.getFirestore();

@@ -45,6 +45,7 @@ public class StorageService {
                 .build()
                 .getService();
         byte[] content = storage.readAllBytes(bucketName, objectName);
+        LOGGER.info(E.PEAR+" Downloaded object from GCS: " + objectName);
         return new String(content, StandardCharsets.UTF_8);
     }
 
