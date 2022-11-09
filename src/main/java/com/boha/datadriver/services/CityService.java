@@ -14,11 +14,14 @@ import com.google.firebase.cloud.FirestoreClient;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,19 +41,19 @@ public class CityService {
         LOGGER.info(E.AMP+E.AMP+E.AMP + " CityService constructed");
         initFirebase();
     }
-
+    @Autowired
+    ResourceLoader resourceLoader;
     public List<City>  getCitiesFromFile() throws IOException{
 
-        File file = ResourceUtils.getFile("classpath:za.json");
+        Resource resource = resourceLoader.getResource("classpath:za.json");
+        File mFile = resource.getFile();
         LOGGER.info(E.ORANGE_HEART+E.ORANGE_HEART+
-                " Cities File, length: " + file.length());
+                " Cities File, length: " + mFile.length());
 
-
-        String json = Files.readString(file.toPath());
-//        LOGGER.info(json);
+        String json = Files.readString(mFile.toPath());
         Gson gson = new Gson();
         City[] cities = gson.fromJson(json, City[].class);
-        LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+ " Found " + cities.length + " cities from file");
+        LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+ " Found " + cities.length + " cities from json file");
         int ind= 0;
         List<City> realCities = new ArrayList<>(Arrays.asList(cities));
         for (City city : realCities) {
@@ -143,7 +146,7 @@ public class CityService {
         }
 
         FirebaseApp app = FirebaseApp.initializeApp(options);
-        LOGGER.info(E.AMP+E.AMP+E.AMP+
+        LOGGER.info(E.AMP+E.AMP+E.AMP+E.AMP+E.AMP+
                 " Firebase has been initialized: " + app.getOptions().getDatabaseUrl()
                 + " " + E.RED_APPLE);
 

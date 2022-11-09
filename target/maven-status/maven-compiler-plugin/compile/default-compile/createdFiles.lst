@@ -2,6 +2,7 @@ com/boha/datadriver/models/Location.class
 com/boha/datadriver/models/City.class
 com/boha/datadriver/util/E.class
 com/boha/datadriver/services/CityService.class
+com/boha/datadriver/services/StorageService.class
 com/boha/datadriver/models/CityPlace.class
 com/boha/datadriver/util/SecretMgr.class
 com/boha/datadriver/services/Generator$1.class
@@ -11,6 +12,7 @@ com/boha/datadriver/models/FlatEvent.class
 com/boha/datadriver/models/Root.class
 com/boha/datadriver/models/Northeast.class
 com/boha/datadriver/services/Generator.class
+com/boha/datadriver/models/Message.class
 com/boha/datadriver/models/Southwest.class
 com/boha/datadriver/models/Photo.class
 com/boha/datadriver/models/Event.class

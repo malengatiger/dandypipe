@@ -1,0 +1,627 @@
+[
+  {
+    "eventId": "1b37565b-938e-4046-b2a2-3e957c9e84fb",
+    "date": "2022-11-08T17:37:08.024+02:00",
+    "amount": 132.0,
+    "rating": 5,
+    "longDate": 1667921828024,
+    "latitude": -26.9430177,
+    "longitude": 29.2426525,
+    "placeId": "ChIJqfAzvDCD7B4Rg_HsDVL64Jg",
+    "vicinity": "39 Beyers Naude Street, Standerton",
+    "cityId": "ee98a9fe-0375-4690-91aa-a4800f2f15fc",
+    "cityName": "Standerton",
+    "placeName": "Terrace Lofts",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "ad7d3b16-a2f1-49f0-b32e-ad98f4d8b411",
+    "date": "2022-11-08T17:37:11.222+02:00",
+    "amount": 74.0,
+    "rating": 1,
+    "longDate": 1667921831222,
+    "latitude": -26.9691562,
+    "longitude": 29.2358443,
+    "placeId": "ChIJXVcvT1SD7B4RuvCMpjf1wYM",
+    "vicinity": "19 Factory Street, Standerton",
+    "cityId": "ee98a9fe-0375-4690-91aa-a4800f2f15fc",
+    "cityName": "Standerton",
+    "placeName": "NUTIRBASICS CC",
+    "types": [
+      "store",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "e89dc255-295c-468c-8ae0-3b766fba1745",
+    "date": "2022-11-08T17:37:17.699+02:00",
+    "amount": 333.0,
+    "rating": 3,
+    "longDate": 1667921837699,
+    "latitude": -26.9765846,
+    "longitude": 29.205924,
+    "placeId": "ChIJFwXgZK6c7B4RY4VK7sgvs7I",
+    "vicinity": "Sakhile",
+    "cityId": "ee98a9fe-0375-4690-91aa-a4800f2f15fc",
+    "cityName": "Standerton",
+    "placeName": "Sakhile",
+    "types": [
+      "sublocality_level_1",
+      "sublocality",
+      "political"
+    ]
+  },
+  {
+    "eventId": "39b7a593-7fee-4a5c-8565-47f7ffec92eb",
+    "date": "2022-11-08T17:37:24.094+02:00",
+    "amount": 476.0,
+    "rating": 3,
+    "longDate": 1667921844094,
+    "latitude": -26.9724254,
+    "longitude": 29.2622486,
+    "placeId": "ChIJ5SIY8puE7B4Rli6Y7peNFiA",
+    "vicinity": "14 Doctor Nelson Mandela Drive, Meyerville, Standerton",
+    "cityId": "ee98a9fe-0375-4690-91aa-a4800f2f15fc",
+    "cityName": "Standerton",
+    "placeName": "Q\u0027s Boutique Stay",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "8194b026-ad10-482b-a0f5-cfad7ec9da39",
+    "date": "2022-11-08T17:37:29.453+02:00",
+    "amount": 412.0,
+    "rating": 4,
+    "longDate": 1667921849453,
+    "latitude": -26.9724254,
+    "longitude": 29.2622486,
+    "placeId": "ChIJ5SIY8puE7B4Rli6Y7peNFiA",
+    "vicinity": "14 Doctor Nelson Mandela Drive, Meyerville, Standerton",
+    "cityId": "ee98a9fe-0375-4690-91aa-a4800f2f15fc",
+    "cityName": "Standerton",
+    "placeName": "Q\u0027s Boutique Stay",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "657e3c54-becf-49f2-9618-79039d6d53fd",
+    "date": "2022-11-08T17:37:34.768+02:00",
+    "amount": 411.0,
+    "rating": 3,
+    "longDate": 1667921854768,
+    "latitude": -26.9492434,
+    "longitude": 29.2359141,
+    "placeId": "ChIJOY29ujWD7B4Rwa8RZOfgNAQ",
+    "vicinity": "C/O Krogh \u0026, Walter Sisulu Drive, SisuluStreet, Standerton",
+    "cityId": "ee98a9fe-0375-4690-91aa-a4800f2f15fc",
+    "cityName": "Standerton",
+    "placeName": "KFC Standerton",
+    "types": [
+      "meal_takeaway",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "8daf123d-258e-4c92-af71-a18bd5e1fc16",
+    "date": "2022-11-08T17:37:40.623+02:00",
+    "amount": 170.0,
+    "rating": 3,
+    "longDate": 1667921860623,
+    "latitude": -26.9492434,
+    "longitude": 29.2359141,
+    "placeId": "ChIJOY29ujWD7B4Rwa8RZOfgNAQ",
+    "vicinity": "C/O Krogh \u0026, Walter Sisulu Drive, SisuluStreet, Standerton",
+    "cityId": "ee98a9fe-0375-4690-91aa-a4800f2f15fc",
+    "cityName": "Standerton",
+    "placeName": "KFC Standerton",
+    "types": [
+      "meal_takeaway",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "ca2b3b82-c1df-49fc-9549-abed8d6ceb9a",
+    "date": "2022-11-08T17:37:46.228+02:00",
+    "amount": 292.0,
+    "rating": 5,
+    "longDate": 1667921866228,
+    "latitude": -26.9492434,
+    "longitude": 29.2359141,
+    "placeId": "ChIJOY29ujWD7B4Rwa8RZOfgNAQ",
+    "vicinity": "C/O Krogh \u0026, Walter Sisulu Drive, SisuluStreet, Standerton",
+    "cityId": "ee98a9fe-0375-4690-91aa-a4800f2f15fc",
+    "cityName": "Standerton",
+    "placeName": "KFC Standerton",
+    "types": [
+      "meal_takeaway",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "d4ea1a8d-84c0-46df-a175-f2a2b3eccbc6",
+    "date": "2022-11-08T17:37:51.583+02:00",
+    "amount": 86.0,
+    "rating": 3,
+    "longDate": 1667921871583,
+    "latitude": -26.9492288,
+    "longitude": 29.2424921,
+    "placeId": "ChIJwQgk5zeD7B4RvJVuIesapxg",
+    "vicinity": "13 Krogh Street, Standerton",
+    "cityId": "ee98a9fe-0375-4690-91aa-a4800f2f15fc",
+    "cityName": "Standerton",
+    "placeName": "Wimpy",
+    "types": [
+      "restaurant",
+      "meal_takeaway",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "1a3678ba-c67d-4271-9732-ddbd240ad947",
+    "date": "2022-11-08T17:37:57.940+02:00",
+    "amount": 271.0,
+    "rating": 2,
+    "longDate": 1667921877940,
+    "latitude": -26.9724254,
+    "longitude": 29.2622486,
+    "placeId": "ChIJ5SIY8puE7B4Rli6Y7peNFiA",
+    "vicinity": "14 Doctor Nelson Mandela Drive, Meyerville, Standerton",
+    "cityId": "ee98a9fe-0375-4690-91aa-a4800f2f15fc",
+    "cityName": "Standerton",
+    "placeName": "Q\u0027s Boutique Stay",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "aaea6ba4-569b-4a69-8e11-f15a54b2bd0f",
+    "date": "2022-11-08T17:38:00.719+02:00",
+    "amount": 411.0,
+    "rating": 3,
+    "longDate": 1667921880719,
+    "latitude": -33.006073,
+    "longitude": 17.943785,
+    "placeId": "ChIJjaDWSfqlNBwRFeekxVij-o0",
+    "vicinity": "64 Saldanha Road, White City, Saldanha",
+    "cityId": "c5ca67b4-8a8f-4a05-bd0b-04924f629b5d",
+    "cityName": "Saldanha",
+    "placeName": "Absa | Branch | Saldanha",
+    "types": [
+      "bank",
+      "point_of_interest",
+      "finance",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "cb5ab6a9-c47a-48b8-aef1-550f72c4e9bb",
+    "date": "2022-11-08T17:38:11.420+02:00",
+    "amount": 379.0,
+    "rating": 1,
+    "longDate": 1667921891420,
+    "latitude": -33.013575,
+    "longitude": 17.948055,
+    "placeId": "ChIJYQNt6FWvNBwRq-4pYpJ-fEw",
+    "vicinity": "Lot 15, Pepperbaai, Saldanha",
+    "cityId": "c5ca67b4-8a8f-4a05-bd0b-04924f629b5d",
+    "cityName": "Saldanha",
+    "placeName": "West Coast Aquaculture",
+    "types": [
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "c7dacc88-1c4b-4445-8b94-8ede82a8134b",
+    "date": "2022-11-08T17:38:17.632+02:00",
+    "amount": 408.0,
+    "rating": 2,
+    "longDate": 1667921897632,
+    "latitude": -32.995413,
+    "longitude": 17.97314,
+    "placeId": "ChIJb86Q1RamNBwR_i3-FDtYDi0",
+    "vicinity": "48 Gracillaria Cresent, Blouwater Bay, Saldanha",
+    "cityId": "c5ca67b4-8a8f-4a05-bd0b-04924f629b5d",
+    "cityName": "Saldanha",
+    "placeName": "Blue Bay Lodge",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "0354cd19-0b36-4fcb-807f-901b5a171b30",
+    "date": "2022-11-08T17:38:19.745+02:00",
+    "amount": 251.0,
+    "rating": 5,
+    "longDate": 1667921899745,
+    "latitude": -33.013575,
+    "longitude": 17.948055,
+    "placeId": "ChIJYQNt6FWvNBwRq-4pYpJ-fEw",
+    "vicinity": "Lot 15, Pepperbaai, Saldanha",
+    "cityId": "c5ca67b4-8a8f-4a05-bd0b-04924f629b5d",
+    "cityName": "Saldanha",
+    "placeName": "West Coast Aquaculture",
+    "types": [
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "1451bec4-63e7-4524-9cb0-dc76c4f1c139",
+    "date": "2022-11-08T17:38:25.002+02:00",
+    "amount": 425.0,
+    "rating": 5,
+    "longDate": 1667921905002,
+    "latitude": -33.0091148,
+    "longitude": 17.9475989,
+    "placeId": "ChIJEZ9_2fulNBwRfwct3bNHhB0",
+    "vicinity": "51 Main Road, Saldanha",
+    "cityId": "c5ca67b4-8a8f-4a05-bd0b-04924f629b5d",
+    "cityName": "Saldanha",
+    "placeName": "Saldanha Bay Hotel",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "183b502a-8e93-45c2-a0d6-673b3257d2da",
+    "date": "2022-11-08T17:38:30.550+02:00",
+    "amount": 467.0,
+    "rating": 2,
+    "longDate": 1667921910550,
+    "latitude": -32.9850773,
+    "longitude": 17.9498399,
+    "placeId": "ChIJQTT6I-WlNBwRqFXxnRsENHQ",
+    "vicinity": "Main Road West Water, Saldanha",
+    "cityId": "c5ca67b4-8a8f-4a05-bd0b-04924f629b5d",
+    "cityName": "Saldanha",
+    "placeName": "Mitchell Cotts Maritime Saldanha Bay",
+    "types": [
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "3b5cc046-40a0-4ca0-acba-2bfb842c4967",
+    "date": "2022-11-08T17:38:34.846+02:00",
+    "amount": 402.0,
+    "rating": 3,
+    "longDate": 1667921914846,
+    "latitude": -32.9941514,
+    "longitude": 17.9693559,
+    "placeId": "ChIJgYEvFRGmNBwRmz3QVXfKpHo",
+    "vicinity": "4 Jolene Street, Blouwater Bay, Saldanha",
+    "cityId": "c5ca67b4-8a8f-4a05-bd0b-04924f629b5d",
+    "cityName": "Saldanha",
+    "placeName": "View from the Top Blue Water Bay",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "757cf041-5101-40ba-8e74-88514bcff240",
+    "date": "2022-11-08T17:38:41.909+02:00",
+    "amount": 4.0,
+    "rating": 3,
+    "longDate": 1667921921909,
+    "latitude": -26.4513607,
+    "longitude": 29.4608116,
+    "placeId": "ChIJWyUUmVWg6x4RI7vsTRrwHmM",
+    "vicinity": "16 Damwal Street, Bethal",
+    "cityId": "17de57c1-d805-45e7-89cd-79c4f2f40635",
+    "cityName": "Bethal",
+    "placeName": "MILAN PARK MOTORS",
+    "types": [
+      "car_dealer",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "1e777d8a-e5b1-44dc-ab59-d2754bfd5b11",
+    "date": "2022-11-08T17:38:47.395+02:00",
+    "amount": 120.0,
+    "rating": 3,
+    "longDate": 1667921927395,
+    "latitude": -26.453899,
+    "longitude": 29.46674,
+    "placeId": "ChIJfScHfauh6x4Rw-zBlOGZSWY",
+    "vicinity": "5 Moses Kotane Street, Bethal",
+    "cityId": "17de57c1-d805-45e7-89cd-79c4f2f40635",
+    "cityName": "Bethal",
+    "placeName": "NISSAN Eastvaal Motors",
+    "types": [
+      "car_dealer",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "c8f82589-6e06-4740-adbe-eec72064c782",
+    "date": "2022-11-08T17:38:50.529+02:00",
+    "amount": 29.0,
+    "rating": 4,
+    "longDate": 1667921930529,
+    "latitude": -26.4513607,
+    "longitude": 29.4608116,
+    "placeId": "ChIJWyUUmVWg6x4RI7vsTRrwHmM",
+    "vicinity": "16 Damwal Street, Bethal",
+    "cityId": "17de57c1-d805-45e7-89cd-79c4f2f40635",
+    "cityName": "Bethal",
+    "placeName": "MILAN PARK MOTORS",
+    "types": [
+      "car_dealer",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "9e06ff4b-5b4c-4520-aa42-a47cfc35baa0",
+    "date": "2022-11-08T17:38:58.022+02:00",
+    "amount": 237.0,
+    "rating": 4,
+    "longDate": 1667921938022,
+    "latitude": -26.453899,
+    "longitude": 29.46674,
+    "placeId": "ChIJfScHfauh6x4Rw-zBlOGZSWY",
+    "vicinity": "5 Moses Kotane Street, Bethal",
+    "cityId": "17de57c1-d805-45e7-89cd-79c4f2f40635",
+    "cityName": "Bethal",
+    "placeName": "NISSAN Eastvaal Motors",
+    "types": [
+      "car_dealer",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "4ec7b4bc-0a06-490e-8e14-10dc1e7ce3e1",
+    "date": "2022-11-08T17:39:02.430+02:00",
+    "amount": 133.0,
+    "rating": 4,
+    "longDate": 1667921942430,
+    "latitude": -26.4545529,
+    "longitude": 29.4618289,
+    "placeId": "ChIJiUIChlSg6x4RTQi8Cc2aOOM",
+    "vicinity": "39 Kerk Street, Bethal, Emalahleni",
+    "cityId": "17de57c1-d805-45e7-89cd-79c4f2f40635",
+    "cityName": "Bethal",
+    "placeName": "Joshua Doore",
+    "types": [
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "f000cb2a-70d3-495d-a349-0eb42cab80f1",
+    "date": "2022-11-08T17:39:10.539+02:00",
+    "amount": 114.0,
+    "rating": 5,
+    "longDate": 1667921950539,
+    "latitude": -26.3448279,
+    "longitude": 27.418055,
+    "placeId": "ChIJCVXKyGXElR4R6FHMz1NxuaA",
+    "vicinity": "10 Footwall Street, New Industrial Area, Carletonville",
+    "cityId": "6c1f8d2e-c2e8-4478-a401-68a1d8f9f1fd",
+    "cityName": "Carletonville",
+    "placeName": "Steel Services \u0026 Allied Industries Pty Ltd",
+    "types": [
+      "general_contractor",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "d1a5b1d4-90de-409c-af83-f9ba67b81657",
+    "date": "2022-11-08T17:39:12.664+02:00",
+    "amount": 134.0,
+    "rating": 4,
+    "longDate": 1667921952664,
+    "latitude": -26.347628,
+    "longitude": 27.3894795,
+    "placeId": "ChIJ240NFpfElR4RctTVGBCwDp4",
+    "vicinity": "59 Van Zyl Smit Street, Oberholzer, Carletonville",
+    "cityId": "6c1f8d2e-c2e8-4478-a401-68a1d8f9f1fd",
+    "cityName": "Carletonville",
+    "placeName": "AutoZone Carletonville",
+    "types": [
+      "car_repair",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "cd7b0903-c385-41b4-a1c8-1644291b445f",
+    "date": "2022-11-08T17:39:17.970+02:00",
+    "amount": 380.0,
+    "rating": 3,
+    "longDate": 1667921957970,
+    "latitude": -26.3569469,
+    "longitude": 27.3985805,
+    "placeId": "ChIJyy0J8_LElR4RlEgHP1ETfaI",
+    "vicinity": "Shop no. 29, 29 Flint Wb Street, Carletonville",
+    "cityId": "6c1f8d2e-c2e8-4478-a401-68a1d8f9f1fd",
+    "cityName": "Carletonville",
+    "placeName": "Truworths Man",
+    "types": [
+      "clothing_store",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "fd9756c6-66c6-46a2-aebf-1bac585d3313",
+    "date": "2022-11-08T17:39:23.247+02:00",
+    "amount": 469.0,
+    "rating": 5,
+    "longDate": 1667921963247,
+    "latitude": -26.3495373,
+    "longitude": 27.3906907,
+    "placeId": "ChIJ-_7____ElR4RmlInHYzZkCE",
+    "vicinity": "60 Eggo Jan Street, Carletonville",
+    "cityId": "6c1f8d2e-c2e8-4478-a401-68a1d8f9f1fd",
+    "cityName": "Carletonville",
+    "placeName": "Just Property Carletonville",
+    "types": [
+      "real_estate_agency",
+      "finance",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "0dc32d76-89e0-42e7-a6a6-b9580ec997db",
+    "date": "2022-11-08T17:39:24.306+02:00",
+    "amount": 384.0,
+    "rating": 4,
+    "longDate": 1667921964306,
+    "latitude": -26.3547973,
+    "longitude": 27.3980539,
+    "placeId": "ChIJefXATI3ElR4RiZWJza4XTTU",
+    "vicinity": "8 Amethyst Street, Carletonville",
+    "cityId": "6c1f8d2e-c2e8-4478-a401-68a1d8f9f1fd",
+    "cityName": "Carletonville",
+    "placeName": "Sircles Meat Market",
+    "types": [
+      "point_of_interest",
+      "food",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "5d1821d7-d54c-46c6-928c-ec59f66e3f42",
+    "date": "2022-11-08T17:39:26.437+02:00",
+    "amount": 164.0,
+    "rating": 4,
+    "longDate": 1667921966437,
+    "latitude": -26.4770572,
+    "longitude": 27.4908738,
+    "placeId": "ChIJFVWw3GrJlR4RG2bxsD-2a4A",
+    "vicinity": "Fochville",
+    "cityId": "6c1f8d2e-c2e8-4478-a401-68a1d8f9f1fd",
+    "cityName": "Carletonville",
+    "placeName": "Fochville",
+    "types": [
+      "locality",
+      "political"
+    ]
+  },
+  {
+    "eventId": "84be8cb0-4cfd-4c2b-a553-1ef7c24ff50f",
+    "date": "2022-11-08T17:39:30.840+02:00",
+    "amount": 353.0,
+    "rating": 1,
+    "longDate": 1667921970840,
+    "latitude": -26.3562298,
+    "longitude": 27.396945,
+    "placeId": "ChIJw31juvLElR4R9QikLWd9NlU",
+    "vicinity": "Shop 1314, 14 Emerald Street, Carletonville",
+    "cityId": "6c1f8d2e-c2e8-4478-a401-68a1d8f9f1fd",
+    "cityName": "Carletonville",
+    "placeName": "PEP Carletonville",
+    "types": [
+      "clothing_store",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "df7302fa-f795-4434-bf11-24b96efbfb37",
+    "date": "2022-11-08T17:39:35.577+02:00",
+    "amount": 237.0,
+    "rating": 2,
+    "longDate": 1667921975577,
+    "latitude": -34.0515657,
+    "longitude": 24.9212427,
+    "placeId": "ChIJSQ1rj0z_eh4R_VXDW-u4Sqs",
+    "vicinity": "12 Oosterland Street, Jeffreys Bay",
+    "cityId": "18c05582-ab79-4073-9bc8-21e452f0bd9e",
+    "cityName": "Jeffrey’s Bay",
+    "placeName": "FunkyTown Self-catering Accommodation",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "788a9dd9-11f3-4529-ba98-1482d2dcb732",
+    "date": "2022-11-08T17:39:40.985+02:00",
+    "amount": 216.0,
+    "rating": 4,
+    "longDate": 1667921980985,
+    "latitude": -34.0453188,
+    "longitude": 24.9258461,
+    "placeId": "ChIJm7-Fukn_eh4RW7NpTOSqWJA",
+    "vicinity": "30 Uys Street, C-Place, Jeffreys Bay",
+    "cityId": "18c05582-ab79-4073-9bc8-21e452f0bd9e",
+    "cityName": "Jeffrey’s Bay",
+    "placeName": "The Mandyville",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ]
+  },
+  {
+    "eventId": "405ea9ef-b798-41da-ace1-2f5d64539e51",
+    "date": "2022-11-08T17:39:54.924+02:00",
+    "amount": 55.0,
+    "rating": 5,
+    "longDate": 1667921994924,
+    "latitude": -34.0200298,
+    "longitude": 24.9190547,
+    "placeId": "ChIJVyMP5W__eh4Rp6KXzobMgGc",
+    "vicinity": "Wavecrest",
+    "cityId": "18c05582-ab79-4073-9bc8-21e452f0bd9e",
+    "cityName": "Jeffrey’s Bay",
+    "placeName": "Wavecrest",
+    "types": [
+      "sublocality_level_1",
+      "sublocality",
+      "political"
+    ]
+  },
+
+]

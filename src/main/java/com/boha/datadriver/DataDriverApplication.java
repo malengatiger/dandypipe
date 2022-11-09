@@ -1,6 +1,9 @@
 package com.boha.datadriver;
 
+import com.boha.datadriver.models.FlatEvent;
+import com.boha.datadriver.models.GCSBlob;
 import com.boha.datadriver.services.EventSubscriber;
+import com.boha.datadriver.services.StorageService;
 import com.boha.datadriver.util.E;
 import com.boha.datadriver.util.SecretMgr;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.env.Environment;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 /**
@@ -39,8 +43,9 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 
 	@Autowired
 	private SecretMgr secrets;
-//	@Autowired
-//	private StorageService storageService;
+	@Autowired
+	private StorageService storageService;
+
 	@Override
 	public void onApplicationEvent(ApplicationReadyEvent event) {
 		String projectId = environment.getProperty("PROJECT_ID");
@@ -57,7 +62,18 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 				LOGGER.info(E.CHECK + E.CHECK + E.CHECK +
 						" Places API Key starts with AIza and  should be OK .... ");
 			}
-					//storageService.init();
+			int number = 1;
+			List<GCSBlob> list = storageService.listObjects(number);
+			List<FlatEvent> flatEvents  = storageService.getRecentFlatEvents(number);
+			LOGGER.info(E.CHECK + E.CHECK + E.CHECK + "Google Cloud Storage service blobs(3 hours): " + list.size());
+			for (GCSBlob blob : list) {
+				LOGGER.info(E.BLUE_HEART
+						+ blob.getCreateTime()
+						+ " " +E.PEAR+ blob.getName()
+						+ " "  + E.RED_APPLE + " " + blob.getSize() + " bytes");
+			}
+
+			LOGGER.info(E.RED_APPLE+E.RED_APPLE+" events from GCS: " + flatEvents.size() + " " + E.RED_APPLE);//storageService.init();
 		} catch (Exception e) {
 			LOGGER.info(E.RED_DOT + "  We have a problem: " + e.getMessage());
 			e.printStackTrace();

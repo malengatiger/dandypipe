@@ -11,8 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
@@ -23,7 +21,10 @@ import java.util.logging.Logger;
 public class EventPublisher {
     static final Logger LOGGER = Logger.getLogger(EventPublisher.class.getSimpleName());
 
-
+    public EventPublisher() {
+        LOGGER.info(E.GREEN_APPLE+E.GREEN_APPLE+
+                " EventPublisher constructed.");
+    }
 
     private String projectId;
     @Value("${eventTopicId}")
@@ -47,7 +48,7 @@ public class EventPublisher {
     }
 
 
-    public void publish(String message)
+    public void publishEvent(String message)
             throws Exception {
         setProjectId();
         String name = "projects/"+ projectId + "/topics/"+eventTopicId;
@@ -86,7 +87,7 @@ public class EventPublisher {
         // Once published, returns a server-assigned message id (unique within the topic)
         ApiFuture<String> messageIdFuture = flatPublisher.publish(pubsubMessage);
         LOGGER.info("PubSub flat message published " + E.RED_APPLE + E.RED_APPLE + E.RED_APPLE
-                + " messageId: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
+                + " \nmessageId: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
 
     }
     public void publishPull(String message)
@@ -98,8 +99,8 @@ public class EventPublisher {
 
         if (pullPublisher == null) {
             pullPublisher = Publisher.newBuilder(topicName.getTopic()).build();
-            LOGGER.info(E.RED_DOT + E.RED_DOT +E.RED_DOT +
-                    " PullPublisher created with Topic: " + topicName.getTopic()
+            LOGGER.info(E.GREEN_APPLE + E.GREEN_APPLE +E.GREEN_APPLE +
+                    " \nPullPublisher created with Topic: " + topicName.getTopic()
                     + " " + E.GREEN_APPLE);
 
         }
@@ -108,7 +109,7 @@ public class EventPublisher {
         // Once published, returns a server-assigned message id (unique within the topic)
         ApiFuture<String> messageIdFuture = pullPublisher.publish(pubsubMessage);
         LOGGER.info("PubSub Pull message published " + E.RED_APPLE + E.RED_APPLE + E.RED_APPLE
-                + " messageId: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
+                + " \nmessageId: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
 
     }
     public void publishBigQueryEvent(String message)
@@ -120,7 +121,7 @@ public class EventPublisher {
         if (bigQueryPublisher == null) {
             bigQueryPublisher = Publisher.newBuilder(topicName.getTopic()).build();
             LOGGER.info(E.RED_DOT + E.RED_DOT +E.RED_DOT +
-                    " BigQueryPublisher created with Topic: " + topicName.getTopic()
+                    " \nBigQueryPublisher created with Topic: " + topicName.getTopic()
                     + " " + E.GREEN_APPLE);
 
         }

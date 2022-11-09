@@ -25,38 +25,44 @@ import java.util.logging.Logger;
 @Service
 public class Generator {
     static final Logger LOGGER = Logger.getLogger(Generator.class.getSimpleName());
+    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    public Generator(CityService cityService, PlacesService placesService) {
+
+    public Generator(CityService cityService, PlacesService placesService, EventPublisher eventPublisher) {
         this.cityService = cityService;
         this.placesService = placesService;
-        LOGGER.info(E.LEAF + E.LEAF + " Generator constructed and services injected");
+        this.eventPublisher = eventPublisher;
     }
 
 
 //    private final PubSubAdmin pubSubAdmin;
 
     private final ArrayList<Subscriber> allSubscribers = new ArrayList<>();
-    private final CityService cityService;
+    private  final CityService cityService;
     private final PlacesService placesService;
+    private final EventPublisher eventPublisher;
+
     @Autowired
     private EventSubscriber eventSubscriber;
 
-    Random random = new Random(System.currentTimeMillis());
-    Timer timer;
-    List<City> cityList;
-    int totalCount = 0;
-    int maxCount;
+    private static Random random = new Random(System.currentTimeMillis());
+    static Timer timer;
+    static List<City> cityList;
+    static int totalCount = 0;
+    static int maxCount;
 
-    public void generateEvents(long intervalInSeconds, int upperCountPerPlace, int maxCount) throws Exception {
-        this.maxCount = maxCount;
-        LOGGER.info(E.BLUE_DOT + E.BLUE_DOT +
-                " Generator: intervalInSeconds: " + intervalInSeconds
+    public void generateEvents(long intervalInSeconds, int upperCountPerPlace, int maximumCount) throws Exception {
+        maxCount = maximumCount;
+        LOGGER.info(E.BLUE_DOT + E.BLUE_DOT +E.BLUE_DOT +E.BLUE_DOT +E.BLUE_DOT +
+                " Generator: generateEvents\n intervalInSeconds: " + intervalInSeconds
                 + " upperCountPerPlace: " +
-                +upperCountPerPlace + " maxCount: " + maxCount +  " " + E.BLUE_DOT);
+                +upperCountPerPlace + " maxCount: " + maxCount +  " " + E.BLUE_DOT+E.BLUE_DOT);
         if (cityList == null || cityList.isEmpty()) {
             cityList = cityService.getCitiesFromFirestore();
         }
         LOGGER.info(E.BLUE_DOT + E.BLUE_DOT + " starting Timer to control work ...");
+//        ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+//        executorService.scheduleAtFixedRate(Runner::performWork, 0, 5, TimeUnit.SECONDS);
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -75,14 +81,19 @@ public class Generator {
             timer.cancel();
             timer = null;
             LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
-                    " Generator Timer stopped; events: " + E.LEAF + " " + totalCount);
+                    " Generator Timer stopped; events: " + E.LEAF + " totalCount: " + totalCount);
         }
     }
 
-    void performWork(int upperCountPerPlace) throws Exception {
+    private void performWork(int upperCountPerPlace)  {
         int index = random.nextInt(cityList.size() - 1);
         City city = cityList.get(index);
-        List<CityPlace> places = placesService.getPlacesByCity(city.getId());
+        List<CityPlace> places = null;
+        try {
+            places = placesService.getPlacesByCity(city.getId());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         int count = random.nextInt(upperCountPerPlace);
         if (count == 0) count = 5;
@@ -90,24 +101,23 @@ public class Generator {
         for (int i = 0; i < count; i++) {
             int mIndex = random.nextInt(places.size() - 1);
             CityPlace cityPlace = places.get(mIndex);
-            Event event = getEvent(cityPlace);
-
+            Event event = null;
             try {
-                int seconds = random.nextInt(5);
-                if (seconds == 0) {
-                    seconds = 2;
-                }
-                LOGGER.info(E.BLUE_HEART+".... sleeping for " + seconds
-                + " seconds");
-                Thread.sleep(seconds * 1000);
+                event = getEvent(cityPlace);
             } catch (Exception e) {
-                //ignore
+                throw new RuntimeException(e);
             }
+
             if (!event.getCityPlace().cityName.equalsIgnoreCase(event.getCityPlace().name)) {
                 event.setDate(DateTime.now().toDateTimeISO().toString());
                 event.setLongDate(DateTime.now().getMillis());
-                writeEventToFirestore(event, city);
-                sendToPubSub(event, city);
+                try {
+                    writeEventToFirestore(event, city);
+                    sendToPubSub(event, city);
+                } catch (Exception e) {
+                    LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+ " Problemo Senor? " + e.getMessage());
+                    e.printStackTrace();
+                }
                 totalCount++;
             } else {
                 LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+
@@ -121,8 +131,7 @@ public class Generator {
             totalCount = 0;
         }
     }
-
-    private Event getEvent(CityPlace cityPlace) throws Exception {
+    private  Event getEvent(CityPlace cityPlace)  {
         Event event = new Event();
         event.setCityPlace(cityPlace);
         int m = random.nextInt(500);
@@ -137,9 +146,9 @@ public class Generator {
         return event;
     }
 
-    Firestore firestore;
+     Firestore firestore;
 
-    void writeEventToFirestore(Event event, City city) throws Exception {
+    private void writeEventToFirestore(Event event, City city) throws Exception {
         if (firestore == null) {
             firestore = FirestoreClient.getFirestore();
         }
@@ -150,20 +159,21 @@ public class Generator {
                 + " path: " + future.get().getPath() + E.LEAF);
     }
 
-    @Autowired
-    private EventPublisher eventPublisher;
-    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
-    public void sendToPubSub(Event event, City city) throws Exception {
 
-        eventPublisher.publish(GSON.toJson(event));
+    private void sendToPubSub(Event event, City city) throws Exception {
+
+        LOGGER.info("... publish Event ....");
+        eventPublisher.publishEvent(GSON.toJson(event));
         FlatEvent fe = event.getFlatEvent();
-        //LOGGER.info(GSON.toJson(fe));
+
+        LOGGER.info("... publishFlatEvent ....");
         eventPublisher.publishFlatEvent(GSON.toJson(fe));
+        LOGGER.info("... publishBigQueryEvent ....");
         eventPublisher.publishBigQueryEvent(GSON.toJson(fe));
+        LOGGER.info("... publishPull ....");
         eventPublisher.publishPull(GSON.toJson(fe));
         LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
                 " PubSub Event: " + E.AMP + event.getCityPlace().name + ", " + city.getCity());
-        //LOGGER.info(GSON.toJson(fe));
     }
 }
