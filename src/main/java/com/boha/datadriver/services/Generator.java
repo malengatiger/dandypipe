@@ -96,7 +96,7 @@ public class Generator {
         }
 
         int count = random.nextInt(upperCountPerPlace);
-        if (count == 0) count = 5;
+        if (count < 10) count = 20;
 
         for (int i = 0; i < count; i++) {
             int mIndex = random.nextInt(places.size() - 1);
@@ -137,7 +137,9 @@ public class Generator {
         event.setCityPlace(cityPlace);
         int m = random.nextInt(2500);
         if (m == 0) m = 150;
-        event.setAmount(Double.parseDouble("" + m));
+        int cents = random.nextInt(99);
+        if (cents  < 10) cents = 50;
+        event.setAmount(Double.parseDouble("" + m + "." + cents));
         int r = random.nextInt(5);
         if (r == 0) r = 5;
         event.setRating(r);
