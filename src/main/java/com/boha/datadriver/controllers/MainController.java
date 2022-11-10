@@ -120,9 +120,14 @@ public class MainController {
         try {
             Gson GSON = new GsonBuilder().setPrettyPrinting().create();
             FlatEvent event = eventService.getLastEvent(hours);
-            LOGGER.info( E.CHECK + E.CHECK +
-                    "  Last event from Firestore Found: " + GSON.toJson(event) + " " + E.CHECK);
-            return ResponseEntity.ok(event);
+            if (event != null) {
+                LOGGER.info(E.CHECK + E.CHECK +
+                        "  Last event from Firestore Found: " + GSON.toJson(event) + " " + E.CHECK);
+                return ResponseEntity.ok(event);
+            }  else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("Last event within " + hours + " hours not found");
+            }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }

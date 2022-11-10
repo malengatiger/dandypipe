@@ -113,9 +113,8 @@ public class CityService {
             city = doc.toObject(City.class);
         }
         if (city == null) {
-            LOGGER.info("City not found!");
-        } else {
-            LOGGER.info(E.CHECK + E.CHECK + " Found " + city.getCity() + " from Firestore");
+            LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+
+                    "City not found!");
         }
         return city;
     }

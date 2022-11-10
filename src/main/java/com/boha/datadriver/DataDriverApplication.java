@@ -8,6 +8,7 @@ import com.boha.datadriver.services.FirebaseService;
 import com.boha.datadriver.services.StorageService;
 import com.boha.datadriver.util.E;
 import com.boha.datadriver.util.SecretMgr;
+import com.boha.datadriver.util.Topics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -42,6 +43,8 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 
 	@Autowired
 	private  FirebaseService firebaseService;
+	@Autowired
+	private Topics topics;
 	@Value("${eventTopicId}")
 	private String eventTopicId;
 	@Autowired
@@ -80,10 +83,11 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 						" Places API Key starts with AIza and  should be OK .... ");
 			}
 			int number = 1;
-			List<GCSBlob> list = storageService.listObjects(number);
+//			List<GCSBlob> list = storageService.listObjects(number);
 //			List<FlatEvent> flatEvents  = storageService.getRecentFlatEvents(number);
-			LOGGER.info(E.CHECK + E.CHECK + E.CHECK + "Google Cloud Storage number of blobs in: " +
-					number + " hours: " + E.PEAR+ " " + list.size());
+			topics.printTopicNames();
+//			LOGGER.info(E.CHECK + E.CHECK + E.CHECK + "Google Cloud Storage number of blobs in: " +
+//					number + " hours: " + E.PEAR+ " " + list.size());
 //			String name = list.get(list.size() - 1).getName();
 //			String json = storageService.downloadObject(name);
 //			LOGGER.info(" Last Blob content: " + json);

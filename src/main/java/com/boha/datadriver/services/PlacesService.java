@@ -119,8 +119,8 @@ public class PlacesService {
             cityPlaces.add(cityPlace);
         }
 
-        LOGGER.info(E.RED_DOT + E.RED_DOT + E.RED_DOT + E.RED_DOT +
-                " " + city.getCity() + " has " + cityPlaces.size() + " places on file" );
+//        LOGGER.info(E.RED_DOT  +
+//                " " + city.getCity() + " has " + cityPlaces.size() + " places on file" );
         return cityPlaces;
     }
     public String loadCityPlaces() throws Exception {

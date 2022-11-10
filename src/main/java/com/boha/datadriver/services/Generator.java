@@ -53,9 +53,32 @@ public class Generator {
     static int totalCount = 0;
     static int maxCount;
 
+    static long startTime;
 
+
+    private void generateRandomCrowd(CityPlace place) {
+        long startTime = DateTime.now().getMillis();
+//        LOGGER.info(E.PEAR+E.PEAR+
+//                "generating random crowd: " + place.name + ", " + place.cityName);
+        int count = random.nextInt(200);
+        if (count < 20) count  = 50;
+
+        int done = 0;
+        for (int i = 0; i < count; i++) {
+            done += generateEventAtPlace(place);
+        }
+        LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+E.BLUE_DOT+
+                " Generated random crowd: " + done + " events at: "
+                +  place.name + ", " + place.cityName);
+        long end = DateTime.now().getMillis();
+        LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+E.BLUE_DOT+
+                " Elapsed time: " + ((end- startTime)/1000) + " seconds for generating random crowd");
+
+
+    }
     public CityPlace generateCrowd(String cityId, int total) throws Exception {
 
+        long start = DateTime.now().getMillis();
         List<CityPlace> places;
         try {
             places = placesService.getPlacesByCity(cityId);
@@ -64,13 +87,13 @@ public class Generator {
         }
         int index = random.nextInt(places.size() - 1);
         CityPlace place = places.get(index);
-        if (place.name.equalsIgnoreCase(place.cityName)) {
+        if (place.name.trim().equalsIgnoreCase(place.cityName.trim())) {
             LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR
                     +" Ignore this place for crowd generation: " + place.name);
             generateCrowd(cityId,total);
         }
-        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR+E.RED_APPLE +
-                " Generating crowd: " + place.name + ", " + place.cityName);
+//        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR+E.RED_APPLE +
+//                " Generating crowd: " + place.name + ", " + place.cityName);
         int x = 0;
         for (int  i = 0; i < total; i++) {
             x += generateEventAtPlace(place);
@@ -78,12 +101,18 @@ public class Generator {
 
         LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR
                 + " Done generating a crowd of " + x + " at: " + place.name +", "+place.cityName + E.RED_APPLE);
+        long end = DateTime.now().getMillis();
+        LOGGER.info(E.PEAR+E.PEAR+
+                " Elapsed time: " + ((end - start)/1000) + " seconds for generating crowd");
 
         return place;
     }
 
+    long start;
+
     public void generateEvents(long intervalInSeconds, int upperCountPerPlace, int maximumCount) throws Exception {
         maxCount = maximumCount;
+        start =  DateTime.now().getMillis();
         LOGGER.info(E.BLUE_DOT + E.BLUE_DOT +E.BLUE_DOT +E.BLUE_DOT +E.BLUE_DOT +
                 " Generator: generateEvents\n intervalInSeconds: " + intervalInSeconds
                 + " upperCountPerPlace: " +
@@ -113,13 +142,17 @@ public class Generator {
             timer = null;
             LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
                     " Generator Timer stopped; events: " + E.LEAF + " totalCount: " + totalCount);
+            long end = DateTime.now().getMillis();
+            LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
+                    " Elapsed time: " + E.LEAF + ((end - start)/1000) + " seconds for generating events");
+
         }
     }
 
     private void performWork(int upperCountPerPlace)  {
         int index = random.nextInt(cityList.size() - 1);
         City city = cityList.get(index);
-        List<CityPlace> places = null;
+        List<CityPlace> places;
         try {
             places = placesService.getPlacesByCity(city.getId());
         } catch (Exception e) {
@@ -127,22 +160,32 @@ public class Generator {
         }
 
         int count = random.nextInt(upperCountPerPlace);
-        if (count < 10) count = 20;
+        if (count < 10) count = 25;
 
-        int x = 0;
+        int realCount = 0;
         for (int i = 0; i < count; i++) {
             int mIndex = random.nextInt(places.size() - 1);
             CityPlace cityPlace = places.get(mIndex);
-            x += generateEventAtPlace(cityPlace);
+            realCount += generateEventAtPlace(cityPlace);
         }
 
-        LOGGER.info(E.LEAF+E.LEAF + " Total Events generated: count: " + x +
+        int chooser = random.nextInt(10);
+        int mIndex = random.nextInt(places.size() - 1);
+        CityPlace cityPlace = places.get(mIndex);
+        if (chooser < 4) {
+            generateRandomCrowd(cityPlace);
+        }
+
+
+        LOGGER.info(E.LEAF+E.LEAF + " Events generated: count: " + realCount + " " +
                 E.RED_APPLE + " totalCount: " + totalCount + " at " + DateTime.now().toDateTimeISO().toString());
         if (totalCount > maxCount) {
             stopTimer();
             totalCount = 0;
         }
     }
+
+    int pubSubEvents;
 
     private int generateEventAtPlace(CityPlace cityPlace) {
         Event event;
@@ -152,7 +195,7 @@ public class Generator {
             throw new RuntimeException(e);
         }
 
-        if (!event.getCityPlace().cityName.equalsIgnoreCase(event.getCityPlace().name)) {
+        if (!event.getCityPlace().cityName.trim().equalsIgnoreCase(event.getCityPlace().name.trim())) {
             event.setDate(DateTime.now().toDateTimeISO().toString());
             event.setLongDate(DateTime.now().getMillis());
             try {
@@ -165,9 +208,9 @@ public class Generator {
             totalCount++;
             return 1;
         } else {
-            LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+
-                    " Event ignored, city and place name are the same" +
-                    E.AMP+E.AMP);
+//            LOGGER.info(E.RED_DOT+
+//                    " Event ignored, city and place name are the same" +
+//                    E.AMP);
             return 0;
         }
     }
@@ -198,21 +241,19 @@ public class Generator {
         FlatEvent flatEvent = FlatEventGetter.getFlatEvent(event);
         ApiFuture<DocumentReference> future =
                 firestore.collection("flatEvents").add(flatEvent);
-        LOGGER.info(E.LEAF + E.LEAF + " Firestore: "
-                + E.ORANGE_HEART + flatEvent.getPlaceName() + ", " + flatEvent.getCityName()
-                + " " + E.LEAF);
+//        LOGGER.info(E.LEAF + E.LEAF + " Firestore: "
+//                + E.ORANGE_HEART + flatEvent.getPlaceName() + ", " + flatEvent.getCityName()
+//                + " " + E.LEAF);
     }
 
     private void sendToPubSub(Event event) throws Exception {
 
         eventPublisher.publishEvent(GSON.toJson(event));
         FlatEvent fe = FlatEventGetter.getFlatEvent(event);
-
         eventPublisher.publishFlatEvent(GSON.toJson(fe));
         eventPublisher.publishBigQueryEvent(GSON.toJson(fe));
         eventPublisher.publishPull(GSON.toJson(fe));
+        pubSubEvents++;
 
-        LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
-                " PubSub Event: " + E.AMP + fe.getPlaceName() + ", " + fe.getCityName());
     }
 }

@@ -57,10 +57,13 @@ public class EventService {
     }
     public FlatEvent getLastEvent(int hours) throws Exception{
         List<FlatEvent> events = getRecentEvents(hours);
-        FlatEvent event = events.get(events.size() - 1);
-        LOGGER.info(E.RED_APPLE + " Last Event withing " + hours + " hours: "
-                + event.getDate() + " " + event.getCityName() + " " + event.getPlaceName());
-        return event;
+        if (events.size() > 0) {
+            FlatEvent event = events.get(events.size() - 1);
+            LOGGER.info(E.RED_APPLE + " Last Event withing " + hours + " hours: "
+                    + event.getDate() + " " + event.getCityName() + " " + event.getPlaceName());
+            return event;
+        }
+        return null;
     }
     public long countEvents(int hours) throws Exception {
         Firestore c = FirestoreClient.getFirestore();
