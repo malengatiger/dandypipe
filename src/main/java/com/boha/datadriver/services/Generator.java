@@ -60,8 +60,8 @@ public class Generator {
         long startTime = DateTime.now().getMillis();
 //        LOGGER.info(E.PEAR+E.PEAR+
 //                "generating random crowd: " + place.name + ", " + place.cityName);
-        int count = random.nextInt(200);
-        if (count < 20) count  = 50;
+        int count = random.nextInt(400);
+        if (count < 100) count  = 100;
 
         int done = 0;
         for (int i = 0; i < count; i++) {
@@ -169,16 +169,17 @@ public class Generator {
             realCount += generateEventAtPlace(cityPlace);
         }
 
-        int chooser = random.nextInt(10);
+        int chooser = random.nextInt(100);
         int mIndex = random.nextInt(places.size() - 1);
         CityPlace cityPlace = places.get(mIndex);
-        if (chooser < 4) {
+        if (chooser < 15) {
             generateRandomCrowd(cityPlace);
         }
 
 
         LOGGER.info(E.LEAF+E.LEAF + " Events generated: count: " + realCount + " " +
-                E.RED_APPLE + " totalCount: " + totalCount + " at " + DateTime.now().toDateTimeISO().toString());
+                E.RED_APPLE + " totalCount: " + totalCount + " for city: " + E.PEAR
+                + " " + city.getCity());
         if (totalCount > maxCount) {
             stopTimer();
             totalCount = 0;
