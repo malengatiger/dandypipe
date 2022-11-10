@@ -145,9 +145,14 @@ public class Generator {
             LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
                     " Generator Timer stopped; events: " + E.LEAF + " totalCount: " + totalCount);
             long end = DateTime.now().getMillis();
-            LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
-                    " Elapsed time: " + E.LEAF + ((end - start)/1000/60) + " minutes for generating events");
-
+            long delta;
+            if ( ((end - start)/1000/60) == 0) {
+                LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
+                        " Elapsed time: " + E.LEAF + ((end - start) / 1000) + " seconds for generating events");
+            } else {
+                LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
+                        " Elapsed time: " + E.LEAF + ((end - start) / 1000 / 60) + " minutes for generating events");
+            }
         }
     }
 
@@ -209,6 +214,11 @@ public class Generator {
                 e.printStackTrace();
             }
             totalCount++;
+            int rem = totalCount % 1000;
+            if (rem == 0) {
+                LOGGER.info(E.RED_APPLE+E.RED_APPLE +
+                        " Total Count of Events Generated: " + totalCount);
+            }
             return 1;
         } else {
             return 0;
