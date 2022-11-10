@@ -6,6 +6,7 @@ import com.boha.datadriver.models.Event;
 import com.boha.datadriver.models.FlatEvent;
 import com.boha.datadriver.util.E;
 import com.boha.datadriver.util.FlatEventGetter;
+import com.boha.datadriver.util.LogControl;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
@@ -36,8 +37,9 @@ public class Generator {
         this.eventPublisher = eventPublisher;
     }
 
+    @Autowired
+    private LogControl logControl;
 
-//    private final PubSubAdmin pubSubAdmin;
 
     private final ArrayList<Subscriber> allSubscribers = new ArrayList<>();
     private  final CityService cityService;
@@ -67,12 +69,12 @@ public class Generator {
         for (int i = 0; i < count; i++) {
             done += generateEventAtPlace(place);
         }
-        LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+E.BLUE_DOT+
-                " Generated random crowd: " + done + " events at: "
+        logControl.info(E.BLUE_DOT+E.BLUE_DOT+E.BLUE_DOT+
+                " Random crowd: " + done + " events at: "
                 +  place.name + ", " + place.cityName);
         long end = DateTime.now().getMillis();
-        LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+E.BLUE_DOT+
-                " Elapsed time: " + ((end- startTime)/1000) + " seconds for generating random crowd");
+        logControl.info(E.BLUE_DOT+E.BLUE_DOT+E.BLUE_DOT+
+                " Elapsed time: " + ((end- startTime)) + " milliseconds for generating random crowd");
 
 
     }
@@ -144,7 +146,7 @@ public class Generator {
                     " Generator Timer stopped; events: " + E.LEAF + " totalCount: " + totalCount);
             long end = DateTime.now().getMillis();
             LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
-                    " Elapsed time: " + E.LEAF + ((end - start)/1000) + " seconds for generating events");
+                    " Elapsed time: " + E.LEAF + ((end - start)/1000/60) + " minutes for generating events");
 
         }
     }
@@ -177,7 +179,7 @@ public class Generator {
         }
 
 
-        LOGGER.info(E.LEAF+E.LEAF + " Events generated: count: " + realCount + " " +
+        logControl.info(E.LEAF+E.LEAF + " Events generated: count: " + realCount + " " +
                 E.RED_APPLE + " totalCount: " + totalCount + " for city: " + E.PEAR
                 + " " + city.getCity());
         if (totalCount > maxCount) {
@@ -209,9 +211,6 @@ public class Generator {
             totalCount++;
             return 1;
         } else {
-//            LOGGER.info(E.RED_DOT+
-//                    " Event ignored, city and place name are the same" +
-//                    E.AMP);
             return 0;
         }
     }
@@ -235,16 +234,14 @@ public class Generator {
 
      Firestore firestore;
 
-    private void writeEventToFirestore(Event event) throws Exception {
+    private void writeEventToFirestore(Event event) {
         if (firestore == null) {
             firestore = FirestoreClient.getFirestore();
         }
         FlatEvent flatEvent = FlatEventGetter.getFlatEvent(event);
         ApiFuture<DocumentReference> future =
                 firestore.collection("flatEvents").add(flatEvent);
-//        LOGGER.info(E.LEAF + E.LEAF + " Firestore: "
-//                + E.ORANGE_HEART + flatEvent.getPlaceName() + ", " + flatEvent.getCityName()
-//                + " " + E.LEAF);
+
     }
 
     private void sendToPubSub(Event event) throws Exception {
