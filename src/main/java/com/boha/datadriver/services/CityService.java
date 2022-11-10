@@ -39,7 +39,6 @@ public class CityService {
     private String citiesFile;
     public CityService() {
         LOGGER.info(E.AMP+E.AMP+E.AMP + " CityService constructed");
-        initFirebase();
     }
     @Autowired
     ResourceLoader resourceLoader;
@@ -120,36 +119,5 @@ public class CityService {
         }
         return city;
     }
-    @Autowired
-    private Environment environment;
-    private String projectId;
-    void setProjectId() {
-        projectId = environment.getProperty("PROJECT_ID");
-    }
-    void initFirebase() {
-        LOGGER.info(E.AMP+E.AMP+E.AMP+ " .... initializing Firebase ....");
-        FirebaseOptions options = null;
-        projectId = System.getenv().get("PROJECT_ID");
-        if (projectId == null) {
-            LOGGER.info(E.RED_DOT+E.RED_DOT+E.AMP+ " .... missing ProjectId WTF? ....");
 
-            return;
-        }
-        LOGGER.info(E.AMP+E.AMP+E.AMP+
-                " Project Id from System.getenv: "+E.RED_APPLE + " " + projectId);
-        try {
-            options = FirebaseOptions.builder()
-                    .setCredentials(GoogleCredentials.getApplicationDefault())
-                    .setDatabaseUrl("https://" +  projectId  + ".firebaseio.com/")
-                    .build();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        FirebaseApp app = FirebaseApp.initializeApp(options);
-        LOGGER.info(E.AMP+E.AMP+E.AMP+E.AMP+E.AMP+
-                " Firebase has been initialized: " + app.getOptions().getDatabaseUrl()
-                + " " + E.RED_APPLE);
-
-    }
 }

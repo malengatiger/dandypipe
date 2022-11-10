@@ -14,6 +14,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -23,6 +25,7 @@ import java.util.logging.Logger;
  * Manages the creation of streaming data to PubSub and Firestore. Events are generated and sent forth
  */
 @Service
+//@EnableScheduling
 public class Generator {
     static final Logger LOGGER = Logger.getLogger(Generator.class.getSimpleName());
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
@@ -157,25 +160,20 @@ public class Generator {
         }
         ApiFuture<DocumentReference> future =
                 firestore.collection("events").add(event);
-        LOGGER.info(E.LEAF + E.LEAF + " Firestore event: "
+        LOGGER.info(E.LEAF + E.LEAF + " Firestore: "
                 + E.ORANGE_HEART + event.getCityPlace().name + ", " + city.getCity()
-                + " path: " + future.get().getPath() + E.LEAF);
+                + " " + E.LEAF);
     }
-
-
 
     private void sendToPubSub(Event event, City city) throws Exception {
 
-        LOGGER.info("... publish Event ....");
         eventPublisher.publishEvent(GSON.toJson(event));
         FlatEvent fe = event.getFlatEvent();
 
-        LOGGER.info("... publishFlatEvent ....");
         eventPublisher.publishFlatEvent(GSON.toJson(fe));
-        LOGGER.info("... publishBigQueryEvent ....");
         eventPublisher.publishBigQueryEvent(GSON.toJson(fe));
-        LOGGER.info("... publishPull ....");
         eventPublisher.publishPull(GSON.toJson(fe));
+
         LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
                 " PubSub Event: " + E.AMP + event.getCityPlace().name + ", " + city.getCity());
     }

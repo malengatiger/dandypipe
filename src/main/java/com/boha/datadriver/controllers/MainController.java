@@ -2,10 +2,9 @@ package com.boha.datadriver.controllers;
 
 import com.boha.datadriver.models.City;
 import com.boha.datadriver.models.CityPlace;
+import com.boha.datadriver.models.FlatEvent;
 import com.boha.datadriver.models.Message;
-import com.boha.datadriver.services.CityService;
-import com.boha.datadriver.services.Generator;
-import com.boha.datadriver.services.PlacesService;
+import com.boha.datadriver.services.*;
 import com.boha.datadriver.util.E;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +31,7 @@ public class MainController {
 
 
     private final CityService cityService;
+
 
     @GetMapping("/")
     private String hello()  {
@@ -96,6 +96,32 @@ public class MainController {
             LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
                     "  Cities from  file Found: " + citiesFromFile.size() + " " + E.CHECK);
             return ResponseEntity.ok(citiesFromFile);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+    @Autowired
+    private StorageService storageService;
+    @GetMapping("/getRecentEventsFromGCS")
+    private ResponseEntity<Object> getRecentEventsFromGCS(@RequestParam int hours) {
+        try {
+            List<FlatEvent> events = storageService.getRecentFlatEvents(hours);
+            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
+                    "  Recent events from GCS Found: " + events.size() + " " + E.CHECK);
+            return ResponseEntity.ok(events);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+    @Autowired
+    private EventService eventService;
+    @GetMapping("/getRecentEventsFromFirestore")
+    private ResponseEntity<Object> getRecentEventsFromFirestore(@RequestParam int hours) {
+        try {
+            List<FlatEvent> events = eventService.getRecentEvents(hours);
+            LOGGER.info(E.RED_APPLE + E.RED_APPLE + E.RED_APPLE +
+                    "  Recent events from Firestore Found: " + events.size() + " " + E.CHECK);
+            return ResponseEntity.ok(events);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }

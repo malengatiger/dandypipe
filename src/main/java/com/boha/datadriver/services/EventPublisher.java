@@ -62,9 +62,8 @@ public class EventPublisher {
         }
         ByteString data = ByteString.copyFromUtf8(message);
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-        // Once published, returns a server-assigned message id (unique within the topic)
         ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-        LOGGER.info("PubSub message published " + E.AMP + E.AMP + E.AMP + " id: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
+        LOGGER.info("PubSub " + E.AMP + E.AMP + " topic: " + topicName.getTopic());
 
     }
 
@@ -86,8 +85,8 @@ public class EventPublisher {
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
         // Once published, returns a server-assigned message id (unique within the topic)
         ApiFuture<String> messageIdFuture = flatPublisher.publish(pubsubMessage);
-        LOGGER.info("PubSub flat message published " + E.RED_APPLE + E.RED_APPLE + E.RED_APPLE
-                + " \nmessageId: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
+        LOGGER.info("PubSub " + E.RED_APPLE + E.RED_APPLE
+                 + " topic: " + topicName.getTopic());
 
     }
     public void publishPull(String message)
@@ -108,8 +107,8 @@ public class EventPublisher {
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
         // Once published, returns a server-assigned message id (unique within the topic)
         ApiFuture<String> messageIdFuture = pullPublisher.publish(pubsubMessage);
-        LOGGER.info("PubSub Pull message published " + E.RED_APPLE + E.RED_APPLE + E.RED_APPLE
-                + " \nmessageId: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
+        LOGGER.info("PubSub " + E.PEAR + E.PEAR
+                 + " topic: " + topicName.getTopic());
 
     }
     public void publishBigQueryEvent(String message)
@@ -129,8 +128,8 @@ public class EventPublisher {
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
         // Once published, returns a server-assigned message id (unique within the topic)
         ApiFuture<String> messageIdFuture = bigQueryPublisher.publish(pubsubMessage);
-        LOGGER.info("PubSub BigQuery message published " + E.ORANGE_HEART + E.ORANGE_HEART + E.ORANGE_HEART
-                + " messageId: " + messageIdFuture.get() + " topic: " + topicName.getTopic());
+        LOGGER.info("PubSub " + E.ORANGE_HEART + E.ORANGE_HEART
+               + " topic: " + topicName.getTopic());
 
     }
 

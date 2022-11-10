@@ -2,7 +2,9 @@ package com.boha.datadriver;
 
 import com.boha.datadriver.models.FlatEvent;
 import com.boha.datadriver.models.GCSBlob;
+import com.boha.datadriver.services.CityService;
 import com.boha.datadriver.services.EventSubscriber;
+import com.boha.datadriver.services.FirebaseService;
 import com.boha.datadriver.services.StorageService;
 import com.boha.datadriver.util.E;
 import com.boha.datadriver.util.SecretMgr;
@@ -33,6 +35,8 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 				" DataDriver completed starting process. " + E.CHECK+E.CHECK);
 	}
 
+	@Autowired
+	private  FirebaseService firebaseService;
 	@Value("${eventTopicId}")
 	private String eventTopicId;
 	@Autowired
@@ -57,6 +61,7 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 				+  " Topic: " + eventTopicId  + " " + E.YELLOW_STAR );
 
 		try {
+			firebaseService.initializeFirebase();
 			String apiKey = secrets.getPlacesAPIKey();
 			if (apiKey.contains("AIza")) {
 				LOGGER.info(E.CHECK + E.CHECK + E.CHECK +

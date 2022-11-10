@@ -48,7 +48,6 @@ public class StorageService {
 //        LOGGER.info(E.PEAR+" Downloaded object from GCS: " + objectName);
         return new String(content, StandardCharsets.UTF_8);
     }
-
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     public List<FlatEvent> getRecentFlatEvents(int hours) throws Exception {
         List<GCSBlob> list = listObjects(hours);
