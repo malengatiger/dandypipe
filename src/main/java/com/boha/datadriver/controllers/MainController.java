@@ -6,6 +6,8 @@ import com.boha.datadriver.models.FlatEvent;
 import com.boha.datadriver.models.Message;
 import com.boha.datadriver.services.*;
 import com.boha.datadriver.util.E;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -109,6 +111,42 @@ public class MainController {
             LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
                     "  Recent events from GCS Found: " + events.size() + " " + E.CHECK);
             return ResponseEntity.ok(events);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+    @GetMapping("/getLastEvent")
+    private ResponseEntity<Object> getLastEvent(@RequestParam int hours) {
+        try {
+            Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+            FlatEvent event = eventService.getLastEvent(hours);
+            LOGGER.info( E.CHECK + E.CHECK +
+                    "  Last event from Firestore Found: " + GSON.toJson(event) + " " + E.CHECK);
+            return ResponseEntity.ok(event);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+    @GetMapping("/generateCrowd")
+    private ResponseEntity<Object> generateCrowd(@RequestParam String cityId, @RequestParam int total) {
+        try {
+            CityPlace place = generator.generateCrowd(cityId,total);
+            LOGGER.info( E.CHECK + E.CHECK +
+                    " Crowd generated: " + total + " at: " +place.name
+                    + ",  " + place.cityName + E.CHECK);
+            return ResponseEntity.ok("Crowd generated => "+ total
+                    + " at: " +place.name + ", " + place.cityName);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+    @GetMapping("/countEvents")
+    private ResponseEntity<Object> countEvents(@RequestParam int hours) {
+        try {
+            long count = eventService.countEvents(hours);
+            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
+                    "  Number of events from Firestore Found: " + count + " " + E.CHECK);
+            return ResponseEntity.ok(count);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }

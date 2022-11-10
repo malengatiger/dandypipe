@@ -5,6 +5,7 @@ import com.boha.datadriver.models.CityPlace;
 import com.boha.datadriver.models.Event;
 import com.boha.datadriver.models.FlatEvent;
 import com.boha.datadriver.util.E;
+import com.boha.datadriver.util.FlatEventGetter;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
@@ -14,8 +15,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -53,6 +52,35 @@ public class Generator {
     static List<City> cityList;
     static int totalCount = 0;
     static int maxCount;
+
+
+    public CityPlace generateCrowd(String cityId, int total) throws Exception {
+
+        List<CityPlace> places;
+        try {
+            places = placesService.getPlacesByCity(cityId);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        int index = random.nextInt(places.size() - 1);
+        CityPlace place = places.get(index);
+        if (place.name.equalsIgnoreCase(place.cityName)) {
+            LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR
+                    +" Ignore this place for crowd generation: " + place.name);
+            generateCrowd(cityId,total);
+        }
+        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR+E.RED_APPLE +
+                " Generating crowd: " + place.name + ", " + place.cityName);
+        int x = 0;
+        for (int  i = 0; i < total; i++) {
+            x += generateEventAtPlace(place);
+        }
+
+        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR
+                + " Done generating a crowd of " + x + " at: " + place.name +", "+place.cityName + E.RED_APPLE);
+
+        return place;
+    }
 
     public void generateEvents(long intervalInSeconds, int upperCountPerPlace, int maximumCount) throws Exception {
         maxCount = maximumCount;
@@ -101,40 +129,49 @@ public class Generator {
         int count = random.nextInt(upperCountPerPlace);
         if (count < 10) count = 20;
 
+        int x = 0;
         for (int i = 0; i < count; i++) {
             int mIndex = random.nextInt(places.size() - 1);
             CityPlace cityPlace = places.get(mIndex);
-            Event event = null;
-            try {
-                event = getEvent(cityPlace);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-
-            if (!event.getCityPlace().cityName.equalsIgnoreCase(event.getCityPlace().name)) {
-                event.setDate(DateTime.now().toDateTimeISO().toString());
-                event.setLongDate(DateTime.now().getMillis());
-                try {
-                    writeEventToFirestore(event, city);
-                    sendToPubSub(event, city);
-                } catch (Exception e) {
-                    LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+ " Problemo Senor? " + e.getMessage());
-                    e.printStackTrace();
-                }
-                totalCount++;
-            } else {
-                LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+
-                        " Event ignored, city and place name are the same" +
-                        E.AMP+E.AMP);
-            }
+            x += generateEventAtPlace(cityPlace);
         }
 
-        LOGGER.info(E.LEAF+E.LEAF + " Total Events generated: " + totalCount + " at " + DateTime.now().toDateTimeISO().toString());
+        LOGGER.info(E.LEAF+E.LEAF + " Total Events generated: count: " + x +
+                E.RED_APPLE + " totalCount: " + totalCount + " at " + DateTime.now().toDateTimeISO().toString());
         if (totalCount > maxCount) {
             stopTimer();
             totalCount = 0;
         }
     }
+
+    private int generateEventAtPlace(CityPlace cityPlace) {
+        Event event;
+        try {
+            event = getEvent(cityPlace);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        if (!event.getCityPlace().cityName.equalsIgnoreCase(event.getCityPlace().name)) {
+            event.setDate(DateTime.now().toDateTimeISO().toString());
+            event.setLongDate(DateTime.now().getMillis());
+            try {
+                writeEventToFirestore(event);
+                sendToPubSub(event);
+            } catch (Exception e) {
+                LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+ " Problemo Senor? " + e.getMessage());
+                e.printStackTrace();
+            }
+            totalCount++;
+            return 1;
+        } else {
+            LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+
+                    " Event ignored, city and place name are the same" +
+                    E.AMP+E.AMP);
+            return 0;
+        }
+    }
+
     private  Event getEvent(CityPlace cityPlace)  {
         Event event = new Event();
         event.setCityPlace(cityPlace);
@@ -154,27 +191,28 @@ public class Generator {
 
      Firestore firestore;
 
-    private void writeEventToFirestore(Event event, City city) throws Exception {
+    private void writeEventToFirestore(Event event) throws Exception {
         if (firestore == null) {
             firestore = FirestoreClient.getFirestore();
         }
+        FlatEvent flatEvent = FlatEventGetter.getFlatEvent(event);
         ApiFuture<DocumentReference> future =
-                firestore.collection("events").add(event);
+                firestore.collection("flatEvents").add(flatEvent);
         LOGGER.info(E.LEAF + E.LEAF + " Firestore: "
-                + E.ORANGE_HEART + event.getCityPlace().name + ", " + city.getCity()
+                + E.ORANGE_HEART + flatEvent.getPlaceName() + ", " + flatEvent.getCityName()
                 + " " + E.LEAF);
     }
 
-    private void sendToPubSub(Event event, City city) throws Exception {
+    private void sendToPubSub(Event event) throws Exception {
 
         eventPublisher.publishEvent(GSON.toJson(event));
-        FlatEvent fe = event.getFlatEvent();
+        FlatEvent fe = FlatEventGetter.getFlatEvent(event);
 
         eventPublisher.publishFlatEvent(GSON.toJson(fe));
         eventPublisher.publishBigQueryEvent(GSON.toJson(fe));
         eventPublisher.publishPull(GSON.toJson(fe));
 
         LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
-                " PubSub Event: " + E.AMP + event.getCityPlace().name + ", " + city.getCity());
+                " PubSub Event: " + E.AMP + fe.getPlaceName() + ", " + fe.getCityName());
     }
 }

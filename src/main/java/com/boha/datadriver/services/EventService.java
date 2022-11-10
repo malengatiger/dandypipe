@@ -5,10 +5,7 @@ import com.boha.datadriver.models.FlatEvent;
 import com.boha.datadriver.util.E;
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.QueryDocumentSnapshot;
-import com.google.cloud.firestore.QuerySnapshot;
+import com.google.cloud.firestore.*;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
@@ -34,6 +31,7 @@ import java.util.logging.Logger;
 @Service
 public class EventService {
     private static final Logger LOGGER = Logger.getLogger(EventService.class.getSimpleName());
+    private static final String collectionName = "flatEvents";
 
     @Autowired
     private StorageService storageService;
@@ -46,10 +44,10 @@ public class EventService {
     public List<FlatEvent> getRecentEvents(int  hours) throws Exception{
         List<FlatEvent> events  = new ArrayList<>();
         Firestore c = FirestoreClient.getFirestore();
-        long date = DateTime.now().minusHours(hours).getMillis();
-        ApiFuture<QuerySnapshot>  future = c.collection("events")
-                .whereGreaterThan("longDate", date).
-                orderBy("date").get();
+        long deltaDate = DateTime.now().minusHours(hours).getMillis();
+        ApiFuture<QuerySnapshot>  future = c.collection(collectionName)
+                .whereGreaterThan("longDate", deltaDate).
+                orderBy("longDate").get();
         for (QueryDocumentSnapshot document : future.get().getDocuments()) {
             FlatEvent e = document.toObject(FlatEvent.class);
             events.add(e);
@@ -57,5 +55,22 @@ public class EventService {
 
         return events;
     }
+    public FlatEvent getLastEvent(int hours) throws Exception{
+        List<FlatEvent> events = getRecentEvents(hours);
+        FlatEvent event = events.get(events.size() - 1);
+        LOGGER.info(E.RED_APPLE + " Last Event withing " + hours + " hours: "
+                + event.getDate() + " " + event.getCityName() + " " + event.getPlaceName());
+        return event;
+    }
+    public long countEvents(int hours) throws Exception {
+        Firestore c = FirestoreClient.getFirestore();
+        long date = DateTime.now().minusHours(hours).getMillis();
+        AggregateQuery q  = c.collection(collectionName).whereGreaterThan("longDate",date).count();
+        long count = q.get().get().getCount();
+
+        LOGGER.info(E.RED_APPLE + " " + count +" Events found in the last " + hours + " hours");
+        return count;
+    }
+
 
 }

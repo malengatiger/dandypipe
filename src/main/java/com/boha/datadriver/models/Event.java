@@ -57,34 +57,4 @@ public class Event {
         this.amount = amount;
     }
     
-    public FlatEvent getFlatEvent() {
-        FlatEvent  f = new FlatEvent();
-        f.setAmount(this.getAmount());
-        f.setCityId(this.getCityPlace().cityId);
-        f.setCityName(this.getCityPlace().cityName);
-        f.setDate(this.getDate());
-        f.setEventId(this.getEventId());
-        f.setLatitude(this.getCityPlace().geometry.location.lat);
-        f.setLongDate(this.getLongDate());
-        f.setLongitude(this.getCityPlace().geometry.location.lng);
-        f.setPlaceId(this.getCityPlace().place_id);
-        f.setPlaceName(this.getCityPlace().name);
-        f.setRating(this.getRating());
-        if (this.getCityPlace().types != null) {
-            StringBuilder bf = new StringBuilder();
-            int index = 0;
-            for (String t: getCityPlace().types) {
-                bf.append(t);
-                if (index < getCityPlace().types.size() - 1) {
-                    bf.append(", ");
-                }
-
-                index++;
-            }
-            f.setTypes(bf.toString());
-        }
-        f.setVicinity(this.getCityPlace().vicinity);
-        return f;
-
-    }
 }

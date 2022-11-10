@@ -22,7 +22,7 @@ public class EventPublisher {
     static final Logger LOGGER = Logger.getLogger(EventPublisher.class.getSimpleName());
 
     public EventPublisher() {
-        LOGGER.info(E.GREEN_APPLE+E.GREEN_APPLE+
+        LOGGER.info(E.GREEN_APPLE+E.GREEN_APPLE+E.GREEN_APPLE+
                 " EventPublisher constructed.");
     }
 
