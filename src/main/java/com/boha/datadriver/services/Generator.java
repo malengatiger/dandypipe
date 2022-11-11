@@ -105,7 +105,7 @@ public class Generator {
                 + " Done generating a crowd of " + x + " at: " + place.name +", "+place.cityName + E.RED_APPLE);
         long end = DateTime.now().getMillis();
         LOGGER.info(E.PEAR+E.PEAR+
-                " Elapsed time: " + ((end - start)/1000) + " seconds for generating crowd");
+                " Elapsed time: " + ((end - start)) + " milliseconds for generating crowd");
 
         return place;
     }
