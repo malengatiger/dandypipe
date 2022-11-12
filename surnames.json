@@ -1,0 +1,4002 @@
+[
+  {
+    "frequency": "0.0028032650",
+    "surname": "NKOSI"
+  },
+  {
+    "frequency": "0.0026951244",
+    "surname": "NDLOVU"
+  },
+  {
+    "frequency": "0.0025869837",
+    "surname": "DLAMINI"
+  },
+  {
+    "frequency": "0.0025294366",
+    "surname": "MAHLANGU"
+  },
+  {
+    "frequency": "0.0024539059",
+    "surname": "KHUMALO"
+  },
+  {
+    "frequency": "0.0023239453",
+    "surname": "NAIDOO"
+  },
+  {
+    "frequency": "0.0022584854",
+    "surname": "BOTHA"
+  },
+  {
+    "frequency": "0.0022388235",
+    "surname": "SMITH"
+  },
+  {
+    "frequency": "0.0021568188",
+    "surname": "SITHOLE"
+  },
+  {
+    "frequency": "0.0020287764",
+    "surname": "MOKOENA"
+  },
+  {
+    "frequency": "0.0020187057",
+    "surname": "VAN DER MERWE"
+  },
+  {
+    "frequency": "0.0018887451",
+    "surname": "GOVENDER"
+  },
+  {
+    "frequency": "0.0018510997",
+    "surname": "MKHIZE"
+  },
+  {
+    "frequency": "0.0017702939",
+    "surname": "DU PLESSIS"
+  },
+  {
+    "frequency": "0.0017626209",
+    "surname": "PILLAY"
+  },
+  {
+    "frequency": "0.0017276131",
+    "surname": "NGCOBO"
+  },
+  {
+    "frequency": "0.0017259346",
+    "surname": "PRETORIUS"
+  },
+  {
+    "frequency": "0.0016928450",
+    "surname": "MTHEMBU"
+  },
+  {
+    "frequency": "0.0016830141",
+    "surname": "JACOBS"
+  },
+  {
+    "frequency": "0.0016755809",
+    "surname": "ZULU"
+  },
+  {
+    "frequency": "0.0016573576",
+    "surname": "KHOZA"
+  },
+  {
+    "frequency": "0.0016511233",
+    "surname": "NEL"
+  },
+  {
+    "frequency": "0.0016460880",
+    "surname": "VENTER"
+  },
+  {
+    "frequency": "0.0016283443",
+    "surname": "COETZEE"
+  },
+  {
+    "frequency": "0.0015770314",
+    "surname": "FOURIE"
+  },
+  {
+    "frequency": "0.0015571297",
+    "surname": "VAN WYK"
+  },
+  {
+    "frequency": "0.0015377075",
+    "surname": "GUMEDE"
+  },
+  {
+    "frequency": "0.0014931085",
+    "surname": "DUBE"
+  },
+  {
+    "frequency": "0.0014756046",
+    "surname": "VAN ZYL"
+  },
+  {
+    "frequency": "0.0014748852",
+    "surname": "TSHABALALA"
+  },
+  {
+    "frequency": "0.0014473106",
+    "surname": "KRUGER"
+  },
+  {
+    "frequency": "0.0014353216",
+    "surname": "NGWENYA"
+  },
+  {
+    "frequency": "0.0014336431",
+    "surname": "RADEBE"
+  },
+  {
+    "frequency": "0.0014238121",
+    "surname": "BUTHELEZI"
+  },
+  {
+    "frequency": "0.0014214143",
+    "surname": "SMIT"
+  },
+  {
+    "frequency": "0.0014209348",
+    "surname": "SIBIYA"
+  },
+  {
+    "frequency": "0.0014154199",
+    "surname": "MHLONGO"
+  },
+  {
+    "frequency": "0.0014075071",
+    "surname": "NTULI"
+  },
+  {
+    "frequency": "0.0013904828",
+    "surname": "WILLIAMS"
+  },
+  {
+    "frequency": "0.0013835291",
+    "surname": "BALOYI"
+  },
+  {
+    "frequency": "0.0013705810",
+    "surname": "DU TOIT"
+  },
+  {
+    "frequency": "0.0013511589",
+    "surname": "VAN NIEKERK"
+  },
+  {
+    "frequency": "0.0013324561",
+    "surname": "MOFOKENG"
+  },
+  {
+    "frequency": "0.0013312572",
+    "surname": "ZWANE"
+  },
+  {
+    "frequency": "0.0012780261",
+    "surname": "MASEKO"
+  },
+  {
+    "frequency": "0.0012761078",
+    "surname": "MAZIBUKO"
+  },
+  {
+    "frequency": "0.0012626802",
+    "surname": "MOODLEY"
+  },
+  {
+    "frequency": "0.0012619608",
+    "surname": "MATHEBULA"
+  },
+  {
+    "frequency": "0.0012458956",
+    "surname": "MBATHA"
+  },
+  {
+    "frequency": "0.0011972203",
+    "surname": "NXUMALO"
+  },
+  {
+    "frequency": "0.0011775583",
+    "surname": "ERASMUS"
+  },
+  {
+    "frequency": "0.0011737219",
+    "surname": "MEYER"
+  },
+  {
+    "frequency": "0.0011634113",
+    "surname": "CHAUKE"
+  },
+  {
+    "frequency": "0.0011574168",
+    "surname": "SINGH"
+  },
+  {
+    "frequency": "0.0011538201",
+    "surname": "LOUW"
+  },
+  {
+    "frequency": "0.0011533406",
+    "surname": "MTHETHWA"
+  },
+  {
+    "frequency": "0.0011384742",
+    "surname": "KHAN"
+  },
+  {
+    "frequency": "0.0011286433",
+    "surname": "STEYN"
+  },
+  {
+    "frequency": "0.0011248068",
+    "surname": "MOLEFE"
+  },
+  {
+    "frequency": "0.0011214499",
+    "surname": "JOUBERT"
+  },
+  {
+    "frequency": "0.0011152156",
+    "surname": "CELE"
+  },
+  {
+    "frequency": "0.0011089813",
+    "surname": "LE ROUX"
+  },
+  {
+    "frequency": "0.0010749326",
+    "surname": "NGOBENI"
+  },
+  {
+    "frequency": "0.0010655812",
+    "surname": "VILJOEN"
+  },
+  {
+    "frequency": "0.0010574287",
+    "surname": "POTGIETER"
+  },
+  {
+    "frequency": "0.0010531127",
+    "surname": "MNISI"
+  },
+  {
+    "frequency": "0.0010293745",
+    "surname": "MABASO"
+  },
+  {
+    "frequency": "0.0010236197",
+    "surname": "MARAIS"
+  },
+  {
+    "frequency": "0.0010185844",
+    "surname": "NGUBANE"
+  },
+  {
+    "frequency": "0.0010123501",
+    "surname": "KEKANA"
+  },
+  {
+    "frequency": "0.0010106716",
+    "surname": "SWANEPOEL"
+  },
+  {
+    "frequency": "0.0009977235",
+    "surname": "SWART"
+  },
+  {
+    "frequency": "0.0009938871",
+    "surname": "VAN DER WESTHUIZEN"
+  },
+  {
+    "frequency": "0.0009811787",
+    "surname": "OOSTHUIZEN"
+  },
+  {
+    "frequency": "0.0009727864",
+    "surname": "JANSE VAN RENSBURG"
+  },
+  {
+    "frequency": "0.0009572008",
+    "surname": "MULLER"
+  },
+  {
+    "frequency": "0.0009512063",
+    "surname": "VAN ROOYEN"
+  },
+  {
+    "frequency": "0.0009444924",
+    "surname": "MKHWANAZI"
+  },
+  {
+    "frequency": "0.0009432935",
+    "surname": "MTSHALI"
+  },
+  {
+    "frequency": "0.0009399366",
+    "surname": "MALULEKE"
+  },
+  {
+    "frequency": "0.0009396968",
+    "surname": "VAN DER WALT"
+  },
+  {
+    "frequency": "0.0009375388",
+    "surname": "CHETTY"
+  },
+  {
+    "frequency": "0.0009339421",
+    "surname": "ADAMS"
+  },
+  {
+    "frequency": "0.0009296261",
+    "surname": "SKOSANA"
+  },
+  {
+    "frequency": "0.0009233918",
+    "surname": "SHABANGU"
+  },
+  {
+    "frequency": "0.0009166780",
+    "surname": "DE BEER"
+  },
+  {
+    "frequency": "0.0009142802",
+    "surname": "MNGUNI"
+  },
+  {
+    "frequency": "0.0009133211",
+    "surname": "STRYDOM"
+  },
+  {
+    "frequency": "0.0009133211",
+    "surname": "ENGELBRECHT"
+  },
+  {
+    "frequency": "0.0009126017",
+    "surname": "MOLOI"
+  },
+  {
+    "frequency": "0.0009118824",
+    "surname": "DU PREEZ"
+  },
+  {
+    "frequency": "0.0008958171",
+    "surname": "VAN HEERDEN"
+  },
+  {
+    "frequency": "0.0008881442",
+    "surname": "NKUNA"
+  },
+  {
+    "frequency": "0.0008665640",
+    "surname": "VILAKAZI"
+  },
+  {
+    "frequency": "0.0008483407",
+    "surname": "ZONDI"
+  },
+  {
+    "frequency": "0.0008459430",
+    "surname": "HLONGWANE"
+  },
+  {
+    "frequency": "0.0008445043",
+    "surname": "MOTAUNG"
+  },
+  {
+    "frequency": "0.0008423463",
+    "surname": "FERREIRA"
+  },
+  {
+    "frequency": "0.0008356324",
+    "surname": "HLATSHWAYO"
+  },
+  {
+    "frequency": "0.0008339540",
+    "surname": "OLIVIER"
+  },
+  {
+    "frequency": "0.0008303573",
+    "surname": "BARNARD"
+  },
+  {
+    "frequency": "0.0008293981",
+    "surname": "PIENAAR"
+  },
+  {
+    "frequency": "0.0008159705",
+    "surname": "MCHUNU"
+  },
+  {
+    "frequency": "0.0008075782",
+    "surname": "NHLAPO"
+  },
+  {
+    "frequency": "0.0007999052",
+    "surname": "BEZUIDENHOUT"
+  },
+  {
+    "frequency": "0.0007991859",
+    "surname": "GROBLER"
+  },
+  {
+    "frequency": "0.0007979870",
+    "surname": "CLOETE"
+  },
+  {
+    "frequency": "0.0007967881",
+    "surname": "PRINSLOO"
+  },
+  {
+    "frequency": "0.0007910334",
+    "surname": "VISSER"
+  },
+  {
+    "frequency": "0.0007898345",
+    "surname": "MABUZA"
+  },
+  {
+    "frequency": "0.0007831207",
+    "surname": "DE VILLIERS"
+  },
+  {
+    "frequency": "0.0007821615",
+    "surname": "PATEL"
+  },
+  {
+    "frequency": "0.0007771262",
+    "surname": "KUNENE"
+  },
+  {
+    "frequency": "0.0007718510",
+    "surname": "NCUBE"
+  },
+  {
+    "frequency": "0.0007711317",
+    "surname": "XABA"
+  },
+  {
+    "frequency": "0.0007629792",
+    "surname": "MODISE"
+  },
+  {
+    "frequency": "0.0007581836",
+    "surname": "ZUNGU"
+  },
+  {
+    "frequency": "0.0007541073",
+    "surname": "SHONGWE"
+  },
+  {
+    "frequency": "0.0007466741",
+    "surname": "ABRAHAMS"
+  },
+  {
+    "frequency": "0.0007464344",
+    "surname": "BROWN"
+  },
+  {
+    "frequency": "0.0007447559",
+    "surname": "SIMELANE"
+  },
+  {
+    "frequency": "0.0007404399",
+    "surname": "MASANGO"
+  },
+  {
+    "frequency": "0.0007366034",
+    "surname": "MABENA"
+  },
+  {
+    "frequency": "0.0007356443",
+    "surname": "LANGA"
+  },
+  {
+    "frequency": "0.0007344454",
+    "surname": "DLADLA"
+  },
+  {
+    "frequency": "0.0007318078",
+    "surname": "PHIRI"
+  },
+  {
+    "frequency": "0.0007248542",
+    "surname": "MOHLALA"
+  },
+  {
+    "frequency": "0.0007183801",
+    "surname": "BURGER"
+  },
+  {
+    "frequency": "0.0007152630",
+    "surname": "JORDAAN"
+  },
+  {
+    "frequency": "0.0007145436",
+    "surname": "MOYO"
+  },
+  {
+    "frequency": "0.0006948817",
+    "surname": "SIBANYONI"
+  },
+  {
+    "frequency": "0.0006912850",
+    "surname": "JOHNSON"
+  },
+  {
+    "frequency": "0.0006912850",
+    "surname": "MDLULI"
+  },
+  {
+    "frequency": "0.0006910452",
+    "surname": "SHABALALA"
+  },
+  {
+    "frequency": "0.0006893668",
+    "surname": "MASILELA"
+  },
+  {
+    "frequency": "0.0006891270",
+    "surname": "MATLALA"
+  },
+  {
+    "frequency": "0.0006891270",
+    "surname": "JONES"
+  },
+  {
+    "frequency": "0.0006864894",
+    "surname": "MOKWENA"
+  },
+  {
+    "frequency": "0.0006826529",
+    "surname": "MAJOLA"
+  },
+  {
+    "frequency": "0.0006816938",
+    "surname": "MASHABA"
+  },
+  {
+    "frequency": "0.0006814540",
+    "surname": "CHEN"
+  },
+  {
+    "frequency": "0.0006747402",
+    "surname": "MHLANGA"
+  },
+  {
+    "frequency": "0.0006675468",
+    "surname": "REDDY"
+  },
+  {
+    "frequency": "0.0006641899",
+    "surname": "DHLAMINI"
+  },
+  {
+    "frequency": "0.0006639501",
+    "surname": "KHANYILE"
+  },
+  {
+    "frequency": "0.0006608330",
+    "surname": "MALATJI"
+  },
+  {
+    "frequency": "0.0006577158",
+    "surname": "KOTZE"
+  },
+  {
+    "frequency": "0.0006574761",
+    "surname": "HADEBE"
+  },
+  {
+    "frequency": "0.0006560374",
+    "surname": "ZUMA"
+  },
+  {
+    "frequency": "0.0006483644",
+    "surname": "NAICKER"
+  },
+  {
+    "frequency": "0.0006476451",
+    "surname": "SCHOEMAN"
+  },
+  {
+    "frequency": "0.0006462064",
+    "surname": "VORSTER"
+  },
+  {
+    "frequency": "0.0006440484",
+    "surname": "NDABA"
+  },
+  {
+    "frequency": "0.0006438086",
+    "surname": "SNYMAN"
+  },
+  {
+    "frequency": "0.0006421302",
+    "surname": "VAN DEN BERG"
+  },
+  {
+    "frequency": "0.0006416506",
+    "surname": "MASUKU"
+  },
+  {
+    "frequency": "0.0006406915",
+    "surname": "BESTER"
+  },
+  {
+    "frequency": "0.0006382937",
+    "surname": "MUDAU"
+  },
+  {
+    "frequency": "0.0006313401",
+    "surname": "MASHEGO"
+  },
+  {
+    "frequency": "0.0006306207",
+    "surname": "THERON"
+  },
+  {
+    "frequency": "0.0006282229",
+    "surname": "LEDWABA"
+  },
+  {
+    "frequency": "0.0006258251",
+    "surname": "THOMAS"
+  },
+  {
+    "frequency": "0.0006236671",
+    "surname": "PIETERSE"
+  },
+  {
+    "frequency": "0.0006234273",
+    "surname": "DE JAGER"
+  },
+  {
+    "frequency": "0.0006181522",
+    "surname": "DAVIDS"
+  },
+  {
+    "frequency": "0.0006155146",
+    "surname": "MABUNDA"
+  },
+  {
+    "frequency": "0.0006138362",
+    "surname": "SIBISI"
+  },
+  {
+    "frequency": "0.0006104792",
+    "surname": "MAGAGULA"
+  },
+  {
+    "frequency": "0.0006064030",
+    "surname": "MLAMBO"
+  },
+  {
+    "frequency": "0.0006037654",
+    "surname": "NDHLOVU"
+  },
+  {
+    "frequency": "0.0006028063",
+    "surname": "MSOMI"
+  },
+  {
+    "frequency": "0.0006028063",
+    "surname": "WILSON"
+  },
+  {
+    "frequency": "0.0005999289",
+    "surname": "MPHAHLELE"
+  },
+  {
+    "frequency": "0.0005956129",
+    "surname": "VAN STADEN"
+  },
+  {
+    "frequency": "0.0005951333",
+    "surname": "ROSSOUW"
+  },
+  {
+    "frequency": "0.0005898582",
+    "surname": "PETERSEN"
+  },
+  {
+    "frequency": "0.0005896184",
+    "surname": "NTOMBELA"
+  },
+  {
+    "frequency": "0.0005874604",
+    "surname": "LABUSCHAGNE"
+  },
+  {
+    "frequency": "0.0005860217",
+    "surname": "STEENKAMP"
+  },
+  {
+    "frequency": "0.0005857819",
+    "surname": "HENDRICKS"
+  },
+  {
+    "frequency": "0.0005857819",
+    "surname": "SIBANDA"
+  },
+  {
+    "frequency": "0.0005826648",
+    "surname": "DE WET"
+  },
+  {
+    "frequency": "0.0005821852",
+    "surname": "SHEZI"
+  },
+  {
+    "frequency": "0.0005817057",
+    "surname": "MOGALE"
+  },
+  {
+    "frequency": "0.0005805068",
+    "surname": "MNGOMEZULU"
+  },
+  {
+    "frequency": "0.0005769101",
+    "surname": "KHUZWAYO"
+  },
+  {
+    "frequency": "0.0005754714",
+    "surname": "GROENEWALD"
+  },
+  {
+    "frequency": "0.0005737929",
+    "surname": "BOOYSEN"
+  },
+  {
+    "frequency": "0.0005725940",
+    "surname": "XULU"
+  },
+  {
+    "frequency": "0.0005723543",
+    "surname": "MTHOMBENI"
+  },
+  {
+    "frequency": "0.0005704360",
+    "surname": "MAHARAJ"
+  },
+  {
+    "frequency": "0.0005685178",
+    "surname": "MADONSELA"
+  },
+  {
+    "frequency": "0.0005680382",
+    "surname": "TSOTETSI"
+  },
+  {
+    "frequency": "0.0005586868",
+    "surname": "MSIBI"
+  },
+  {
+    "frequency": "0.0005579675",
+    "surname": "DE KLERK"
+  },
+  {
+    "frequency": "0.0005574879",
+    "surname": "NGEMA"
+  },
+  {
+    "frequency": "0.0005550901",
+    "surname": "AHMED"
+  },
+  {
+    "frequency": "0.0005512536",
+    "surname": "NKABINDE"
+  },
+  {
+    "frequency": "0.0005505343",
+    "surname": "SIBEKO"
+  },
+  {
+    "frequency": "0.0005445398",
+    "surname": "TAYLOR"
+  },
+  {
+    "frequency": "0.0005383055",
+    "surname": "MASEMOLA"
+  },
+  {
+    "frequency": "0.0005380658",
+    "surname": "SCHEEPERS"
+  },
+  {
+    "frequency": "0.0005339895",
+    "surname": "NKOMO"
+  },
+  {
+    "frequency": "0.0005327906",
+    "surname": "BADENHORST"
+  },
+  {
+    "frequency": "0.0005320713",
+    "surname": "MULAUDZI"
+  },
+  {
+    "frequency": "0.0005277552",
+    "surname": "MTSWENI"
+  },
+  {
+    "frequency": "0.0005267961",
+    "surname": "KUBHEKA"
+  },
+  {
+    "frequency": "0.0005265563",
+    "surname": "BASSON"
+  },
+  {
+    "frequency": "0.0005263165",
+    "surname": "VAN RENSBURG"
+  },
+  {
+    "frequency": "0.0005243983",
+    "surname": "ISMAIL"
+  },
+  {
+    "frequency": "0.0005224801",
+    "surname": "ROUX"
+  },
+  {
+    "frequency": "0.0005215210",
+    "surname": "BOTES"
+  },
+  {
+    "frequency": "0.0005210414",
+    "surname": "MARTIN"
+  },
+  {
+    "frequency": "0.0005203221",
+    "surname": "VAN TONDER"
+  },
+  {
+    "frequency": "0.0005181640",
+    "surname": "NAUDE"
+  },
+  {
+    "frequency": "0.0005164856",
+    "surname": "LETSOALO"
+  },
+  {
+    "frequency": "0.0005116900",
+    "surname": "MOHAMED"
+  },
+  {
+    "frequency": "0.0005049761",
+    "surname": "MKHABELA"
+  },
+  {
+    "frequency": "0.0005037773",
+    "surname": "MOLOTO"
+  },
+  {
+    "frequency": "0.0005028181",
+    "surname": "MATHE"
+  },
+  {
+    "frequency": "0.0005025784",
+    "surname": "JANSEN"
+  },
+  {
+    "frequency": "0.0005020988",
+    "surname": "WESSELS"
+  },
+  {
+    "frequency": "0.0005013795",
+    "surname": "LOMBARD"
+  },
+  {
+    "frequency": "0.0004989817",
+    "surname": "THWALA"
+  },
+  {
+    "frequency": "0.0004975430",
+    "surname": "NTSHANGASE"
+  },
+  {
+    "frequency": "0.0004953850",
+    "surname": "MBELE"
+  },
+  {
+    "frequency": "0.0004920280",
+    "surname": "SKHOSANA"
+  },
+  {
+    "frequency": "0.0004915485",
+    "surname": "NENE"
+  },
+  {
+    "frequency": "0.0004879518",
+    "surname": "CRONJE"
+  },
+  {
+    "frequency": "0.0004838755",
+    "surname": "GOUWS"
+  },
+  {
+    "frequency": "0.0004833960",
+    "surname": "MALINGA"
+  },
+  {
+    "frequency": "0.0004833960",
+    "surname": "MAKHUBELA"
+  },
+  {
+    "frequency": "0.0004829164",
+    "surname": "LUTHULI"
+  },
+  {
+    "frequency": "0.0004819573",
+    "surname": "NGOMANE"
+  },
+  {
+    "frequency": "0.0004793197",
+    "surname": "VAN SCHALKWYK"
+  },
+  {
+    "frequency": "0.0004774015",
+    "surname": "LIEBENBERG"
+  },
+  {
+    "frequency": "0.0004754832",
+    "surname": "BOSHOFF"
+  },
+  {
+    "frequency": "0.0004730854",
+    "surname": "SHANGE"
+  },
+  {
+    "frequency": "0.0004728457",
+    "surname": "MASHELE"
+  },
+  {
+    "frequency": "0.0004718865",
+    "surname": "DE LANGE"
+  },
+  {
+    "frequency": "0.0004706876",
+    "surname": "ZONDO"
+  },
+  {
+    "frequency": "0.0004704479",
+    "surname": "BHENGU"
+  },
+  {
+    "frequency": "0.0004702081",
+    "surname": "MSIZA"
+  },
+  {
+    "frequency": "0.0004651727",
+    "surname": "MABASA"
+  },
+  {
+    "frequency": "0.0004649329",
+    "surname": "BEUKES"
+  },
+  {
+    "frequency": "0.0004630147",
+    "surname": "SAMBO"
+  },
+  {
+    "frequency": "0.0004601373",
+    "surname": "MOTLOUNG"
+  },
+  {
+    "frequency": "0.0004586987",
+    "surname": "MNCUBE"
+  },
+  {
+    "frequency": "0.0004579793",
+    "surname": "MAKHANYA"
+  },
+  {
+    "frequency": "0.0004565406",
+    "surname": "VERMEULEN"
+  },
+  {
+    "frequency": "0.0004543826",
+    "surname": "DUMA"
+  },
+  {
+    "frequency": "0.0004522246",
+    "surname": "COETZER"
+  },
+  {
+    "frequency": "0.0004510257",
+    "surname": "MALAN"
+  },
+  {
+    "frequency": "0.0004507859",
+    "surname": "THABETHE"
+  },
+  {
+    "frequency": "0.0004503064",
+    "surname": "TWALA"
+  },
+  {
+    "frequency": "0.0004491075",
+    "surname": "NZIMANDE"
+  },
+  {
+    "frequency": "0.0004481483",
+    "surname": "MALULEKA"
+  },
+  {
+    "frequency": "0.0004476688",
+    "surname": "ROBERTS"
+  },
+  {
+    "frequency": "0.0004474290",
+    "surname": "MBHELE"
+  },
+  {
+    "frequency": "0.0004471892",
+    "surname": "NDOU"
+  },
+  {
+    "frequency": "0.0004457506",
+    "surname": "DE KOCK"
+  },
+  {
+    "frequency": "0.0004452710",
+    "surname": "HATTINGH"
+  },
+  {
+    "frequency": "0.0004421539",
+    "surname": "MASHIGO"
+  },
+  {
+    "frequency": "0.0004421539",
+    "surname": "MAPHUMULO"
+  },
+  {
+    "frequency": "0.0004419141",
+    "surname": "HLOPHE"
+  },
+  {
+    "frequency": "0.0004411947",
+    "surname": "HARRIS"
+  },
+  {
+    "frequency": "0.0004411947",
+    "surname": "MAMABOLO"
+  },
+  {
+    "frequency": "0.0004392765",
+    "surname": "DANIELS"
+  },
+  {
+    "frequency": "0.0004392765",
+    "surname": "MYBURGH"
+  },
+  {
+    "frequency": "0.0004373583",
+    "surname": "THOMPSON"
+  },
+  {
+    "frequency": "0.0004356798",
+    "surname": "MADLALA"
+  },
+  {
+    "frequency": "0.0004347207",
+    "surname": "NGOBESE"
+  },
+  {
+    "frequency": "0.0004330422",
+    "surname": "SCOTT"
+  },
+  {
+    "frequency": "0.0004299251",
+    "surname": "MAHOMED"
+  },
+  {
+    "frequency": "0.0004294455",
+    "surname": "MALEKA"
+  },
+  {
+    "frequency": "0.0004272875",
+    "surname": "MAPHANGA"
+  },
+  {
+    "frequency": "0.0004270477",
+    "surname": "MOHALE"
+  },
+  {
+    "frequency": "0.0004265682",
+    "surname": "MLANGENI"
+  },
+  {
+    "frequency": "0.0004260886",
+    "surname": "VISAGIE"
+  },
+  {
+    "frequency": "0.0004256091",
+    "surname": "TAU"
+  },
+  {
+    "frequency": "0.0004241704",
+    "surname": "NDLELA"
+  },
+  {
+    "frequency": "0.0004236908",
+    "surname": "LEWIS"
+  },
+  {
+    "frequency": "0.0004220124",
+    "surname": "MBAMBO"
+  },
+  {
+    "frequency": "0.0004205737",
+    "surname": "MOSTERT"
+  },
+  {
+    "frequency": "0.0004200941",
+    "surname": "SCHOLTZ"
+  },
+  {
+    "frequency": "0.0004107427",
+    "surname": "JANSEN VAN VUUREN"
+  },
+  {
+    "frequency": "0.0004097836",
+    "surname": "MAVUSO"
+  },
+  {
+    "frequency": "0.0004088245",
+    "surname": "BIYELA"
+  },
+  {
+    "frequency": "0.0004081051",
+    "surname": "NYATHI"
+  },
+  {
+    "frequency": "0.0004066665",
+    "surname": "ANDERSON"
+  },
+  {
+    "frequency": "0.0004057073",
+    "surname": "BRITS"
+  },
+  {
+    "frequency": "0.0004047482",
+    "surname": "ELS"
+  },
+  {
+    "frequency": "0.0003992333",
+    "surname": "NKAMBULE"
+  },
+  {
+    "frequency": "0.0003963559",
+    "surname": "PHILLIPS"
+  },
+  {
+    "frequency": "0.0003956366",
+    "surname": "MILLER"
+  },
+  {
+    "frequency": "0.0003937183",
+    "surname": "GELDENHUYS"
+  },
+  {
+    "frequency": "0.0003934786",
+    "surname": "MARITZ"
+  },
+  {
+    "frequency": "0.0003929990",
+    "surname": "NGIDI"
+  },
+  {
+    "frequency": "0.0003908410",
+    "surname": "SELEPE"
+  },
+  {
+    "frequency": "0.0003898819",
+    "surname": "MPANZA"
+  },
+  {
+    "frequency": "0.0003894023",
+    "surname": "HUMAN"
+  },
+  {
+    "frequency": "0.0003882034",
+    "surname": "VAN DYK"
+  },
+  {
+    "frequency": "0.0003879636",
+    "surname": "VERMAAK"
+  },
+  {
+    "frequency": "0.0003870045",
+    "surname": "MODIBA"
+  },
+  {
+    "frequency": "0.0003853261",
+    "surname": "EBRAHIM"
+  },
+  {
+    "frequency": "0.0003850863",
+    "surname": "MTHIMUNYE"
+  },
+  {
+    "frequency": "0.0003850863",
+    "surname": "BANDA"
+  },
+  {
+    "frequency": "0.0003831680",
+    "surname": "MOKONE"
+  },
+  {
+    "frequency": "0.0003805305",
+    "surname": "MAAKE"
+  },
+  {
+    "frequency": "0.0003805305",
+    "surname": "GREEN"
+  },
+  {
+    "frequency": "0.0003805305",
+    "surname": "MDLETSHE"
+  },
+  {
+    "frequency": "0.0003802907",
+    "surname": "MASONDO"
+  },
+  {
+    "frequency": "0.0003800509",
+    "surname": "KHOSA"
+  },
+  {
+    "frequency": "0.0003766940",
+    "surname": "BOSMAN"
+  },
+  {
+    "frequency": "0.0003764542",
+    "surname": "JANSEN VAN RENSBURG"
+  },
+  {
+    "frequency": "0.0003764542",
+    "surname": "JACKSON"
+  },
+  {
+    "frequency": "0.0003762144",
+    "surname": "ALI"
+  },
+  {
+    "frequency": "0.0003757349",
+    "surname": "MDLALOSE"
+  },
+  {
+    "frequency": "0.0003754951",
+    "surname": "TERBLANCHE"
+  },
+  {
+    "frequency": "0.0003740564",
+    "surname": "TLADI"
+  },
+  {
+    "frequency": "0.0003735768",
+    "surname": "ISAACS"
+  },
+  {
+    "frequency": "0.0003730973",
+    "surname": "ROOS"
+  },
+  {
+    "frequency": "0.0003728575",
+    "surname": "GREYLING"
+  },
+  {
+    "frequency": "0.0003711790",
+    "surname": "DA SILVA"
+  },
+  {
+    "frequency": "0.0003706995",
+    "surname": "JAMES"
+  },
+  {
+    "frequency": "0.0003697404",
+    "surname": "KUMALO"
+  },
+  {
+    "frequency": "0.0003687813",
+    "surname": "DREYER"
+  },
+  {
+    "frequency": "0.0003671028",
+    "surname": "GUMBI"
+  },
+  {
+    "frequency": "0.0003663835",
+    "surname": "BEKKER"
+  },
+  {
+    "frequency": "0.0003654243",
+    "surname": "MAGWAZA"
+  },
+  {
+    "frequency": "0.0003654243",
+    "surname": "MSIMANGO"
+  },
+  {
+    "frequency": "0.0003647050",
+    "surname": "LEE"
+  },
+  {
+    "frequency": "0.0003632663",
+    "surname": "APHANE"
+  },
+  {
+    "frequency": "0.0003627868",
+    "surname": "JOOSTE"
+  },
+  {
+    "frequency": "0.0003623072",
+    "surname": "MATLOU"
+  },
+  {
+    "frequency": "0.0003606287",
+    "surname": "SIKHOSANA"
+  },
+  {
+    "frequency": "0.0003587105",
+    "surname": "NDEBELE"
+  },
+  {
+    "frequency": "0.0003584707",
+    "surname": "GWALA"
+  },
+  {
+    "frequency": "0.0003577514",
+    "surname": "PHASHA"
+  },
+  {
+    "frequency": "0.0003560729",
+    "surname": "WHITE"
+  },
+  {
+    "frequency": "0.0003560729",
+    "surname": "DU PLOOY"
+  },
+  {
+    "frequency": "0.0003541547",
+    "surname": "WANG"
+  },
+  {
+    "frequency": "0.0003529558",
+    "surname": "GERBER"
+  },
+  {
+    "frequency": "0.0003522364",
+    "surname": "MNGADI"
+  },
+  {
+    "frequency": "0.0003522364",
+    "surname": "ZITHA"
+  },
+  {
+    "frequency": "0.0003503182",
+    "surname": "MIYA"
+  },
+  {
+    "frequency": "0.0003484000",
+    "surname": "LUKHELE"
+  },
+  {
+    "frequency": "0.0003481602",
+    "surname": "MUHAMMAD"
+  },
+  {
+    "frequency": "0.0003479204",
+    "surname": "MYENI"
+  },
+  {
+    "frequency": "0.0003479204",
+    "surname": "VAN VUUREN"
+  },
+  {
+    "frequency": "0.0003472011",
+    "surname": "STANDER"
+  },
+  {
+    "frequency": "0.0003462420",
+    "surname": "MASHIANE"
+  },
+  {
+    "frequency": "0.0003452828",
+    "surname": "PHAKATHI"
+  },
+  {
+    "frequency": "0.0003440839",
+    "surname": "DE BRUYN"
+  },
+  {
+    "frequency": "0.0003438442",
+    "surname": "LIN"
+  },
+  {
+    "frequency": "0.0003419259",
+    "surname": "JOSEPH"
+  },
+  {
+    "frequency": "0.0003416861",
+    "surname": "PARKER"
+  },
+  {
+    "frequency": "0.0003404872",
+    "surname": "UYS"
+  },
+  {
+    "frequency": "0.0003400077",
+    "surname": "MOOSA"
+  },
+  {
+    "frequency": "0.0003373701",
+    "surname": "LOURENS"
+  },
+  {
+    "frequency": "0.0003368905",
+    "surname": "LEGODI"
+  },
+  {
+    "frequency": "0.0003368905",
+    "surname": "NAIDU"
+  },
+  {
+    "frequency": "0.0003361712",
+    "surname": "MOTAU"
+  },
+  {
+    "frequency": "0.0003325745",
+    "surname": "NZAMA"
+  },
+  {
+    "frequency": "0.0003323347",
+    "surname": "KING"
+  },
+  {
+    "frequency": "0.0003318552",
+    "surname": "DELPORT"
+  },
+  {
+    "frequency": "0.0003292176",
+    "surname": "MASINGA"
+  },
+  {
+    "frequency": "0.0003289778",
+    "surname": "MANAMELA"
+  },
+  {
+    "frequency": "0.0003287380",
+    "surname": "RIKHOTSO"
+  },
+  {
+    "frequency": "0.0003261005",
+    "surname": "MASINA"
+  },
+  {
+    "frequency": "0.0003241822",
+    "surname": "MASHININI"
+  },
+  {
+    "frequency": "0.0003241822",
+    "surname": "THOBEJANE"
+  },
+  {
+    "frequency": "0.0003234629",
+    "surname": "MITCHELL"
+  },
+  {
+    "frequency": "0.0003229833",
+    "surname": "KRIEL"
+  },
+  {
+    "frequency": "0.0003229833",
+    "surname": "MOSIA"
+  },
+  {
+    "frequency": "0.0003217844",
+    "surname": "MAREE"
+  },
+  {
+    "frequency": "0.0003210651",
+    "surname": "BRINK"
+  },
+  {
+    "frequency": "0.0003210651",
+    "surname": "SWARTZ"
+  },
+  {
+    "frequency": "0.0003208253",
+    "surname": "LUBBE"
+  },
+  {
+    "frequency": "0.0003203457",
+    "surname": "BRITZ"
+  },
+  {
+    "frequency": "0.0003189071",
+    "surname": "ESTERHUIZEN"
+  },
+  {
+    "frequency": "0.0003177082",
+    "surname": "NDWANDWE"
+  },
+  {
+    "frequency": "0.0003174684",
+    "surname": "LUBISI"
+  },
+  {
+    "frequency": "0.0003169888",
+    "surname": "ROBINSON"
+  },
+  {
+    "frequency": "0.0003157899",
+    "surname": "NDIMANDE"
+  },
+  {
+    "frequency": "0.0003141115",
+    "surname": "CHILOANE"
+  },
+  {
+    "frequency": "0.0003141115",
+    "surname": "GOOSEN"
+  },
+  {
+    "frequency": "0.0003136319",
+    "surname": "BUYS"
+  },
+  {
+    "frequency": "0.0003131524",
+    "surname": "SCHUTTE"
+  },
+  {
+    "frequency": "0.0003129126",
+    "surname": "VAN DEVENTER"
+  },
+  {
+    "frequency": "0.0003126728",
+    "surname": "ALEXANDER"
+  },
+  {
+    "frequency": "0.0003121932",
+    "surname": "WRIGHT"
+  },
+  {
+    "frequency": "0.0003114739",
+    "surname": "CILLIERS"
+  },
+  {
+    "frequency": "0.0003107546",
+    "surname": "MAGUBANE"
+  },
+  {
+    "frequency": "0.0003081170",
+    "surname": "ODENDAAL"
+  },
+  {
+    "frequency": "0.0003071579",
+    "surname": "STRAUSS"
+  },
+  {
+    "frequency": "0.0003061987",
+    "surname": "NORTJE"
+  },
+  {
+    "frequency": "0.0003061987",
+    "surname": "BOTHMA"
+  },
+  {
+    "frequency": "0.0003057192",
+    "surname": "MATHONSI"
+  },
+  {
+    "frequency": "0.0003054794",
+    "surname": "MANZINI"
+  },
+  {
+    "frequency": "0.0003040407",
+    "surname": "WILLEMSE"
+  },
+  {
+    "frequency": "0.0003026020",
+    "surname": "MASOMBUKA"
+  },
+  {
+    "frequency": "0.0003023623",
+    "surname": "MADUNA"
+  },
+  {
+    "frequency": "0.0003023623",
+    "surname": "EDWARDS"
+  },
+  {
+    "frequency": "0.0003018827",
+    "surname": "CAMPBELL"
+  },
+  {
+    "frequency": "0.0003011634",
+    "surname": "PETERS"
+  },
+  {
+    "frequency": "0.0002994849",
+    "surname": "CONRADIE"
+  },
+  {
+    "frequency": "0.0002987656",
+    "surname": "KOEKEMOER"
+  },
+  {
+    "frequency": "0.0002987656",
+    "surname": "ZIKHALI"
+  },
+  {
+    "frequency": "0.0002985258",
+    "surname": "MAKOLA"
+  },
+  {
+    "frequency": "0.0002973269",
+    "surname": "MPOFU"
+  },
+  {
+    "frequency": "0.0002970871",
+    "surname": "SOLOMON"
+  },
+  {
+    "frequency": "0.0002954086",
+    "surname": "JIYANE"
+  },
+  {
+    "frequency": "0.0002951689",
+    "surname": "GORDON"
+  },
+  {
+    "frequency": "0.0002951689",
+    "surname": "MATTHEWS"
+  },
+  {
+    "frequency": "0.0002951689",
+    "surname": "MOEKETSI"
+  },
+  {
+    "frequency": "0.0002946893",
+    "surname": "NKADIMENG"
+  },
+  {
+    "frequency": "0.0002913324",
+    "surname": "THUSI"
+  },
+  {
+    "frequency": "0.0002908528",
+    "surname": "CLARK"
+  },
+  {
+    "frequency": "0.0002906131",
+    "surname": "QWABE"
+  },
+  {
+    "frequency": "0.0002898937",
+    "surname": "FOUCHE"
+  },
+  {
+    "frequency": "0.0002898937",
+    "surname": "KOMANE"
+  },
+  {
+    "frequency": "0.0002891744",
+    "surname": "MUNYAI"
+  },
+  {
+    "frequency": "0.0002886948",
+    "surname": "FISHER"
+  },
+  {
+    "frequency": "0.0002877357",
+    "surname": "WALKER"
+  },
+  {
+    "frequency": "0.0002874959",
+    "surname": "SHANDU"
+  },
+  {
+    "frequency": "0.0002874959",
+    "surname": "MANANA"
+  },
+  {
+    "frequency": "0.0002870164",
+    "surname": "MKHONZA"
+  },
+  {
+    "frequency": "0.0002862970",
+    "surname": "MATHENJWA"
+  },
+  {
+    "frequency": "0.0002858175",
+    "surname": "GAMA"
+  },
+  {
+    "frequency": "0.0002853379",
+    "surname": "MKHATSHWA"
+  },
+  {
+    "frequency": "0.0002850981",
+    "surname": "ZHANG"
+  },
+  {
+    "frequency": "0.0002841390",
+    "surname": "FAKUDE"
+  },
+  {
+    "frequency": "0.0002838992",
+    "surname": "DE BRUIN"
+  },
+  {
+    "frequency": "0.0002831799",
+    "surname": "WATSON"
+  },
+  {
+    "frequency": "0.0002829401",
+    "surname": "JONKER"
+  },
+  {
+    "frequency": "0.0002829401",
+    "surname": "ARENDSE"
+  },
+  {
+    "frequency": "0.0002819810",
+    "surname": "MASHABELA"
+  },
+  {
+    "frequency": "0.0002819810",
+    "surname": "MAHLABA"
+  },
+  {
+    "frequency": "0.0002810219",
+    "surname": "NZUZA"
+  },
+  {
+    "frequency": "0.0002807821",
+    "surname": "STEVENS"
+  },
+  {
+    "frequency": "0.0002805423",
+    "surname": "MOAGI"
+  },
+  {
+    "frequency": "0.0002805423",
+    "surname": "MOTSEPE"
+  },
+  {
+    "frequency": "0.0002805423",
+    "surname": "OPPERMAN"
+  },
+  {
+    "frequency": "0.0002803025",
+    "surname": "VAN DEN HEEVER"
+  },
+  {
+    "frequency": "0.0002795832",
+    "surname": "MOENG"
+  },
+  {
+    "frequency": "0.0002793434",
+    "surname": "YOUNG"
+  },
+  {
+    "frequency": "0.0002791036",
+    "surname": "GROBBELAAR"
+  },
+  {
+    "frequency": "0.0002786241",
+    "surname": "MBANJWA"
+  },
+  {
+    "frequency": "0.0002786241",
+    "surname": "MTHIYANE"
+  },
+  {
+    "frequency": "0.0002783843",
+    "surname": "GEORGE"
+  },
+  {
+    "frequency": "0.0002781445",
+    "surname": "NGWANE"
+  },
+  {
+    "frequency": "0.0002779047",
+    "surname": "BOUWER"
+  },
+  {
+    "frequency": "0.0002767058",
+    "surname": "PADAYACHEE"
+  },
+  {
+    "frequency": "0.0002755069",
+    "surname": "MKHONTO"
+  },
+  {
+    "frequency": "0.0002740683",
+    "surname": "MOLEPO"
+  },
+  {
+    "frequency": "0.0002731091",
+    "surname": "MOTHA"
+  },
+  {
+    "frequency": "0.0002726296",
+    "surname": "MDHLULI"
+  },
+  {
+    "frequency": "0.0002723898",
+    "surname": "DAVIS"
+  },
+  {
+    "frequency": "0.0002721500",
+    "surname": "MATHIBELA"
+  },
+  {
+    "frequency": "0.0002719102",
+    "surname": "VAN DER BERG"
+  },
+  {
+    "frequency": "0.0002719102",
+    "surname": "MOORE"
+  },
+  {
+    "frequency": "0.0002716705",
+    "surname": "LI"
+  },
+  {
+    "frequency": "0.0002711909",
+    "surname": "SLABBERT"
+  },
+  {
+    "frequency": "0.0002711909",
+    "surname": "DAVIES"
+  },
+  {
+    "frequency": "0.0002704716",
+    "surname": "MORGAN"
+  },
+  {
+    "frequency": "0.0002704716",
+    "surname": "MORRIS"
+  },
+  {
+    "frequency": "0.0002702318",
+    "surname": "ROBERTSON"
+  },
+  {
+    "frequency": "0.0002685533",
+    "surname": "MAKHATHINI"
+  },
+  {
+    "frequency": "0.0002673544",
+    "surname": "SIKHAKHANE"
+  },
+  {
+    "frequency": "0.0002666351",
+    "surname": "GREEFF"
+  },
+  {
+    "frequency": "0.0002659157",
+    "surname": "MTHIMKHULU"
+  },
+  {
+    "frequency": "0.0002659157",
+    "surname": "WOOD"
+  },
+  {
+    "frequency": "0.0002656760",
+    "surname": "MLOTSHWA"
+  },
+  {
+    "frequency": "0.0002654362",
+    "surname": "CASSIM"
+  },
+  {
+    "frequency": "0.0002651964",
+    "surname": "MASHISHI"
+  },
+  {
+    "frequency": "0.0002649566",
+    "surname": "MURRAY"
+  },
+  {
+    "frequency": "0.0002649566",
+    "surname": "PIETERSEN"
+  },
+  {
+    "frequency": "0.0002642373",
+    "surname": "PULE"
+  },
+  {
+    "frequency": "0.0002639975",
+    "surname": "CLAASSEN"
+  },
+  {
+    "frequency": "0.0002639975",
+    "surname": "MAHLALELA"
+  },
+  {
+    "frequency": "0.0002637577",
+    "surname": "MOLAPO"
+  },
+  {
+    "frequency": "0.0002625588",
+    "surname": "OSMAN"
+  },
+  {
+    "frequency": "0.0002623190",
+    "surname": "HALL"
+  },
+  {
+    "frequency": "0.0002615997",
+    "surname": "TEMBE"
+  },
+  {
+    "frequency": "0.0002613599",
+    "surname": "STEWART"
+  },
+  {
+    "frequency": "0.0002608804",
+    "surname": "KLEYNHANS"
+  },
+  {
+    "frequency": "0.0002599212",
+    "surname": "CHABALALA"
+  },
+  {
+    "frequency": "0.0002592019",
+    "surname": "RAUTENBACH"
+  },
+  {
+    "frequency": "0.0002589621",
+    "surname": "BOOI"
+  },
+  {
+    "frequency": "0.0002589621",
+    "surname": "PHALA"
+  },
+  {
+    "frequency": "0.0002577632",
+    "surname": "HILL"
+  },
+  {
+    "frequency": "0.0002577632",
+    "surname": "MAKHUBELE"
+  },
+  {
+    "frequency": "0.0002572837",
+    "surname": "HORN"
+  },
+  {
+    "frequency": "0.0002565643",
+    "surname": "KEMP"
+  },
+  {
+    "frequency": "0.0002563246",
+    "surname": "BOSCH"
+  },
+  {
+    "frequency": "0.0002558450",
+    "surname": "VAN EEDEN"
+  },
+  {
+    "frequency": "0.0002558450",
+    "surname": "MOUTON"
+  },
+  {
+    "frequency": "0.0002556052",
+    "surname": "MAILA"
+  },
+  {
+    "frequency": "0.0002556052",
+    "surname": "MONARENG"
+  },
+  {
+    "frequency": "0.0002548859",
+    "surname": "MALOPE"
+  },
+  {
+    "frequency": "0.0002534472",
+    "surname": "HUANG"
+  },
+  {
+    "frequency": "0.0002532074",
+    "surname": "TALJAARD"
+  },
+  {
+    "frequency": "0.0002529676",
+    "surname": "KGOMO"
+  },
+  {
+    "frequency": "0.0002515290",
+    "surname": "ELLIS"
+  },
+  {
+    "frequency": "0.0002508096",
+    "surname": "VAN JAARSVELD"
+  },
+  {
+    "frequency": "0.0002503301",
+    "surname": "HERBST"
+  },
+  {
+    "frequency": "0.0002493709",
+    "surname": "MASHILO"
+  },
+  {
+    "frequency": "0.0002491312",
+    "surname": "MASILO"
+  },
+  {
+    "frequency": "0.0002488914",
+    "surname": "MTSHWENI"
+  },
+  {
+    "frequency": "0.0002488914",
+    "surname": "EVANS"
+  },
+  {
+    "frequency": "0.0002484118",
+    "surname": "BRAND"
+  },
+  {
+    "frequency": "0.0002469731",
+    "surname": "VAN ASWEGEN"
+  },
+  {
+    "frequency": "0.0002462538",
+    "surname": "NYEMBE"
+  },
+  {
+    "frequency": "0.0002462538",
+    "surname": "HOSSAIN"
+  },
+  {
+    "frequency": "0.0002460140",
+    "surname": "MKWANAZI"
+  },
+  {
+    "frequency": "0.0002460140",
+    "surname": "MOTHAPO"
+  },
+  {
+    "frequency": "0.0002457742",
+    "surname": "MARX"
+  },
+  {
+    "frequency": "0.0002452947",
+    "surname": "VAN DER LINDE"
+  },
+  {
+    "frequency": "0.0002450549",
+    "surname": "FORTUIN"
+  },
+  {
+    "frequency": "0.0002448151",
+    "surname": "JELE"
+  },
+  {
+    "frequency": "0.0002448151",
+    "surname": "CLARKE"
+  },
+  {
+    "frequency": "0.0002443356",
+    "surname": "KOEN"
+  },
+  {
+    "frequency": "0.0002440958",
+    "surname": "MASHILE"
+  },
+  {
+    "frequency": "0.0002428969",
+    "surname": "MOHAMMED"
+  },
+  {
+    "frequency": "0.0002428969",
+    "surname": "PETER"
+  },
+  {
+    "frequency": "0.0002428969",
+    "surname": "MOGOTSI"
+  },
+  {
+    "frequency": "0.0002426571",
+    "surname": "SHANGASE"
+  },
+  {
+    "frequency": "0.0002426571",
+    "surname": "NGUBENI"
+  },
+  {
+    "frequency": "0.0002414582",
+    "surname": "MADIBA"
+  },
+  {
+    "frequency": "0.0002407389",
+    "surname": "LAWRENCE"
+  },
+  {
+    "frequency": "0.0002404991",
+    "surname": "SELLO"
+  },
+  {
+    "frequency": "0.0002400195",
+    "surname": "ROSS"
+  },
+  {
+    "frequency": "0.0002400195",
+    "surname": "HUGO"
+  },
+  {
+    "frequency": "0.0002397797",
+    "surname": "MAKHOBA"
+  },
+  {
+    "frequency": "0.0002395400",
+    "surname": "MOOLMAN"
+  },
+  {
+    "frequency": "0.0002395400",
+    "surname": "FRANCIS"
+  },
+  {
+    "frequency": "0.0002383411",
+    "surname": "SINDANE"
+  },
+  {
+    "frequency": "0.0002381013",
+    "surname": "MOHAPI"
+  },
+  {
+    "frequency": "0.0002361831",
+    "surname": "LEKALAKALA"
+  },
+  {
+    "frequency": "0.0002354637",
+    "surname": "MAVUNDLA"
+  },
+  {
+    "frequency": "0.0002354637",
+    "surname": "KOK"
+  },
+  {
+    "frequency": "0.0002352239",
+    "surname": "HENNING"
+  },
+  {
+    "frequency": "0.0002352239",
+    "surname": "OBERHOLZER"
+  },
+  {
+    "frequency": "0.0002335455",
+    "surname": "ADAM"
+  },
+  {
+    "frequency": "0.0002325864",
+    "surname": "MAY"
+  },
+  {
+    "frequency": "0.0002325864",
+    "surname": "NKOANA"
+  },
+  {
+    "frequency": "0.0002321068",
+    "surname": "KUBEKA"
+  },
+  {
+    "frequency": "0.0002321068",
+    "surname": "COHEN"
+  },
+  {
+    "frequency": "0.0002316272",
+    "surname": "BLIGNAUT"
+  },
+  {
+    "frequency": "0.0002311477",
+    "surname": "LOUBSER"
+  },
+  {
+    "frequency": "0.0002306681",
+    "surname": "NKWANYANA"
+  },
+  {
+    "frequency": "0.0002306681",
+    "surname": "MOREMI"
+  },
+  {
+    "frequency": "0.0002306681",
+    "surname": "MAKOFANE"
+  },
+  {
+    "frequency": "0.0002306681",
+    "surname": "MOSES"
+  },
+  {
+    "frequency": "0.0002289897",
+    "surname": "VOSLOO"
+  },
+  {
+    "frequency": "0.0002289897",
+    "surname": "TLOU"
+  },
+  {
+    "frequency": "0.0002289897",
+    "surname": "MUKWEVHO"
+  },
+  {
+    "frequency": "0.0002285101",
+    "surname": "MINNAAR"
+  },
+  {
+    "frequency": "0.0002282703",
+    "surname": "NELL"
+  },
+  {
+    "frequency": "0.0002280305",
+    "surname": "JANSE VAN VUUREN"
+  },
+  {
+    "frequency": "0.0002268316",
+    "surname": "MOJAPELO"
+  },
+  {
+    "frequency": "0.0002258725",
+    "surname": "BELL"
+  },
+  {
+    "frequency": "0.0002251532",
+    "surname": "COOPER"
+  },
+  {
+    "frequency": "0.0002251532",
+    "surname": "OTTO"
+  },
+  {
+    "frequency": "0.0002251532",
+    "surname": "SHAI"
+  },
+  {
+    "frequency": "0.0002244338",
+    "surname": "LAUBSCHER"
+  },
+  {
+    "frequency": "0.0002241941",
+    "surname": "MADONDO"
+  },
+  {
+    "frequency": "0.0002241941",
+    "surname": "HLONGWA"
+  },
+  {
+    "frequency": "0.0002234747",
+    "surname": "HARMSE"
+  },
+  {
+    "frequency": "0.0002229952",
+    "surname": "MYEZA"
+  },
+  {
+    "frequency": "0.0002227554",
+    "surname": "LIU"
+  },
+  {
+    "frequency": "0.0002225156",
+    "surname": "BOPAPE"
+  },
+  {
+    "frequency": "0.0002225156",
+    "surname": "OMAR"
+  },
+  {
+    "frequency": "0.0002220360",
+    "surname": "ALBERTS"
+  },
+  {
+    "frequency": "0.0002220360",
+    "surname": "LOTTERING"
+  },
+  {
+    "frequency": "0.0002217963",
+    "surname": "MAPHOSA"
+  },
+  {
+    "frequency": "0.0002217963",
+    "surname": "MORAKE"
+  },
+  {
+    "frequency": "0.0002217963",
+    "surname": "RICHARDS"
+  },
+  {
+    "frequency": "0.0002213167",
+    "surname": "MPUNGOSE"
+  },
+  {
+    "frequency": "0.0002213167",
+    "surname": "HANEKOM"
+  },
+  {
+    "frequency": "0.0002203576",
+    "surname": "SEKGOBELA"
+  },
+  {
+    "frequency": "0.0002203576",
+    "surname": "MBOKAZI"
+  },
+  {
+    "frequency": "0.0002203576",
+    "surname": "MORE"
+  },
+  {
+    "frequency": "0.0002201178",
+    "surname": "BAILEY"
+  },
+  {
+    "frequency": "0.0002198780",
+    "surname": "SHOZI"
+  },
+  {
+    "frequency": "0.0002196382",
+    "surname": "DIALE"
+  },
+  {
+    "frequency": "0.0002193985",
+    "surname": "PITSO"
+  },
+  {
+    "frequency": "0.0002191587",
+    "surname": "MAPONYA"
+  },
+  {
+    "frequency": "0.0002186791",
+    "surname": "MABUSELA"
+  },
+  {
+    "frequency": "0.0002186791",
+    "surname": "MSWELI"
+  },
+  {
+    "frequency": "0.0002181996",
+    "surname": "DLOMO"
+  },
+  {
+    "frequency": "0.0002181996",
+    "surname": "BAKER"
+  },
+  {
+    "frequency": "0.0002177200",
+    "surname": "MAVIMBELA"
+  },
+  {
+    "frequency": "0.0002165211",
+    "surname": "MEMELA"
+  },
+  {
+    "frequency": "0.0002162813",
+    "surname": "MULDER"
+  },
+  {
+    "frequency": "0.0002158018",
+    "surname": "MAKWELA"
+  },
+  {
+    "frequency": "0.0002148427",
+    "surname": "SEPTEMBER"
+  },
+  {
+    "frequency": "0.0002146029",
+    "surname": "SANGWENI"
+  },
+  {
+    "frequency": "0.0002146029",
+    "surname": "SIMPSON"
+  },
+  {
+    "frequency": "0.0002136438",
+    "surname": "NIEUWOUDT"
+  },
+  {
+    "frequency": "0.0002134040",
+    "surname": "SOLOMONS"
+  },
+  {
+    "frequency": "0.0002129244",
+    "surname": "TURNER"
+  },
+  {
+    "frequency": "0.0002129244",
+    "surname": "NXELE"
+  },
+  {
+    "frequency": "0.0002126846",
+    "surname": "HLUNGWANI"
+  },
+  {
+    "frequency": "0.0002119653",
+    "surname": "BARNES"
+  },
+  {
+    "frequency": "0.0002107664",
+    "surname": "OLIPHANT"
+  },
+  {
+    "frequency": "0.0002105266",
+    "surname": "PIETERS"
+  },
+  {
+    "frequency": "0.0002102868",
+    "surname": "MOLETSANE"
+  },
+  {
+    "frequency": "0.0002100471",
+    "surname": "DOS SANTOS"
+  },
+  {
+    "frequency": "0.0002083686",
+    "surname": "MKIZE"
+  },
+  {
+    "frequency": "0.0002083686",
+    "surname": "COLLINS"
+  },
+  {
+    "frequency": "0.0002081288",
+    "surname": "DE WAAL"
+  },
+  {
+    "frequency": "0.0002078890",
+    "surname": "KHESWA"
+  },
+  {
+    "frequency": "0.0002076493",
+    "surname": "CARSTENS"
+  },
+  {
+    "frequency": "0.0002076493",
+    "surname": "MALAPANE"
+  },
+  {
+    "frequency": "0.0002074095",
+    "surname": "JALI"
+  },
+  {
+    "frequency": "0.0002071697",
+    "surname": "HOFFMAN"
+  },
+  {
+    "frequency": "0.0002054912",
+    "surname": "FREDERICKS"
+  },
+  {
+    "frequency": "0.0002047719",
+    "surname": "TRUTER"
+  },
+  {
+    "frequency": "0.0002045321",
+    "surname": "PLAATJIES"
+  },
+  {
+    "frequency": "0.0002038128",
+    "surname": "MONAMA"
+  },
+  {
+    "frequency": "0.0002035730",
+    "surname": "MZIMELA"
+  },
+  {
+    "frequency": "0.0002033332",
+    "surname": "CHUENE"
+  },
+  {
+    "frequency": "0.0002033332",
+    "surname": "NEETHLING"
+  },
+  {
+    "frequency": "0.0002021343",
+    "surname": "PHETLA"
+  },
+  {
+    "frequency": "0.0002021343",
+    "surname": "NYAWO"
+  },
+  {
+    "frequency": "0.0002011752",
+    "surname": "MTETWA"
+  },
+  {
+    "frequency": "0.0002009354",
+    "surname": "SAUNDERS"
+  },
+  {
+    "frequency": "0.0002002161",
+    "surname": "ROETS"
+  },
+  {
+    "frequency": "0.0001999763",
+    "surname": "MOGASHOA"
+  },
+  {
+    "frequency": "0.0001999763",
+    "surname": "MALAZA"
+  },
+  {
+    "frequency": "0.0001997365",
+    "surname": "BREYTENBACH"
+  },
+  {
+    "frequency": "0.0001992570",
+    "surname": "MOJELA"
+  },
+  {
+    "frequency": "0.0001990172",
+    "surname": "MAJOZI"
+  },
+  {
+    "frequency": "0.0001990172",
+    "surname": "MNYANDU"
+  },
+  {
+    "frequency": "0.0001985376",
+    "surname": "MZOBE"
+  },
+  {
+    "frequency": "0.0001985376",
+    "surname": "ISLAM"
+  },
+  {
+    "frequency": "0.0001982979",
+    "surname": "MVELASE"
+  },
+  {
+    "frequency": "0.0001982979",
+    "surname": "MASHILOANE"
+  },
+  {
+    "frequency": "0.0001978183",
+    "surname": "MPHUTHI"
+  },
+  {
+    "frequency": "0.0001975785",
+    "surname": "LOOTS"
+  },
+  {
+    "frequency": "0.0001968592",
+    "surname": "MEIRING"
+  },
+  {
+    "frequency": "0.0001968592",
+    "surname": "KLAAS"
+  },
+  {
+    "frequency": "0.0001968592",
+    "surname": "CEBEKHULU"
+  },
+  {
+    "frequency": "0.0001963796",
+    "surname": "MOONSAMY"
+  },
+  {
+    "frequency": "0.0001959001",
+    "surname": "PELSER"
+  },
+  {
+    "frequency": "0.0001959001",
+    "surname": "MALOKA"
+  },
+  {
+    "frequency": "0.0001956603",
+    "surname": "HUSSAIN"
+  },
+  {
+    "frequency": "0.0001956603",
+    "surname": "MANGENA"
+  },
+  {
+    "frequency": "0.0001949409",
+    "surname": "SHAW"
+  },
+  {
+    "frequency": "0.0001949409",
+    "surname": "MASWANGANYI"
+  },
+  {
+    "frequency": "0.0001949409",
+    "surname": "MTOLO"
+  },
+  {
+    "frequency": "0.0001949409",
+    "surname": "BECKER"
+  },
+  {
+    "frequency": "0.0001942216",
+    "surname": "NDALA"
+  },
+  {
+    "frequency": "0.0001939818",
+    "surname": "JONAS"
+  },
+  {
+    "frequency": "0.0001939818",
+    "surname": "NELSON"
+  },
+  {
+    "frequency": "0.0001937420",
+    "surname": "WOLMARANS"
+  },
+  {
+    "frequency": "0.0001937420",
+    "surname": "PHUNGULA"
+  },
+  {
+    "frequency": "0.0001925431",
+    "surname": "KHAMBULE"
+  },
+  {
+    "frequency": "0.0001918238",
+    "surname": "MPHELA"
+  },
+  {
+    "frequency": "0.0001901453",
+    "surname": "JACK"
+  },
+  {
+    "frequency": "0.0001896658",
+    "surname": "MAKUA"
+  },
+  {
+    "frequency": "0.0001896658",
+    "surname": "JANTJIES"
+  },
+  {
+    "frequency": "0.0001894260",
+    "surname": "MANGANYI"
+  },
+  {
+    "frequency": "0.0001894260",
+    "surname": "ANDREWS"
+  },
+  {
+    "frequency": "0.0001889464",
+    "surname": "MASHA"
+  },
+  {
+    "frequency": "0.0001887067",
+    "surname": "MAJA"
+  },
+  {
+    "frequency": "0.0001887067",
+    "surname": "TSHABANGU"
+  },
+  {
+    "frequency": "0.0001884669",
+    "surname": "MNTAMBO"
+  },
+  {
+    "frequency": "0.0001882271",
+    "surname": "SAMUELS"
+  },
+  {
+    "frequency": "0.0001879873",
+    "surname": "FRASER"
+  },
+  {
+    "frequency": "0.0001875078",
+    "surname": "MBONANI"
+  },
+  {
+    "frequency": "0.0001872680",
+    "surname": "SEBOLA"
+  },
+  {
+    "frequency": "0.0001867884",
+    "surname": "ZIKALALA"
+  },
+  {
+    "frequency": "0.0001860691",
+    "surname": "HUGHES"
+  },
+  {
+    "frequency": "0.0001860691",
+    "surname": "WU"
+  },
+  {
+    "frequency": "0.0001858293",
+    "surname": "HASSAN"
+  },
+  {
+    "frequency": "0.0001858293",
+    "surname": "MFEKA"
+  },
+  {
+    "frequency": "0.0001853497",
+    "surname": "MAIMELA"
+  },
+  {
+    "frequency": "0.0001848702",
+    "surname": "WENTZEL"
+  },
+  {
+    "frequency": "0.0001846304",
+    "surname": "MNCWABE"
+  },
+  {
+    "frequency": "0.0001843906",
+    "surname": "DESAI"
+  },
+  {
+    "frequency": "0.0001839111",
+    "surname": "LATEGAN"
+  },
+  {
+    "frequency": "0.0001836713",
+    "surname": "DIPPENAAR"
+  },
+  {
+    "frequency": "0.0001836713",
+    "surname": "NHLAPHO"
+  },
+  {
+    "frequency": "0.0001834315",
+    "surname": "MANAKA"
+  },
+  {
+    "frequency": "0.0001834315",
+    "surname": "SCHMIDT"
+  },
+  {
+    "frequency": "0.0001831917",
+    "surname": "MBUYAZI"
+  },
+  {
+    "frequency": "0.0001829519",
+    "surname": "BRUWER"
+  },
+  {
+    "frequency": "0.0001827122",
+    "surname": "EKSTEEN"
+  },
+  {
+    "frequency": "0.0001812735",
+    "surname": "KLOPPER"
+  },
+  {
+    "frequency": "0.0001810337",
+    "surname": "MAKHUBU"
+  },
+  {
+    "frequency": "0.0001803144",
+    "surname": "MALEPE"
+  },
+  {
+    "frequency": "0.0001803144",
+    "surname": "SWARTS"
+  },
+  {
+    "frequency": "0.0001803144",
+    "surname": "BLOM"
+  },
+  {
+    "frequency": "0.0001800746",
+    "surname": "PRINS"
+  },
+  {
+    "frequency": "0.0001800746",
+    "surname": "PEREIRA"
+  },
+  {
+    "frequency": "0.0001800746",
+    "surname": "BENNETT"
+  },
+  {
+    "frequency": "0.0001798348",
+    "surname": "MBONAMBI"
+  },
+  {
+    "frequency": "0.0001798348",
+    "surname": "MANGANYE"
+  },
+  {
+    "frequency": "0.0001795950",
+    "surname": "MALGAS"
+  },
+  {
+    "frequency": "0.0001786359",
+    "surname": "LAMOLA"
+  },
+  {
+    "frequency": "0.0001783961",
+    "surname": "HOOSEN"
+  },
+  {
+    "frequency": "0.0001781564",
+    "surname": "DIEDERICKS"
+  },
+  {
+    "frequency": "0.0001779166",
+    "surname": "MNGOMA"
+  },
+  {
+    "frequency": "0.0001774370",
+    "surname": "LE GRANGE"
+  },
+  {
+    "frequency": "0.0001771972",
+    "surname": "SMUTS"
+  },
+  {
+    "frequency": "0.0001762381",
+    "surname": "SIBUYI"
+  },
+  {
+    "frequency": "0.0001762381",
+    "surname": "DE VRIES"
+  },
+  {
+    "frequency": "0.0001759983",
+    "surname": "PERUMAL"
+  },
+  {
+    "frequency": "0.0001757586",
+    "surname": "MOTHIBI"
+  },
+  {
+    "frequency": "0.0001755188",
+    "surname": "NCHABELENG"
+  },
+  {
+    "frequency": "0.0001755188",
+    "surname": "THEUNISSEN"
+  },
+  {
+    "frequency": "0.0001752790",
+    "surname": "MANQELE"
+  },
+  {
+    "frequency": "0.0001752790",
+    "surname": "KABINI"
+  },
+  {
+    "frequency": "0.0001740801",
+    "surname": "CALITZ"
+  },
+  {
+    "frequency": "0.0001738403",
+    "surname": "ENSLIN"
+  },
+  {
+    "frequency": "0.0001738403",
+    "surname": "HARRISON"
+  },
+  {
+    "frequency": "0.0001738403",
+    "surname": "HEYNS"
+  },
+  {
+    "frequency": "0.0001736005",
+    "surname": "MAWELA"
+  },
+  {
+    "frequency": "0.0001733608",
+    "surname": "MABITSELA"
+  },
+  {
+    "frequency": "0.0001733608",
+    "surname": "GRAHAM"
+  },
+  {
+    "frequency": "0.0001731210",
+    "surname": "MARSHALL"
+  },
+  {
+    "frequency": "0.0001731210",
+    "surname": "MATJILA"
+  },
+  {
+    "frequency": "0.0001726414",
+    "surname": "OLIVER"
+  },
+  {
+    "frequency": "0.0001724016",
+    "surname": "MARTINS"
+  },
+  {
+    "frequency": "0.0001721619",
+    "surname": "MANUEL"
+  },
+  {
+    "frequency": "0.0001716823",
+    "surname": "BENJAMIN"
+  },
+  {
+    "frequency": "0.0001714425",
+    "surname": "APRIL"
+  },
+  {
+    "frequency": "0.0001712027",
+    "surname": "ROODT"
+  },
+  {
+    "frequency": "0.0001712027",
+    "surname": "LOTTER"
+  },
+  {
+    "frequency": "0.0001709630",
+    "surname": "THOMSON"
+  },
+  {
+    "frequency": "0.0001707232",
+    "surname": "MOATSHE"
+  },
+  {
+    "frequency": "0.0001707232",
+    "surname": "NGOMA"
+  },
+  {
+    "frequency": "0.0001704834",
+    "surname": "LANDMAN"
+  },
+  {
+    "frequency": "0.0001704834",
+    "surname": "KHANYE"
+  },
+  {
+    "frequency": "0.0001702436",
+    "surname": "TITUS"
+  },
+  {
+    "frequency": "0.0001700038",
+    "surname": "VICTOR"
+  },
+  {
+    "frequency": "0.0001695243",
+    "surname": "MARUMO"
+  },
+  {
+    "frequency": "0.0001695243",
+    "surname": "VERSTER"
+  },
+  {
+    "frequency": "0.0001692845",
+    "surname": "WALTERS"
+  },
+  {
+    "frequency": "0.0001692845",
+    "surname": "MASENYA"
+  },
+  {
+    "frequency": "0.0001690447",
+    "surname": "REID"
+  },
+  {
+    "frequency": "0.0001688049",
+    "surname": "GASA"
+  },
+  {
+    "frequency": "0.0001685652",
+    "surname": "MLABA"
+  },
+  {
+    "frequency": "0.0001680856",
+    "surname": "NGUBO"
+  },
+  {
+    "frequency": "0.0001676060",
+    "surname": "SPIES"
+  },
+  {
+    "frequency": "0.0001671265",
+    "surname": "VOS"
+  },
+  {
+    "frequency": "0.0001671265",
+    "surname": "THEMBA"
+  },
+  {
+    "frequency": "0.0001668867",
+    "surname": "MDAKA"
+  },
+  {
+    "frequency": "0.0001664071",
+    "surname": "SEEDAT"
+  },
+  {
+    "frequency": "0.0001664071",
+    "surname": "ANTHONY"
+  },
+  {
+    "frequency": "0.0001664071",
+    "surname": "CUPIDO"
+  },
+  {
+    "frequency": "0.0001659276",
+    "surname": "MOTSOENENG"
+  },
+  {
+    "frequency": "0.0001659276",
+    "surname": "REYNEKE"
+  },
+  {
+    "frequency": "0.0001659276",
+    "surname": "MOTHIBA"
+  },
+  {
+    "frequency": "0.0001659276",
+    "surname": "MALETE"
+  },
+  {
+    "frequency": "0.0001654480",
+    "surname": "TSHEHLA"
+  },
+  {
+    "frequency": "0.0001652082",
+    "surname": "BAM"
+  },
+  {
+    "frequency": "0.0001649685",
+    "surname": "ALLY"
+  },
+  {
+    "frequency": "0.0001647287",
+    "surname": "NAIR"
+  },
+  {
+    "frequency": "0.0001647287",
+    "surname": "NGCONGO"
+  },
+  {
+    "frequency": "0.0001644889",
+    "surname": "GRAY"
+  },
+  {
+    "frequency": "0.0001642491",
+    "surname": "PATHER"
+  },
+  {
+    "frequency": "0.0001642491",
+    "surname": "MASHABANE"
+  },
+  {
+    "frequency": "0.0001640093",
+    "surname": "DE SOUSA"
+  },
+  {
+    "frequency": "0.0001637696",
+    "surname": "KELLY"
+  },
+  {
+    "frequency": "0.0001635298",
+    "surname": "SIBANDE"
+  },
+  {
+    "frequency": "0.0001635298",
+    "surname": "MOGAPI"
+  },
+  {
+    "frequency": "0.0001628104",
+    "surname": "MEINTJES"
+  },
+  {
+    "frequency": "0.0001628104",
+    "surname": "RAHMAN"
+  },
+  {
+    "frequency": "0.0001625707",
+    "surname": "WEBB"
+  },
+  {
+    "frequency": "0.0001623309",
+    "surname": "MARE"
+  },
+  {
+    "frequency": "0.0001623309",
+    "surname": "MOLOKOMME"
+  },
+  {
+    "frequency": "0.0001620911",
+    "surname": "WARD"
+  },
+  {
+    "frequency": "0.0001620911",
+    "surname": "NHLEKO"
+  },
+  {
+    "frequency": "0.0001618513",
+    "surname": "MOETI"
+  },
+  {
+    "frequency": "0.0001618513",
+    "surname": "WITBOOI"
+  },
+  {
+    "frequency": "0.0001613718",
+    "surname": "MOGANE"
+  },
+  {
+    "frequency": "0.0001611320",
+    "surname": "MOGOROSI"
+  },
+  {
+    "frequency": "0.0001608922",
+    "surname": "MOLETE"
+  },
+  {
+    "frequency": "0.0001606524",
+    "surname": "VIVIERS"
+  },
+  {
+    "frequency": "0.0001594535",
+    "surname": "ALLEN"
+  },
+  {
+    "frequency": "0.0001592138",
+    "surname": "LAMPRECHT"
+  },
+  {
+    "frequency": "0.0001589740",
+    "surname": "MADIKIZELA"
+  },
+  {
+    "frequency": "0.0001587342",
+    "surname": "MAILULA"
+  },
+  {
+    "frequency": "0.0001584944",
+    "surname": "STOLTZ"
+  },
+  {
+    "frequency": "0.0001582546",
+    "surname": "LLOYD"
+  },
+  {
+    "frequency": "0.0001580149",
+    "surname": "MOSALA"
+  },
+  {
+    "frequency": "0.0001580149",
+    "surname": "POOE"
+  },
+  {
+    "frequency": "0.0001580149",
+    "surname": "KUBAYI"
+  },
+  {
+    "frequency": "0.0001577751",
+    "surname": "MAREDI"
+  },
+  {
+    "frequency": "0.0001577751",
+    "surname": "SHOBA"
+  },
+  {
+    "frequency": "0.0001575353",
+    "surname": "ESSOP"
+  },
+  {
+    "frequency": "0.0001570557",
+    "surname": "CHILIZA"
+  },
+  {
+    "frequency": "0.0001568160",
+    "surname": "HOLTZHAUSEN"
+  },
+  {
+    "frequency": "0.0001568160",
+    "surname": "BUTLER"
+  },
+  {
+    "frequency": "0.0001563364",
+    "surname": "M LLER"
+  },
+  {
+    "frequency": "0.0001563364",
+    "surname": "MOKHELE"
+  },
+  {
+    "frequency": "0.0001560966",
+    "surname": "SEMENYA"
+  },
+  {
+    "frequency": "0.0001556171",
+    "surname": "NYONI"
+  },
+  {
+    "frequency": "0.0001553773",
+    "surname": "FERNANDES"
+  },
+  {
+    "frequency": "0.0001553773",
+    "surname": "RADEMEYER"
+  },
+  {
+    "frequency": "0.0001551375",
+    "surname": "SONO"
+  },
+  {
+    "frequency": "0.0001548977",
+    "surname": "CHONCO"
+  },
+  {
+    "frequency": "0.0001548977",
+    "surname": "MATABANE"
+  },
+  {
+    "frequency": "0.0001546579",
+    "surname": "BRONKHORST"
+  },
+  {
+    "frequency": "0.0001544182",
+    "surname": "NSELE"
+  },
+  {
+    "frequency": "0.0001544182",
+    "surname": "SHAIK"
+  },
+  {
+    "frequency": "0.0001541784",
+    "surname": "VAN BILJON"
+  },
+  {
+    "frequency": "0.0001539386",
+    "surname": "SALIE"
+  },
+  {
+    "frequency": "0.0001536988",
+    "surname": "SOKHELA"
+  },
+  {
+    "frequency": "0.0001534590",
+    "surname": "MDAKANE"
+  },
+  {
+    "frequency": "0.0001534590",
+    "surname": "MOLLER"
+  },
+  {
+    "frequency": "0.0001524999",
+    "surname": "NKWANA"
+  },
+  {
+    "frequency": "0.0001522601",
+    "surname": "PALMER"
+  },
+  {
+    "frequency": "0.0001522601",
+    "surname": "NDAMASE"
+  },
+  {
+    "frequency": "0.0001522601",
+    "surname": "WAGNER"
+  },
+  {
+    "frequency": "0.0001520204",
+    "surname": "COOK"
+  },
+  {
+    "frequency": "0.0001517806",
+    "surname": "WENG"
+  },
+  {
+    "frequency": "0.0001513010",
+    "surname": "MATTHEE"
+  },
+  {
+    "frequency": "0.0001510612",
+    "surname": "ROGERS"
+  },
+  {
+    "frequency": "0.0001510612",
+    "surname": "DLUDLA"
+  },
+  {
+    "frequency": "0.0001508215",
+    "surname": "KHUNOU"
+  },
+  {
+    "frequency": "0.0001508215",
+    "surname": "OLIFANT"
+  },
+  {
+    "frequency": "0.0001503419",
+    "surname": "MAILE"
+  },
+  {
+    "frequency": "0.0001501021",
+    "surname": "NGOEPE"
+  },
+  {
+    "frequency": "0.0001501021",
+    "surname": "MONYELA"
+  },
+  {
+    "frequency": "0.0001501021",
+    "surname": "BREEDT"
+  },
+  {
+    "frequency": "0.0001501021",
+    "surname": "MAKHETHA"
+  },
+  {
+    "frequency": "0.0001501021",
+    "surname": "MALATJIE"
+  },
+  {
+    "frequency": "0.0001498623",
+    "surname": "MACHABA"
+  },
+  {
+    "frequency": "0.0001498623",
+    "surname": "MSIMANGA"
+  },
+  {
+    "frequency": "0.0001498623",
+    "surname": "YANG"
+  },
+  {
+    "frequency": "0.0001496226",
+    "surname": "SITHEBE"
+  },
+  {
+    "frequency": "0.0001493828",
+    "surname": "NKALA"
+  },
+  {
+    "frequency": "0.0001493828",
+    "surname": "NAGEL"
+  },
+  {
+    "frequency": "0.0001493828",
+    "surname": "MZIZI"
+  },
+  {
+    "frequency": "0.0001493828",
+    "surname": "MALHERBE"
+  },
+  {
+    "frequency": "0.0001489032",
+    "surname": "MURPHY"
+  },
+  {
+    "frequency": "0.0001489032",
+    "surname": "PAUL"
+  },
+  {
+    "frequency": "0.0001489032",
+    "surname": "DYANTYI"
+  },
+  {
+    "frequency": "0.0001484237",
+    "surname": "MAMPURU"
+  },
+  {
+    "frequency": "0.0001481839",
+    "surname": "MAEPA"
+  },
+  {
+    "frequency": "0.0001479441",
+    "surname": "KOOPMAN"
+  },
+  {
+    "frequency": "0.0001479441",
+    "surname": "HAVENGA"
+  },
+  {
+    "frequency": "0.0001479441",
+    "surname": "STUURMAN"
+  },
+  {
+    "frequency": "0.0001477043",
+    "surname": "DE VOS"
+  },
+  {
+    "frequency": "0.0001474645",
+    "surname": "MILLS"
+  },
+  {
+    "frequency": "0.0001472248",
+    "surname": "DAWOOD"
+  },
+  {
+    "frequency": "0.0001472248",
+    "surname": "KOCK"
+  },
+  {
+    "frequency": "0.0001472248",
+    "surname": "SAAYMAN"
+  },
+  {
+    "frequency": "0.0001472248",
+    "surname": "MALATSI"
+  },
+  {
+    "frequency": "0.0001472248",
+    "surname": "MSANE"
+  },
+  {
+    "frequency": "0.0001469850",
+    "surname": "MAMBA"
+  },
+  {
+    "frequency": "0.0001467452",
+    "surname": "ALLIE"
+  },
+  {
+    "frequency": "0.0001467452",
+    "surname": "HOLMES"
+  },
+  {
+    "frequency": "0.0001465054",
+    "surname": "MODISANE"
+  },
+  {
+    "frequency": "0.0001462656",
+    "surname": "MOABELO"
+  },
+  {
+    "frequency": "0.0001462656",
+    "surname": "SERFONTEIN"
+  },
+  {
+    "frequency": "0.0001460259",
+    "surname": "MBEDZI"
+  },
+  {
+    "frequency": "0.0001457861",
+    "surname": "MOLEFI"
+  },
+  {
+    "frequency": "0.0001457861",
+    "surname": "MOTSAMAI"
+  },
+  {
+    "frequency": "0.0001455463",
+    "surname": "MAKHAYE"
+  },
+  {
+    "frequency": "0.0001448270",
+    "surname": "RODRIGUES"
+  },
+  {
+    "frequency": "0.0001443474",
+    "surname": "DHLADHLA"
+  },
+  {
+    "frequency": "0.0001441076",
+    "surname": "MOKOKA"
+  },
+  {
+    "frequency": "0.0001441076",
+    "surname": "MOLOKO"
+  },
+  {
+    "frequency": "0.0001441076",
+    "surname": "SINGO"
+  },
+  {
+    "frequency": "0.0001438678",
+    "surname": "MBULI"
+  },
+  {
+    "frequency": "0.0001438678",
+    "surname": "RAS"
+  },
+  {
+    "frequency": "0.0001438678",
+    "surname": "REYNOLDS"
+  },
+  {
+    "frequency": "0.0001436281",
+    "surname": "YENDE"
+  },
+  {
+    "frequency": "0.0001433883",
+    "surname": "LEBELO"
+  },
+  {
+    "frequency": "0.0001431485",
+    "surname": "KRITZINGER"
+  },
+  {
+    "frequency": "0.0001431485",
+    "surname": "MABE"
+  },
+  {
+    "frequency": "0.0001429087",
+    "surname": "LEEUW"
+  },
+  {
+    "frequency": "0.0001429087",
+    "surname": "SNYDERS"
+  },
+  {
+    "frequency": "0.0001426690",
+    "surname": "GAMEDE"
+  },
+  {
+    "frequency": "0.0001426690",
+    "surname": "VAN DER SCHYFF"
+  },
+  {
+    "frequency": "0.0001421894",
+    "surname": "KUHN"
+  },
+  {
+    "frequency": "0.0001421894",
+    "surname": "MATHIBE"
+  },
+  {
+    "frequency": "0.0001419496",
+    "surname": "MOABI"
+  },
+  {
+    "frequency": "0.0001419496",
+    "surname": "COX"
+  },
+  {
+    "frequency": "0.0001419496",
+    "surname": "MBUYANE"
+  },
+  {
+    "frequency": "0.0001419496",
+    "surname": "BAPELA"
+  },
+  {
+    "frequency": "0.0001417098",
+    "surname": "GWEBU"
+  },
+  {
+    "frequency": "0.0001417098",
+    "surname": "NONYANE"
+  },
+  {
+    "frequency": "0.0001414701",
+    "surname": "SHELEMBE"
+  },
+  {
+    "frequency": "0.0001414701",
+    "surname": "ADONIS"
+  },
+  {
+    "frequency": "0.0001414701",
+    "surname": "DANIEL"
+  },
+  {
+    "frequency": "0.0001414701",
+    "surname": "MOTHUPI"
+  },
+  {
+    "frequency": "0.0001412303",
+    "surname": "CROUS"
+  },
+  {
+    "frequency": "0.0001412303",
+    "surname": "GIBSON"
+  },
+  {
+    "frequency": "0.0001412303",
+    "surname": "JOHNSTON"
+  },
+  {
+    "frequency": "0.0001412303",
+    "surname": "MADISHA"
+  },
+  {
+    "frequency": "0.0001409905",
+    "surname": "CORNELIUS"
+  },
+  {
+    "frequency": "0.0001409905",
+    "surname": "MOLEBATSI"
+  },
+  {
+    "frequency": "0.0001409905",
+    "surname": "NIEMAND"
+  },
+  {
+    "frequency": "0.0001407507",
+    "surname": "MALELE"
+  },
+  {
+    "frequency": "0.0001407507",
+    "surname": "CHILI"
+  },
+  {
+    "frequency": "0.0001402712",
+    "surname": "DAVIDSON"
+  },
+  {
+    "frequency": "0.0001402712",
+    "surname": "MALEMA"
+  },
+  {
+    "frequency": "0.0001402712",
+    "surname": "SOSIBO"
+  },
+  {
+    "frequency": "0.0001400314",
+    "surname": "SEBOTHOMA"
+  },
+  {
+    "frequency": "0.0001400314",
+    "surname": "SELEKA"
+  },
+  {
+    "frequency": "0.0001397916",
+    "surname": "KOCH"
+  },
+  {
+    "frequency": "0.0001393120",
+    "surname": "ACKERMAN"
+  },
+  {
+    "frequency": "0.0001393120",
+    "surname": "MASHAU"
+  },
+  {
+    "frequency": "0.0001388325",
+    "surname": "RETIEF"
+  },
+  {
+    "frequency": "0.0001383529",
+    "surname": "MOLEKO"
+  },
+  {
+    "frequency": "0.0001381131",
+    "surname": "DAVID"
+  },
+  {
+    "frequency": "0.0001376336",
+    "surname": "GRANT"
+  },
+  {
+    "frequency": "0.0001376336",
+    "surname": "TEFFO"
+  },
+  {
+    "frequency": "0.0001373938",
+    "surname": "GROVE"
+  },
+  {
+    "frequency": "0.0001373938",
+    "surname": "HARVEY"
+  },
+  {
+    "frequency": "0.0001371540",
+    "surname": "KATZ"
+  },
+  {
+    "frequency": "0.0001371540",
+    "surname": "SCHULTZ"
+  },
+  {
+    "frequency": "0.0001369142",
+    "surname": "MAGORO"
+  },
+  {
+    "frequency": "0.0001369142",
+    "surname": "ELLIOTT"
+  },
+  {
+    "frequency": "0.0001366745",
+    "surname": "PAGE"
+  },
+  {
+    "frequency": "0.0001364347",
+    "surname": "TSHIVHASE"
+  },
+  {
+    "frequency": "0.0001364347",
+    "surname": "STONE"
+  },
+  {
+    "frequency": "0.0001361949",
+    "surname": "GOLIATH"
+  },
+  {
+    "frequency": "0.0001361949",
+    "surname": "HUNTER"
+  },
+  {
+    "frequency": "0.0001361949",
+    "surname": "MNCWANGO"
+  },
+  {
+    "frequency": "0.0001359551",
+    "surname": "RAMOSHABA"
+  },
+  {
+    "frequency": "0.0001359551",
+    "surname": "LEBESE"
+  },
+  {
+    "frequency": "0.0001357153",
+    "surname": "FOSTER"
+  },
+  {
+    "frequency": "0.0001357153",
+    "surname": "THOBELA"
+  },
+  {
+    "frequency": "0.0001354756",
+    "surname": "KUTUMELA"
+  },
+  {
+    "frequency": "0.0001354756",
+    "surname": "NDLAZI"
+  },
+  {
+    "frequency": "0.0001349960",
+    "surname": "MCDONALD"
+  },
+  {
+    "frequency": "0.0001347562",
+    "surname": "RABIE"
+  },
+  {
+    "frequency": "0.0001347562",
+    "surname": "MATHABATHA"
+  },
+  {
+    "frequency": "0.0001347562",
+    "surname": "CINDI"
+  },
+  {
+    "frequency": "0.0001342767",
+    "surname": "MAKHUBO"
+  },
+  {
+    "frequency": "0.0001340369",
+    "surname": "CLAASEN"
+  },
+  {
+    "frequency": "0.0001340369",
+    "surname": "JAFTA"
+  },
+  {
+    "frequency": "0.0001335573",
+    "surname": "AMOD"
+  },
+  {
+    "frequency": "0.0001335573",
+    "surname": "GOUNDEN"
+  },
+  {
+    "frequency": "0.0001335573",
+    "surname": "PRICE"
+  },
+  {
+    "frequency": "0.0001335573",
+    "surname": "HOWARD"
+  },
+  {
+    "frequency": "0.0001335573",
+    "surname": "SEEMA"
+  },
+  {
+    "frequency": "0.0001333175",
+    "surname": "SILINDA"
+  },
+  {
+    "frequency": "0.0001333175",
+    "surname": "MOSS"
+  },
+  {
+    "frequency": "0.0001333175",
+    "surname": "MASHAO"
+  },
+  {
+    "frequency": "0.0001330778",
+    "surname": "VAN LOGGERENBERG"
+  },
+  {
+    "frequency": "0.0001328380",
+    "surname": "BOKABA"
+  },
+  {
+    "frequency": "0.0001328380",
+    "surname": "CARTER"
+  },
+  {
+    "frequency": "0.0001328380",
+    "surname": "MGIDI"
+  },
+  {
+    "frequency": "0.0001328380",
+    "surname": "UDDIN"
+  },
+  {
+    "frequency": "0.0001323584",
+    "surname": "LUCAS"
+  },
+  {
+    "frequency": "0.0001321186",
+    "surname": "FORD"
+  },
+  {
+    "frequency": "0.0001321186",
+    "surname": "KILIAN"
+  },
+  {
+    "frequency": "0.0001321186",
+    "surname": "MGWENYA"
+  },
+  {
+    "frequency": "0.0001321186",
+    "surname": "NHLABATHI"
+  },
+  {
+    "frequency": "0.0001321186",
+    "surname": "COMBRINK"
+  },
+  {
+    "frequency": "0.0001318789",
+    "surname": "MABIZELA"
+  },
+  {
+    "frequency": "0.0001318789",
+    "surname": "HLENGWA"
+  },
+  {
+    "frequency": "0.0001316391",
+    "surname": "KENNEDY"
+  },
+  {
+    "frequency": "0.0001316391",
+    "surname": "MABOTJA"
+  },
+  {
+    "frequency": "0.0001316391",
+    "surname": "XIMBA"
+  },
+  {
+    "frequency": "0.0001313993",
+    "surname": "HART"
+  },
+  {
+    "frequency": "0.0001313993",
+    "surname": "MBUYISA"
+  },
+  {
+    "frequency": "0.0001311595",
+    "surname": "SELEKE"
+  },
+  {
+    "frequency": "0.0001309197",
+    "surname": "MINNIE"
+  },
+  {
+    "frequency": "0.0001309197",
+    "surname": "HANSEN"
+  },
+  {
+    "frequency": "0.0001309197",
+    "surname": "MBOWENI"
+  },
+  {
+    "frequency": "0.0001306800",
+    "surname": "MABONA"
+  },
+  {
+    "frequency": "0.0001304402",
+    "surname": "PLAATJIE"
+  },
+  {
+    "frequency": "0.0001302004",
+    "surname": "MAKGOBA"
+  },
+  {
+    "frequency": "0.0001302004",
+    "surname": "MTIMKULU"
+  },
+  {
+    "frequency": "0.0001302004",
+    "surname": "KGANYAGO"
+  },
+  {
+    "frequency": "0.0001297208",
+    "surname": "MOKGOSI"
+  },
+  {
+    "frequency": "0.0001297208",
+    "surname": "MAKGATO"
+  },
+  {
+    "frequency": "0.0001294811",
+    "surname": "WEBSTER"
+  },
+  {
+    "frequency": "0.0001294811",
+    "surname": "MAKHAFOLA"
+  },
+  {
+    "frequency": "0.0001292413",
+    "surname": "VAN DER VYVER"
+  },
+  {
+    "frequency": "0.0001290015",
+    "surname": "HENDERSON"
+  },
+  {
+    "frequency": "0.0001290015",
+    "surname": "AFRICA"
+  },
+  {
+    "frequency": "0.0001287617",
+    "surname": "FICK"
+  },
+  {
+    "frequency": "0.0001287617",
+    "surname": "MABELANE"
+  },
+  {
+    "frequency": "0.0001282822",
+    "surname": "NSIBANDE"
+  },
+  {
+    "frequency": "0.0001282822",
+    "surname": "MOGANO"
+  },
+  {
+    "frequency": "0.0001282822",
+    "surname": "MALESA"
+  },
+  {
+    "frequency": "0.0001282822",
+    "surname": "MNDEBELE"
+  },
+  {
+    "frequency": "0.0001278026",
+    "surname": "RICHARDSON"
+  },
+  {
+    "frequency": "0.0001278026",
+    "surname": "WILKINSON"
+  },
+  {
+    "frequency": "0.0001273230",
+    "surname": "ARMSTRONG"
+  },
+  {
+    "frequency": "0.0001273230",
+    "surname": "SULIMAN"
+  },
+  {
+    "frequency": "0.0001273230",
+    "surname": "DE FREITAS"
+  },
+  {
+    "frequency": "0.0001273230",
+    "surname": "NGWENYAMA"
+  },
+  {
+    "frequency": "0.0001270833",
+    "surname": "NYANDENI"
+  },
+  {
+    "frequency": "0.0001268435",
+    "surname": "NTSHINGILA"
+  },
+  {
+    "frequency": "0.0001266037",
+    "surname": "BROOKS"
+  },
+  {
+    "frequency": "0.0001261241",
+    "surname": "LINDA"
+  },
+  {
+    "frequency": "0.0001258844",
+    "surname": "MONGWE"
+  },
+  {
+    "frequency": "0.0001256446",
+    "surname": "MOOLA"
+  }
+]

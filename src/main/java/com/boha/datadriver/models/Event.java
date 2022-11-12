@@ -4,10 +4,19 @@ public class Event {
     private String eventId;
     private String date;
     private CityPlace cityPlace;
+
+    private User user;
     private double amount;
     private int rating;
     private long longDate;
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public long getLongDate() {
         return longDate;

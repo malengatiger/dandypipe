@@ -21,6 +21,8 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -73,7 +75,9 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 				.getBean("requestMappingHandlerMapping", RequestMappingHandlerMapping.class);
 		Map<RequestMappingInfo, HandlerMethod> map = requestMappingHandlerMapping
 				.getHandlerMethods();
-		map.forEach((key, value) -> LOGGER.info(E.PEAR+ " Endpoint: " + key));
+		map.forEach((key, value) -> {
+			LOGGER.info(E.PEAR+ " Endpoint: " + key);
+		});
 
 		try {
 			firebaseService.initializeFirebase();

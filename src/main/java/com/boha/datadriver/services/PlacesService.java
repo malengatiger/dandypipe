@@ -123,6 +123,27 @@ public class PlacesService {
 //                " " + city.getCity() + " has " + cityPlaces.size() + " places on file" );
         return cityPlaces;
     }
+    public CityPlace getPlaceById(String placeId) throws Exception {
+        Firestore c = FirestoreClient.getFirestore();
+        ApiFuture<QuerySnapshot> future = c
+                .collection("cityPlaces")
+                .whereEqualTo("placeId", placeId)
+                .get();
+        QuerySnapshot snapshot = future.get();
+        List<QueryDocumentSnapshot> list = snapshot.getDocuments();
+
+        CityPlace place = null;
+
+        for (QueryDocumentSnapshot queryDocumentSnapshot : list) {
+            place = queryDocumentSnapshot.toObject(CityPlace.class);
+
+        }
+
+//        LOGGER.info(E.RED_DOT  +
+//                " " + city.getCity() + " has " + cityPlaces.size() + " places on file" );
+        return place;
+    }
+
     public String loadCityPlaces() throws Exception {
         List<City> cities = cityService.getCitiesFromFirestore();
         if (!cities.isEmpty()) {

@@ -1,9 +1,6 @@
 package com.boha.datadriver.controllers;
 
-import com.boha.datadriver.models.City;
-import com.boha.datadriver.models.CityPlace;
-import com.boha.datadriver.models.FlatEvent;
-import com.boha.datadriver.models.Message;
+import com.boha.datadriver.models.*;
 import com.boha.datadriver.services.*;
 import com.boha.datadriver.util.E;
 import com.google.gson.Gson;
@@ -36,8 +33,8 @@ public class MainController {
 
 
     @GetMapping("/")
-    private String hello()  {
-        return E.BLUE_DOT+E.BLUE_DOT+
+    private String hello() {
+        return E.BLUE_DOT + E.BLUE_DOT +
                 "DataDriver is running at " + new DateTime().toDateTimeISO().toString();
     }
 
@@ -48,6 +45,87 @@ public class MainController {
             LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
                     " MainController Returning " + cities.size() + " cities");
             return ResponseEntity.ok(cities);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
+        }
+    }
+
+    @GetMapping("/generateUsers")
+    private ResponseEntity<Object> generateUsers(@RequestParam int maxPerCityCount) {
+        try {
+            int count  = generator.generateUsers(maxPerCityCount);
+            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
+                    " Users generated:  " + count);
+            return ResponseEntity.ok("User generation completed: Generated:  " +
+                    count);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/generateCityUsers")
+    private ResponseEntity<Object> generateCityUsers(@RequestParam String cityId,
+                                                     @RequestParam int count) {
+        try {
+            int done = generator.generateCityUsers(cityId, count);
+            City city  = cityService.getCityById(cityId);
+
+            return ResponseEntity.ok(city.getCity()
+                    + " users generation completed. Generated: " + done );
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+    @GetMapping("/generateEventsByCity")
+    private ResponseEntity<Object> generateEventsByCity(@RequestParam String cityId,
+                                                        @RequestParam int count) {
+        try {
+            String done = generator.generateEventsByCity(cityId, count);
+            City city  = cityService.getCityById(cityId);
+            return ResponseEntity.ok(city.getCity()
+                    + " event generation completed. Generated: " + done );
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+    @GetMapping("/generateEventsByPlace")
+    private ResponseEntity<Object> generateEventsByPlace(@RequestParam String placeId,
+                                                     @RequestParam int count) {
+        try {
+            String done = generator.generateEventsByPlace(placeId, count);
+            City city  = cityService.getCityById(placeId);
+
+            return ResponseEntity.ok(city.getCity()
+                    + " event generation by place completed. Generated: " + done );
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @Autowired
+    private UserService userService;
+
+    @GetMapping("/countUsers")
+    private ResponseEntity<Object> countUsers() {
+        try {
+            long count = userService.countUsers();
+            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
+                    " Looks like city users counted: " + count);
+            return ResponseEntity.ok(count);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/getCityUsers")
+    private ResponseEntity<Object> getCityUsers(
+            @RequestParam String cityId) {
+        try {
+            List<User> users = userService.getCityUsers(cityId);
+            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART  +
+                    " Firestore Returning " + users.size() + " users " + E.CHECK);
+            return ResponseEntity.ok(users);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
         }

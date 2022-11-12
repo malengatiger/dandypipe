@@ -7,6 +7,7 @@ import java.util.ArrayList;
 @Data
 public class FlatEvent {
     private String eventId, cityId, cityName;
+
     private String placeId, placeName;
     private double amount;
     private int rating;
@@ -15,6 +16,9 @@ public class FlatEvent {
     private long longDate;
     private String types;
     private String vicinity;
+    private String userId, firstName, lastName, middleInitial;
+    private String userCityId, userCityName;
+
 
     public String getEventId() {
         return eventId;
@@ -118,5 +122,53 @@ public class FlatEvent {
 
     public void setVicinity(String vicinity) {
         this.vicinity = vicinity;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getMiddleInitial() {
+        return middleInitial;
+    }
+
+    public void setMiddleInitial(String middleInitial) {
+        this.middleInitial = middleInitial;
+    }
+
+    public String getUserCityId() {
+        return userCityId;
+    }
+
+    public void setUserCityId(String userCityId) {
+        this.userCityId = userCityId;
+    }
+
+    public String getUserCityName() {
+        return userCityName;
+    }
+
+    public void setUserCityName(String userCityName) {
+        this.userCityName = userCityName;
     }
 }
