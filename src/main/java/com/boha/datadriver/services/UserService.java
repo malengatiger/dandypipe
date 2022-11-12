@@ -67,7 +67,7 @@ public class UserService {
             users.add(user);
         }
         if (city != null) {
-            LOGGER.info(E.CHECK + E.CHECK + " Found " + users.size()
+            logControl.info(E.CHECK + E.CHECK + " Found " + users.size()
                     + " users registered in " + city.getCity());
         }
         return users;
