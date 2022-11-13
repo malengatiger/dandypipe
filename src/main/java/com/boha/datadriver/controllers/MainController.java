@@ -80,10 +80,8 @@ public class MainController {
     private ResponseEntity<Object> generateEventsByCity(@RequestParam String cityId,
                                                         @RequestParam int count) {
         try {
-            String done = generator.generateEventsByCity(cityId, count);
-            City city  = cityService.getCityById(cityId);
-            return ResponseEntity.ok(city.getCity()
-                    + " event generation completed. Generated: " + done );
+            GenerationMessage done = generator.generateEventsByCity(cityId, count);
+            return ResponseEntity.ok(done );
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
@@ -92,7 +90,7 @@ public class MainController {
     private ResponseEntity<Object> generateEventsByCities(@RequestParam List<String> cityIds,
                                                         @RequestParam int upperCount) {
         try {
-            List<String> done = generator.generateEventsByCities(cityIds, upperCount);
+            List<GenerationMessage> done = generator.generateEventsByCities(cityIds, upperCount);
             return ResponseEntity.ok(done );
         } catch (Exception e) {
             return ResponseEntity.status(
@@ -104,11 +102,10 @@ public class MainController {
     private ResponseEntity<Object> generateEventsByPlace(@RequestParam String placeId,
                                                      @RequestParam int count) {
         try {
-            String done = generator.generateEventsByPlace(placeId, count);
+            GenerationMessage done = generator.generateEventsByPlace(placeId, count);
             City city  = cityService.getCityById(placeId);
 
-            return ResponseEntity.ok(city.getCity()
-                    + " event generation by place completed. Generated: " + done );
+            return ResponseEntity.ok(done );
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
@@ -117,7 +114,7 @@ public class MainController {
     private ResponseEntity<Object> generateEventsByPlaces(@RequestParam List<String> placeIds,
                                                          @RequestParam int upperCount) {
         try {
-            List<String> done = generator.generateEventsByPlaces(placeIds, upperCount);
+            List<GenerationMessage> done = generator.generateEventsByPlaces(placeIds, upperCount);
             return ResponseEntity.ok(done );
         } catch (Exception e) {
             return ResponseEntity.status(
