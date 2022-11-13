@@ -159,7 +159,7 @@ public class FlatEvent {
     public String getUserCityId() {
         return userCityId;
     }
-
+// ChIJrT_LS2ZnzB0RsKwdCo2kTk8, ChIJizqF5XFnzB0Rg-n-YV3T_O8, ChIJj_1PuGFnzB0RHGHUrRPACGo, ChIJdTV9qHxnzB0RWPw8bXWhuqk, ChIJb27tOVtnzB0RMh88jaCL3uU
     public void setUserCityId(String userCityId) {
         this.userCityId = userCityId;
     }

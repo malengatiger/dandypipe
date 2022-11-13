@@ -88,6 +88,18 @@ public class MainController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
+    @GetMapping("/generateEventsByCities")
+    private ResponseEntity<Object> generateEventsByCities(@RequestParam List<String> cityIds,
+                                                        @RequestParam int upperCount) {
+        try {
+            List<String> done = generator.generateEventsByCities(cityIds, upperCount);
+            return ResponseEntity.ok(done );
+        } catch (Exception e) {
+            return ResponseEntity.status(
+                    HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
     @GetMapping("/generateEventsByPlace")
     private ResponseEntity<Object> generateEventsByPlace(@RequestParam String placeId,
                                                      @RequestParam int count) {
@@ -99,6 +111,18 @@ public class MainController {
                     + " event generation by place completed. Generated: " + done );
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+    @GetMapping("/generateEventsByPlaces")
+    private ResponseEntity<Object> generateEventsByPlaces(@RequestParam List<String> placeIds,
+                                                         @RequestParam int upperCount) {
+        try {
+            List<String> done = generator.generateEventsByPlaces(placeIds, upperCount);
+            return ResponseEntity.ok(done );
+        } catch (Exception e) {
+            return ResponseEntity.status(
+                    HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
         }
     }
 
@@ -251,46 +275,46 @@ public class MainController {
     @Autowired
     Generator generator;
 
-    @GetMapping("/generateEvents")
-    private ResponseEntity<Message> generateEvents(long intervalInSeconds, int upperCountPerPlace, int maxCount) {
-        try {
-            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
-                    " MainController: ... Generator starting .... ");
-            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
-                    " MainController: intervalInSeconds:  " + intervalInSeconds +
-                    " upperCountPerPlace: " + upperCountPerPlace +
-                    " maxCount: " + maxCount + " " + E.RED_APPLE);
-
-            generator.generateEvents(intervalInSeconds,
-                    upperCountPerPlace, maxCount);
-            Message  message = new Message();
-            message.setStatusCode(200);
-            message.setMessage("Generator has started. Check logs Firestore, PubSub, BigQuery and GCS");
-            message.setDate(String.valueOf(new DateTime()));
-
-            return ResponseEntity.ok(
-                    message);
-        } catch (Exception e) {
-            e.printStackTrace();
-            Message  message = new Message();
-            message.setStatusCode(500);
-            message.setMessage(E.RED_DOT+
-                    "Something smells! Gone badly wrong: " + e.getMessage());
-            message.setDate(String.valueOf(new DateTime()));
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
-                    message);
-        }
-    }
-    @GetMapping("/stopGenerator")
-    private ResponseEntity<Message> generateEvents() {
-        generator.stopTimer();
-        Message  message = new Message();
-        message.setStatusCode(200);
-        message.setMessage("Generator has STOPPED. Check logs Firestore, PubSub, BigQuery and GCS");
-        message.setDate(String.valueOf(new DateTime()));
-
-        return ResponseEntity.ok(
-                message);
-    }
+//    @GetMapping("/generateEvents")
+//    private ResponseEntity<Message> generateEvents(long intervalInSeconds, int upperCountPerPlace, int maxCount) {
+//        try {
+//            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
+//                    " MainController: ... Generator starting .... ");
+//            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
+//                    " MainController: intervalInSeconds:  " + intervalInSeconds +
+//                    " upperCountPerPlace: " + upperCountPerPlace +
+//                    " maxCount: " + maxCount + " " + E.RED_APPLE);
+//
+//            generator.generateEvents(intervalInSeconds,
+//                    upperCountPerPlace, maxCount);
+//            Message  message = new Message();
+//            message.setStatusCode(200);
+//            message.setMessage("Generator has started. Check logs Firestore, PubSub, BigQuery and GCS");
+//            message.setDate(String.valueOf(new DateTime()));
+//
+//            return ResponseEntity.ok(
+//                    message);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            Message  message = new Message();
+//            message.setStatusCode(500);
+//            message.setMessage(E.RED_DOT+
+//                    "Something smells! Gone badly wrong: " + e.getMessage());
+//            message.setDate(String.valueOf(new DateTime()));
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
+//                    message);
+//        }
+//    }
+//    @GetMapping("/stopGenerator")
+//    private ResponseEntity<Message> generateEvents() {
+//        generator.stopTimer();
+//        Message  message = new Message();
+//        message.setStatusCode(200);
+//        message.setMessage("Generator has STOPPED. Check logs Firestore, PubSub, BigQuery and GCS");
+//        message.setDate(String.valueOf(new DateTime()));
+//
+//        return ResponseEntity.ok(
+//                message);
+//    }
 
 }

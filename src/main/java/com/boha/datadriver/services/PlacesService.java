@@ -119,15 +119,15 @@ public class PlacesService {
             cityPlaces.add(cityPlace);
         }
 
-//        LOGGER.info(E.RED_DOT  +
-//                " " + city.getCity() + " has " + cityPlaces.size() + " places on file" );
+        LOGGER.info(E.PEAR  +
+                " " + city.getCity() + " has " + cityPlaces.size() + " places on file" );
         return cityPlaces;
     }
     public CityPlace getPlaceById(String placeId) throws Exception {
         Firestore c = FirestoreClient.getFirestore();
         ApiFuture<QuerySnapshot> future = c
                 .collection("cityPlaces")
-                .whereEqualTo("placeId", placeId)
+                .whereEqualTo("place_id", placeId)
                 .get();
         QuerySnapshot snapshot = future.get();
         List<QueryDocumentSnapshot> list = snapshot.getDocuments();

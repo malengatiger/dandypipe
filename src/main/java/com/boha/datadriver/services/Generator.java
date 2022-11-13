@@ -4,6 +4,7 @@ import com.boha.datadriver.models.*;
 import com.boha.datadriver.util.E;
 import com.boha.datadriver.util.FlatEventGetter;
 import com.boha.datadriver.util.LogControl;
+import com.boha.datadriver.util.WriteLogEntry;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
@@ -31,20 +32,29 @@ public class Generator {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
 
-    public Generator(CityService cityService, PlacesService placesService, EventPublisher eventPublisher) {
+    public Generator(CityService cityService, PlacesService placesService, EventPublisher eventPublisher, FirebaseService firebaseService) {
         this.cityService = cityService;
         this.placesService = placesService;
         this.eventPublisher = eventPublisher;
+        this.firebaseService = firebaseService;
+        try {
+            //this.firebaseService.initializeFirebase();
+        } catch (Exception  e)  {
+            LOGGER.info(" Firebase initialization failed");
+        }
     }
-
+// c0751f57-2493-47f8-b8a6-664637992db5, b07ae3a-3105-483f-a023-c3e359241d05, b5aa2593-b333-4c84-82c6-d10d6784b9d8, edc4cab4-38f0-4e4c-882a-813597277936, 253c0404-3458-480c-bc51-cf0e020b28b4, 151d3b43-de61-4c1f-a470-e62f310cdf7f, 18c05582-ab79-4073-9bc8-21e452f0bd9e, 82bc129f-701e-435f-8d32-9dbdec025407, ad01a09e-f865-424f-9804-cd248733eb81, d955d30b-9903-45c1-a466-db7bfad385d8
     @Autowired
     private LogControl logControl;
+    @Autowired
+    private WriteLogEntry writeLogEntry;
 
 
     private final ArrayList<Subscriber> allSubscribers = new ArrayList<>();
     private final CityService cityService;
     private final PlacesService placesService;
     private final EventPublisher eventPublisher;
+    private final FirebaseService firebaseService;
 
     @Autowired
     private EventSubscriber eventSubscriber;
@@ -85,8 +95,8 @@ public class Generator {
     private void generateRandomCrowd(CityPlace place) throws Exception {
         userMap = new HashMap<>();
         long startTime = DateTime.now().getMillis();
-        int count = random.nextInt(400);
-        if (count < 100) count = 100;
+        int count = random.nextInt(1000);
+        if (count < 200) count = 450;
 
         int done = 0;
         for (int i = 0; i < count; i++) {
@@ -126,8 +136,6 @@ public class Generator {
                     + " Ignore this place for crowd generation: " + place.name);
             generateCrowd(cityId, total);
         }
-//        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR+E.RED_APPLE +
-//                " Generating crowd: " + place.name + ", " + place.cityName);
         int successCount = 0;
         for (int i = 0; i < total; i++) {
             try {
@@ -150,59 +158,18 @@ public class Generator {
 
     long start;
 
-    public void generateEvents(long intervalInSeconds,
-                               int upperCountPerPlace, int maximumCount) throws Exception {
+    public int performWork(int upperCountPerPlace, int maximumCount) throws Exception {
         maxCount = maximumCount;
-        pubSubCount = 0;
-        totalCount = 0;
-        start = DateTime.now().getMillis();
-        LOGGER.info(E.BLUE_DOT + E.BLUE_DOT + E.BLUE_DOT + E.BLUE_DOT + E.BLUE_DOT +
-                " Generator: intervalInSeconds: " + intervalInSeconds
-                + " upperCountPerPlace: " +
-                +upperCountPerPlace + " maxCount: " + maxCount + " "
-                + E.BLUE_DOT + E.BLUE_DOT);
+        if (totalCount > maxCount) {
+            LOGGER.info(E.RED_DOT + E.RED_DOT +
+                    " Refusing to perform work; "+ E.PEAR
+                    +" totalCount: " + totalCount
+                    + " maxCount: " + maxCount);
+            return 0;
+        }
         if (cityList == null || cityList.isEmpty()) {
             cityList = cityService.getCitiesFromFirestore();
         }
-        LOGGER.info(E.BLUE_DOT + E.BLUE_DOT + " starting Timer to control work ...");
-        timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                try {
-                    performWork(upperCountPerPlace);
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        }, 1000, intervalInSeconds * 1000);
-
-    }
-
-    public void stopTimer() {
-        if (timer != null) {
-            timer.cancel();
-            timer = null;
-
-            LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
-                    " Generator Timer stopped; events: " + E.LEAF
-                    + " totalCount: " + totalCount + " " +E.AMP + " PubSub count: " + pubSubCount);
-            totalCount = 0;
-            pubSubCount = 0;
-            long end = DateTime.now().getMillis();
-            if (((end - start) / 1000 / 60) == 0) {
-                LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
-                        " Elapsed time: " + E.LEAF + ((end - start) / 1000)
-                        + " seconds for generating events");
-            } else {
-                LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR +
-                        " Elapsed time: " + E.LEAF + " "
-                        + ((end - start) / 1000 / 60) + " minutes for generating events");
-            }
-        }
-    }
-
-    private void performWork(int upperCountPerPlace) throws Exception {
         int index = random.nextInt(cityList.size() - 1);
         City city = cityList.get(index);
         List<CityPlace> places;
@@ -234,13 +201,13 @@ public class Generator {
             generateRandomCrowd(cityPlace);
         }
 
-        logControl.info(E.LEAF + E.LEAF + " Events generated: count: " + realCount + " " +
+        String msg = E.LEAF + E.LEAF + " Events generated: count: " + realCount + " " +
                 E.RED_APPLE + " totalCount: " + totalCount + " for city: " + E.PEAR
-                + " " + city.getCity());
-        if (totalCount > maxCount) {
-            stopTimer();
-            totalCount = 0;
-        }
+                + " " + city.getCity();
+        logControl.info(msg);
+        writeLogEntry.info(msg);
+
+        return realCount;
     }
 
     int pubSubCount;
@@ -265,7 +232,7 @@ public class Generator {
                 e.printStackTrace();
             }
             totalCount++;
-            int rem = totalCount % 1000;
+            int rem = totalCount % 8000;
             if (rem == 0) {
                 LOGGER.info(E.RED_APPLE + E.RED_APPLE +
                         " Total Count of Events Generated: " + totalCount);
@@ -290,7 +257,7 @@ public class Generator {
     private Event getEvent(CityPlace cityPlace, User user) {
         if (user == null) {
             String msg = "User not available for event";
-            LOGGER.info(E.RED_DOT+E.RED_DOT+ " " + msg);
+            LOGGER.info(E.RED_DOT + E.RED_DOT + " " + msg);
             throw new RuntimeException(msg);
         }
         Event event = new Event();
@@ -331,9 +298,9 @@ public class Generator {
         eventPublisher.publishPull(GSON.toJson(fe));
 
         pubSubCount += 4;
-        int rem = pubSubCount % 4000;
+        int rem = pubSubCount % 8000;
         if (rem == 0) {
-            LOGGER.info(E.ORANGE_HEART+E.ORANGE_HEART+
+            LOGGER.info(E.ORANGE_HEART + E.ORANGE_HEART +
                     " Total PubSub publishing calls: " + E.AMP + pubSubCount +
                     " to 4 topics");
         }
@@ -420,9 +387,32 @@ public class Generator {
 
     private final HashMap<String, List<User>> hashMap = new HashMap<>();
 
+    public List<String> generateEventsByCities(List<String> cityIds, int upperCount) throws Exception {
+        List<String> messages = new ArrayList<>();
+
+        for (String cityId : cityIds) {
+            int count = random.nextInt(upperCount);
+            if (count < 100) count = 200;
+            messages.add(generateEventsByCity(cityId,count));
+        }
+        return messages;
+    }
+    public List<String> generateEventsByPlaces(List<String> placeIds, int upperCount) throws Exception {
+        List<String> messages = new ArrayList<>();
+
+        for (String placeId : placeIds) {
+            int count = random.nextInt(upperCount);
+            if (count < 100) count = 200;
+            messages.add(generateEventsByPlace(placeId,count));
+        }
+        return messages;
+    }
     public String generateEventsByCity(String cityId, int count) throws Exception {
 
         City city = cityService.getCityById(cityId);
+        if (city == null) {
+            return "City with  id: "  +  cityId + " not found";
+        }
         List<CityPlace> places = placesService.getPlacesByCity(cityId);
         userMap = new HashMap<>();
         totalCount = 0;
@@ -438,7 +428,7 @@ public class Generator {
             }
 
         }
-        String msg = " events generated: " + total + " city: " + city.getCity();
+        String msg = " Events generated OK: " + total + " city: " + city.getCity();
         LOGGER.info(E.RED_APPLE + " " + msg);
         return msg;
     }
@@ -456,8 +446,8 @@ public class Generator {
             }
 
         }
-        String msg = " events generated: " + total + " at " + place.name;
-        LOGGER.info(E.RED_APPLE + " " + msg);
+        String msg = " Place events generated: " + total + " at " + place.name;
+        LOGGER.info(E.GREEN_APPLE + " " + msg);
         return msg;
 
     }

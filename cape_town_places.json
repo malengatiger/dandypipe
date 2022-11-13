@@ -1,0 +1,2660 @@
+[
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.93008149999999,
+        "lng": 18.413153
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9287252197085,
+          "lng": 18.4146212302915
+        },
+        "southwest": {
+          "lat": -33.9314231802915,
+          "lng": 18.4119232697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/school-71.png",
+    "icon_background_color": "#7B9EB0",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/school_pinlet",
+    "name": "Michaelis School of Fine Art",
+    "photos": [
+      {
+        "height": 2448,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/104325949659252133577\">Ian Pells</a>"
+        ],
+        "photo_reference": "AcYSjRg1G6k0duEKe1Vw0MbHDvJLPYsRRb6q184MfJZf4fSCabMULs54i2-viY2hAvH8nha313rWRssnBLrk_Dk2ExGUBVeE8eLLexT-lCs7yEHq4GNRmfI0uFBMxlmBnxnXPbya0ClEpHPxKtLCSb22YIzBckAnLO9hYwG4Tgiygx6CLqlB",
+        "width": 3264
+      }
+    ],
+    "place_id": "ChIJkSrfUXBnzB0Rx-X_Sn_ffUM",
+    "reference": "ChIJkSrfUXBnzB0Rx-X_Sn_ffUM",
+    "scope": "GOOGLE",
+    "types": [
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "31, 37 Orange Street, Gardens, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9248685,
+        "lng": 18.4240553
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.47127004603382,
+          "lng": 19.00466996799566
+        },
+        "southwest": {
+          "lat": -34.35980610964359,
+          "lng": 18.3074487758017
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png",
+    "icon_background_color": "#7B9EB0",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+    "name": "Cape Town",
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/113915798499327050151\">Krystyna S</a>"
+        ],
+        "photo_reference": "AcYSjRiuFQ1POeAOFV5eyTxZC4kloR45AiYG5tCsmaPB0FnweNNfxfCeLx6nJY8gjAB0SCtZ3p8ur-8Bqivt8nuH5ujpO5xgCG3Q5WITdMa0q-Y8PEuKzZDV7hkcECtCvaf4_7w6wlkrMTYNDGpkiHIrUzQmd29eXmeNHp9bsAKiW9rW8dho",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJ1-4miA9QzB0Rh6ooKPzhf2g",
+    "reference": "ChIJ1-4miA9QzB0Rh6ooKPzhf2g",
+    "scope": "GOOGLE",
+    "types": [
+      "locality",
+      "political"
+    ],
+    "vicinity": "Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9272288,
+        "lng": 18.4153599
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9258346697085,
+          "lng": 18.4167571302915
+        },
+        "southwest": {
+          "lat": -33.9285326302915,
+          "lng": 18.4140591697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Cape Breaks",
+    "photos": [
+      {
+        "height": 476,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/105627797730484004149\">Cape Breaks</a>"
+        ],
+        "photo_reference": "AcYSjRhbnTASnqeZ-E6DLk5w9I4wiyeic5lcbWmwWU57HBndinmGaTBgWGvqzjQeT-OFizERYFZEKBImY9BmKrS_JnimJ7NPOrdGyAeWEA8oCMyRIIxLXkov8A9wlhhA0zBei_-76TybVdDLWreEP3tyiup5XPuvY9tr7RSHwcb_zLsRsAPI",
+        "width": 640
+      }
+    ],
+    "place_id": "ChIJQ-dS_W9nzB0RtmSR55yiXAA",
+    "reference": "ChIJQ-dS_W9nzB0RtmSR55yiXAA",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "St Martini Gardens, 72 Queen Victoria Street, Gardens, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.92855660000001,
+        "lng": 18.4079671
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.92716276970851,
+          "lng": 18.4093599302915
+        },
+        "southwest": {
+          "lat": -33.92986073029151,
+          "lng": 18.4066619697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Parker Cottage",
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/115860485513338233797\">Nur Kirazlı</a>"
+        ],
+        "photo_reference": "AcYSjRgN8vh4LRUVJ2__l1xIKwptS07ykjwjBFWZEBqED3j8D8beShH6zoc6kFcQjlNSr5O2v7zUOO44fiIpKmIMciREm4hYrecgxk9Ows6t4ofjg_TLfB9H5W3JJTqui4yR30X4Z1GziqAN0rROevhDvSg-PUH7ia1NRWl82n5F9XtLMo13",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJic0Gim1nzB0ReJGRf2VAz84",
+    "reference": "ChIJic0Gim1nzB0ReJGRf2VAz84",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Tamboerskloof, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.922267,
+        "lng": 18.4198566
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.92091801970849,
+          "lng": 18.4212055802915
+        },
+        "southwest": {
+          "lat": -33.92361598029149,
+          "lng": 18.41850761970849
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "ONOMO Hotels Cape Town Inn on the Square",
+    "photos": [
+      {
+        "height": 3969,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/106880354966733133457\">ONOMO Hotels Cape Town Inn on the Square</a>"
+        ],
+        "photo_reference": "AcYSjRj-bThKRpIX8zMbKdbR8sLkd54YnvICz4OAyeryghUToKmSi7m4cSJKu6SLbd3740Xvl7IG8GCO5e3wq7ItmnuP6aNBfcNu_tDVsCTisTa22wbb0US_XdAYcNpk8V5YSqZnrPdVqj-YBcD8WRrW06_l5X__bcbZTTZlb_jzsEcZQcEO",
+        "width": 5947
+      }
+    ],
+    "place_id": "ChIJmT2pbGRnzB0RvtQNO6XCKB8",
+    "reference": "ChIJmT2pbGRnzB0RvtQNO6XCKB8",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "10 Greenmarket Square Cape Town Central, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.918831,
+        "lng": 18.4255797
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9175646697085,
+          "lng": 18.4270862802915
+        },
+        "southwest": {
+          "lat": -33.9202626302915,
+          "lng": 18.4243883197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Park Inn by Radisson Cape Town Foreshore",
+    "photos": [
+      {
+        "height": 2562,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/106408232714745677377\">Park Inn by Radisson Cape Town Foreshore</a>"
+        ],
+        "photo_reference": "AcYSjRizxBkHStsm6RMD6K68ho1yyBPbL0dl2iFYnaggDir7KFCsQfD1vzSOMk7EbLWBbbxiawdOfjBznfAmjwfNcByU-oyan5kYLv4fJSjWpJrResL3nbQgXzzTFjfbZzD4IXLtSIEbu7co3qPQ9bNzF8PacyYDIay8_gv5c64aa2LsfEGV",
+        "width": 3839
+      }
+    ],
+    "place_id": "ChIJj_1PuGFnzB0RHGHUrRPACGo",
+    "reference": "ChIJj_1PuGFnzB0RHGHUrRPACGo",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "29 Heerengracht Street, Foreshore, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.926754,
+        "lng": 18.4213829
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9254069697085,
+          "lng": 18.4227237802915
+        },
+        "southwest": {
+          "lat": -33.92810493029149,
+          "lng": 18.4200258197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Parliament Hotel",
+    "photos": [
+      {
+        "height": 2988,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/104209252484261237610\">Anand Gole</a>"
+        ],
+        "photo_reference": "AcYSjRgCau7EefhH6ZrUk2vFmMmDpwT-wCMjAGK5IzvI3lKM07mcXwONU4FAYkls6ixiLM6sl63Ie5JllM2FWNT1ilgi1oYgKEkazy1isZbBU3lf43G5vrVitKiIwuVcOiVUpIjuSDeJkDjhuXDFfU9p787vUBgUMCvdevVySZKnQSyxtix5",
+        "width": 3984
+      }
+    ],
+    "place_id": "ChIJdTV9qHxnzB0RWPw8bXWhuqk",
+    "reference": "ChIJdTV9qHxnzB0RWPw8bXWhuqk",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "9 Barrack Street, Cape Town City Centre, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9086313,
+        "lng": 18.4162905
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9072101197085,
+          "lng": 18.41771558029151
+        },
+        "southwest": {
+          "lat": -33.9099080802915,
+          "lng": 18.4150176197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "One&Only Cape Town",
+    "photos": [
+      {
+        "height": 748,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/101489695423831673751\">One&amp;Only Cape Town</a>"
+        ],
+        "photo_reference": "AcYSjRhbgZatJECMqnwTsjQxFhoSNLFYrkX3WkIlVwA2i6YKHuJIU_IeCLR_HP8Jr5ylFIR7MzExnsBwdyA4q9LfKKJNeiuH7gbdPQAKoXyGbBkvkEYtfTA0eCq6fqzkWlUipUBux_BpwqTkrzJrSO-U0hNbSd_ApP7ZP9EfvNURzBDtS_Om",
+        "width": 1200
+      }
+    ],
+    "place_id": "ChIJb27tOVtnzB0RMh88jaCL3uU",
+    "reference": "ChIJb27tOVtnzB0RMh88jaCL3uU",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "One&Only Cape Town, Dock Road, Victoria & Alfred Waterfront, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9288,
+        "lng": 18.4108
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9274236697085,
+          "lng": 18.4121805802915
+        },
+        "southwest": {
+          "lat": -33.9301216302915,
+          "lng": 18.4094826197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Hippo Boutique Hotel",
+    "photos": [
+      {
+        "height": 2268,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/101028974869439067291\">Dusan H.</a>"
+        ],
+        "photo_reference": "AcYSjRjfligHIrA0Y0tf75a01wJ19ImrvsChSn4SE1RdcxgSIKUtdst-YsGPJvdJiO2fTCiGFs58W9dqNrdC-30YG3b3nX5H3nWnuMx6VweT0v4ymL9_jZeX1MNta0ghzXbbjed8Aof8DrYjTT2CSsdBQsFXc0oQkzQaJM46Yqk7SuhD7MAG",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJizqF5XFnzB0Rg-n-YV3T_O8",
+    "reference": "ChIJizqF5XFnzB0Rg-n-YV3T_O8",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Gardens, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.91935,
+        "lng": 18.41741
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9179580697085,
+          "lng": 18.4187021802915
+        },
+        "southwest": {
+          "lat": -33.9206560302915,
+          "lng": 18.4160042197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Rouge On Rose Boutique Hotel",
+    "photos": [
+      {
+        "height": 5166,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/103689201069563945718\">Rouge On Rose Boutique Hotel</a>"
+        ],
+        "photo_reference": "AcYSjRhugMSi0jtTk9IkV3ogVDxqz8D0tm9eYAmNE9Y_itJkyKURXHcf1PI-wUBv8RUPD68XR_GgHpegxH1xCoKXmnyDBOe4-8szvzyZWsT8fNyjjOHCda5mpYXptx8FZp48hZbA6RCf8okVTEcrNrNTWCOlFeLLZnrzDXMG-Z4WrU246zRI",
+        "width": 16018
+      }
+    ],
+    "place_id": "ChIJrT_LS2ZnzB0RsKwdCo2kTk8",
+    "reference": "ChIJrT_LS2ZnzB0RsKwdCo2kTk8",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "25 Rose Street, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.92837639999999,
+        "lng": 18.4138214
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9269887197085,
+          "lng": 18.4150574302915
+        },
+        "southwest": {
+          "lat": -33.9296866802915,
+          "lng": 18.4123594697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "The Capital 15 on Orange Hotel",
+    "photos": [
+      {
+        "height": 1996,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/110349137429669407664\">The Capital 15 on Orange Hotel</a>"
+        ],
+        "photo_reference": "AcYSjRgF438djHoMjhAK3Z05pd1XjIuOlDpnWe1WnZLr8WfzzNngWWziZedzaINBnwU_qtAtOJXgMGPsEruU96-f8pJOgQP81Uf17EsJHElV9buzs5IFPPkmH32aJtXQuOxBBjrjzoRMsG1Hhy0Lu9gbYfHxvFEJZYUSj6B2Lxm8J1QAOew",
+        "width": 3000
+      }
+    ],
+    "place_id": "ChIJSQLGJnBnzB0RE32jV0e-xgU",
+    "reference": "ChIJSQLGJnBnzB0RE32jV0e-xgU",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Corner Of Orange Street & Grey's Pass, Gardens, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9227381,
+        "lng": 18.4192865
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.92133641970851,
+          "lng": 18.4207166802915
+        },
+        "southwest": {
+          "lat": -33.9240343802915,
+          "lng": 18.4180187197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Tudor Hotel",
+    "photos": [
+      {
+        "height": 2988,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/107087491173236950017\">백성인 Music studio</a>"
+        ],
+        "photo_reference": "AcYSjRiRgm_kWFWwGiywPqN4J0dFqXOM0OinIK2q94Biy34WSEVGztwz2LSqlSlI3iVL97Npa8HGDc5J1XUSBXP0wkAmz1-dNzyDnpggpY3r_jqDcC7vWIQFnlHSE8iIkGtzQf2q0LJgSX7u8EhD9LlJSGNHb0mV-5Tpc8nTPDLn7SRT2h-7",
+        "width": 5312
+      }
+    ],
+    "place_id": "ChIJtQ2aN2RnzB0Rb2H019AxRiI",
+    "reference": "ChIJtQ2aN2RnzB0Rb2H019AxRiI",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9165559,
+        "lng": 18.4240374
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9152069197085,
+          "lng": 18.4253863802915
+        },
+        "southwest": {
+          "lat": -33.91790488029149,
+          "lng": 18.4226884197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Protea by Marriott Hotel Cape Town North Wharf",
+    "photos": [
+      {
+        "height": 1366,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/116771906649193745981\">Protea Hotel by Marriott Cape Town North Wharf</a>"
+        ],
+        "photo_reference": "AcYSjRhP0kyXSAUInpjXr8XWBTE2Yaddum3TqY2G1tntyoLTebjPCuXYc9mbhT7-Z5ayNJ-CD-5c6KYvOjjrDobhq3-tXzpMGWkG62LPhFSxIfJwixHyICY4ls-z5DDm2wb6u0YBHquJDAc7Rkn8g5EY3I8Nbttvg1XlnzytDqHJRM9c1kPp",
+        "width": 2048
+      }
+    ],
+    "place_id": "ChIJq7mtmmBnzB0RySWyuzhYRls",
+    "reference": "ChIJq7mtmmBnzB0RySWyuzhYRls",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "1 Lower, Bree Street, Foreshore, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9244744,
+        "lng": 18.4197152
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9231773197085,
+          "lng": 18.42100938029151
+        },
+        "southwest": {
+          "lat": -33.9258752802915,
+          "lng": 18.4183114197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Taj Cape Town",
+    "photos": [
+      {
+        "height": 6048,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/108866792624794581684\">Taj Cape Town</a>"
+        ],
+        "photo_reference": "AcYSjRgq4rkE5XSaKCHPvR_HlBWi4vr7-8rYmxM-z2HaQzmcD-1snWcSSWAgtvuICA09YS3rD2GDEB-ot6-vaj44URsNkVtxLPFvJz4fW-y5HrHQ2XFesdcTnh4K-91HBKCLv_TVY4cqJHByM0q-kQNtvoIcSpVB-N2NlIi8VT1MTWB2ieAO",
+        "width": 6048
+      }
+    ],
+    "place_id": "ChIJf87R9mRnzB0RYL4W8SzIR28",
+    "reference": "ChIJf87R9mRnzB0RYL4W8SzIR28",
+    "scope": "GOOGLE",
+    "types": [
+      "spa",
+      "lodging",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "1 Waal Straat, corner Saint Georges Mall, Cape Town City Centre, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.910868,
+        "lng": 18.4122107
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9094657697085,
+          "lng": 18.4134919802915
+        },
+        "southwest": {
+          "lat": -33.91216373029149,
+          "lng": 18.41079401970849
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Cape Diem Lodge - Boutique Hotel",
+    "photos": [
+      {
+        "height": 1600,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/117378168224841460991\">Cape Diem Lodge - Boutique Hotel</a>"
+        ],
+        "photo_reference": "AcYSjRiylytthWVvWcz7Qr19GJDZIJ3HdKcgej9BUaluuWJm183qVZrrBQHseAiO_osFHQm8-5NACdKOr5_O5V79EdMoHNKBe3Bw0ty4H8aR36a6T_Fq5ujJLANXq1mdVBo8uHrjUCaPTRJC7QAp5eFcjr9QyevtmEuy4wacbD1baIZ0jcp4",
+        "width": 2400
+      }
+    ],
+    "place_id": "ChIJo9lSb0RnzB0REPUojI_tTVU",
+    "reference": "ChIJo9lSb0RnzB0REPUojI_tTVU",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "11 Vesperdene Road, Green Point, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.911352,
+        "lng": 18.415297
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9099572197085,
+          "lng": 18.4167054302915
+        },
+        "southwest": {
+          "lat": -33.91265518029149,
+          "lng": 18.4140074697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Sugar Hotel",
+    "photos": [
+      {
+        "height": 3000,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/105425877571912468337\">Evelyn Gould</a>"
+        ],
+        "photo_reference": "AcYSjRi8VGcfIyuoNZyEHPud-TkX9sFHn52zym98FHxCuruifiPcq0kilURTD9baBq-WtA7Ujgyvu4h7w1j1uE1M6_JPi088ah_mct8lC077UkH90H7kb1UaKByFTB_N-Cy00Ld8BtBgyQB47jnvoLT88VcNG1_Zyjo8m3JHt4MnGEihwQ8e",
+        "width": 4000
+      }
+    ],
+    "place_id": "ChIJMR3xoK1czB0RKRTbjcihzpM",
+    "reference": "ChIJMR3xoK1czB0RKRTbjcihzpM",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "1 Main Road, Green Point, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9104852,
+        "lng": 18.4136466
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.90919066970849,
+          "lng": 18.4149274302915
+        },
+        "southwest": {
+          "lat": -33.91188863029149,
+          "lng": 18.4122294697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "St Johns Waterfront Lodge",
+    "photos": [
+      {
+        "height": 3120,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/110167992278344693807\">Ashraf Kazi</a>"
+        ],
+        "photo_reference": "AcYSjRhhuTDex9C52tkwsVxIUh9o7s6v-XsdLvWflt2iFGQ04B5hQxQkDgVpuVAKxE3JcmLnLGUiGUZVMwC_ZQzQpxGa7EjulFbVOrU7dUKxORzUsVbP7SXx_sP9CdjR790YLOs30xqRexQ4KuNPIwRtUize2bzngPFAds7xRPCHrLXF1iqJ",
+        "width": 4160
+      }
+    ],
+    "place_id": "ChIJVVVVVUhnzB0RduJQsdw-P-U",
+    "reference": "ChIJVVVVVUhnzB0RduJQsdw-P-U",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "6 Braemar Road, Green Point, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9345733,
+        "lng": 18.4474376
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.93293016970851,
+          "lng": 18.4483433302915
+        },
+        "southwest": {
+          "lat": -33.93562813029151,
+          "lng": 18.4456453697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Garden Court Nelson Mandela Boulevard",
+    "photos": [
+      {
+        "height": 3840,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/109270962661069796476\">Garden Court Nelson Mandela Boulevard</a>"
+        ],
+        "photo_reference": "AcYSjRhGmKiqhMmzPiKSdppMOUbB_r2Xa_flYmd2qWrHYdVgrJbDyX7M62jc5i3nnBdhIgivxo0aEOI8nbs178vKETwxkws5jP_HCdYPbQ0Oxpgzce2Svaz8O55xeoFJDmjuHAibcH9djj5SwsC4xRMevu87DOK_G2h8dWJmZtVDh6tNY4wM",
+        "width": 5760
+      }
+    ],
+    "place_id": "ChIJIQCtCXVdzB0Rp8ce4dOwWfE",
+    "reference": "ChIJIQCtCXVdzB0Rp8ce4dOwWfE",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Corner Melbourne and Coronation Road &, Melbourne Road, Walmer Estate, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9224601,
+        "lng": 18.4155973
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9210869697085,
+          "lng": 18.41691443029151
+        },
+        "southwest": {
+          "lat": -33.9237849302915,
+          "lng": 18.4142164697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Cape Town Lodge Hotel",
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/110844220583678393078\">chad madden</a>"
+        ],
+        "photo_reference": "AcYSjRj1PASYkE0df-mfp1qXMLHyQNBLmKNJm52jK6za8WtLhIEbPQ8d3so8aZ0xSYIiKlHyDgU4LeAjPbrybgHyQFJAVS5356tEFjvrPGf4ceFL9fKOcfNZgRqKKXTJzbu1o7gQB923zRxqqtEU-TpT0pI8_IhqYB8qCvSkri9qakKhTocp",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJB8AfVm9nzB0RhuROLv0h8U4",
+    "reference": "ChIJB8AfVm9nzB0RhuROLv0h8U4",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "101 Buitengracht Street, Cape Town City Centre, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.924356,
+        "lng": 18.4210457
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9229691197085,
+          "lng": 18.4223436302915
+        },
+        "southwest": {
+          "lat": -33.92566708029149,
+          "lng": 18.4196456697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Adderley Hotel",
+    "photos": [
+      {
+        "height": 1200,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/118235352038121428837\">Igmar</a>"
+        ],
+        "photo_reference": "AcYSjRi3p2wfdG3lQwud45XF8MYOsqFYDk-oYtsLY27Ip1qURtmPeWCpVK3ip8fmuYfckN2uMt4iredFBBpPx5FsRbgps9AMOgOzeuO4margy3jqAlD3vCJ2Metv43Ea6Xa1RbnlvL0fjyqmCpgVoVKiwWYmxhyD8y2LROPYiN9yutfbyQZp",
+        "width": 819
+      }
+    ],
+    "place_id": "ChIJx6CYhWRnzB0R3iitaANFkoo",
+    "reference": "ChIJx6CYhWRnzB0R3iitaANFkoo",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9060597,
+        "lng": 18.41713
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9046703197085,
+          "lng": 18.4184400802915
+        },
+        "southwest": {
+          "lat": -33.9073682802915,
+          "lng": 18.4157421197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "The Portswood Hotel",
+    "photos": [
+      {
+        "height": 1504,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/104990920231472045107\">Frederick Wekesah</a>"
+        ],
+        "photo_reference": "AcYSjRhQxfSOHYvB7ZsDsvRbkQ8rlrFTZ8WzdZrZ8KqomsUURXtM3goEoCL--Mbmq7qJAdjihKDERpmlJZigwzeWRe9DyBMggkURbcEtENHC97B3Bjycm9ERSzFeuICWJp1ZbNOqsRwUef76nFfur-912-RhEHtWoG-we6_WjCsfNB9guUFa",
+        "width": 2016
+      }
+    ],
+    "place_id": "ChIJ86t4kFpnzB0Rn89u4j22tNM",
+    "reference": "ChIJ86t4kFpnzB0Rn89u4j22tNM",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Portswood Square, Portswood Road, Victoria & Alfred Waterfront, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.918017,
+        "lng": 18.423794
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9167760697085,
+          "lng": 18.4250394802915
+        },
+        "southwest": {
+          "lat": -33.9194740302915,
+          "lng": 18.4223415197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Icon Luxury Apartments",
+    "photos": [
+      {
+        "height": 1367,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/104546685104063674549\">Icon Luxury Apartments</a>"
+        ],
+        "photo_reference": "AcYSjRh-zn_Y97RBx2YQTtIiQ9odO4OL_7PyJAdDXvep1FZeenah9J-J53VEMv2cp3c9IysBlhrO0XxdwspMwUG0fel201CQ0RYFEz9yeOA_SRajBRR-dp0Jdi7QYxmX2MwMGe8QnQ5embqnQJSMjHWxU5X4cJn-JElN3-BcrRsuhzNst71M",
+        "width": 2048
+      }
+    ],
+    "place_id": "ChIJFy3NAmFnzB0RB1HsDWWj4Ws",
+    "reference": "ChIJFy3NAmFnzB0RB1HsDWWj4Ws",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "24 Hans Strijdom Avenue, Cape Town City Centre, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9157633,
+        "lng": 18.4234956
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9143788197085,
+          "lng": 18.42475433029151
+        },
+        "southwest": {
+          "lat": -33.9170767802915,
+          "lng": 18.4220563697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Southern Sun Waterfront Cape Town",
+    "photos": [
+      {
+        "height": 608,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/118270743309610256539\">Southern Sun Waterfront Cape Town</a>"
+        ],
+        "photo_reference": "AcYSjRjxSzS0h_5VqndF-Z47H0qsyescEX5toxsyxdXiab9LASfBeE8XMDgIo1JsmJSDiaveBdj1Oc7oghfTq9xlNkfhKeRPefaLuEVmz9dCc8OJv-nCn4MLAJAQCvq9jx27rFHvWs4g8IWKMAYQqSdTBJxiCuieQ5DNUjQrPtGP3z8LokO7",
+        "width": 1080
+      }
+    ],
+    "place_id": "ChIJN5zkbXJnzB0RxqS-7dZAVJY",
+    "reference": "ChIJN5zkbXJnzB0RxqS-7dZAVJY",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "1 Lower Buitengracht, Cape Town City Centre, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9331363,
+        "lng": 18.4107843
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.93181706970851,
+          "lng": 18.4121081302915
+        },
+        "southwest": {
+          "lat": -33.93451503029151,
+          "lng": 18.4094101697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Lady Hamilton Hotel",
+    "photos": [
+      {
+        "height": 1840,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/107120649483501562411\">Jerry Sylvester</a>"
+        ],
+        "photo_reference": "AcYSjRiKuEUVOJyTtbxEZojhtUQlEsdwE6UvNJKCUhSTjU3a-jM2wVZLV-w_fAUhpFfx7N8SlsNI1-yajxaGhzJy_pwB0Dk9WcO_NK4uxHYKBDXZm76XAfe6H6Dr6zKp9pkQ88Fu-m96kFJZ1zQSmrneIti1zbCuOjsg7qmF2riOy0jXpQg8",
+        "width": 3264
+      }
+    ],
+    "place_id": "ChIJd81YSXFnzB0RKcXrY9W6sug",
+    "reference": "ChIJd81YSXFnzB0RKcXrY9W6sug",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "10 Union Street, Gardens, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.913494,
+        "lng": 18.4260011
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9121340197085,
+          "lng": 18.4272741302915
+        },
+        "southwest": {
+          "lat": -33.9148319802915,
+          "lng": 18.4245761697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "aha Harbour Bridge Hotel & Suites",
+    "photos": [
+      {
+        "height": 4912,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/115990826938843063486\">aha Harbour Bridge Hotel &amp; Suites</a>"
+        ],
+        "photo_reference": "AcYSjRiUnaUU4j4cAirbqteANgFWYJMpKXznhl85G4xOACwdvjdPHvmag6vDly-L4Nw_pSezE-NYotpyxGs0BMcKwBsldRJ8yYWbPUlaX8Gs5_xQ1eZpej9vTHeU1kNGsItgE3D9PecKFgqeQSElWtVfLdU_Q9ckXjmDc-pxUSMkhMX9ss7T",
+        "width": 7360
+      }
+    ],
+    "place_id": "ChIJQasY_GBnzB0RK7l_yzvwv8g",
+    "reference": "ChIJQasY_GBnzB0RK7l_yzvwv8g",
+    "scope": "GOOGLE",
+    "types": [
+      "bar",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Dockrail Road, Foreshore, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9303555,
+        "lng": 18.403445
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9289350197085,
+          "lng": 18.4048877302915
+        },
+        "southwest": {
+          "lat": -33.9316329802915,
+          "lng": 18.40218976970849
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Jardin D'Ebene Boutique Guest House",
+    "photos": [
+      {
+        "height": 810,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/104754857399923227719\">Jardin D&#39;Ebene Boutique Guest House</a>"
+        ],
+        "photo_reference": "AcYSjRibMof2FizYrvCYeBXsvS_3T7EjvC0_j5O71vmkkAlFR1q9up_GVR7r3jAzVG2n3N5ylK5CeiuRot1T6kNIRXWf3hWWztBqV6LUigukzxKbxAOPy6d8soEwBGuPVd1myEcf_i_T1fcA1XNGyV6_6bDX9KdVjaCJJhBjVw9ynXa4ubwx",
+        "width": 1440
+      }
+    ],
+    "place_id": "ChIJETNFyXJnzB0R_rpm6i3oEww",
+    "reference": "ChIJETNFyXJnzB0R_rpm6i3oEww",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "21 Warren Street, Tamboerskloof, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9102567,
+        "lng": 18.4092434
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9089730197085,
+          "lng": 18.4105715302915
+        },
+        "southwest": {
+          "lat": -33.9116709802915,
+          "lng": 18.4078735697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "The B.I.G : Backpackers in Green Point",
+    "photos": [
+      {
+        "height": 3120,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/104714918751220076393\">Viviana Martínez</a>"
+        ],
+        "photo_reference": "AcYSjRgAcElhyL6fQ-qHVgrTGSoDX35xMwke39md9Tm7rrm47VkPY1lujwRJRbrlR5UY1x_-b1LGFRb1CZntwFoWTq9LuUBt8vieN-hrRt8ccmgIMqw-NJP0Uez94HYq1dZbivDPxza41RJQpN12zQl5InsA42MtPWYq6TdcI09TysLFNBAC",
+        "width": 4160
+      }
+    ],
+    "place_id": "ChIJbe7SnUZnzB0RU0lGbew2kKU",
+    "reference": "ChIJbe7SnUZnzB0RU0lGbew2kKU",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "18 Thornhill Road, Green Point, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.93347000000001,
+        "lng": 18.4121649
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.93208076970851,
+          "lng": 18.4134313802915
+        },
+        "southwest": {
+          "lat": -33.93477873029151,
+          "lng": 18.4107334197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Ashanti Lodge Gardens",
+    "photos": [
+      {
+        "height": 2768,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/109794220106436512635\">Ashanti Lodge Gardens</a>"
+        ],
+        "photo_reference": "AcYSjRjFfmr1Z3iTcuN7jgaCHj05GF1N_YtQ44UqhJm7h8h07oCPwiRsdDZm1iY6L_N_mtCbkrjIPWJo7iflqAhh9itCKeWWA16ofXMBZ8x-0iJ_SZMO6a4_yba1opnrK853JZF0gvHmG6lhWVou47Uv3bFKkpcP7VCMzqRh7cnrCAnZEAz9",
+        "width": 5888
+      }
+    ],
+    "place_id": "ChIJ8Xzj0nZnzB0Rkbth5kNV_AY",
+    "reference": "ChIJ8Xzj0nZnzB0Rkbth5kNV_AY",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "travel_agency",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "11 Hof Street, Gardens, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.907055,
+        "lng": 18.421593
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9057060197085,
+          "lng": 18.4229419802915
+        },
+        "southwest": {
+          "lat": -33.9084039802915,
+          "lng": 18.42024401970849
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+    "icon_background_color": "#13B5C7",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+    "name": "Chavonnes Battery Museum",
+    "photos": [
+      {
+        "height": 1453,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/111957954438793126543\">Chavonnes Battery Museum</a>"
+        ],
+        "photo_reference": "AcYSjRhSp_GjCLjdtX1rCYt7F6kRWo5CTfV-CvNpM5eB8VVXzHSlM1GGA6f5jfb-j1KcxAY1g0nuZKmxLIdWOQEpIpLU66tXBsULVcZCh5hwj4WWyNGgUUzvawu6sTVoTGuKOIJT2Ky2UEh9Ou6vfYaTNXCnAI1Nk2Xq_GCoEK5oAzPVXpcu",
+        "width": 4526
+      }
+    ],
+    "place_id": "ChIJyXYUKFpnzB0Ru4cif_4XGyk",
+    "reference": "ChIJyXYUKFpnzB0Ru4cif_4XGyk",
+    "scope": "GOOGLE",
+    "types": [
+      "tourist_attraction",
+      "travel_agency",
+      "museum",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Clock Tower Precinct, Victoria & Alfred Waterfront, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.922881,
+        "lng": 18.4144687
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9214911697085,
+          "lng": 18.41586283029151
+        },
+        "southwest": {
+          "lat": -33.9241891302915,
+          "lng": 18.4131648697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Dutch Manor Antique Hotel",
+    "photos": [
+      {
+        "height": 1064,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/100774602807538136819\">Lime 909</a>"
+        ],
+        "photo_reference": "AcYSjRgQ2k-xLrJFAf39uuzZ-HWvuHiVe2m_P8wFF4_UyJPviAoLJ7M1RmEh7lK0YYNmkKQmiQzdjtohlxGrSdo6HFhZOqxIzYzSFDs1hKADUa1O1DOud1bCgs9-yzUMdc1wW51bZvrW1owcpr-iABLzB_X7jnC42-TgPytc6oucUTZ280fE",
+        "width": 1302
+      }
+    ],
+    "place_id": "ChIJw2iESG9nzB0R-0EvyHmN_VU",
+    "reference": "ChIJw2iESG9nzB0R-0EvyHmN_VU",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Schotsche Kloof, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.92461,
+        "lng": 18.42197
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9232248197085,
+          "lng": 18.4233579802915
+        },
+        "southwest": {
+          "lat": -33.9259227802915,
+          "lng": 18.4206600197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Cape Diamond Boutique Hotel",
+    "photos": [
+      {
+        "height": 600,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/106313642875239382076\">Cape Diamond Boutique Hotel</a>"
+        ],
+        "photo_reference": "AcYSjRjvPiLBHKVCzm-Eap9BIdRPFpNy_e5HD4TQE40lBO_7hJxJKmmT06rZhO9nZF3YkcWmN1Gp4y0ufb8SOLhP6uTG3_FPzrzCaTKOwiMnkIE0pHuBJW69q5W_HiSbk6o-50P_fpwy-63PqobORON1ivkhnrUUl-untkRYPB2TtskmXzXh",
+        "width": 900
+      }
+    ],
+    "place_id": "ChIJ01PYfGNnzB0RQDNhnY83rio",
+    "reference": "ChIJ01PYfGNnzB0RQDNhnY83rio",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "117 Longmarket Street, Cape Town City Centre, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9376864,
+        "lng": 18.4176354
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.93637366970849,
+          "lng": 18.4188273802915
+        },
+        "southwest": {
+          "lat": -33.93907163029149,
+          "lng": 18.41612941970849
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Three Boutique Hotel",
+    "photos": [
+      {
+        "height": 945,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/103605218348968567466\">Three Boutique Hotel</a>"
+        ],
+        "photo_reference": "AcYSjRh7coWlKLm6ZDQQlzaKH-OmZnrNM9wsSPlyuAaZOj-AR5bVz34kgF1oc9sztd9gkxQUyFU0UIGorxwoYtE_HgpHsg3KQGLg3PH-Iklc6RtUpfv3MpRZfHl7OJy6An4q3lq6iN83ZSZKwDMP5Ieo_Ep3BXrFVyPuCHCrv_jwppPuJC1k",
+        "width": 1417
+      }
+    ],
+    "place_id": "ChIJY1o4dHhnzB0RSR2FApBYDQo",
+    "reference": "ChIJY1o4dHhnzB0RSR2FApBYDQo",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "3 Flower Street, Oranjezicht, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9062191,
+        "lng": 18.4201757
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9049580197085,
+          "lng": 18.4215820802915
+        },
+        "southwest": {
+          "lat": -33.9076559802915,
+          "lng": 18.4188841197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Victoria & Alfred Hotel Cape Town",
+    "photos": [
+      {
+        "height": 2469,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/117985213755447894660\">Victoria &amp; Alfred Hotel Cape Town</a>"
+        ],
+        "photo_reference": "AcYSjRgYcUjeLKqy70kQzefY-MGOj6-wjLVqtuh9PhAkCE4bmq01DppJPzXWvrrRPNr5U-h6Da844xoqYROmv0CChbCe5z-cSk4Z1yquNl0H7LMsskRakb52UOv4UkeXo2zySKkus7rrffdmR24r10yJ8BVGmBO92v-A_Ac2V6HRm-nlRjho",
+        "width": 3703
+      }
+    ],
+    "place_id": "ChIJjWnWa1pnzB0RHyRw-wpDTLI",
+    "reference": "ChIJjWnWa1pnzB0RHyRw-wpDTLI",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "PierHead, V&A Complex, Dock Road, Victoria & Alfred Waterfront, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.92418120000001,
+        "lng": 18.4314418
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.92279381970851,
+          "lng": 18.4328295302915
+        },
+        "southwest": {
+          "lat": -33.92549178029151,
+          "lng": 18.4301315697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Train Lodge",
+    "photos": [
+      {
+        "height": 2322,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/101224488877994350380\">frans h andreas</a>"
+        ],
+        "photo_reference": "AcYSjRj9Zgjxsz8vpI5sPTrtcbzsdxx1Z0KgVpUOW6Y8AoT-MlQDX8N4irNo8zFGxsSmTo-dz-z0drXrhXyAYgl4bfRBVkPxT0YIv1MD2XWUPFRHCgApeF0x7aleuNAtl8Al5_1H2QHwA_gCWZkPEamaLk7aLsa0cfsnGV5mrjTGG2WfKtmh",
+        "width": 4128
+      }
+    ],
+    "place_id": "ChIJN8RxSWJnzB0Rf6x2Hu2UCNI",
+    "reference": "ChIJN8RxSWJnzB0Rf6x2Hu2UCNI",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Foreshore, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.92611110000001,
+        "lng": 18.4152778
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9247312197085,
+          "lng": 18.4165903802915
+        },
+        "southwest": {
+          "lat": -33.9274291802915,
+          "lng": 18.4138924197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Carnival Court Backpackers",
+    "photos": [
+      {
+        "height": 3629,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/111085852685867296039\">Andrea Longinotti</a>"
+        ],
+        "photo_reference": "AcYSjRjGHLa1Jjb4BzhH4UmORkt9HtRPdJFaRae6ZtlTOuZVfPNhL_T-oGJQsQPq1ZIL04duf7IB0zgeweY4FMw330-1MF4C0Od_sGwmf4SywtqYvE5Uve7UzQBuVcy4COQHsZJNT9XiWnMYXJssVfecKQlbMF-ZEpqHHSOLNx9kSU5VsWoi",
+        "width": 3024
+      }
+    ],
+    "place_id": "ChIJefWuiW9nzB0RYHjQNjZFvjc",
+    "reference": "ChIJefWuiW9nzB0RYHjQNjZFvjc",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "255 Long Street, Cape Town City Centre, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9279595,
+        "lng": 18.4021841
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.92664466970849,
+          "lng": 18.4036003802915
+        },
+        "southwest": {
+          "lat": -33.92934263029149,
+          "lng": 18.4009024197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Radium Hall Guest House",
+    "photos": [
+      {
+        "height": 1328,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/100372329221793482566\">Hannes</a>"
+        ],
+        "photo_reference": "AcYSjRitSPHfrEkq-0vyOAn3Y0ftva5eRv1cGJAn7QuGEy4ZyE0qhy44kqrfSnLqzM4BRV3L17acj9aN63w4DHW5SE5qdvu4Ne_lKyYVeZvEuqfmeYN1GzHrTkZbdFAV8O79AY5KlTx4jhv9Ihve_FxBDb0b6dxSqJw8w-FRTGzbnli_7rXT",
+        "width": 3824
+      }
+    ],
+    "place_id": "ChIJfaIDM21nzB0Ryxank98AoXI",
+    "reference": "ChIJfaIDM21nzB0Ryxank98AoXI",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "4 Hildene Road, Tamboerskloof, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9068267,
+        "lng": 18.42246039999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.90547771970849,
+          "lng": 18.4238093802915
+        },
+        "southwest": {
+          "lat": -33.90817568029149,
+          "lng": 18.42111141970849
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+    "icon_background_color": "#7B9EB0",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+    "name": "Mountain Marina",
+    "photos": [
+      {
+        "height": 4032,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/117429216535323780064\">Verushca Hunter</a>"
+        ],
+        "photo_reference": "AcYSjRh7N8B0zKxLu0Uj12zm_B0wmIV1x0G0eNyeXeC-KcH8BKrJCyjd2yxeZrEX5QWYbHA0l-jH_LsLvYsz-IG2e2MhcJiWkLJ5X5C_M0z7XhCxRBMKu0V9kbCZSqwoiYAt6TEOSYjHisJfeKdTY7DQ3V1KzB8Zo3jhTiqDZpdxQLplj8LW",
+        "width": 3024
+      }
+    ],
+    "place_id": "ChIJs1u7mllnzB0RyoDvH-jFZQ8",
+    "reference": "ChIJs1u7mllnzB0RyoDvH-jFZQ8",
+    "scope": "GOOGLE",
+    "types": [
+      "real_estate_agency",
+      "travel_agency",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "7 West Quay Road, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9028648,
+        "lng": 18.4221961
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.90129041970849,
+          "lng": 18.4236307302915
+        },
+        "southwest": {
+          "lat": -33.90398838029149,
+          "lng": 18.4209327697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "The Table Bay hotel",
+    "photos": [
+      {
+        "height": 5173,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/107497301338097369905\">The Table Bay hotel</a>"
+        ],
+        "photo_reference": "AcYSjRh-LTXszGYmEiGUsc9r_uDE1hIzyDJ1Y_UogX2QOAwF5GYowBQOk1OhjlX9P2R2CVpXudIGxsgPSeufSV9Lmn-vJ9wyS3FRTRf5NlZ6vODwFlVSHJ6I26KX9kbdQfzUz0u_X7HSiuKopCegoI9eotSLlOXUtfO-a4BdauepvU0VNy6t",
+        "width": 7322
+      }
+    ],
+    "place_id": "ChIJpXkdMFdnzB0R_Q0fraFrT-I",
+    "reference": "ChIJpXkdMFdnzB0R_Q0fraFrT-I",
+    "scope": "GOOGLE",
+    "types": [
+      "night_club",
+      "spa",
+      "lodging",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Quay, 6 West Quay Road, Victoria & Alfred Waterfront, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.93206500000001,
+        "lng": 18.411655
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9307980197085,
+          "lng": 18.41296373029151
+        },
+        "southwest": {
+          "lat": -33.9334959802915,
+          "lng": 18.4102657697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Mount Nelson, A Belmond Hotel, Cape Town",
+    "photos": [
+      {
+        "height": 1365,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/101432212341856027065\">Mount Nelson, A Belmond Hotel, Cape Town</a>"
+        ],
+        "photo_reference": "AcYSjRhb_vzNwmFHjq4J-kBiwwRvi1Y5Zaj-CkNAgejdO7wSm9J6vCEFqaMNeKDTsRcL-2mymRPMGJmAayVQAeR_dZaPRF54ax-SZUKJnVTGjuNC83yio6L1s3csl6D1FZfL-p_CA7-Fo7QVqIcs7QQdBce_veh0UnBXIQYZ2LGMDu_nnS0r",
+        "width": 2048
+      }
+    ],
+    "place_id": "ChIJ2ZmgHnFnzB0RObLO5XspkIw",
+    "reference": "ChIJ2ZmgHnFnzB0RObLO5XspkIw",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "76 Orange Street, Gardens, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9261453,
+        "lng": 18.4149327
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.92482971970851,
+          "lng": 18.4163258802915
+        },
+        "southwest": {
+          "lat": -33.9275276802915,
+          "lng": 18.4136279197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Long Street Boutique Hotel",
+    "photos": [
+      {
+        "height": 3192,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/101860071404851272484\">Long Street Boutique Hotel</a>"
+        ],
+        "photo_reference": "AcYSjRhs7Sz1qZj92j6ag8TY5Xhnyr4o_C6YuK9NProuT4EgQf1SAHp8EwIv-9gth2botRMlnsVTakIOJi4ckmDS6jJuAVUrpq0T-qtnlsmwA9nrZWCg4HW2wAfuXxrYHpF2yuSvTPPMg9AhsHMphdDfAaQHUCb0m6k-Z093cG9GJ9GOsrAK",
+        "width": 5028
+      }
+    ],
+    "place_id": "ChIJ41usk29nzB0RdGRry3nUufM",
+    "reference": "ChIJ41usk29nzB0RdGRry3nUufM",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "230 Long Street, Cape Town City Centre, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9062112,
+        "lng": 18.4170718
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9047875197085,
+          "lng": 18.4183486302915
+        },
+        "southwest": {
+          "lat": -33.9074854802915,
+          "lng": 18.4156506697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "The Commodore Hotel",
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/110926617740684747921\">Max de Villiers</a>"
+        ],
+        "photo_reference": "AcYSjRhw8u_nktoCLzORx4pY_nedvwWVE45qQjMjOGmRaI5EeTByC8Fm78gD_A-iNisM8L7rALiucO5MBRS0LrNWCg4Vt2OcK3-WGOhNDIi-3Q1AqMD3ZaGFolgbEkVfT6Vp0SpkAKD1j-Fhcg3J-3OO8-4k3cPpq3cqlD1_XMx6ZLKR2L6h",
+        "width": 4032
+      }
+    ],
+    "place_id": "ChIJh_UCllBnzB0R9Les8vfsrhI",
+    "reference": "ChIJh_UCllBnzB0R9Les8vfsrhI",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Portswood Road, Victoria & Alfred Waterfront, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.92109,
+        "lng": 18.42043
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9197847197085,
+          "lng": 18.4218367802915
+        },
+        "southwest": {
+          "lat": -33.9224826802915,
+          "lng": 18.4191388197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "The Grand Daddy Boutique Hotel",
+    "photos": [
+      {
+        "height": 1179,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/115957286771107494080\">The Grand Daddy Boutique Hotel</a>"
+        ],
+        "photo_reference": "AcYSjRiTVtnLgBKoWT0Eeg7rDeDoJMQOlEcvJQOepZxVijqMZNGX-W7z-ZoGmdsOkr62ft96ukB0vwjx6kmxlaR60OthqxljyUzCkvM1L98XqZGIQ7-XPXkcwtUKjeksZl4aBmssMxqS_C82PNMDYs8L4pXSmZHg6dllYJr1n9KpIw4wtHHA",
+        "width": 1766
+      }
+    ],
+    "place_id": "ChIJuycyoWZnzB0RFPftt4xTZqc",
+    "reference": "ChIJuycyoWZnzB0RFPftt4xTZqc",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "38 Long Street, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9096027,
+        "lng": 18.41160069999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9083093197085,
+          "lng": 18.4129873302915
+        },
+        "southwest": {
+          "lat": -33.9110072802915,
+          "lng": 18.41028936970849
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Atlantic Point Backpackers",
+    "photos": [
+      {
+        "height": 1001,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/113975100947136191094\">Atlantic Point Backpackers</a>"
+        ],
+        "photo_reference": "AcYSjRjt9J4DjO7l1Zf-fWOUKVKlWbTjqISt_2TPgRYCqg0lDvSSYWaIs2I4EDTJwKNdaJcQWDdwsE6YHM8R9t-EZ8XWbOZOWEiuXwXxSdlzhMjWEiCtGJHJbtcnDXWmXaUCRTids6lo7D9pewTZd1fkcwH1TB_AZJ7eQXtH4nIvvbnnxm1G",
+        "width": 1500
+      }
+    ],
+    "place_id": "ChIJo9BFSURnzB0RJ-pf5s1jVsQ",
+    "reference": "ChIJo9BFSURnzB0RJ-pf5s1jVsQ",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "2 Cavalcade Road, Green Point, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.93419,
+        "lng": 18.41506
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9326963197085,
+          "lng": 18.4164076802915
+        },
+        "southwest": {
+          "lat": -33.9353942802915,
+          "lng": 18.4137097197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "SunSquare Cape Town Gardens",
+    "photos": [
+      {
+        "height": 4366,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/104807619085857519205\">SunSquare Cape Town Gardens</a>"
+        ],
+        "photo_reference": "AcYSjRifCA9UZQUsqflACrtN9ECwmR6klPpOLLLxUCc7X8BrdJrI8hkbQOVYtqhlCH_7MjrmHu3qRBBXFDP8bdUWi45-GS3Mz1r6upHvBbmZr_wAx45Gvmo95fCG_zEcXQWWOMmHQyjO2NyY_34V4Nd7n4FfklYwbyxk2Y3ssZTFLRmsYpHD",
+        "width": 2910
+      }
+    ],
+    "place_id": "ChIJlQVtr3lnzB0RVP6pAVRtEkw",
+    "reference": "ChIJlQVtr3lnzB0RVP6pAVRtEkw",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "10 Mill Street, Gardens, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9313403,
+        "lng": 18.4172522
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9300512197085,
+          "lng": 18.4185418802915
+        },
+        "southwest": {
+          "lat": -33.93274918029149,
+          "lng": 18.4158439197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "iKhaya Lodge and Conference Centre",
+    "photos": [
+      {
+        "height": 4032,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/117287316777715330749\">Stanley Kubu</a>"
+        ],
+        "photo_reference": "AcYSjRgxFIXIyV0mzJYDEvvxwUnvwFRFv0eESZ71d60PzRE7wDcwWhgKGBV0mwypHzMgm8U0bIdcogUCQBZLImVXauofz2JsoIM0LApkQrWevhnQa7afbUZ21Fk78SYCSs_7LVRI_SNC4NfRbcTSFDX9wadSXzfaSoRiD6t_xhArFSn6pGMK",
+        "width": 1908
+      }
+    ],
+    "place_id": "ChIJ4yj-EnpnzB0RjdYaPTk7qhU",
+    "reference": "ChIJ4yj-EnpnzB0RjdYaPTk7qhU",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Dunkley Square, Gardens, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.93207619999999,
+        "lng": 18.4271205
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9303819697085,
+          "lng": 18.4286207302915
+        },
+        "southwest": {
+          "lat": -33.9330799302915,
+          "lng": 18.4259227697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Best Western Cape Suites Hotel",
+    "photos": [
+      {
+        "height": 998,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/109038323235739352954\">Best Western Cape Suites Hotel</a>"
+        ],
+        "photo_reference": "AcYSjRjuvYfgD0F9P1p290bSFkNYMVkh6VZry2os5gzd6bQMjxwMRCBA7neQs8IQuUMvchGxgjuE2ANNoIYG_ToOayt7xg3mhHyhEB_Hsjq8qYLn_1Pza1n7n4ROqdDcegrn2UGkdY5xgoHfMEVk5c0baWBK6gdtFJ5_HRCOwORThDXNTrDn",
+        "width": 1497
+      }
+    ],
+    "place_id": "ChIJXXnZ5IBdzB0RkdaXWukohNE",
+    "reference": "ChIJXXnZ5IBdzB0RkdaXWukohNE",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Corner of De Villiers & Constitution Streets, District Six, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.92402909999999,
+        "lng": 18.41907269999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9227079697085,
+          "lng": 18.4206735302915
+        },
+        "southwest": {
+          "lat": -33.9254059302915,
+          "lng": 18.4179755697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Mandela Rhodes Place Hotel and Spa",
+    "photos": [
+      {
+        "height": 542,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/102929072074056483404\">Mandela Rhodes Place Hotel and Spa</a>"
+        ],
+        "photo_reference": "AcYSjRi2-BYV6-tn9Tku1nDKo9HQVxPVIl94womw68bgyod3UIvpfdA_De3k2vxmvQ5Ajfg72UfYzkjSbkJnhZLPAO9ABEZFd1tvsrkXDUFh9t3__lYQln5UXRE4vJVmfGcE_lk4UNpSPsWLiS6E1-c9Qq7e2BCeiRw0tg8gDp2tJcgXvsYK",
+        "width": 548
+      }
+    ],
+    "place_id": "ChIJ4dFOq2VnzB0RaC_-cWQqDVQ",
+    "reference": "ChIJ4dFOq2VnzB0RaC_-cWQqDVQ",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Wale St & Burg St, Cape Town City Centre, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.91273179999999,
+        "lng": 18.41727819999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.91129961970849,
+          "lng": 18.4185878802915
+        },
+        "southwest": {
+          "lat": -33.91399758029149,
+          "lng": 18.41588991970849
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Garden Court Victoria Junction",
+    "photos": [
+      {
+        "height": 1366,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/108318011892655369687\">Garden Court Victoria Junction</a>"
+        ],
+        "photo_reference": "AcYSjRgEeNeX1N-sftNqxI8Yu4tmzX7AVmrPXhSwAHDoY2c3CbdqXrekU5vWIiX_62bG1bpGuGGYS6rBFib6ZDibokGQatFVqKJoEIzjhr9Q-LRA5o6VXWWDlI1xxAob0LtNvxUnpmYkYuAMjBNZXUdOT94eIoVU6zIeMqpgYNCHYKGYDgi9",
+        "width": 2048
+      }
+    ],
+    "place_id": "ChIJg4mTxlxnzB0RuO-TjFSGvIE",
+    "reference": "ChIJg4mTxlxnzB0RuO-TjFSGvIE",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Corner Of Somerset And, Ebenezer Road, Green Point, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9335832,
+        "lng": 18.4054646
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9323084697085,
+          "lng": 18.4067572302915
+        },
+        "southwest": {
+          "lat": -33.9350064302915,
+          "lng": 18.4040592697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Derwent House Boutique Hotel",
+    "photos": [
+      {
+        "height": 853,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/109974266512272584813\">Derwent House Boutique Hotel</a>"
+        ],
+        "photo_reference": "AcYSjRjNbVwt1DeSVF3WUkoYkE9Hv7BzAHRfLMqVkcle3Xd5zlDzHHkqh5881xuDVuN58nj4fXzcGdXaVQLMOLFJYRx6h1ZsWEyMNtTWYQtOzleyq4iS_YSfUPpJvyEwg_ySJlt1WB4Q8U5NaLaGJSHLg0RI1YcB_cdV4-arL1cgeSLUPZCX",
+        "width": 1280
+      }
+    ],
+    "place_id": "ChIJcfVKaHNnzB0RTzbNPv0yZkQ",
+    "reference": "ChIJcfVKaHNnzB0RTzbNPv0yZkQ",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "14 Derwent Road, Gardens, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9271422,
+        "lng": 18.4103656
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9259088697085,
+          "lng": 18.4118352802915
+        },
+        "southwest": {
+          "lat": -33.9286068302915,
+          "lng": 18.4091373197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Villa Viva Cape Town",
+    "photos": [
+      {
+        "height": 1334,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/113604843486373262720\">Villa Viva Cape Town</a>"
+        ],
+        "photo_reference": "AcYSjRjvJUx6-SzKIUU2G8-1SyjbYwGgeACdLeFyDUKhg5jjWrW7kWDxIl1pv2JIY8Yoevlv4rqNN8kz1mrI4SbUluu9LF9cVkt--YS0br7Y_iRMZOkDv9zw8lmxr1LNp77TG-OJ9LLBAhpVKsW6uv9oqnzK8uEMlXYhUfoGNT4jvkTFlPM",
+        "width": 2000
+      }
+    ],
+    "place_id": "ChIJS7kbEm5nzB0R-7HuAwKZjHo",
+    "reference": "ChIJS7kbEm5nzB0R-7HuAwKZjHo",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "74 New Church Street, Tamboerskloof, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9104426,
+        "lng": 18.4126553
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.90904206970851,
+          "lng": 18.41393723029151
+        },
+        "southwest": {
+          "lat": -33.9117400302915,
+          "lng": 18.4112392697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Big Blue Backpackers",
+    "photos": [
+      {
+        "height": 2340,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/107982433388742273859\">김영규</a>"
+        ],
+        "photo_reference": "AcYSjRin2jXniPgkHZihs_JK7vUHaF6frcn1OTzzbirTRET9lv-PbwYQHGw1hCbDJQiHsaFpxJTN5uElEyA9K-kyhn2XIAsijoKCCPec-6bAv7jjRnZSjezX6QR-l57P7xUPyGRLdNEcEshLIPhcEDJdpbj-aM0EZHgV-oy57viKVWz3oQkP",
+        "width": 4160
+      }
+    ],
+    "place_id": "ChIJ-bhuYERnzB0RPCYHPmmdxU4",
+    "reference": "ChIJ-bhuYERnzB0RPCYHPmmdxU4",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "7 Vesperdene Road, Green Point, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.91067,
+        "lng": 18.41392
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9093878697085,
+          "lng": 18.4151843802915
+        },
+        "southwest": {
+          "lat": -33.9120858302915,
+          "lng": 18.4124864197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Zest Boutique Hotel",
+    "photos": [
+      {
+        "height": 1600,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/115229422607357926348\">Zest Boutique Hotel</a>"
+        ],
+        "photo_reference": "AcYSjRg2Lbp2ExZENo36P7oXcOLq4QvnquX7bj6iEVnxc6_i0VlxasCaoV-ujJyQbuPSTVns0aBr7fKplWZtOjkmSjyNVplq9zRGHjujIEYUQMrL5H_HT3jFlF3w_rEEMuZ184NnlgkJff81Ox3Gmu4_myvx0Z-odkUuTnWoZVhORuf43kqK",
+        "width": 1200
+      }
+    ],
+    "place_id": "ChIJI-7QlkRnzB0R-czzxHwMkgk",
+    "reference": "ChIJI-7QlkRnzB0R-czzxHwMkgk",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "2 Braemar Road, Green Point, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9184379,
+        "lng": 18.4252891
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9173790697085,
+          "lng": 18.4263418802915
+        },
+        "southwest": {
+          "lat": -33.92007703029149,
+          "lng": 18.4236439197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Hollow on the Square",
+    "photos": [
+      {
+        "height": 3716,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/112413618482886899773\">Hollow on the Square</a>"
+        ],
+        "photo_reference": "AcYSjRgWG8QNBat7bMuWd-lLIXjrxnOblc8LJTCWQ6r8pfhYW4lWfYakKBmAxjzD2w0FXEAdx5P-U-dzy8FjXJvMl9CX7OKnGrHebYeLRXHMniSPJBog9PAi_7U0H7-gWHvrpiNF-XSNrHIJhbboMHpCLBic0x6tUJfwUDDb3COw0wI1Bz4W",
+        "width": 5580
+      }
+    ],
+    "place_id": "ChIJHZm492dnzB0RGghaS0cx3LA",
+    "reference": "ChIJHZm492dnzB0RGghaS0cx3LA",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Avenue, Hans Strijdom Avenue, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.92645580000001,
+        "lng": 18.41203269999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9252445697085,
+          "lng": 18.4130464302915
+        },
+        "southwest": {
+          "lat": -33.9279425302915,
+          "lng": 18.4103484697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Protea Hotel Fire & Ice! Cape Town",
+    "photos": [
+      {
+        "height": 320,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/109753461114390990816\">Protea Hotel Fire &amp; Ice! Cape Town</a>"
+        ],
+        "photo_reference": "AcYSjRhlW-jH_3-YV67rtSA7YrF7LPb3IRAg1jqNRP79vWRFwmKBKb7Wzy_KaDLnTcbJFQ4tztVkKW9AypGmzx6J9n7WuLpI-m43LntmpqarpSPI4CPLCOkf1sDN9zonoa1QzRqhVm2d1oDhoCThWSL7FdF1hb7GDN8hZljN13MEdZdMTaBF",
+        "width": 480
+      }
+    ],
+    "place_id": "ChIJF9UnQW5nzB0Rg2GL-DEDkwc",
+    "reference": "ChIJF9UnQW5nzB0Rg2GL-DEDkwc",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "64 New Church Street, Tamboerskloof, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9214218,
+        "lng": 18.4220856
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9200460697085,
+          "lng": 18.4234635302915
+        },
+        "southwest": {
+          "lat": -33.9227440302915,
+          "lng": 18.4207655697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Southern Sun Cape Sun",
+    "photos": [
+      {
+        "height": 608,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/114412712237243254381\">Southern Sun Cape Sun</a>"
+        ],
+        "photo_reference": "AcYSjRjnOE2VmBOf5oHpbSLTanzUJgi4JyDRHbUcmzomxcttZQ_-QfvnXEa1Wp7JJY1FG-HKGYkwfeTSZ9OMNX6EbC00kJa5h8cl27HWuOimvH6uHrS_aUNIFgppM-yR7kwvkq0GEVTsjE2uFYGM7KNzBx2uIAu7hSsaUQEZVQGxWu7jGFE6",
+        "width": 1080
+      }
+    ],
+    "place_id": "ChIJO7IY-WNnzB0RlOIFGBy96qQ",
+    "reference": "ChIJO7IY-WNnzB0RlOIFGBy96qQ",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "23 Strand Street, Cape Town City Centre, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9249206,
+        "lng": 18.4155414
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9234512197085,
+          "lng": 18.4170183802915
+        },
+        "southwest": {
+          "lat": -33.9261491802915,
+          "lng": 18.4143204197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Pepperclub Hotel",
+    "photos": [
+      {
+        "height": 1536,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/114064797831616861293\">Ebrahiem Saal</a>"
+        ],
+        "photo_reference": "AcYSjRg5t7zY6MlLXyhNXs6vfT9BtD6H2D2ZPDiBgeYqduAIX-Q7HwnK5Q8ef97M-3CRom7yRuyZx2flZRXrxqRfeQ1-nmRzcWOgH8Yw5NiqPHphq0i8T1JxTeDs4SzlMHcOhmM_JTsryiWEocVIwKhzNCS-AA2CN1Id9_zVVDme7TtvwrY_",
+        "width": 2048
+      }
+    ],
+    "place_id": "ChIJafbF40tmzB0RlD-Gs3PHaoI",
+    "reference": "ChIJafbF40tmzB0RlD-Gs3PHaoI",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "movie_theater",
+      "spa",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Corner of Loop Street and, Pepper Street, Cape Town City Centre, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.915131,
+        "lng": 18.416861
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9137592697085,
+          "lng": 18.41827978029151
+        },
+        "southwest": {
+          "lat": -33.9164572302915,
+          "lng": 18.4155818197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "Purple House",
+    "photos": [
+      {
+        "height": 453,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/107394105967264410330\">Purple House Accommodations</a>"
+        ],
+        "photo_reference": "AcYSjRgqPJeq4PdH05HqxdEWOWXwXzHY906U8JH4Pf3iHBzE-9OSrineeeVx-CEbZsSQ5UpXJAGHRac3WCn46LkRvct5ZJQUuWJ5fLu7u8IB8VH6CeVsA1Xt0ICXFS-tE6VIDKuR5e1YmFazIybJuAl5tYpnrrpLSlIbOk0c4XUp2jkx0QtX",
+        "width": 800
+      }
+    ],
+    "place_id": "ChIJnWaqQF1nzB0Rvsd5dJ5pSwE",
+    "reference": "ChIJnWaqQF1nzB0Rvsd5dJ5pSwE",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "23 Jarvis Street, Green Point, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.924741,
+        "lng": 18.4241074
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.88994982728855,
+          "lng": 18.5413949299726
+        },
+        "southwest": {
+          "lat": -33.96909096999775,
+          "lng": 18.36903992892701
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png",
+    "icon_background_color": "#7B9EB0",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+    "name": "Cape Town",
+    "photos": [
+      {
+        "height": 2693,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/110209408033249649899\">Werner Schnetzer</a>"
+        ],
+        "photo_reference": "AcYSjRhpvpj7L7lsLB8IzOgDLLWLcMYWTdPvXTMgHaYRdJc1Ae7G9c-XTvqzBIyZF74NvLSJB4YOV9qudMVtmhVIsruGULMUkf8xJ3aa7hvQdiVNfAwPEuC5ZOxGOBYEq7zkIouncuQ7QuUxj1Resb76wL-cWiBjpEH_6ZypGW3rSy1yRcXb",
+        "width": 4780
+      }
+    ],
+    "place_id": "ChIJd6gCp-5dzB0RcInnRigFn0A",
+    "reference": "ChIJd6gCp-5dzB0RcInnRigFn0A",
+    "scope": "GOOGLE",
+    "types": [
+      "sublocality_level_1",
+      "sublocality",
+      "political"
+    ],
+    "vicinity": "Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.91957,
+        "lng": 18.41712
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9181877697085,
+          "lng": 18.4184252802915
+        },
+        "southwest": {
+          "lat": -33.9208857302915,
+          "lng": 18.4157273197085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "La Rose Bed & Breakfast",
+    "photos": [
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/112784243723109013012\">La Rose Bed &amp; Breakfast</a>"
+        ],
+        "photo_reference": "AcYSjRjqL_NWt2wzICS19-Px29cNpnjGUaA3Ci0GKxL-FzRkzIL1bJ_epGUmmPgWNN_2xGxByUWSdUOrsFJkdhgcGUWHKmAfZghRHttmwki5Z-cEjLD5BGSn3DgKnl0sftfOhFeXUwmAxTxoN9QNYqJcjY5dMyBtuDtzXO_ZPHpgnnEDUJlL",
+        "width": 3024
+      }
+    ],
+    "place_id": "ChIJV9PMNWZnzB0RxrQr_fidHcU",
+    "reference": "ChIJV9PMNWZnzB0RxrQr_fidHcU",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "32 Rose Street, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  },
+  {
+    "geometry": {
+      "location": {
+        "lat": -33.9157055,
+        "lng": 18.4262212
+      },
+      "viewport": {
+        "northeast": {
+          "lat": -33.9143596697085,
+          "lng": 18.4275745302915
+        },
+        "southwest": {
+          "lat": -33.9170576302915,
+          "lng": 18.4248765697085
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+    "icon_background_color": "#909CE1",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+    "name": "The Westin Cape Town",
+    "photos": [
+      {
+        "height": 2048,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/104099009271760318589\">The Westin Cape Town</a>"
+        ],
+        "photo_reference": "AcYSjRgiIDvaxlEAp95uRykUmjUQ7Q8CoyhZZyOXhLJHxtlyh70fILgNbfz2n7z6bfoMmLraz_WVQjOctvVmNoUtaW_-oQH7lngNb66FRcmT6FR9RRlEglEYb1LlS1Qx2aEJbzUFCHw3GA-ZXofutJLp5fmiPqXJusqLg6FphQGwRk5ZWh5z",
+        "width": 1365
+      }
+    ],
+    "place_id": "ChIJ_YCpaGBnzB0RB4l6g4--5Rs",
+    "reference": "ChIJ_YCpaGBnzB0RB4l6g4--5Rs",
+    "scope": "GOOGLE",
+    "types": [
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "vicinity": "Convention Square, Lower Long Street, Cape Town",
+    "cityId": "c0751f57-2493-47f8-b8a6-664637992db5",
+    "cityName": "Cape Town",
+    "province": "Western Cape"
+  }
+]

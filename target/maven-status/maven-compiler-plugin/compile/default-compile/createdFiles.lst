@@ -9,7 +9,6 @@ com/boha/datadriver/models/CityPlace.class
 com/boha/datadriver/models/User.class
 com/boha/datadriver/models/GCSBlob.class
 com/boha/datadriver/util/SecretMgr.class
-com/boha/datadriver/services/Generator$1.class
 com/boha/datadriver/services/EventPublisher.class
 com/boha/datadriver/services/StorageService$1.class
 com/boha/datadriver/models/Viewport.class

@@ -114,7 +114,7 @@ public class CityService {
         }
         if (city == null) {
             LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+
-                    "City not found!");
+                    " City not found! : " + cityId);
         }
         return city;
     }

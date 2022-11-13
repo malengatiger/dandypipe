@@ -1,14 +1,13 @@
 package com.boha.datadriver;
 
-import com.boha.datadriver.models.FlatEvent;
-import com.boha.datadriver.models.GCSBlob;
-import com.boha.datadriver.services.CityService;
 import com.boha.datadriver.services.EventSubscriber;
 import com.boha.datadriver.services.FirebaseService;
 import com.boha.datadriver.services.StorageService;
 import com.boha.datadriver.util.E;
 import com.boha.datadriver.util.SecretMgr;
 import com.boha.datadriver.util.Topics;
+import com.boha.datadriver.util.WriteLogEntry;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -17,13 +16,11 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.env.Environment;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -46,6 +43,8 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 	@Autowired
 	private  FirebaseService firebaseService;
 	@Autowired
+	private WriteLogEntry writeLogEntry;
+	@Autowired
 	private Topics topics;
 	@Value("${eventTopicId}")
 	private String eventTopicId;
@@ -63,12 +62,15 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 	@Override
 	public void onApplicationEvent(ApplicationReadyEvent event) {
 		String projectId = environment.getProperty("PROJECT_ID");
+		firebaseService.initializeFirebase();
+
 		LOGGER.info(E.RED_DOT+E.RED_DOT+ " Data Driver ApplicationReadyEvent - Timestamp: "
 				+ E.YELLOW_STAR + event.getTimestamp());
 		LOGGER.info(E.RED_DOT+E.RED_DOT+ " onApplicationEvent Project: " + projectId + " "
 				+ E.YELLOW_STAR );
 		LOGGER.info(E.RED_DOT+E.RED_DOT
 				+  " Topic: " + eventTopicId  + " " + E.YELLOW_STAR );
+		writeLogEntry.info("Data Driver: Things have started OK this far: " + DateTime.now().toDateTimeISO().toString());
 
 		ApplicationContext applicationContext = event.getApplicationContext();
 		RequestMappingHandlerMapping requestMappingHandlerMapping = applicationContext
@@ -76,11 +78,12 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 		Map<RequestMappingInfo, HandlerMethod> map = requestMappingHandlerMapping
 				.getHandlerMethods();
 		map.forEach((key, value) -> {
-			LOGGER.info(E.PEAR+ " Endpoint: " + key);
+			LOGGER.info(E.PEAR+E.PEAR+
+					" Endpoint: " + key);
 		});
 
 		try {
-			firebaseService.initializeFirebase();
+
 			String apiKey = secrets.getPlacesAPIKey();
 			if (apiKey.contains("AIza")) {
 				LOGGER.info(E.CHECK + E.CHECK + E.CHECK +
