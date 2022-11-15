@@ -33,8 +33,8 @@ public class FirebaseService {
     }
 //    @Autowired
 //    private Environment environment;
-
-    public void initializeFirebase() {
+    private FirebaseApp app;
+    public FirebaseApp initializeFirebase() {
         LOGGER.info(E.AMP+E.AMP+E.AMP+ " .... initializing Firebase ....");
         FirebaseOptions options;
         String projectId = System.getenv().get("PROJECT_ID");
@@ -53,10 +53,11 @@ public class FirebaseService {
             throw new RuntimeException("Firebase initialization failed!  " + e.getMessage());
         }
 
-        FirebaseApp app = FirebaseApp.initializeApp(options);
+        app = FirebaseApp.initializeApp(options);
         LOGGER.info(E.AMP+E.AMP+E.AMP+E.AMP+E.AMP+
-                " Firebase has been initialized: " + app.getOptions().getDatabaseUrl()
+                " Firebase has been initialized: "
+                + app.getOptions().getDatabaseUrl()
                 + " " + E.RED_APPLE);
-
+        return app;
     }
 }

@@ -7,6 +7,7 @@ import com.boha.datadriver.util.E;
 import com.boha.datadriver.util.SecretMgr;
 import com.boha.datadriver.util.Topics;
 import com.boha.datadriver.util.WriteLogEntry;
+import com.google.firebase.FirebaseApp;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -59,10 +60,11 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 	@Autowired
 	private StorageService storageService;
 
+	FirebaseApp app;
 	@Override
 	public void onApplicationEvent(ApplicationReadyEvent event) {
 		String projectId = environment.getProperty("PROJECT_ID");
-		firebaseService.initializeFirebase();
+		app = firebaseService.initializeFirebase();
 
 		LOGGER.info(E.RED_DOT+E.RED_DOT+ " Data Driver ApplicationReadyEvent - Timestamp: "
 				+ E.YELLOW_STAR + event.getTimestamp());

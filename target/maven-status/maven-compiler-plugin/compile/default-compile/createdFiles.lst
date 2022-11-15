@@ -1,6 +1,7 @@
 com/boha/datadriver/services/EventService.class
 com/boha/datadriver/services/FirebaseService.class
 com/boha/datadriver/models/Location.class
+com/boha/datadriver/util/WriteLogEntry.class
 com/boha/datadriver/models/City.class
 com/boha/datadriver/util/E.class
 com/boha/datadriver/services/CityService.class
@@ -8,6 +9,7 @@ com/boha/datadriver/services/StorageService.class
 com/boha/datadriver/models/CityPlace.class
 com/boha/datadriver/models/User.class
 com/boha/datadriver/models/GCSBlob.class
+com/boha/datadriver/services/GenerationMessage.class
 com/boha/datadriver/util/SecretMgr.class
 com/boha/datadriver/services/EventPublisher.class
 com/boha/datadriver/services/StorageService$1.class

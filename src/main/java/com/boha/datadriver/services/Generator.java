@@ -393,17 +393,23 @@ public class Generator {
 
         for (String cityId : cityIds) {
             int count = random.nextInt(upperCount);
-            if (count < 100) count = 200;
-            messages.add(generateEventsByCity(cityId,count));
+            if (count < 200) count = 400;
+            try {
+                messages.add(generateEventsByCity(cityId, count));
+            } catch (Exception e) {
+                LOGGER.info(E.RED_DOT+" Error: " + e.getMessage());
+            }
         }
         int total = 0;
         for (GenerationMessage message : messages) {
             total +=  message.getCount();
         }
+        LOGGER.info(E.LEAF+E.LEAF+" Total Cities generated: " + messages.size());
+
         GenerationMessage msg = new GenerationMessage();
         msg.setType("generateEventsByCities");
         msg.setCount(total);
-        msg.setMessage("Total Events Generated");
+        msg.setMessage("Total Events");
         messages.add(msg);
         return messages;
     }
@@ -428,30 +434,32 @@ public class Generator {
     }
     public GenerationMessage generateEventsByCity(String cityId, int count) throws Exception {
 
-        City city = cityService.getCityById(cityId);
-        if (city == null) {
-            throw new Exception("City not found");
-        }
-        List<CityPlace> places = placesService.getPlacesByCity(cityId);
-        userMap = new HashMap<>();
-        int total = 0;
-        for (int i = 0; i < count; i++) {
-            int placeIndex = random.nextInt(places.size() - 1);
-            CityPlace place = places.get(placeIndex);
-            try {
-                total += generateEventAtPlace(place, getUnusedRandomUser(cityId));
-            } catch (Exception e) {
-                LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());
-            }
+        try {
+            City city = cityService.getCityById(cityId);
+            List<CityPlace> places = placesService.getPlacesByCity(cityId);
+            userMap = new HashMap<>();
+            int total = 0;
+            for (int i = 0; i < count; i++) {
+                int placeIndex = random.nextInt(places.size() - 1);
+                CityPlace place = places.get(placeIndex);
+                try {
+                    total += generateEventAtPlace(place, getUnusedRandomUser(cityId));
+                } catch (Exception e) {
+                    LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());
+                }
 
+            }
+            String x = "Events generated OK: " + total + " city: " + city.getCity();
+            LOGGER.info(E.RED_APPLE + " " + x);
+            GenerationMessage msg = new GenerationMessage();
+            msg.setType("generateEventsByCity");
+            msg.setCount(total);
+            msg.setMessage(city.getCity() + ", " + city.getAdmin_name());
+            return msg;
+        } catch (Exception e) {
+            LOGGER.info(E.RED_DOT +" generateEventsByCity: Error: " + e.getMessage());
+            throw e;
         }
-        String x = " Events generated OK: " + total + " city: " + city.getCity();
-        LOGGER.info(E.RED_APPLE + " " + x);
-        GenerationMessage msg = new GenerationMessage();
-        msg.setType("generateEventsByCity");
-        msg.setCount(total);
-        msg.setMessage("Total Events Generated for " + city.getCity());
-        return msg;
     }
 
     public GenerationMessage generateEventsByPlace(String placeId, int count) throws Exception {

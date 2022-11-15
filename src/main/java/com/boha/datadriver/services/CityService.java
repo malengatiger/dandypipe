@@ -84,6 +84,7 @@ public class CityService {
         return cities;
     }
     public List<City> getCitiesFromFirestore() throws Exception {
+        LOGGER.info(E.PEAR+ " Getting cities ...");
         Firestore c = FirestoreClient.getFirestore();
         ApiFuture<QuerySnapshot> future = c.collection("cities")
                 .orderBy("city")

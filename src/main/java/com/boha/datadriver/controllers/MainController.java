@@ -79,8 +79,11 @@ public class MainController {
     @GetMapping("/generateEventsByCity")
     private ResponseEntity<Object> generateEventsByCity(@RequestParam String cityId,
                                                         @RequestParam int count) {
+            LOGGER.info("generateEventsByCity request come in: "+cityId + " count: " + count);
         try {
             GenerationMessage done = generator.generateEventsByCity(cityId, count);
+            LOGGER.info("Events generated: " +
+                    new GsonBuilder().setPrettyPrinting().create().toJson(done));
             return ResponseEntity.ok(done );
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
@@ -160,7 +163,8 @@ public class MainController {
                     " Firestore Returning " + cities.size() + " cities " + E.CHECK);
             return ResponseEntity.ok(cities);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
         }
     }
 
