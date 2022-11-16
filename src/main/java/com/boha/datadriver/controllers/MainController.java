@@ -89,15 +89,26 @@ public class MainController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
+    @GetMapping("/getCityAggregates")
+    private ResponseEntity<Object> getCityAggregates(@RequestParam int hours) {
+        try {
+            List<CityAggregate> done = cityService.getCityAggregates(hours);
+            return ResponseEntity.ok(done );
+        } catch (Exception e) {
+            return ResponseEntity.status(
+                    HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
     @GetMapping("/generateEventsByCities")
     private ResponseEntity<Object> generateEventsByCities(@RequestParam List<String> cityIds,
-                                                        @RequestParam int upperCount) {
+                                                          @RequestParam int upperCount) {
         try {
             List<GenerationMessage> done = generator.generateEventsByCities(cityIds, upperCount);
             return ResponseEntity.ok(done );
         } catch (Exception e) {
             return ResponseEntity.status(
-                    HttpStatus.INTERNAL_SERVER_ERROR)
+                            HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(e.getMessage());
         }
     }

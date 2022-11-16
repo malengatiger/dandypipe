@@ -1,28 +1,23 @@
 package com.boha.datadriver.services;
 
 import com.boha.datadriver.models.City;
+import com.boha.datadriver.models.CityAggregate;
+import com.boha.datadriver.models.FlatEvent;
 import com.boha.datadriver.util.E;
 import com.google.api.core.ApiFuture;
-import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
 import com.google.gson.Gson;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.env.Environment;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 
@@ -66,6 +61,7 @@ public class CityService {
         }
         return null;
     }
+
     public List<City> addCitiesToFirestore() throws Exception{
 
         List<City> cities = getCitiesFromFile();
@@ -83,24 +79,75 @@ public class CityService {
         }
         return cities;
     }
-    public List<City> getCitiesFromFirestore() throws Exception {
-        LOGGER.info(E.PEAR+ " Getting cities ...");
+    public List<CityAggregate> getCityAggregates(int hours) throws Exception {
+
+        List<FlatEvent> events = getEventsFromFirestore(hours);
+        LOGGER.info(E.RED_APPLE
+                +" Events of last " + hours + " hours found: " + events.size());
+        HashMap<String, List<FlatEvent>> eMap = new HashMap<>();
+        for (FlatEvent event : events) {
+            if (eMap.containsKey(event.getCityId())) {
+                List<FlatEvent> list = eMap.get(event.getCityId());
+                list.add(event);
+            } else {
+                List<FlatEvent> list = new ArrayList<>();
+                list.add(event);
+                eMap.put(event.getCityId(),list);
+            }
+        }
+        List<CityAggregate> aggList = new ArrayList<>();
+        Set<String> set = eMap.keySet();
+        for (String cityId : set) {
+            List<FlatEvent> eventList = eMap.get(cityId);
+            int numberOfEvents = eventList.size();
+            int totalAmount = 0;
+            double averageRating = 0.0;
+            int totalRating = 0;
+
+            for (FlatEvent flatEvent : eventList) {
+                totalAmount += flatEvent.getAmount();
+                totalRating += flatEvent.getRating();
+            }
+            averageRating = Double.parseDouble(""+totalRating) /
+                    Double.parseDouble(""+numberOfEvents);
+            City city = getCityById(cityId);
+            CityAggregate ca = new CityAggregate();
+            ca.setCityId(cityId);
+            ca.setCityName(city.getCity());
+            ca.setDate(DateTime.now().toDateTimeISO().toString());
+            ca.setLongDate(DateTime.now().toDateTimeISO().getMillis());
+            ca.setNumberOfEvents(numberOfEvents);
+            ca.setAverageRating(averageRating);
+            ca.setTotalSpent(totalAmount);
+            ca.setHours(hours);
+            aggList.add(ca);
+            LOGGER.info(E.RED_APPLE+ " aggregate: "
+                    + " - totalSpent: " + ca.getTotalSpent()
+            + " ratingAverage: " + ca.getAverageRating()
+            + " for " + E.LEAF + city.getCity() );
+
+        }
+        LOGGER.info(E.RED_APPLE+
+                " City Aggregates generated: " + aggList.size());
+        return aggList;
+    }
+    public List<FlatEvent> getEventsFromFirestore(int hours) throws Exception {
+        LOGGER.info(E.PEAR+ " Getting events of the past hours: " + hours);
         Firestore c = FirestoreClient.getFirestore();
-        ApiFuture<QuerySnapshot> future = c.collection("cities")
-                .orderBy("city")
+        long date = DateTime.now().toDateTimeISO().minusHours(hours).getMillis();
+        ApiFuture<QuerySnapshot> future = c.collection("flatEvents")
+                .whereGreaterThan("longDate", date)
                 .get();
         QuerySnapshot snapshot = future.get();
         List<QueryDocumentSnapshot> docs = snapshot.getDocuments();
-        List<City> resultCities = new ArrayList<>();
+        List<FlatEvent> flatEvents = new ArrayList<>();
         for (QueryDocumentSnapshot doc : docs) {
-           City city = doc.toObject(City.class);
-           resultCities.add(city);
+           FlatEvent city = doc.toObject(FlatEvent.class);
+           flatEvents.add(city);
         }
-        if (resultCities.isEmpty()) {
-            resultCities = addCitiesToFirestore();
-        }
-        LOGGER.info(E.CHECK + E.CHECK + " Found " + resultCities.size()  + " cities from Firestore");
-        return resultCities;
+
+        LOGGER.info(E.AMP + E.AMP + " Found " + flatEvents.size()  + " events from Firestore");
+        return flatEvents;
     }
     public City getCityById(String cityId) throws Exception {
         Firestore firestore = FirestoreClient.getFirestore();
@@ -119,5 +166,24 @@ public class CityService {
         }
         return city;
     }
+
+    public List<City> getCitiesFromFirestore() throws Exception {
+        LOGGER.info(E.PEAR+ " Getting cities ...");
+        Firestore c = FirestoreClient.getFirestore();
+        ApiFuture<QuerySnapshot> future = c.collection("cities")
+                .orderBy("city")
+                .get();
+        QuerySnapshot snapshot = future.get();
+        List<QueryDocumentSnapshot> docs = snapshot.getDocuments();
+        List<City> flatEvents = new ArrayList<>();
+        for (QueryDocumentSnapshot doc : docs) {
+            City city = doc.toObject(City.class);
+            flatEvents.add(city);
+        }
+
+        LOGGER.info(E.CHECK + E.CHECK + " Found " + flatEvents.size()  + " cities from Firestore");
+        return flatEvents;
+    }
+
 
 }
