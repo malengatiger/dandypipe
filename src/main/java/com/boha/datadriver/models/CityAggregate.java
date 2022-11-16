@@ -1,6 +1,6 @@
 package com.boha.datadriver.models;
 
-public class CityAggregate {
+public class CityAggregate implements Comparable<CityAggregate>{
    private String cityId, cityName;
    private String date;
     private long longDate;
@@ -69,5 +69,10 @@ public class CityAggregate {
 
     public void setTotalSpent(double totalSpent) {
         this.totalSpent = totalSpent;
+    }
+
+    @Override
+    public int compareTo(CityAggregate cityAggregate) {
+        return this.cityName.compareToIgnoreCase(cityAggregate.cityName);
     }
 }

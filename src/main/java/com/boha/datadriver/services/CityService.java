@@ -129,6 +129,7 @@ public class CityService {
         }
         LOGGER.info(E.RED_APPLE+
                 " City Aggregates generated: " + aggList.size());
+        Collections.sort(aggList);
         return aggList;
     }
     public List<FlatEvent> getEventsFromFirestore(int hours) throws Exception {
