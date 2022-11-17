@@ -92,7 +92,7 @@ public class Generator {
 
     HashMap<String, User> userMap = new HashMap<>();
 
-    private void generateRandomCrowd(CityPlace place) throws Exception {
+    private void generateRandomCrowd(CityPlace place, boolean isBad) throws Exception {
         userMap = new HashMap<>();
         long startTime = DateTime.now().getMillis();
         int count = random.nextInt(1000);
@@ -101,7 +101,7 @@ public class Generator {
         int done = 0;
         for (int i = 0; i < count; i++) {
             try {
-                done += generateEventAtPlace(place, getUnusedRandomUser(place.cityId));
+                done += generateEventAtPlace(place, getUnusedRandomUser(place.cityId), isBad);
             } catch (Exception e) {
                 LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());
             }
@@ -118,7 +118,7 @@ public class Generator {
 
     }
 
-    public CityPlace generateCrowd(String cityId, int total) throws Exception {
+    public CityPlace generateCrowd(String cityId, int total, boolean isBad) throws Exception {
 
         long start = DateTime.now().getMillis();
         totalCount = 0;
@@ -134,12 +134,12 @@ public class Generator {
         if (place.name.trim().equalsIgnoreCase(place.cityName.trim())) {
             LOGGER.info(E.YELLOW_STAR + E.YELLOW_STAR + E.YELLOW_STAR
                     + " Ignore this place for crowd generation: " + place.name);
-            generateCrowd(cityId, total);
+            generateCrowd(cityId, total, isBad);
         }
         int successCount = 0;
         for (int i = 0; i < total; i++) {
             try {
-                successCount += generateEventAtPlace(place, getUnusedRandomUser(place.cityId));
+                successCount += generateEventAtPlace(place, getUnusedRandomUser(place.cityId), isBad);
             } catch (Exception e) {
                 LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());
             }
@@ -158,65 +158,14 @@ public class Generator {
 
     long start;
 
-    public int performWork(int upperCountPerPlace, int maximumCount) throws Exception {
-        maxCount = maximumCount;
-        if (totalCount > maxCount) {
-            LOGGER.info(E.RED_DOT + E.RED_DOT +
-                    " Refusing to perform work; "+ E.PEAR
-                    +" totalCount: " + totalCount
-                    + " maxCount: " + maxCount);
-            return 0;
-        }
-        if (cityList == null || cityList.isEmpty()) {
-            cityList = cityService.getCitiesFromFirestore();
-        }
-        int index = random.nextInt(cityList.size() - 1);
-        City city = cityList.get(index);
-        List<CityPlace> places;
-        try {
-            places = placesService.getPlacesByCity(city.getId());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        int count = random.nextInt(upperCountPerPlace);
-        if (count < 25) count = 50;
-
-        int realCount = 0;
-        for (int i = 0; i < count; i++) {
-            int mIndex = random.nextInt(places.size() - 1);
-            CityPlace cityPlace = places.get(mIndex);
-            try {
-                realCount += generateEventAtPlace(cityPlace,
-                        getUnusedRandomUser(city.getId()));
-            } catch (Exception e) {
-                LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());
-            }
-        }
-
-        int chooser = random.nextInt(100);
-        int mIndex = random.nextInt(places.size() - 1);
-        CityPlace cityPlace = places.get(mIndex);
-        if (chooser < 15) {
-            generateRandomCrowd(cityPlace);
-        }
-
-        String msg = E.LEAF + E.LEAF + " Events generated: count: " + realCount + " " +
-                E.RED_APPLE + " totalCount: " + totalCount + " for city: " + E.PEAR
-                + " " + city.getCity();
-        logControl.info(msg);
-        writeLogEntry.info(msg);
-
-        return realCount;
-    }
-
     int pubSubCount;
 
-    private int generateEventAtPlace(CityPlace cityPlace, User user) throws Exception {
+    private int generateEventAtPlace(CityPlace cityPlace, User user, boolean isBad) throws Exception {
+
 
         Event event;
         try {
-            event = getEvent(cityPlace, user);
+            event = getEvent(cityPlace, user, isBad);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -254,7 +203,7 @@ public class Generator {
         return users;
     }
 
-    private Event getEvent(CityPlace cityPlace, User user) {
+    private Event getEvent(CityPlace cityPlace, User user, boolean isBad) {
         if (user == null) {
             String msg = "User not available for event";
             LOGGER.info(E.RED_DOT + E.RED_DOT + " " + msg);
@@ -263,18 +212,41 @@ public class Generator {
         Event event = new Event();
         event.setCityPlace(cityPlace);
         int m = random.nextInt(2500);
-        if (m == 0) m = 150;
+        if (m == 0) m = 100;
         int cents = random.nextInt(99);
         if (cents < 10) cents = 50;
         event.setAmount(Double.parseDouble("" + m + "." + cents));
-        int r = random.nextInt(5);
-        if (r == 0) r = 5;
-        event.setRating(r);
+        event.setRating(isBad? getBadRating() : getGoodRating());
         event.setDate(DateTime.now().toDateTimeISO().toString());
         event.setLongDate(DateTime.now().getMillis());
         event.setEventId(UUID.randomUUID().toString());
         event.setUser(user);
         return event;
+    }
+    int getGoodRating() {
+        int m = random.nextInt(100);
+        if (m <= 10) {
+            return 3;
+        }
+        if (m <= 70) {
+            return 4;
+        }
+
+        return 5;
+    }
+    int getBadRating() {
+        int m = random.nextInt(100);
+        if (m <= 20) {
+            return 1;
+        }
+        if (m <= 80) {
+            return 2;
+        }
+        if (m <= 90) {
+            return 3;
+        }
+
+        return 1;
     }
 
     Firestore firestore;
@@ -406,6 +378,7 @@ public class Generator {
         }
         LOGGER.info(E.LEAF+E.LEAF+" Total Cities generated: " + messages.size());
 
+        Collections.sort(messages);
         GenerationMessage msg = new GenerationMessage();
         msg.setType("generateEventsByCities");
         msg.setCount(total);
@@ -415,11 +388,13 @@ public class Generator {
     }
     public List<GenerationMessage> generateEventsByPlaces(List<String> placeIds, int upperCount) throws Exception {
         List<GenerationMessage> messages = new ArrayList<>();
-
+        boolean isBad;
+        int m = random.nextInt(100);
+        isBad = m <= 40;
         for (String placeId : placeIds) {
             int count = random.nextInt(upperCount);
             if (count < 100) count = 200;
-            messages.add(generateEventsByPlace(placeId,count));
+            messages.add(generateEventsByPlace(placeId,count, isBad));
         }
         int total = 0;
         for (GenerationMessage message : messages) {
@@ -433,9 +408,13 @@ public class Generator {
         return messages;
     }
     public GenerationMessage generateEventsByCity(String cityId, int count) throws Exception {
+        boolean isBad;
+        int m = random.nextInt(10);
+        isBad = m <= 4;
 
         try {
             City city = cityService.getCityById(cityId);
+            LOGGER.info(E.LEAF + city.getCity() + " rating should be bad: " + isBad);
             List<CityPlace> places = placesService.getPlacesByCity(cityId);
             userMap = new HashMap<>();
             int total = 0;
@@ -443,7 +422,7 @@ public class Generator {
                 int placeIndex = random.nextInt(places.size() - 1);
                 CityPlace place = places.get(placeIndex);
                 try {
-                    total += generateEventAtPlace(place, getUnusedRandomUser(cityId));
+                    total += generateEventAtPlace(place, getUnusedRandomUser(cityId), isBad);
                 } catch (Exception e) {
                     LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());
                 }
@@ -462,13 +441,13 @@ public class Generator {
         }
     }
 
-    public GenerationMessage generateEventsByPlace(String placeId, int count) throws Exception {
+    public GenerationMessage generateEventsByPlace(String placeId, int count, boolean isBad) throws Exception {
         CityPlace place = placesService.getPlaceById(placeId);
         int total = 0;
         userMap = new HashMap<>();
         for (int i = 0; i < count; i++) {
             try {
-                total += generateEventAtPlace(place, getUnusedRandomUser(place.cityId));
+                total += generateEventAtPlace(place, getUnusedRandomUser(place.cityId), isBad);
                 totalCount += total;
             } catch (Exception e) {
                 LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());

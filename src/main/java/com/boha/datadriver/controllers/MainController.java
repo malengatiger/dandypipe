@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -90,9 +89,9 @@ public class MainController {
         }
     }
     @GetMapping("/getCityAggregates")
-    private ResponseEntity<Object> getCityAggregates(@RequestParam int hours) {
+    private ResponseEntity<Object> getCityAggregates(@RequestParam int minutes) {
         try {
-            List<CityAggregate> done = cityService.getCityAggregates(hours);
+            List<CityAggregate> done = cityService.getCityAggregates(minutes);
             return ResponseEntity.ok(done );
         } catch (Exception e) {
             return ResponseEntity.status(
@@ -114,11 +113,9 @@ public class MainController {
     }
     @GetMapping("/generateEventsByPlace")
     private ResponseEntity<Object> generateEventsByPlace(@RequestParam String placeId,
-                                                     @RequestParam int count) {
+                                                     @RequestParam int count, @RequestParam boolean isBad) {
         try {
-            GenerationMessage done = generator.generateEventsByPlace(placeId, count);
-            City city  = cityService.getCityById(placeId);
-
+            GenerationMessage done = generator.generateEventsByPlace(placeId, count, isBad);
             return ResponseEntity.ok(done );
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
@@ -247,9 +244,11 @@ public class MainController {
         }
     }
     @GetMapping("/generateCrowd")
-    private ResponseEntity<Object> generateCrowd(@RequestParam String cityId, @RequestParam int total) {
+    private ResponseEntity<Object> generateCrowd(@RequestParam String cityId,
+                                                 @RequestParam int total,
+                                                 @RequestParam boolean isBad) {
         try {
-            CityPlace place = generator.generateCrowd(cityId,total);
+            CityPlace place = generator.generateCrowd(cityId,total, isBad);
             LOGGER.info( E.CHECK + E.CHECK +
                     " Crowd generated: " + total + " at: " +place.name
                     + ",  " + place.cityName + E.CHECK);
@@ -287,46 +286,5 @@ public class MainController {
     @Autowired
     Generator generator;
 
-//    @GetMapping("/generateEvents")
-//    private ResponseEntity<Message> generateEvents(long intervalInSeconds, int upperCountPerPlace, int maxCount) {
-//        try {
-//            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
-//                    " MainController: ... Generator starting .... ");
-//            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART +
-//                    " MainController: intervalInSeconds:  " + intervalInSeconds +
-//                    " upperCountPerPlace: " + upperCountPerPlace +
-//                    " maxCount: " + maxCount + " " + E.RED_APPLE);
-//
-//            generator.generateEvents(intervalInSeconds,
-//                    upperCountPerPlace, maxCount);
-//            Message  message = new Message();
-//            message.setStatusCode(200);
-//            message.setMessage("Generator has started. Check logs Firestore, PubSub, BigQuery and GCS");
-//            message.setDate(String.valueOf(new DateTime()));
-//
-//            return ResponseEntity.ok(
-//                    message);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            Message  message = new Message();
-//            message.setStatusCode(500);
-//            message.setMessage(E.RED_DOT+
-//                    "Something smells! Gone badly wrong: " + e.getMessage());
-//            message.setDate(String.valueOf(new DateTime()));
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(
-//                    message);
-//        }
-//    }
-//    @GetMapping("/stopGenerator")
-//    private ResponseEntity<Message> generateEvents() {
-//        generator.stopTimer();
-//        Message  message = new Message();
-//        message.setStatusCode(200);
-//        message.setMessage("Generator has STOPPED. Check logs Firestore, PubSub, BigQuery and GCS");
-//        message.setDate(String.valueOf(new DateTime()));
-//
-//        return ResponseEntity.ok(
-//                message);
-//    }
 
 }

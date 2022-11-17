@@ -1,17 +1,12 @@
-package com.boha.datadriver.services;
+package com.boha.datadriver.models;
 
-public class GenerationMessage {
+public class GenerationMessage implements  Comparable<GenerationMessage>{
     String type, message;
     int count;
 
     public GenerationMessage() {
     }
 
-    public GenerationMessage(String type, String message, int count) {
-        this.type = type;
-        this.message = message;
-        this.count = count;
-    }
 
     public String getType() {
         return type;
@@ -35,5 +30,10 @@ public class GenerationMessage {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    @Override
+    public int compareTo(GenerationMessage generationMessage) {
+        return this.message.compareToIgnoreCase(generationMessage.getMessage());
     }
 }
