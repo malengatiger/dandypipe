@@ -58,7 +58,7 @@ public class PlacesService {
                 LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT +
                         " MAX_PAGE_COUNT = 4 !!! Yay! " + city.getCity());
             } else {
-                MAX_PAGE_COUNT =  1;
+                MAX_PAGE_COUNT =  2;
             }
         }
         String link = buildLink(city.getLatitude(),city.getLongitude(),radiusInMetres);

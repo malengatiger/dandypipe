@@ -414,17 +414,31 @@ public class Generator {
 
         try {
             City city = cityService.getCityById(cityId);
-            LOGGER.info(E.LEAF + city.getCity() + " rating should be bad: " + isBad);
+            LOGGER.info(E.LEAF + " " + city.getCity() + " rating should be bad: "
+                    + isBad + " - count: " + count);
             List<CityPlace> places = placesService.getPlacesByCity(cityId);
             userMap = new HashMap<>();
             int total = 0;
             for (int i = 0; i < count; i++) {
                 int placeIndex = random.nextInt(places.size() - 1);
                 CityPlace place = places.get(placeIndex);
-                try {
-                    total += generateEventAtPlace(place, getUnusedRandomUser(cityId), isBad);
-                } catch (Exception e) {
-                    LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());
+                var isToBeExcluded =  false;
+                for (String s : place.types) {
+                    if (s.equalsIgnoreCase("school")
+                            || s.equalsIgnoreCase("church")) {
+                        isToBeExcluded = true;
+                        LOGGER.info(E.YELLOW_STAR + "Ignore this place: " +
+                                E.YELLOW_STAR + " " +
+                                place.name);
+                        break;
+                    }
+                }
+                if (!isToBeExcluded) {
+                    try {
+                        total += generateEventAtPlace(place, getUnusedRandomUser(cityId), isBad);
+                    } catch (Exception e) {
+                        LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());
+                    }
                 }
 
             }
