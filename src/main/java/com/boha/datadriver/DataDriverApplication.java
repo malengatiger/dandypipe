@@ -16,12 +16,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
 
@@ -109,18 +115,18 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 
 
 	}
-//	@Bean
-//	ApplicationRunner storageRunner(Storage storage, GcpProjectIdProvider projectIdProvider) {
-//		AtomicInteger count = new AtomicInteger();
-//		return (args) -> {
-//			Page<Blob> list = storage.list(projectIdProvider.getProjectId());
-//
-//			list.iterateAll().forEach(blob -> {
-//				//LOGGER.info(E.BLUE_HEART+E.BLUE_HEART + " " + blob.getName());
-//				count.getAndIncrement();
-//			});
-//			LOGGER.info(E.BLUE_HEART+E.BLUE_HEART + E.RED_APPLE+
-//					" " + count.get() + " cloud storage files " + E.RED_APPLE+E.RED_APPLE+E.RED_APPLE);
-//		};
-//	}
+	@Bean
+	public CorsConfigurationSource corsConfigurationSource() {
+		final CorsConfiguration config = new CorsConfiguration();
+
+		config.setAllowedOrigins(List.of("http://localhost:4200"));
+		config.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS", "DELETE", "PUT", "PATCH"));
+		config.setAllowCredentials(true);
+		config.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control", "Content-Type"));
+
+		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		source.registerCorsConfiguration("/**", config);
+
+		return source;
+	}
 }

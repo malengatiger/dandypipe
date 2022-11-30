@@ -120,6 +120,8 @@ public class CityService {
             ca.setAverageRating(averageRating);
             ca.setTotalSpent(totalAmount);
             ca.setHours(minutes);
+            ca.setLatitude(city.getLatitude());
+            ca.setLongitude(city.getLongitude());
             aggList.add(ca);
             LOGGER.info(E.RED_APPLE+ " aggregate: "
                     + " - totalSpent: " + ca.getTotalSpent()
@@ -164,6 +166,7 @@ public class CityService {
         if (city == null) {
             LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+
                     " City not found! : " + cityId);
+            throw new Exception("City not found: " + cityId);
         }
         return city;
     }
