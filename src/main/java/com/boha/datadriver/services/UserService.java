@@ -31,7 +31,10 @@ public class UserService {
     public void addUser(User user) throws RuntimeException {
         Firestore c = FirestoreClient.getFirestore();
         try {
-            c.collection("users").add(user);
+            ApiFuture<DocumentReference> future = c.collection("demoUsers").add(user);
+//            LOGGER.info(E.LEAF + " user added, path: "
+//                    + E.RED_APPLE + future.get().getPath());
+
         } catch (Exception e) {
             throw new RuntimeException("Failed to add user: "  +e.getMessage());
         }
@@ -40,7 +43,7 @@ public class UserService {
         Firestore c = FirestoreClient.getFirestore();
         long count = 0;
         try {
-            AggregateQuery query = c.collection("users").count();
+            AggregateQuery query = c.collection("demoUsers").count();
             count = query.get().get().getCount();
         } catch (Exception e) {
             throw new RuntimeException("Failed to count users: "  +e.getMessage());
@@ -56,7 +59,7 @@ public class UserService {
         City city = cityService.getCityById(cityId);
 
         QuerySnapshot snapshot = firestore
-                .collection("users")
+                .collection("demoUsers")
                 .whereEqualTo("cityId", cityId)
                 .get().get();
 
@@ -75,7 +78,7 @@ public class UserService {
 
     public User getUserById(String userId) throws Exception {
         Firestore firestore = FirestoreClient.getFirestore();
-        ApiFuture<QuerySnapshot> future = firestore.collection("users")
+        ApiFuture<QuerySnapshot> future = firestore.collection("demoUsers")
                 .whereEqualTo("userId", userId)
                 .get();
         QuerySnapshot snapshot = future.get();

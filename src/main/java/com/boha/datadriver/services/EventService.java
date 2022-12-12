@@ -2,6 +2,7 @@ package com.boha.datadriver.services;
 
 import com.boha.datadriver.models.City;
 import com.boha.datadriver.models.FlatEvent;
+import com.boha.datadriver.util.DB;
 import com.boha.datadriver.util.E;
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -31,7 +32,7 @@ import java.util.logging.Logger;
 @Service
 public class EventService {
     private static final Logger LOGGER = Logger.getLogger(EventService.class.getSimpleName());
-    private static final String collectionName = "flatEvents";
+    private static final String collectionName = DB.events;
 
     @Autowired
     private StorageService storageService;
@@ -41,10 +42,10 @@ public class EventService {
         LOGGER.info(E.AMP+E.AMP+E.AMP + " EventService constructed");
     }
 
-    public List<FlatEvent> getRecentEvents(int  hours) throws Exception{
+    public List<FlatEvent> getRecentEvents(int  minutes) throws Exception{
         List<FlatEvent> events  = new ArrayList<>();
         Firestore c = FirestoreClient.getFirestore();
-        long deltaDate = DateTime.now().minusHours(hours).getMillis();
+        long deltaDate = DateTime.now().minusMinutes(minutes).getMillis();
         ApiFuture<QuerySnapshot>  future = c.collection(collectionName)
                 .whereGreaterThan("longDate", deltaDate).
                 orderBy("longDate").get();
@@ -65,13 +66,13 @@ public class EventService {
         }
         return null;
     }
-    public long countEvents(int hours) throws Exception {
+    public long countEvents(int minutes) throws Exception {
         Firestore c = FirestoreClient.getFirestore();
-        long date = DateTime.now().minusHours(hours).getMillis();
+        long date = DateTime.now().minusMinutes(minutes).getMillis();
         AggregateQuery q  = c.collection(collectionName).whereGreaterThan("longDate",date).count();
         long count = q.get().get().getCount();
 
-        LOGGER.info(E.RED_APPLE + " " + count +" Events found in the last " + hours + " hours");
+        LOGGER.info(E.RED_APPLE + " " + count +" Events found in the last " + minutes + " minutes");
         return count;
     }
 

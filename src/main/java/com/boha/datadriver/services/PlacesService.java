@@ -1,25 +1,22 @@
 package com.boha.datadriver.services;
 
-import com.boha.datadriver.models.City;
-import com.boha.datadriver.models.CityPlace;
-import com.boha.datadriver.models.Root;
+import com.boha.datadriver.models.*;
+import com.boha.datadriver.util.DB;
 import com.boha.datadriver.util.E;
 import com.boha.datadriver.util.SecretMgr;
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.QueryDocumentSnapshot;
-import com.google.cloud.firestore.QuerySnapshot;
+import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.squareup.okhttp.*;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Logger;
 
 /**
@@ -30,6 +27,9 @@ public class PlacesService {
     private static final String prefix =
             "https://maps.googleapis.com/maps/api/place/nearbysearch/json?";
     private static final Logger LOGGER = Logger.getLogger(PlacesService.class.getSimpleName());
+    private static final Gson GSON = new GsonBuilder()
+            .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+            .create();
     @Autowired
     private SecretMgr secretMgr;
     String buildLink(double lat, double lng, int radiusInMetres) throws Exception {
@@ -42,7 +42,7 @@ public class PlacesService {
         return sb.toString();
     }
     OkHttpClient client = new OkHttpClient();
-    int MAX_PAGE_COUNT = 2;
+    int MAX_PAGE_COUNT = 3;
     int pageCount;
     int totalPlaceCount = 0;
     void getCityPlaces(City city, int radiusInMetres, String pageToken) throws Exception {
@@ -78,29 +78,36 @@ public class PlacesService {
         Response response = call.execute();
         String mResp = response.body().string();
         Root root = GSON.fromJson(mResp, Root.class);
-        for (CityPlace cityPlace : root.results) {
-            cityPlace.cityId = city.getId();
+        for (CityPlace cityPlace : root.getResults()) {
+            cityPlace.setCityId(city.getId());
+            cityPlace.setCityName(city.getCity());
+            cityPlace.setProvince(city.getAdminMame());
+            cityPlace.setLatitude(cityPlace.getGeometry().getLocation().lat);
+            cityPlace.setLongitude(cityPlace.getGeometry().getLocation().lng);
         }
         addCityPlacesToFirestore(root);
         pageCount++;
-        totalPlaceCount += root.results.size();
+        totalPlaceCount += root.getResults().size();
         if (pageCount < MAX_PAGE_COUNT) {
-            if (root.next_page_token != null) {
-                getCityPlaces(city, radiusInMetres, root.next_page_token);
+            if (root.getNextPageToken() != null) {
+                getCityPlaces(city, radiusInMetres, root.getNextPageToken());
             }
         }
     }
 
     void addCityPlacesToFirestore(Root root) throws Exception {
         Firestore c = FirestoreClient.getFirestore();
-        for (CityPlace cityPlace : root.results) {
-            ApiFuture<DocumentReference> future = c.collection("cityPlaces").add(cityPlace);
-            DocumentReference ref = future.get();
-            LOGGER.info(E.RED_APPLE+E.RED_APPLE+
-                    " " + cityPlace.name + E.YELLOW_STAR + " path: " + ref.getPath());
+        for (CityPlace cityPlace : root.getResults()) {
+            if (cityPlace.getGeometry() == null) {
+                LOGGER.info(E.RED_DOT + E.RED_DOT + " geometry is null. Ignoring Firestore add!");
+            } else {
+                ApiFuture<DocumentReference> future = c.collection(DB.places).add(cityPlace);
+                DocumentReference ref = future.get();
+                LOGGER.info(E.RED_APPLE + E.RED_APPLE +
+                        " " + cityPlace.getName() + " " + E.YELLOW_STAR + " path: " + ref.getPath());
+            }
         }
     }
-    static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     @Autowired
     private CityService cityService;
 
@@ -123,6 +130,56 @@ public class PlacesService {
                 " " + city.getCity() + " has " + cityPlaces.size() + " places on file" );
         return cityPlaces;
     }
+
+    public PlaceAggregate getPlaceAggregate(String placeId, int minutes) throws Exception {
+        List<PlaceAggregate> cityPlaces = new ArrayList<>();
+        Firestore c = FirestoreClient.getFirestore();
+        DateTime dt = DateTime.now().minusMinutes(minutes);
+        long m = dt.getMillis();
+        var ref = c.collection(DB.events)
+                .whereEqualTo("placeId",placeId)
+                .whereGreaterThanOrEqualTo("longDate", m)
+                .orderBy("longDate", Query.Direction.DESCENDING)
+                .get().get();
+
+        List<FlatEvent> events = new ArrayList<>();
+        for (QueryDocumentSnapshot doc : ref.getDocuments()) {
+            events.add(doc.toObject(FlatEvent.class));
+        }
+
+        LOGGER.info(E.RED_APPLE
+                +" Events of last " + minutes + " minutes found: " + events.size());
+        double totalAmount = 0.0;
+        int totalRating = 0;
+        double avgRating = 0.0;
+
+        for (FlatEvent e : events) {
+            totalAmount += e.getAmount();
+            totalRating += e.getRating();
+        }
+        avgRating = Double.parseDouble("" + (totalRating/events.size()));
+        PlaceAggregate agg = new PlaceAggregate();
+        FlatEvent fe = events.get(0);
+
+        agg.setAverageRating(avgRating);
+        agg.setCityName(fe.getCityName());
+        agg.setCityId(fe.getCityId());
+        agg.setDate(DateTime.now().toDateTimeISO().toString());
+        agg.setLatitude(fe.getLatitude());
+        agg.setLongitude(fe.getLongitude());
+        agg.setPlaceName(fe.getPlaceName());
+        agg.setPlaceId(fe.getPlaceId());
+        agg.setMinutes(minutes);
+        agg.setLongDate(DateTime.now().getMillis());
+        agg.setTotalSpent(totalAmount);
+        agg.setNumberOfEvents(events.size());
+
+
+        LOGGER.info(E.RED_APPLE+
+                " Place Aggregate calculated: " + GSON.toJson(agg));
+        return agg;
+    }
+
     public CityPlace getPlaceById(String placeId) throws Exception {
         Firestore c = FirestoreClient.getFirestore();
         ApiFuture<QuerySnapshot> future = c
@@ -149,7 +206,7 @@ public class PlacesService {
         if (!cities.isEmpty()) {
             for (City city : cities) {
                 LOGGER.info(E.BLUE_DOT + E.BLUE_DOT + E.BLUE_DOT +
-                        " Finding places for " + city.getCity());
+                        " ... Finding places for " + city.getCity());
                 pageCount = 0;
                 getCityPlaces(city, 10000, null);
 
@@ -157,5 +214,15 @@ public class PlacesService {
         }
 
         return totalPlaceCount + " Total City Places Loaded " + E.AMP+E.AMP+E.AMP;
+    }
+
+    public long countPlaces() throws Exception {
+        Firestore firestore = FirestoreClient.getFirestore();
+        AggregateQuerySnapshot snapshot = firestore.collection("cityPlaces")
+                .count()
+                .get().get();
+        long count = snapshot.getCount();
+        LOGGER.info(E.AMP + " Counted " + count + " places");
+        return count;
     }
 }

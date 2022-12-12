@@ -3,12 +3,10 @@ package com.boha.datadriver.services;
 import com.boha.datadriver.models.City;
 import com.boha.datadriver.models.CityAggregate;
 import com.boha.datadriver.models.FlatEvent;
+import com.boha.datadriver.util.DB;
 import com.boha.datadriver.util.E;
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.QueryDocumentSnapshot;
-import com.google.cloud.firestore.QuerySnapshot;
+import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
 import com.google.gson.Gson;
 import org.joda.time.DateTime;
@@ -37,7 +35,27 @@ public class CityService {
     }
     @Autowired
     ResourceLoader resourceLoader;
-    public List<City>  getCitiesFromFile() throws Exception{
+
+    public void fixCities() throws Exception {
+        LOGGER.info(E.PEAR+ " fixing cities ........: " );
+        Firestore c = FirestoreClient.getFirestore();
+        ApiFuture<QuerySnapshot> future = c.collection(DB.cities)
+                .get();
+        QuerySnapshot snapshot = future.get();
+        List<QueryDocumentSnapshot> docs = snapshot.getDocuments();
+        LOGGER.info("Cities found for fixing: " + docs.size());
+        for (QueryDocumentSnapshot doc : docs) {
+            String val = (String) doc.getData().get("admin_name");
+            if (val != null) {
+                LOGGER.info("admin_name value: " + val);
+                Map<String, Object> map = new HashMap<>();
+                map.put("adminName", val);
+                doc.getReference().set(map);
+            }
+        }
+    }
+    public List<City>  getCitiesFromFile() throws Exception
+    {
         LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+ " getCitiesFromFile running ... ");
         try {
             String json = storageService.downloadObject(citiesFile);
@@ -70,7 +88,7 @@ public class CityService {
         for (City realCity : cities) {
             LOGGER.info(E.RED_APPLE + " " + realCity.getCity()
                     + " to Firestore " + E.RED_APPLE);
-            ApiFuture<DocumentReference> future = c.collection("cities").add(realCity);
+            ApiFuture<DocumentReference> future = c.collection(DB.cities).add(realCity);
             try {
                 LOGGER.info(E.GREEN_APPLE+" Firestore city; path: " + future.get().getPath());
             } catch (InterruptedException | ExecutionException e) {
@@ -138,7 +156,7 @@ public class CityService {
         LOGGER.info(E.PEAR+ " Getting events of the past minutes: " + minutes);
         Firestore c = FirestoreClient.getFirestore();
         long date = DateTime.now().toDateTimeISO().minusMinutes(minutes).getMillis();
-        ApiFuture<QuerySnapshot> future = c.collection("flatEvents")
+        ApiFuture<QuerySnapshot> future = c.collection(DB.events)
                 .whereGreaterThan("longDate", date)
                 .get();
         QuerySnapshot snapshot = future.get();
@@ -154,7 +172,7 @@ public class CityService {
     }
     public City getCityById(String cityId) throws Exception {
         Firestore firestore = FirestoreClient.getFirestore();
-        ApiFuture<QuerySnapshot> future = firestore.collection("cities")
+        ApiFuture<QuerySnapshot> future = firestore.collection(DB.cities)
                 .whereEqualTo("id", cityId)
                 .get();
         QuerySnapshot snapshot = future.get();
@@ -171,10 +189,41 @@ public class CityService {
         return city;
     }
 
+    public List<FlatEvent> getCityEvents(String cityId, int minutes) throws Exception {
+        LOGGER.info(E.PEAR+ " Getting events of the past minutes: " + minutes);
+        Firestore c = FirestoreClient.getFirestore();
+        long date = DateTime.now().toDateTimeISO().minusMinutes(minutes).getMillis();
+        ApiFuture<QuerySnapshot> future = c.collection(DB.events)
+                .whereEqualTo("cityId", cityId)
+                .whereGreaterThan("longDate", date)
+                .get();
+        QuerySnapshot snapshot = future.get();
+        List<QueryDocumentSnapshot> docs = snapshot.getDocuments();
+        List<FlatEvent> flatEvents = new ArrayList<>();
+        for (QueryDocumentSnapshot doc : docs) {
+            FlatEvent city = doc.toObject(FlatEvent.class);
+            flatEvents.add(city);
+        }
+
+        LOGGER.info(E.AMP + E.AMP + " Found " + flatEvents.size()  + " events from Firestore");
+        return flatEvents;
+    }
+
+    public long countCities() throws Exception {
+        Firestore firestore = FirestoreClient.getFirestore();
+        AggregateQuerySnapshot snapshot = firestore.collection(DB.cities)
+                .count()
+                .get().get();
+        long count = snapshot.getCount();
+        LOGGER.info(E.AMP + " Counted " + count + " cities");
+        return count;
+    }
+
+
     public List<City> getCitiesFromFirestore() throws Exception {
         LOGGER.info(E.PEAR+ " Getting cities ...");
         Firestore c = FirestoreClient.getFirestore();
-        ApiFuture<QuerySnapshot> future = c.collection("cities")
+        ApiFuture<QuerySnapshot> future = c.collection(DB.cities)
                 .orderBy("city")
                 .get();
         QuerySnapshot snapshot = future.get();

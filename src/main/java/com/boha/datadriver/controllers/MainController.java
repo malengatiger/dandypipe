@@ -23,12 +23,14 @@ import java.util.logging.Logger;
 public class MainController {
     private static final Logger LOGGER = Logger.getLogger(MainController.class.getSimpleName());
 
-    public MainController(CityService cityService) {
+    public MainController(CityService cityService, DashboardService dashboardService) {
         this.cityService = cityService;
+        this.dashboardService = dashboardService;
     }
 
 
     private final CityService cityService;
+    private final DashboardService dashboardService;
 
 
     @GetMapping("/")
@@ -62,6 +64,8 @@ public class MainController {
         }
     }
 
+
+
     @GetMapping("/generateCityUsers")
     private ResponseEntity<Object> generateCityUsers(@RequestParam String cityId,
                                                      @RequestParam int count) {
@@ -81,8 +85,8 @@ public class MainController {
             LOGGER.info("generateEventsByCity request come in: "+cityId + " count: " + count);
         try {
             GenerationMessage done = generator.generateEventsByCity(cityId, count);
-            LOGGER.info("Events generated: " +
-                    new GsonBuilder().setPrettyPrinting().create().toJson(done));
+//            LOGGER.info("Events generated: " +
+//                    new GsonBuilder().setPrettyPrinting().create().toJson(done));
             return ResponseEntity.ok(done );
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
@@ -96,6 +100,30 @@ public class MainController {
         } catch (Exception e) {
             return ResponseEntity.status(
                     HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/getCityEvents")
+    private ResponseEntity<Object> getCityEvents(@RequestParam String cityId, @RequestParam int minutes) {
+        try {
+            List<FlatEvent> done = cityService.getCityEvents(cityId,minutes);
+            return ResponseEntity.ok(done );
+        } catch (Exception e) {
+            return ResponseEntity.status(
+                            HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/getPlaceAggregate")
+    private ResponseEntity<Object> getPlaceAggregate(@RequestParam String placeId, @RequestParam int minutes) {
+        try {
+            PlaceAggregate done = placesService.getPlaceAggregate(placeId, minutes);
+            return ResponseEntity.ok(done );
+        } catch (Exception e) {
+            return ResponseEntity.status(
+                            HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(e.getMessage());
         }
     }
@@ -121,12 +149,12 @@ public class MainController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
-    @GetMapping("/generateEventsByPlaces")
-    private ResponseEntity<Object> generateEventsByPlaces(@RequestParam List<String> placeIds,
-                                                         @RequestParam int upperCount) {
+
+    @GetMapping("/getDashboardData")
+    private ResponseEntity<Object> getDashboardData( @RequestParam int minutesAgo) {
         try {
-            List<GenerationMessage> done = generator.generateEventsByPlaces(placeIds, upperCount);
-            return ResponseEntity.ok(done );
+            DashboardData data = dashboardService.getDashboardData( minutesAgo);
+            return ResponseEntity.ok(data );
         } catch (Exception e) {
             return ResponseEntity.status(
                     HttpStatus.INTERNAL_SERVER_ERROR)
@@ -186,6 +214,17 @@ public class MainController {
             LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
                     "  " + loaded + E.CHECK);
             return ResponseEntity.ok(loaded);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
+        }
+    }
+    @GetMapping("/fixCities")
+    private ResponseEntity<Object> fixCities() {
+        try {
+            cityService.fixCities();
+            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
+                    " Cities fixed "  + E.CHECK);
+            return ResponseEntity.ok("Cities fixed? check Firestore");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
         }
@@ -250,10 +289,10 @@ public class MainController {
         try {
             CityPlace place = generator.generateCrowd(cityId,total, isBad);
             LOGGER.info( E.CHECK + E.CHECK +
-                    " Crowd generated: " + total + " at: " +place.name
-                    + ",  " + place.cityName + E.CHECK);
+                    " Crowd generated: " + total + " at: " +place.getName()
+                    + ",  " + place.getCityName() + E.CHECK);
             return ResponseEntity.ok("Crowd generated => "+ total
-                    + " at: " +place.name + ", " + place.cityName);
+                    + " at: " +place.getName() + ", " + place.getCityName());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }

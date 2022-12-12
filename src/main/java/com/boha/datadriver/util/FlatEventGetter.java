@@ -1,6 +1,5 @@
 package com.boha.datadriver.util;
 
-import com.boha.datadriver.DataDriverApplication;
 import com.boha.datadriver.models.Event;
 import com.boha.datadriver.models.FlatEvent;
 
@@ -13,15 +12,15 @@ public class FlatEventGetter {
     public static FlatEvent getFlatEvent(Event event) throws Exception {
         FlatEvent  flatEvent = new FlatEvent();
         flatEvent.setAmount(event.getAmount());
-        flatEvent.setCityId(event.getCityPlace().cityId);
-        flatEvent.setCityName(event.getCityPlace().cityName);
+        flatEvent.setCityId(event.getCityPlace().getCityId());
+        flatEvent.setCityName(event.getCityPlace().getCityName());
         flatEvent.setDate(event.getDate());
         flatEvent.setEventId(event.getEventId());
-        flatEvent.setLatitude(event.getCityPlace().geometry.location.lat);
+        flatEvent.setLatitude(event.getCityPlace().getGeometry().getLocation().lat);
         flatEvent.setLongDate(event.getLongDate());
-        flatEvent.setLongitude(event.getCityPlace().geometry.location.lng);
-        flatEvent.setPlaceId(event.getCityPlace().place_id);
-        flatEvent.setPlaceName(event.getCityPlace().name);
+        flatEvent.setLongitude(event.getCityPlace().getGeometry().getLocation().lng);
+        flatEvent.setPlaceId(event.getCityPlace().getPlaceId());
+        flatEvent.setPlaceName(event.getCityPlace().getName());
         flatEvent.setRating(event.getRating());
         if (event.getUser() !=  null) {
             flatEvent.setUserId(event.getUser().getUserId());
@@ -35,12 +34,12 @@ public class FlatEventGetter {
             LOGGER.info(E.RED_DOT+E.RED_DOT+ " " + msg);
             throw new RuntimeException(msg);
         }
-        if (event.getCityPlace().types != null) {
+        if (event.getCityPlace().getTypes() != null) {
             StringBuilder bf = new StringBuilder();
             int index = 0;
-            for (String t: event.getCityPlace().types) {
+            for (String t: event.getCityPlace().getTypes()) {
                 bf.append(t);
-                if (index < event.getCityPlace().types.size() - 1) {
+                if (index < event.getCityPlace().getTypes().size() - 1) {
                     bf.append(", ");
                 }
 
@@ -48,7 +47,7 @@ public class FlatEventGetter {
             }
             flatEvent.setTypes(bf.toString());
         }
-        flatEvent.setVicinity(event.getCityPlace().vicinity);
+        flatEvent.setVicinity(event.getCityPlace().getVicinity());
         return flatEvent;
 
     }

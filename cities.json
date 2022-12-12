@@ -5,13 +5,13 @@
     "lng": "28.1219",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "121536",
     "capital": "",
+    "adminMame": "Gauteng",
+    "populationProper": "121536",
     "latitude": -26.2672,
     "longitude": 28.1219,
     "pop": 0,
-    "id": "d050542a-57ae-4280-87ea-91aaecf1c402"
+    "id": "7751c047-d8c0-420b-866e-5f9d56c23fb8"
   },
   {
     "city": "Aliwal North",
@@ -19,13 +19,13 @@
     "lng": "26.7000",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Eastern Cape",
-    "population_proper": "8410",
     "capital": "",
+    "adminMame": "Eastern Cape",
+    "populationProper": "8410",
     "latitude": -30.7,
     "longitude": 26.7,
     "pop": 0,
-    "id": "6d0a24d2-52b3-4899-8c76-1aa5eeaba0a9"
+    "id": "f3afd795-6eac-416b-88a7-580ee2210117"
   },
   {
     "city": "Beaufort West",
@@ -33,13 +33,13 @@
     "lng": "22.5833",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "11404",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "11404",
     "latitude": -32.35,
     "longitude": 22.5833,
     "pop": 0,
-    "id": "2e7fd147-e7aa-4a11-8e15-97af89e4be54"
+    "id": "22b23a7e-def7-4296-99cd-242905a76427"
   },
   {
     "city": "Benoni",
@@ -47,13 +47,13 @@
     "lng": "28.3206",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "158777",
     "capital": "",
+    "adminMame": "Gauteng",
+    "populationProper": "158777",
     "latitude": -26.1883,
     "longitude": 28.3206,
     "pop": 0,
-    "id": "b5a5999f-70eb-4e6c-98c5-de24b2b85d2b"
+    "id": "0f9f2176-0de2-4222-b8d7-d3e6f91702b9"
   },
   {
     "city": "Bethal",
@@ -61,13 +61,13 @@
     "lng": "29.4500",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Mpumalanga",
-    "population_proper": "90450",
     "capital": "",
+    "adminMame": "Mpumalanga",
+    "populationProper": "90450",
     "latitude": -26.45,
     "longitude": 29.45,
     "pop": 0,
-    "id": "17de57c1-d805-45e7-89cd-79c4f2f40635"
+    "id": "df25af88-3970-43c0-bc52-95af6304ec2e"
   },
   {
     "city": "Bhisho",
@@ -75,13 +75,13 @@
     "lng": "27.4381",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Eastern Cape",
-    "population_proper": "137287",
     "capital": "admin",
+    "adminMame": "Eastern Cape",
+    "populationProper": "137287",
     "latitude": -32.8494,
     "longitude": 27.4381,
     "pop": 0,
-    "id": "344365b8-2907-41d5-93a4-9d7410512c0f"
+    "id": "cab61b2a-b0a3-4918-b983-c429a591a5b2"
   },
   {
     "city": "Bloemfontein",
@@ -89,13 +89,13 @@
     "lng": "26.2167",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Free State",
-    "population_proper": "256185",
     "capital": "primary",
+    "adminMame": "Free State",
+    "populationProper": "256185",
     "latitude": -29.1,
     "longitude": 26.2167,
     "pop": 0,
-    "id": "7b07ae3a-3105-483f-a023-c3e359241d05"
+    "id": "f062dd64-698c-47f6-b863-cebb42f6bed9"
   },
   {
     "city": "Brakpan",
@@ -103,13 +103,13 @@
     "lng": "28.3700",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "73080",
     "capital": "",
+    "adminMame": "Gauteng",
+    "populationProper": "73080",
     "latitude": -26.2353,
     "longitude": 28.37,
     "pop": 0,
-    "id": "8326dc1a-e121-448b-a46d-5e98aa703634"
+    "id": "6c8d0277-a8d4-46bd-8800-6d8b5460c6d0"
   },
   {
     "city": "Brits",
@@ -117,13 +117,13 @@
     "lng": "27.7667",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "North West",
-    "population_proper": "39947",
     "capital": "",
+    "adminMame": "North West",
+    "populationProper": "39947",
     "latitude": -25.6167,
     "longitude": 27.7667,
     "pop": 0,
-    "id": "b5aa2593-b333-4c84-82c6-d10d6784b9d8"
+    "id": "34415344-54bd-4460-84c7-7e459db9b4c7"
   },
   {
     "city": "Cape Town",
@@ -131,13 +131,13 @@
     "lng": "18.4250",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "433688",
     "capital": "primary",
+    "adminMame": "Western Cape",
+    "populationProper": "433688",
     "latitude": -33.925,
     "longitude": 18.425,
     "pop": 0,
-    "id": "c0751f57-2493-47f8-b8a6-664637992db5"
+    "id": "343a49ed-253d-4536-aa29-d0302f3fa025"
   },
   {
     "city": "Carletonville",
@@ -145,13 +145,13 @@
     "lng": "27.3981",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "23000",
     "capital": "",
+    "adminMame": "Gauteng",
+    "populationProper": "23000",
     "latitude": -26.3581,
     "longitude": 27.3981,
     "pop": 0,
-    "id": "6c1f8d2e-c2e8-4478-a401-68a1d8f9f1fd"
+    "id": "2252a5c2-405c-4992-9ece-668287662d57"
   },
   {
     "city": "Centurion",
@@ -159,13 +159,13 @@
     "lng": "28.1894",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "236580",
     "capital": "",
+    "adminMame": "Gauteng",
+    "populationProper": "236580",
     "latitude": -25.8603,
     "longitude": 28.1894,
     "pop": 0,
-    "id": "edc4cab4-38f0-4e4c-882a-813597277936"
+    "id": "a870ff08-2bb0-4aaf-aa49-c5336b372fcc"
   },
   {
     "city": "Cradock",
@@ -173,13 +173,13 @@
     "lng": "25.6167",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Eastern Cape",
-    "population_proper": "32898",
     "capital": "",
+    "adminMame": "Eastern Cape",
+    "populationProper": "32898",
     "latitude": -32.1833,
     "longitude": 25.6167,
     "pop": 0,
-    "id": "5a406c35-74ac-4602-99d9-bbabad877010"
+    "id": "fbe9caa5-09c2-4cc6-b7d8-5eac1bdb5453"
   },
   {
     "city": "De Aar",
@@ -187,13 +187,13 @@
     "lng": "24.0167",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Northern Cape",
-    "population_proper": "5021",
     "capital": "",
+    "adminMame": "Northern Cape",
+    "populationProper": "5021",
     "latitude": -30.65,
     "longitude": 24.0167,
     "pop": 0,
-    "id": "5ec50433-ed01-4c8f-855b-0e481c581769"
+    "id": "0c8b3dcd-53cf-4680-a695-2921104d3a74"
   },
   {
     "city": "Durban",
@@ -201,13 +201,13 @@
     "lng": "31.0250",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "KwaZulu-Natal",
-    "population_proper": "595061",
     "capital": "",
+    "adminMame": "KwaZulu-Natal",
+    "populationProper": "595061",
     "latitude": -29.8583,
     "longitude": 31.025,
     "pop": 0,
-    "id": "d955d30b-9903-45c1-a466-db7bfad385d8"
+    "id": "db69115e-6f47-41bc-a314-37827417f62b"
   },
   {
     "city": "East London",
@@ -215,13 +215,13 @@
     "lng": "27.9116",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Eastern Cape",
-    "population_proper": "338627",
     "capital": "",
+    "adminMame": "Eastern Cape",
+    "populationProper": "338627",
     "latitude": -33.0153,
     "longitude": 27.9116,
     "pop": 0,
-    "id": "8a52651d-03ca-4c94-b4f3-cc823bc504a7"
+    "id": "51b3bf49-7f25-493b-963a-703d516227ce"
   },
   {
     "city": "George",
@@ -229,13 +229,13 @@
     "lng": "22.4500",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "157394",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "157394",
     "latitude": -33.9667,
     "longitude": 22.45,
     "pop": 0,
-    "id": "ad01a09e-f865-424f-9804-cd248733eb81"
+    "id": "5b8b6b12-98d8-4947-8841-8aefb66ada42"
   },
   {
     "city": "Graaff-Reinet",
@@ -243,13 +243,13 @@
     "lng": "24.5406",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Eastern Cape",
-    "population_proper": "3021",
     "capital": "",
+    "adminMame": "Eastern Cape",
+    "populationProper": "3021",
     "latitude": -32.2522,
     "longitude": 24.5406,
     "pop": 0,
-    "id": "f137ecec-2241-4713-a025-f06c4d01e4fe"
+    "id": "88654f30-3f4c-44a5-b7a9-b53642e73649"
   },
   {
     "city": "Grahamstown",
@@ -257,13 +257,13 @@
     "lng": "26.5200",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Eastern Cape",
-    "population_proper": "49083",
     "capital": "",
+    "adminMame": "Eastern Cape",
+    "populationProper": "49083",
     "latitude": -33.2996,
     "longitude": 26.52,
     "pop": 0,
-    "id": "ddfa63f4-c532-4de9-8e86-da1bd3d03a95"
+    "id": "99b1860d-63f5-43d9-b2ef-a1d0810b6124"
   },
   {
     "city": "Hermanus",
@@ -271,13 +271,13 @@
     "lng": "19.3000",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "7396",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "7396",
     "latitude": -34.4167,
     "longitude": 19.3,
     "pop": 0,
-    "id": "82bc129f-701e-435f-8d32-9dbdec025407"
+    "id": "7a7f4481-9aec-4d5a-829f-ed4efa766ca9"
   },
   {
     "city": "Jeffrey’s Bay",
@@ -285,13 +285,13 @@
     "lng": "24.9167",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Eastern Cape",
-    "population_proper": "27107",
     "capital": "",
+    "adminMame": "Eastern Cape",
+    "populationProper": "27107",
     "latitude": -34.0333,
     "longitude": 24.9167,
     "pop": 0,
-    "id": "18c05582-ab79-4073-9bc8-21e452f0bd9e"
+    "id": "7e4b5c7d-72bf-4367-8d30-770817696bd7"
   },
   {
     "city": "Johannesburg",
@@ -299,13 +299,13 @@
     "lng": "28.0416",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "4434827",
     "capital": "admin",
+    "adminMame": "Gauteng",
+    "populationProper": "4434827",
     "latitude": -26.2044,
     "longitude": 28.0416,
     "pop": 0,
-    "id": "151d3b43-de61-4c1f-a470-e62f310cdf7f"
+    "id": "4b60ab59-b1fc-43f9-85ca-aeff33c8e22f"
   },
   {
     "city": "Kimberley",
@@ -313,13 +313,13 @@
     "lng": "24.7586",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Northern Cape",
-    "population_proper": "142089",
     "capital": "admin",
+    "adminMame": "Northern Cape",
+    "populationProper": "142089",
     "latitude": -28.7386,
     "longitude": 24.7586,
     "pop": 0,
-    "id": "8312f572-9a1c-4d9e-ba45-a6a835b26e76"
+    "id": "7409a248-0d2f-4ff4-8217-3c1e2c25c6e0"
   },
   {
     "city": "Klerksdorp",
@@ -327,13 +327,13 @@
     "lng": "26.6667",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "North West",
-    "population_proper": "147804",
     "capital": "",
+    "adminMame": "North West",
+    "populationProper": "147804",
     "latitude": -26.8667,
     "longitude": 26.6667,
     "pop": 0,
-    "id": "7a26e621-b36c-4979-bdc0-6d123cced6f2"
+    "id": "2ac555e4-4325-47b5-b998-419c9ac9d593"
   },
   {
     "city": "Knysna",
@@ -341,13 +341,13 @@
     "lng": "23.0489",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "51078",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "51078",
     "latitude": -34.0356,
     "longitude": 23.0489,
     "pop": 0,
-    "id": "1361bb2d-d35f-4cbc-9836-2e47726c1c38"
+    "id": "1ddfba87-9934-4561-b9c7-e6e339662ee1"
   },
   {
     "city": "Kroonstad",
@@ -355,13 +355,13 @@
     "lng": "27.2317",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Free State",
-    "population_proper": "72835",
     "capital": "",
+    "adminMame": "Free State",
+    "populationProper": "72835",
     "latitude": -27.6456,
     "longitude": 27.2317,
     "pop": 0,
-    "id": "dd636c87-2e2c-4ebb-a425-39568821d58f"
+    "id": "34bdc9a2-880b-4c91-bc0e-c5adff4b0ec5"
   },
   {
     "city": "Kuilsrivier",
@@ -369,13 +369,13 @@
     "lng": "18.7000",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "46686",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "46686",
     "latitude": -34.0333,
     "longitude": 18.7,
     "pop": 0,
-    "id": "48a16a1e-8db5-47d8-aed3-0c342a93814d"
+    "id": "9fb34931-c92c-43bc-b852-05b68694603c"
   },
   {
     "city": "Ladysmith",
@@ -383,13 +383,13 @@
     "lng": "29.7825",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "KwaZulu-Natal",
-    "population_proper": "47375",
     "capital": "",
+    "adminMame": "KwaZulu-Natal",
+    "populationProper": "47375",
     "latitude": -28.5539,
     "longitude": 29.7825,
     "pop": 0,
-    "id": "8d9bcb61-4bfc-493b-a0d3-e4d49cb2aa6e"
+    "id": "ef93322b-3d05-4420-8352-6fc2c0546d0d"
   },
   {
     "city": "Lebowakgomo",
@@ -397,13 +397,13 @@
     "lng": "29.5650",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Limpopo",
-    "population_proper": "397",
     "capital": "",
+    "adminMame": "Limpopo",
+    "populationProper": "397",
     "latitude": -24.305,
     "longitude": 29.565,
     "pop": 0,
-    "id": "4c5bb5eb-25b3-488a-9d15-02076eb24048"
+    "id": "bbeb1f7f-8fff-4fa5-9a0b-a041950f020b"
   },
   {
     "city": "Lichtenburg",
@@ -411,13 +411,13 @@
     "lng": "26.1667",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "North West",
-    "population_proper": "26338",
     "capital": "",
+    "adminMame": "North West",
+    "populationProper": "26338",
     "latitude": -26.15,
     "longitude": 26.1667,
     "pop": 0,
-    "id": "98260e58-dc3e-4834-ad2f-ab0175eeee9d"
+    "id": "25c71d33-2d2d-49e0-9e05-59beac4b3ffc"
   },
   {
     "city": "Mahikeng",
@@ -425,13 +425,13 @@
     "lng": "25.6442",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "North West",
-    "population_proper": "15117",
     "capital": "admin",
+    "adminMame": "North West",
+    "populationProper": "15117",
     "latitude": -25.8653,
     "longitude": 25.6442,
     "pop": 0,
-    "id": "89054ceb-f1ed-4fe4-b45d-3d6dc6991123"
+    "id": "63cc1b50-f832-4587-96ff-7ebe7ca68007"
   },
   {
     "city": "Malmesbury",
@@ -439,13 +439,13 @@
     "lng": "18.7333",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "35897",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "35897",
     "latitude": -33.45,
     "longitude": 18.7333,
     "pop": 0,
-    "id": "e41c09bb-d3a9-4755-a48f-9acc0e8a0533"
+    "id": "ea7f369b-b001-4d68-9db1-a90a9c9b3a60"
   },
   {
     "city": "Middelburg",
@@ -453,13 +453,13 @@
     "lng": "29.4783",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Mpumalanga",
-    "population_proper": "93790",
     "capital": "",
+    "adminMame": "Mpumalanga",
+    "populationProper": "93790",
     "latitude": -25.7684,
     "longitude": 29.4783,
     "pop": 0,
-    "id": "84b0064e-0d1d-4b78-a18c-598c052a7bac"
+    "id": "81f3f46a-815b-4919-9df3-686b3a673add"
   },
   {
     "city": "Mmabatho",
@@ -467,13 +467,13 @@
     "lng": "25.6333",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "North West",
-    "population_proper": "76754",
     "capital": "",
+    "adminMame": "North West",
+    "populationProper": "76754",
     "latitude": -25.85,
     "longitude": 25.6333,
     "pop": 0,
-    "id": "0a729995-9bb7-40b7-835a-36169ff91c5b"
+    "id": "32a39541-be09-4b47-b47a-7f57d1122fe4"
   },
   {
     "city": "Mossel Bay",
@@ -481,13 +481,13 @@
     "lng": "22.1333",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "59031",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "59031",
     "latitude": -34.1833,
     "longitude": 22.1333,
     "pop": 0,
-    "id": "68701984-d0b2-493e-bd46-65e4df78469f"
+    "id": "3afd386c-2ff6-48ee-936f-da83d6e57761"
   },
   {
     "city": "Musina",
@@ -495,13 +495,13 @@
     "lng": "30.0417",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Limpopo",
-    "population_proper": "42678",
     "capital": "",
+    "adminMame": "Limpopo",
+    "populationProper": "42678",
     "latitude": -22.3381,
     "longitude": 30.0417,
     "pop": 0,
-    "id": "f5c9d821-5152-4898-99e8-e03b7dbce8b6"
+    "id": "8b7ec36c-7309-420e-a1ad-7da690b20d90"
   },
   {
     "city": "Nelspruit",
@@ -509,13 +509,13 @@
     "lng": "30.9703",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Mpumalanga",
-    "population_proper": "",
     "capital": "admin",
+    "adminMame": "Mpumalanga",
+    "populationProper": "",
     "latitude": -25.4745,
     "longitude": 30.9703,
     "pop": 0,
-    "id": "688da7a9-b617-4414-8436-b8a3da79aff9"
+    "id": "8bdcefe1-68ff-4078-ac4b-0efdd4b1c4b9"
   },
   {
     "city": "Oudtshoorn",
@@ -523,13 +523,13 @@
     "lng": "22.2000",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "61507",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "61507",
     "latitude": -33.5833,
     "longitude": 22.2,
     "pop": 0,
-    "id": "4336e47f-7269-452b-a8b0-1af26b1eea80"
+    "id": "b8873c72-881c-4967-bc60-cdbc80750281"
   },
   {
     "city": "Paarl",
@@ -537,13 +537,13 @@
     "lng": "18.9558",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "112045",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "112045",
     "latitude": -33.7242,
     "longitude": 18.9558,
     "pop": 0,
-    "id": "76c3616c-5cf2-4ff6-a77d-b5832aab6cde"
+    "id": "79b1325a-2a89-4a47-a4b8-3e2db40454ea"
   },
   {
     "city": "Pietermaritzburg",
@@ -551,13 +551,13 @@
     "lng": "30.4167",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "KwaZulu-Natal",
-    "population_proper": "490951",
     "capital": "admin",
+    "adminMame": "KwaZulu-Natal",
+    "populationProper": "490951",
     "latitude": -29.5833,
     "longitude": 30.4167,
     "pop": 0,
-    "id": "783564f1-3381-4eb2-880b-9afe1c0b28e9"
+    "id": "508c28c2-02d2-4647-8783-97151a68ecaf"
   },
   {
     "city": "Polokwane",
@@ -565,13 +565,13 @@
     "lng": "29.4500",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Limpopo",
-    "population_proper": "123749",
     "capital": "admin",
+    "adminMame": "Limpopo",
+    "populationProper": "123749",
     "latitude": -23.9,
     "longitude": 29.45,
     "pop": 0,
-    "id": "1984d1eb-0918-4f84-9c23-46d76bc70b70"
+    "id": "ed0b0279-fa53-4848-8de5-b4520aebb12a"
   },
   {
     "city": "Port Elizabeth",
@@ -579,13 +579,13 @@
     "lng": "25.6000",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Eastern Cape",
-    "population_proper": "312392",
     "capital": "",
+    "adminMame": "Eastern Cape",
+    "populationProper": "312392",
     "latitude": -33.9581,
     "longitude": 25.6,
     "pop": 0,
-    "id": "50ab0585-091c-4c2f-80bf-5a8c73b2043d"
+    "id": "d487e096-930c-4252-b4e2-3e8409150225"
   },
   {
     "city": "Port Shepstone",
@@ -593,13 +593,13 @@
     "lng": "30.4547",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "KwaZulu-Natal",
-    "population_proper": "21858",
     "capital": "",
+    "adminMame": "KwaZulu-Natal",
+    "populationProper": "21858",
     "latitude": -30.7411,
     "longitude": 30.4547,
     "pop": 0,
-    "id": "38fa1c2e-6d6d-4fc3-9118-b39d69f194c0"
+    "id": "a24207c5-a76f-4002-af33-2855212da881"
   },
   {
     "city": "Potchefstroom",
@@ -607,13 +607,13 @@
     "lng": "27.1033",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "North West",
-    "population_proper": "148804",
     "capital": "",
+    "adminMame": "North West",
+    "populationProper": "148804",
     "latitude": -26.715,
     "longitude": 27.1033,
     "pop": 0,
-    "id": "cd9476a2-eea9-4316-83de-c308e1234528"
+    "id": "5b67d6bf-e0a0-4bc7-b39a-7a445e8e5f64"
   },
   {
     "city": "Pretoria",
@@ -621,13 +621,13 @@
     "lng": "28.1881",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "741651",
     "capital": "primary",
+    "adminMame": "Gauteng",
+    "populationProper": "741651",
     "latitude": -25.7464,
     "longitude": 28.1881,
     "pop": 0,
-    "id": "8a6bd828-5529-4298-b4e2-4fbcd1716b9d"
+    "id": "381b179f-d0c4-4810-9d73-82de95d155a0"
   },
   {
     "city": "Queenstown",
@@ -635,13 +635,13 @@
     "lng": "26.8833",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Eastern Cape",
-    "population_proper": "87240",
     "capital": "",
+    "adminMame": "Eastern Cape",
+    "populationProper": "87240",
     "latitude": -31.9,
     "longitude": 26.8833,
     "pop": 0,
-    "id": "bacf2b9d-7399-4ce4-8a89-66c1257b9422"
+    "id": "b1b243a3-d693-4e76-be37-dc214501373d"
   },
   {
     "city": "Randburg",
@@ -649,13 +649,13 @@
     "lng": "28.0064",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "337053",
     "capital": "",
+    "adminMame": "Gauteng",
+    "populationProper": "337053",
     "latitude": -26.0936,
     "longitude": 28.0064,
     "pop": 0,
-    "id": "e89905a8-ef90-4513-a4d2-711ea3028d38"
+    "id": "44e43ca6-4272-4864-9bca-310cdd48bdcb"
   },
   {
     "city": "Roodepoort",
@@ -663,13 +663,13 @@
     "lng": "27.8725",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "326416",
     "capital": "",
+    "adminMame": "Gauteng",
+    "populationProper": "326416",
     "latitude": -26.1625,
     "longitude": 27.8725,
     "pop": 0,
-    "id": "a8410bf5-954f-4b4f-843b-46d60da3fd65"
+    "id": "5a8f23c1-339c-4371-b850-0c46eebdcecf"
   },
   {
     "city": "Rustenburg",
@@ -677,13 +677,13 @@
     "lng": "27.2336",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "North West",
-    "population_proper": "124064",
     "capital": "",
+    "adminMame": "North West",
+    "populationProper": "124064",
     "latitude": -25.6667,
     "longitude": 27.2336,
     "pop": 0,
-    "id": "79177877-b294-4b6a-abcd-8d5676508fb6"
+    "id": "acb7049b-dbd9-485b-bf61-bf9921b04d79"
   },
   {
     "city": "Saldanha",
@@ -691,13 +691,13 @@
     "lng": "17.9456",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "6654",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "6654",
     "latitude": -32.9978,
     "longitude": 17.9456,
     "pop": 0,
-    "id": "c5ca67b4-8a8f-4a05-bd0b-04924f629b5d"
+    "id": "c33bfdb0-cfbb-4887-8b75-65c4b4f9db92"
   },
   {
     "city": "Sandton",
@@ -705,13 +705,13 @@
     "lng": "28.0517",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "222415",
     "capital": "",
+    "adminMame": "Gauteng",
+    "populationProper": "222415",
     "latitude": -26.107,
     "longitude": 28.0517,
     "pop": 0,
-    "id": "253c0404-3458-480c-bc51-cf0e020b28b4"
+    "id": "25156118-6aaf-4d5a-9e89-2eef5d58e3c3"
   },
   {
     "city": "Springs",
@@ -719,13 +719,13 @@
     "lng": "28.4428",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "186394",
     "capital": "",
+    "adminMame": "Gauteng",
+    "populationProper": "186394",
     "latitude": -26.2547,
     "longitude": 28.4428,
     "pop": 0,
-    "id": "a7ef9963-3345-4222-a3da-82e75f611c87"
+    "id": "d5d4971f-fa1f-4d5b-9399-d745f4468cbc"
   },
   {
     "city": "Standerton",
@@ -733,13 +733,13 @@
     "lng": "29.2500",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Mpumalanga",
-    "population_proper": "18093",
     "capital": "",
+    "adminMame": "Mpumalanga",
+    "populationProper": "18093",
     "latitude": -26.95,
     "longitude": 29.25,
     "pop": 0,
-    "id": "ee98a9fe-0375-4690-91aa-a4800f2f15fc"
+    "id": "a45ada08-6c12-4060-88cc-158c96eb21d2"
   },
   {
     "city": "Thohoyandou",
@@ -747,13 +747,13 @@
     "lng": "30.4833",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Limpopo",
-    "population_proper": "69453",
     "capital": "",
+    "adminMame": "Limpopo",
+    "populationProper": "69453",
     "latitude": -22.95,
     "longitude": 30.4833,
     "pop": 0,
-    "id": "92426a65-9f83-4228-af96-ddcc0aef1995"
+    "id": "11a9d041-8326-4a8a-9b37-6153963331cf"
   },
   {
     "city": "Tzaneen",
@@ -761,13 +761,13 @@
     "lng": "30.1667",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Limpopo",
-    "population_proper": "16954",
     "capital": "",
+    "adminMame": "Limpopo",
+    "populationProper": "16954",
     "latitude": -23.8333,
     "longitude": 30.1667,
     "pop": 0,
-    "id": "b5d14223-eed6-4cfa-8019-da1dfdb60ff7"
+    "id": "4453efe1-a858-463e-89ac-5018ed65a8f7"
   },
   {
     "city": "Uitenhage",
@@ -775,13 +775,13 @@
     "lng": "25.4000",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Eastern Cape",
-    "population_proper": "103639",
     "capital": "",
+    "adminMame": "Eastern Cape",
+    "populationProper": "103639",
     "latitude": -33.75,
     "longitude": 25.4,
     "pop": 0,
-    "id": "2916cb18-044e-482c-9214-3a79892ad8cb"
+    "id": "4f0293a5-a2a0-4a65-8a73-2567ebccea07"
   },
   {
     "city": "Ulundi",
@@ -789,13 +789,13 @@
     "lng": "31.4161",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "KwaZulu-Natal",
-    "population_proper": "29132",
     "capital": "",
+    "adminMame": "KwaZulu-Natal",
+    "populationProper": "29132",
     "latitude": -28.335,
     "longitude": 31.4161,
     "pop": 0,
-    "id": "dc97349f-a570-4839-b43d-1ad9dcc5bbd1"
+    "id": "d21abe96-b618-4440-82c4-df18afaa9bc0"
   },
   {
     "city": "Umtata",
@@ -803,13 +803,13 @@
     "lng": "28.7900",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Eastern Cape",
-    "population_proper": "78663",
     "capital": "",
+    "adminMame": "Eastern Cape",
+    "populationProper": "78663",
     "latitude": -31.58,
     "longitude": 28.79,
     "pop": 0,
-    "id": "5b0dbe14-b835-4e14-95f8-eadeb396413d"
+    "id": "ed4f7287-dab6-41a4-89fc-ae4b9fb9f427"
   },
   {
     "city": "Upington",
@@ -817,13 +817,13 @@
     "lng": "21.2425",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Northern Cape",
-    "population_proper": "121189",
     "capital": "",
+    "adminMame": "Northern Cape",
+    "populationProper": "121189",
     "latitude": -28.4572,
     "longitude": 21.2425,
     "pop": 0,
-    "id": "9a3fba13-8aa9-4244-b8d1-41c922881cd6"
+    "id": "adc0138a-3688-46c2-9c62-a5cdca5d8c64"
   },
   {
     "city": "Vanderbijlpark",
@@ -831,13 +831,13 @@
     "lng": "27.8356",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "95840",
     "capital": "",
+    "adminMame": "Gauteng",
+    "populationProper": "95840",
     "latitude": -26.6992,
     "longitude": 27.8356,
     "pop": 0,
-    "id": "6894c0d2-8cd2-480c-bba0-6d66f0127dff"
+    "id": "627d05c0-7996-4b32-9791-2d98f0640695"
   },
   {
     "city": "Vereeniging",
@@ -845,13 +845,13 @@
     "lng": "27.9319",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Gauteng",
-    "population_proper": "474681",
     "capital": "",
+    "adminMame": "Gauteng",
+    "populationProper": "474681",
     "latitude": -26.6736,
     "longitude": 27.9319,
     "pop": 0,
-    "id": "16302af2-d773-4a7e-b55f-7d9840ea1d3e"
+    "id": "05960dd5-213f-4048-b2ad-9e23f5347c7b"
   },
   {
     "city": "Volksrust",
@@ -859,13 +859,13 @@
     "lng": "29.8833",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Mpumalanga",
-    "population_proper": "7411",
     "capital": "",
+    "adminMame": "Mpumalanga",
+    "populationProper": "7411",
     "latitude": -27.3667,
     "longitude": 29.8833,
     "pop": 0,
-    "id": "ef61bca4-5709-491f-97ca-19b87c34656b"
+    "id": "6941fb43-7e79-4a1a-bc7a-37180f98cdb5"
   },
   {
     "city": "Vredenburg",
@@ -873,13 +873,13 @@
     "lng": "17.9833",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "38382",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "38382",
     "latitude": -32.9,
     "longitude": 17.9833,
     "pop": 0,
-    "id": "b4c53019-26ce-475c-b6bf-f2b5f57a3b61"
+    "id": "2ceb2498-ef0e-4322-b647-e2784fd6bab2"
   },
   {
     "city": "Vryburg",
@@ -887,13 +887,13 @@
     "lng": "24.7333",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "North West",
-    "population_proper": "13590",
     "capital": "",
+    "adminMame": "North West",
+    "populationProper": "13590",
     "latitude": -26.95,
     "longitude": 24.7333,
     "pop": 0,
-    "id": "6b357766-3a86-4076-81fc-ae47e8cdabbf"
+    "id": "598f4e40-1daa-42ae-bdbd-20a52b0ff771"
   },
   {
     "city": "Vryheid",
@@ -901,13 +901,13 @@
     "lng": "30.7914",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "KwaZulu-Natal",
-    "population_proper": "66717",
     "capital": "",
+    "adminMame": "KwaZulu-Natal",
+    "populationProper": "66717",
     "latitude": -27.7694,
     "longitude": 30.7914,
     "pop": 0,
-    "id": "8e0b60ac-975b-4f4f-9a15-48e0740d5fb7"
+    "id": "b28775c8-c603-42ee-9483-64358925b57a"
   },
   {
     "city": "Welkom",
@@ -915,13 +915,13 @@
     "lng": "26.7208",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Free State",
-    "population_proper": "126079",
     "capital": "",
+    "adminMame": "Free State",
+    "populationProper": "126079",
     "latitude": -27.9831,
     "longitude": 26.7208,
     "pop": 0,
-    "id": "2192a9cd-bf63-476c-8f39-a77df9b7919b"
+    "id": "e053ad39-c7ff-499c-8739-a858b2e54bf6"
   },
   {
     "city": "Worcester",
@@ -929,12 +929,12 @@
     "lng": "19.4436",
     "country": "South Africa",
     "iso2": "ZA",
-    "admin_name": "Western Cape",
-    "population_proper": "97098",
     "capital": "",
+    "adminMame": "Western Cape",
+    "populationProper": "97098",
     "latitude": -33.645,
     "longitude": 19.4436,
     "pop": 0,
-    "id": "71649b94-c89a-43c8-9f24-3ec722bbaa54"
+    "id": "1b41f314-b153-43e6-a2e0-88bbbdd5baec"
   }
 ]

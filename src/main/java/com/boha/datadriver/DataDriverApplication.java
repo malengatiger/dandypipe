@@ -26,6 +26,8 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -72,13 +74,22 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 		String projectId = environment.getProperty("PROJECT_ID");
 		app = firebaseService.initializeFirebase();
 
-		LOGGER.info(E.RED_DOT+E.RED_DOT+ " Data Driver ApplicationReadyEvent - Timestamp: "
+		String address = null;
+		try {
+			address = InetAddress.getLocalHost().getHostAddress();
+			LOGGER.info(E.RED_DOT+E.RED_DOT+" server address: " + address);
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+
+
+				LOGGER.info(E.RED_DOT+E.RED_DOT+ " Data Driver ApplicationReadyEvent - Timestamp: "
 				+ E.YELLOW_STAR + event.getTimestamp());
 		LOGGER.info(E.RED_DOT+E.RED_DOT+ " onApplicationEvent Project: " + projectId + " "
 				+ E.YELLOW_STAR );
 		LOGGER.info(E.RED_DOT+E.RED_DOT
 				+  " Topic: " + eventTopicId  + " " + E.YELLOW_STAR );
-		writeLogEntry.info("Data Driver: Things have started OK this far: " + DateTime.now().toDateTimeISO().toString());
+		//writeLogEntry.info("Data Driver: Things have started OK this far: " + DateTime.now().toDateTimeISO().toString());
 
 		ApplicationContext applicationContext = event.getApplicationContext();
 		RequestMappingHandlerMapping requestMappingHandlerMapping = applicationContext
@@ -97,17 +108,7 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 				LOGGER.info(E.CHECK + E.CHECK + E.CHECK +
 						" Places API Key starts with AIza and  should be OK .... ");
 			}
-			int number = 1;
-//			List<GCSBlob> list = storageService.listObjects(number);
-//			List<FlatEvent> flatEvents  = storageService.getRecentFlatEvents(number);
 			topics.printTopicNames();
-//			LOGGER.info(E.CHECK + E.CHECK + E.CHECK + "Google Cloud Storage number of blobs in: " +
-//					number + " hours: " + E.PEAR+ " " + list.size());
-//			String name = list.get(list.size() - 1).getName();
-//			String json = storageService.downloadObject(name);
-//			LOGGER.info(" Last Blob content: " + json);
-
-//			LOGGER.info(E.RED_APPLE+E.RED_APPLE+" events from GCS: " + flatEvents.size() + " " + E.RED_APPLE);//storageService.init();
 		} catch (Exception e) {
 			LOGGER.info(E.RED_DOT + "  We have a problem: " + e.getMessage());
 			e.printStackTrace();

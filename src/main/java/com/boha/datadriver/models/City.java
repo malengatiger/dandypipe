@@ -1,10 +1,32 @@
 package com.boha.datadriver.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class City {
-    private String city, lat,lng,country,iso2,admin_name,population_proper,capital;
+    private String city, lat,lng,country,iso2,capital;
+    @SerializedName("admin_name")
+    private String adminMame;
+    @SerializedName("population_proper")
+    private String populationProper;
     double latitude,longitude;
     int pop;
     String id;
+
+    public String getAdminMame() {
+        return adminMame;
+    }
+
+    public void setAdminMame(String adminMame) {
+        this.adminMame = adminMame;
+    }
+
+    public String getPopulationProper() {
+        return populationProper;
+    }
+
+    public void setPopulationProper(String populationProper) {
+        this.populationProper = populationProper;
+    }
 
     public String getId() {
         return id;
@@ -54,21 +76,6 @@ public class City {
         this.iso2 = iso2;
     }
 
-    public String getAdmin_name() {
-        return admin_name;
-    }
-
-    public void setAdmin_name(String admin_name) {
-        this.admin_name = admin_name;
-    }
-
-    public String getPopulation_proper() {
-        return population_proper;
-    }
-
-    public void setPopulation_proper(String population_proper) {
-        this.population_proper = population_proper;
-    }
 
     public String getCapital() {
         return capital;
