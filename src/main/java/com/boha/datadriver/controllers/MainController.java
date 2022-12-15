@@ -23,14 +23,16 @@ import java.util.logging.Logger;
 public class MainController {
     private static final Logger LOGGER = Logger.getLogger(MainController.class.getSimpleName());
 
-    public MainController(CityService cityService, DashboardService dashboardService) {
+    public MainController(CityService cityService, DashboardService dashboardService, CityAggregateService cityAggregateService) {
         this.cityService = cityService;
         this.dashboardService = dashboardService;
+        this.cityAggregateService = cityAggregateService;
     }
 
 
     private final CityService cityService;
     private final DashboardService dashboardService;
+    private final CityAggregateService cityAggregateService;
 
 
     @GetMapping("/")
@@ -82,7 +84,8 @@ public class MainController {
     @GetMapping("/generateEventsByCity")
     private ResponseEntity<Object> generateEventsByCity(@RequestParam String cityId,
                                                         @RequestParam int count) {
-            LOGGER.info("generateEventsByCity request come in: "+cityId + " count: " + count);
+            LOGGER.info("generateEventsByCity request come in: "+E.BLUE_DOT+ " "+cityId
+                    + " count: " + count+ " " + E.RED_DOT);
         try {
             GenerationMessage done = generator.generateEventsByCity(cityId, count);
 //            LOGGER.info("Events generated: " +
@@ -92,10 +95,11 @@ public class MainController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
+
     @GetMapping("/getCityAggregates")
     private ResponseEntity<Object> getCityAggregates(@RequestParam int minutes) {
         try {
-            List<CityAggregate> done = cityService.getCityAggregates(minutes);
+            List<CityAggregate> done = cityAggregateService.getCityAggregates(minutes);
             return ResponseEntity.ok(done );
         } catch (Exception e) {
             return ResponseEntity.status(
@@ -161,6 +165,18 @@ public class MainController {
                     .body(e.getMessage());
         }
     }
+    @GetMapping("/createAggregatesForAllCities")
+
+    private ResponseEntity<Object> createAggregatesForAllCities( @RequestParam int minutesAgo) {
+        try {
+            List<CityAggregate> data = cityAggregateService.createAggregatesForAllCities( minutesAgo);
+            return ResponseEntity.ok(data );
+        } catch (Exception e) {
+            return ResponseEntity.status(
+                            HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
 
     @Autowired
     private UserService userService;
@@ -214,17 +230,6 @@ public class MainController {
             LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
                     "  " + loaded + E.CHECK);
             return ResponseEntity.ok(loaded);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
-        }
-    }
-    @GetMapping("/fixCities")
-    private ResponseEntity<Object> fixCities() {
-        try {
-            cityService.fixCities();
-            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
-                    " Cities fixed "  + E.CHECK);
-            return ResponseEntity.ok("Cities fixed? check Firestore");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
         }

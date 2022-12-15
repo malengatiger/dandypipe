@@ -72,7 +72,11 @@ public class DataDriverApplication implements ApplicationListener<ApplicationRea
 	@Override
 	public void onApplicationEvent(ApplicationReadyEvent event) {
 		String projectId = environment.getProperty("PROJECT_ID");
-		app = firebaseService.initializeFirebase();
+		try {
+			app = firebaseService.initializeFirebase();
+		} catch (Exception e) {
+			LOGGER.severe("Something wrong; Firebase may already been initialized");
+		}
 
 		String address = null;
 		try {

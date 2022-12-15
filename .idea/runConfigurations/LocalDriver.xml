@@ -1,0 +1,21 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="LocalDriver" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="com.boha.datadriver.util.LocalDriver" />
+    <module name="dandypipe" />
+    <option name="PROGRAM_PARAMETERS" value="http://localhost:8080/ 60 300" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.boha.datadriver.util.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+      <option name="credential" />
+      <option name="region" />
+      <option name="useCurrentConnection" value="false" />
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

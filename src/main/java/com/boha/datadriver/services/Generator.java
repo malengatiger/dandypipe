@@ -185,7 +185,7 @@ public class Generator {
         }
         Event event = new Event();
         event.setCityPlace(cityPlace);
-        int m = random.nextInt(2500);
+        int m = random.nextInt(3000);
         if (m == 0) m = 100;
         int cents = random.nextInt(99);
         if (cents < 10) cents = 50;
@@ -246,11 +246,11 @@ public class Generator {
         eventPublisher.publishPull(GSON.toJson(fe));
 
         pubSubCount += 4;
-        int rem = pubSubCount % 8000;
+        int rem = pubSubCount % 6000;
         if (rem == 0) {
-            LOGGER.info(E.ORANGE_HEART + E.ORANGE_HEART +
+            LOGGER.info(E.ORANGE_HEART + E.ORANGE_HEART + E.ORANGE_HEART +
                     " Total PubSub publishing calls: " + E.AMP + pubSubCount +
-                    " to 4 topics");
+                    " to 4 topics. "+E.ORANGE_HEART );
         }
 
     }
@@ -347,7 +347,7 @@ public class Generator {
 
         for (String cityId : cityIds) {
             int count = random.nextInt(upperCount);
-            if (count < 200) count = 400;
+            if (count < 10) count = 100;
             try {
                 messages.add(generateEventsByCity(cityId, count));
             } catch (Exception e) {
@@ -391,8 +391,8 @@ public class Generator {
     }
     public GenerationMessage generateEventsByCity(String cityId, int count) throws Exception {
         boolean isBad;
-        int m = random.nextInt(10);
-        isBad = m <= 4;
+        int m = random.nextInt(100);
+        isBad = m <= 30;
 
         try {
             City city = cityService.getCityById(cityId);
@@ -401,6 +401,7 @@ public class Generator {
             List<CityPlace> places = placesService.getPlacesByCity(cityId);
             userMap = new HashMap<>();
             int total = 0;
+
             for (int i = 0; i < count; i++) {
                 int placeIndex = random.nextInt(places.size() - 1);
                 CityPlace place = places.get(placeIndex);

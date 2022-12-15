@@ -4,9 +4,18 @@ public class CityAggregate implements Comparable<CityAggregate>{
    private String cityId, cityName;
    private String date;
     private long longDate;
-    private int  numberOfEvents, hours;
+    private int  numberOfEvents, minutesAgo;
     private double totalSpent, averageRating;
     private double latitude, longitude;
+    private double elapsedSeconds;
+
+    public double getElapsedSeconds() {
+        return elapsedSeconds;
+    }
+
+    public void setElapsedSeconds(double elapsedSeconds) {
+        this.elapsedSeconds = elapsedSeconds;
+    }
 
     public double getLatitude() {
         return latitude;
@@ -24,12 +33,12 @@ public class CityAggregate implements Comparable<CityAggregate>{
         this.longitude = longitude;
     }
 
-    public int getHours() {
-        return hours;
+    public int getMinutesAgo() {
+        return minutesAgo;
     }
 
-    public void setHours(int hours) {
-        this.hours = hours;
+    public void setMinutesAgo(int minutesAgo) {
+        this.minutesAgo = minutesAgo;
     }
 
     public String getCityId() {

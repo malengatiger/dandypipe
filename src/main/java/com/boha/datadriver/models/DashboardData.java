@@ -7,6 +7,16 @@ public class DashboardData {
     private long longDate;
     private String date;
 
+    private double elapsedSeconds;
+
+    public double getElapsedSeconds() {
+        return elapsedSeconds;
+    }
+
+    public void setElapsedSeconds(double elapsedSeconds) {
+        this.elapsedSeconds = elapsedSeconds;
+    }
+
     public long getLongDate() {
         return longDate;
     }

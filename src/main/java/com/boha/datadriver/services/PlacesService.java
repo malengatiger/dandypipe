@@ -126,8 +126,6 @@ public class PlacesService {
             cityPlaces.add(cityPlace);
         }
 
-        LOGGER.info(E.PEAR  +
-                " " + city.getCity() + " has " + cityPlaces.size() + " places on file" );
         return cityPlaces;
     }
 
@@ -222,7 +220,7 @@ public class PlacesService {
                 .count()
                 .get().get();
         long count = snapshot.getCount();
-        LOGGER.info(E.AMP + " Counted " + count + " places");
+        LOGGER.info(E.AMP+E.AMP+E.AMP + " Counted " + count + " places");
         return count;
     }
 }

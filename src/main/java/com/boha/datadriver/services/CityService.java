@@ -36,24 +36,6 @@ public class CityService {
     @Autowired
     ResourceLoader resourceLoader;
 
-    public void fixCities() throws Exception {
-        LOGGER.info(E.PEAR+ " fixing cities ........: " );
-        Firestore c = FirestoreClient.getFirestore();
-        ApiFuture<QuerySnapshot> future = c.collection(DB.cities)
-                .get();
-        QuerySnapshot snapshot = future.get();
-        List<QueryDocumentSnapshot> docs = snapshot.getDocuments();
-        LOGGER.info("Cities found for fixing: " + docs.size());
-        for (QueryDocumentSnapshot doc : docs) {
-            String val = (String) doc.getData().get("admin_name");
-            if (val != null) {
-                LOGGER.info("admin_name value: " + val);
-                Map<String, Object> map = new HashMap<>();
-                map.put("adminName", val);
-                doc.getReference().set(map);
-            }
-        }
-    }
     public List<City>  getCitiesFromFile() throws Exception
     {
         LOGGER.info(E.BLUE_DOT+E.BLUE_DOT+ " getCitiesFromFile running ... ");
@@ -97,65 +79,11 @@ public class CityService {
         }
         return cities;
     }
-    public List<CityAggregate> getCityAggregates(int minutes) throws Exception {
 
-        List<FlatEvent> events = getEventsFromFirestore(minutes);
-        LOGGER.info(E.RED_APPLE
-                +" Events of last " + minutes + " minutes found: " + events.size());
-        HashMap<String, List<FlatEvent>> eMap = new HashMap<>();
-        for (FlatEvent event : events) {
-            if (eMap.containsKey(event.getCityId())) {
-                List<FlatEvent> list = eMap.get(event.getCityId());
-                list.add(event);
-            } else {
-                List<FlatEvent> list = new ArrayList<>();
-                list.add(event);
-                eMap.put(event.getCityId(),list);
-            }
-        }
-        List<CityAggregate> aggList = new ArrayList<>();
-        Set<String> set = eMap.keySet();
-        for (String cityId : set) {
-            List<FlatEvent> eventList = eMap.get(cityId);
-            int numberOfEvents = eventList.size();
-            int totalAmount = 0;
-            double averageRating = 0.0;
-            int totalRating = 0;
-
-            for (FlatEvent flatEvent : eventList) {
-                totalAmount += flatEvent.getAmount();
-                totalRating += flatEvent.getRating();
-            }
-            averageRating = Double.parseDouble(""+totalRating) /
-                    Double.parseDouble(""+numberOfEvents);
-            City city = getCityById(cityId);
-            CityAggregate ca = new CityAggregate();
-            ca.setCityId(cityId);
-            ca.setCityName(city.getCity());
-            ca.setDate(DateTime.now().toDateTimeISO().toString());
-            ca.setLongDate(DateTime.now().toDateTimeISO().getMillis());
-            ca.setNumberOfEvents(numberOfEvents);
-            ca.setAverageRating(averageRating);
-            ca.setTotalSpent(totalAmount);
-            ca.setHours(minutes);
-            ca.setLatitude(city.getLatitude());
-            ca.setLongitude(city.getLongitude());
-            aggList.add(ca);
-            LOGGER.info(E.RED_APPLE+ " aggregate: "
-                    + " - totalSpent: " + ca.getTotalSpent()
-            + " ratingAverage: " + ca.getAverageRating()
-            + " for " + E.LEAF + city.getCity() );
-
-        }
-        LOGGER.info(E.RED_APPLE+
-                " City Aggregates generated: " + aggList.size());
-        Collections.sort(aggList);
-        return aggList;
-    }
-    public List<FlatEvent> getEventsFromFirestore(int minutes) throws Exception {
-        LOGGER.info(E.PEAR+ " Getting events of the past minutes: " + minutes);
+    public List<FlatEvent> getEventsFromFirestore(int minutesAgo) throws Exception {
+        LOGGER.info(E.PEAR+ " Getting events of the past minutesAgo: " + minutesAgo);
         Firestore c = FirestoreClient.getFirestore();
-        long date = DateTime.now().toDateTimeISO().minusMinutes(minutes).getMillis();
+        long date = DateTime.now().toDateTimeISO().minusMinutes(minutesAgo).getMillis();
         ApiFuture<QuerySnapshot> future = c.collection(DB.events)
                 .whereGreaterThan("longDate", date)
                 .get();
