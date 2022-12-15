@@ -3,10 +3,18 @@ package com.boha.datadriver.models;
 public class GenerationMessage implements  Comparable<GenerationMessage>{
     String type, message;
     int count;
+    double elapsedSeconds;
 
     public GenerationMessage() {
     }
 
+    public double getElapsedSeconds() {
+        return elapsedSeconds;
+    }
+
+    public void setElapsedSeconds(double elapsedSeconds) {
+        this.elapsedSeconds = elapsedSeconds;
+    }
 
     public String getType() {
         return type;

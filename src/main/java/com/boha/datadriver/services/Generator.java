@@ -5,7 +5,6 @@ import com.boha.datadriver.util.*;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.pubsub.v1.Subscriber;
 import com.google.firebase.cloud.FirestoreClient;
 import com.google.gson.Gson;
@@ -278,7 +277,7 @@ public class Generator {
 
     public int generateUsers(int maxPerCityCount) throws Exception {
         if (cityList == null || cityList.isEmpty()) {
-            cityList = cityService.getCitiesFromFirestore();
+            cityList = cityService.getCities();
         }
         userTotal = 0;
         if (lastNames.size() == 0) {
@@ -344,6 +343,7 @@ public class Generator {
     public List<GenerationMessage> generateEventsByCities(List<String> cityIds, int upperCount) throws Exception {
         List<GenerationMessage> messages = new ArrayList<>();
         totalCount = 0;
+        long start = System.currentTimeMillis();
 
         for (String cityId : cityIds) {
             int count = random.nextInt(upperCount);
@@ -361,9 +361,12 @@ public class Generator {
         LOGGER.info(E.LEAF+E.LEAF+" Total Cities generated: " + messages.size());
 
         Collections.sort(messages);
+        long end = System.currentTimeMillis();
+        double elapsed = Double.parseDouble("" + (end-start)/1000);
         GenerationMessage msg = new GenerationMessage();
         msg.setType("generateEventsByCities");
         msg.setCount(total);
+        msg.setElapsedSeconds(elapsed);
         msg.setMessage("Total Events");
         messages.add(msg);
         return messages;
@@ -393,7 +396,7 @@ public class Generator {
         boolean isBad;
         int m = random.nextInt(100);
         isBad = m <= 30;
-
+        long start = System.currentTimeMillis();
         try {
             City city = cityService.getCityById(cityId);
             LOGGER.info(E.LEAF + " " + city.getCity() + " rating should be bad: "
@@ -427,9 +430,12 @@ public class Generator {
             }
             String x = "Events generated OK: " + total + " city: " + city.getCity();
             LOGGER.info(E.RED_APPLE + " " + x);
+            long end = System.currentTimeMillis();
+            double elapsed = Double.parseDouble("" + (end-start)/1000);
             GenerationMessage msg = new GenerationMessage();
             msg.setType("generateEventsByCity");
             msg.setCount(total);
+            msg.setElapsedSeconds(elapsed);
             msg.setMessage(city.getCity() + ", " + city.getAdminMame());
             return msg;
         } catch (Exception e) {
@@ -439,6 +445,7 @@ public class Generator {
     }
 
     public GenerationMessage generateEventsByPlace(String placeId, int count, boolean isBad) throws Exception {
+        long start = System.currentTimeMillis();
         CityPlace place = placesService.getPlaceById(placeId);
         City city = cityService.getCityById(place.getCityId());
         int total = 0;
@@ -454,8 +461,11 @@ public class Generator {
         }
         String msg = " Place events generated: " + total + " at " + place.getName();
         LOGGER.info(E.GREEN_APPLE + " " + msg);
+        long end = System.currentTimeMillis();
+        double elapsed = Double.parseDouble("" + (end-start)/1000);
         GenerationMessage message = new GenerationMessage();
         message.setCount(total);
+        message.setElapsedSeconds(elapsed);
         message.setMessage("Events generated for: " + place.getName());
         message.setType("generateEventsByPlace");
         return message;

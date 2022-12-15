@@ -1,7 +1,6 @@
 package com.boha.datadriver.services;
 
 import com.boha.datadriver.models.City;
-import com.boha.datadriver.models.CityAggregate;
 import com.boha.datadriver.models.FlatEvent;
 import com.boha.datadriver.util.DB;
 import com.boha.datadriver.util.E;
@@ -100,10 +99,9 @@ public class CityService {
     }
     public City getCityById(String cityId) throws Exception {
         Firestore firestore = FirestoreClient.getFirestore();
-        ApiFuture<QuerySnapshot> future = firestore.collection(DB.cities)
+        QuerySnapshot snapshot = firestore.collection(DB.cities)
                 .whereEqualTo("id", cityId)
-                .get();
-        QuerySnapshot snapshot = future.get();
+                .get().get();
         List<QueryDocumentSnapshot> docs = snapshot.getDocuments();
         City city = null;
         for (QueryDocumentSnapshot doc : docs) {
@@ -113,6 +111,9 @@ public class CityService {
             LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+
                     " City not found! : " + cityId);
             throw new Exception("City not found: " + cityId);
+        } else {
+            LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+
+                    " City found by id! : " + cityId + " city: " + city.getCity());
         }
         return city;
     }
@@ -148,22 +149,22 @@ public class CityService {
     }
 
 
-    public List<City> getCitiesFromFirestore() throws Exception {
-        LOGGER.info(E.PEAR+ " Getting cities ...");
+    public List<City> getCities() throws Exception {
+        LOGGER.info(E.PEAR+ " Getting all cities ...");
         Firestore c = FirestoreClient.getFirestore();
         ApiFuture<QuerySnapshot> future = c.collection(DB.cities)
                 .orderBy("city")
                 .get();
         QuerySnapshot snapshot = future.get();
         List<QueryDocumentSnapshot> docs = snapshot.getDocuments();
-        List<City> flatEvents = new ArrayList<>();
+        List<City> cities = new ArrayList<>();
         for (QueryDocumentSnapshot doc : docs) {
             City city = doc.toObject(City.class);
-            flatEvents.add(city);
+            cities.add(city);
         }
 
-        LOGGER.info(E.CHECK + E.CHECK + " Found " + flatEvents.size()  + " cities from Firestore");
-        return flatEvents;
+        LOGGER.info(E.CHECK + E.CHECK + " Found " + cities.size()  + " cities from Firestore");
+        return cities;
     }
 
 

@@ -97,13 +97,24 @@ public class MainController {
     }
 
     @GetMapping("/getCityAggregates")
-    private ResponseEntity<Object> getCityAggregates(@RequestParam int minutes) {
+    private ResponseEntity<Object> getCityAggregates(@RequestParam int minutesAgo) {
         try {
-            List<CityAggregate> done = cityAggregateService.getCityAggregates(minutes);
+            List<CityAggregate> done = cityAggregateService.getCityAggregates(minutesAgo);
             return ResponseEntity.ok(done );
         } catch (Exception e) {
             return ResponseEntity.status(
                     HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
+    @GetMapping("/getCityAggregatesByCity")
+    private ResponseEntity<Object> getCityAggregatesByCity(@RequestParam String cityId, @RequestParam int minutesAgo) {
+        try {
+            List<CityAggregate> done = cityAggregateService.getCityAggregatesByCity(cityId,minutesAgo);
+            return ResponseEntity.ok(done );
+        } catch (Exception e) {
+            return ResponseEntity.status(
+                            HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(e.getMessage());
         }
     }
@@ -157,11 +168,22 @@ public class MainController {
     @GetMapping("/getDashboardData")
     private ResponseEntity<Object> getDashboardData( @RequestParam int minutesAgo) {
         try {
-            DashboardData data = dashboardService.getDashboardData( minutesAgo);
+            List<DashboardData> data = dashboardService.getDashboardData( minutesAgo);
             return ResponseEntity.ok(data );
         } catch (Exception e) {
             return ResponseEntity.status(
                     HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
+    @GetMapping("/addDashboardData")
+    private ResponseEntity<Object> addDashboardData( @RequestParam int minutesAgo) {
+        try {
+            DashboardData data = dashboardService.addDashboardData( minutesAgo);
+            return ResponseEntity.ok(data );
+        } catch (Exception e) {
+            return ResponseEntity.status(
+                            HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(e.getMessage());
         }
     }
@@ -210,7 +232,7 @@ public class MainController {
     @GetMapping("/getCities")
     private ResponseEntity<Object> getCities() {
         try {
-            List<City> cities = cityService.getCitiesFromFirestore();
+            List<City> cities = cityService.getCities();
             LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
                     " Firestore Returning " + cities.size() + " cities " + E.CHECK);
             return ResponseEntity.ok(cities);

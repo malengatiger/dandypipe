@@ -13,7 +13,6 @@ import com.google.gson.GsonBuilder;
 import com.squareup.okhttp.*;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -200,7 +199,7 @@ public class PlacesService {
     }
 
     public String loadCityPlaces() throws Exception {
-        List<City> cities = cityService.getCitiesFromFirestore();
+        List<City> cities = cityService.getCities();
         if (!cities.isEmpty()) {
             for (City city : cities) {
                 LOGGER.info(E.BLUE_DOT + E.BLUE_DOT + E.BLUE_DOT +
