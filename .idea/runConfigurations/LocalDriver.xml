@@ -1,8 +1,15 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="LocalDriver" type="Application" factoryName="Application" nameIsGenerated="true">
+    <envs>
+      <env name="urlPrefix" value="http://localhost:8080/" />
+      <env name="periodInMinutes" value="60" />
+      <env name="intervalInSeconds" value="10" />
+      <env name="minutesAgo" value="60" />
+      <env name="upperCount" value="200" />
+    </envs>
     <option name="MAIN_CLASS_NAME" value="com.boha.datadriver.util.LocalDriver" />
     <module name="dandypipe" />
-    <option name="PROGRAM_PARAMETERS" value="http://localhost:8080/ 60 300" />
+    <option name="PROGRAM_PARAMETERS" value="http://localhost:8080/ 10 60 60 300" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.boha.datadriver.util.*" />

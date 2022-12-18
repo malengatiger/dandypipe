@@ -111,9 +111,6 @@ public class CityService {
             LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT+
                     " City not found! : " + cityId);
             throw new Exception("City not found: " + cityId);
-        } else {
-            LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+
-                    " City found by id! : " + cityId + " city: " + city.getCity());
         }
         return city;
     }

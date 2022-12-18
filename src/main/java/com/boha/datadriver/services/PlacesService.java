@@ -52,12 +52,13 @@ public class PlacesService {
                     || city.getCity().contains("Johannesburg" )
                     || city.getCity().contains("Sandton" )
                     || city.getCity().contains("Bloemfontein")
-                    || city.getCity().contains("Fourways" )) {
-                MAX_PAGE_COUNT = 4;
+                    || city.getCity().contains("Centurion")
+                    || city.getCity().contains("Hermanus" )) {
+                MAX_PAGE_COUNT = 2;
                 LOGGER.info(E.RED_DOT+E.RED_DOT+E.RED_DOT +
                         " MAX_PAGE_COUNT = 4 !!! Yay! " + city.getCity());
             } else {
-                MAX_PAGE_COUNT =  2;
+                MAX_PAGE_COUNT =  1;
             }
         }
         String link = buildLink(city.getLatitude(),city.getLongitude(),radiusInMetres);
@@ -87,7 +88,7 @@ public class PlacesService {
         addCityPlacesToFirestore(root);
         pageCount++;
         totalPlaceCount += root.getResults().size();
-        if (pageCount < MAX_PAGE_COUNT) {
+        if (pageCount <= MAX_PAGE_COUNT) {
             if (root.getNextPageToken() != null) {
                 getCityPlaces(city, radiusInMetres, root.getNextPageToken());
             }
@@ -127,6 +128,25 @@ public class PlacesService {
 
         return cityPlaces;
     }
+
+    public List<CityPlace> getPlaces() throws Exception {
+        List<CityPlace> cityPlaces = new ArrayList<>();
+        Firestore c = FirestoreClient.getFirestore();
+        ApiFuture<QuerySnapshot> future = c.collection("cityPlaces")
+                .orderBy("cityId")
+                .get();
+        QuerySnapshot snapshot = future.get();
+        List<QueryDocumentSnapshot> list = snapshot.getDocuments();
+
+        for (QueryDocumentSnapshot queryDocumentSnapshot : list) {
+            CityPlace cityPlace = queryDocumentSnapshot.toObject(CityPlace.class);
+            cityPlaces.add(cityPlace);
+        }
+        LOGGER.info(E.CHECK+" getPlaces found: " + cityPlaces.size() + " in Firestore");
+
+        return cityPlaces;
+    }
+
 
     public PlaceAggregate getPlaceAggregate(String placeId, int minutes) throws Exception {
         List<PlaceAggregate> cityPlaces = new ArrayList<>();

@@ -1,7 +1,5 @@
 package com.boha.datadriver.services;
 
-import com.boha.datadriver.controllers.MainController;
-import com.boha.datadriver.models.City;
 import com.boha.datadriver.models.DashboardData;
 import com.boha.datadriver.models.FlatEvent;
 import com.boha.datadriver.util.DB;
@@ -16,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 
 @Service

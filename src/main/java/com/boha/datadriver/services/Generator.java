@@ -256,6 +256,10 @@ public class Generator {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private DashboardService dashboardService;
+    @Autowired
+    private CityAggregateService cityAggregateService;
     @Value("${surnames}")
     private String surnamesFile;
     @Value("${firstNames}")
@@ -470,6 +474,115 @@ public class Generator {
         message.setType("generateEventsByPlace");
         return message;
 
+    }
+
+    private DashboardData addDashboard(int minutesAgo) {
+        LOGGER.info("\uD83C\uDF50\uD83C\uDF50\uD83C\uDF50\uD83C\uDF50 ....... " +
+                "starting Dashboard ........... " + DateTime.now().toDateTimeISO().toString());
+        DashboardData data = null;
+        try {
+            data = dashboardService.addDashboardData(minutesAgo);
+            LOGGER.info(E.ORANGE_HEART + E.ORANGE_HEART + E.ORANGE_HEART
+                    + " DashboardData: " + GSON.toJson(data));
+
+        } catch (Exception e) {
+            LOGGER.severe("\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 We have some problem: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
+        return data;
+    }
+
+    //create new city aggregates at periodic intervals
+    private List<CityAggregate> addAggregates(int minutesAgo) {
+        LOGGER.info("\uD83C\uDF3C\uD83C\uDF3C\uD83C\uDF3C ... creating Aggregates: "
+                + DateTime.now().toDateTimeISO().toString() + ", " +
+                "\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34 this takes a few minutes to calculate ");
+        List<CityAggregate> aggregates = new ArrayList<>();
+        try {
+            aggregates = cityAggregateService.createAggregatesForAllCities(minutesAgo);
+
+            LOGGER.info("\uD83C\uDF3C\uD83C\uDF3C\uD83C\uDF3C " +
+                    "Total city aggregates calculated: " + aggregates.size());
+
+            if (aggregates.size() > 0) {
+                LOGGER.info("\uD83C\uDF3C\uD83C\uDF3C\uD83C\uDF3C " +
+                        "First aggregate(sample): " + GSON.toJson(aggregates.get(0)));
+            }
+            for (CityAggregate ca : aggregates) {
+                String name = ca.getCityName();
+                if (name.contains("Cape Town")
+                        || name.contains("Sandton")
+                        || name.contains("Durban")) {
+                    LOGGER.info("\uD83C\uDF3C\uD83C\uDF3C\uD83C\uDF3C " +
+                            name + " - Aggregate: " + GSON.toJson(ca));
+                }
+            }
+        } catch (Exception e) {
+            LOGGER.severe("\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 " +
+                    "We have a network or server problem: " + e.getMessage());
+            throw new RuntimeException(e);
+        }
+        return aggregates;
+    }
+
+    public GenerationResultsBag generateData(int minutesAgo, int upperCount) throws Exception {
+        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR+
+                " Starting big generator job: minutesAgo: " + minutesAgo + " upperCount: " + upperCount);
+        long start = System.currentTimeMillis();
+        List<City> cities = cityService.getCities();
+
+        List<GenerationMessage> gms = new ArrayList<>();
+        for (City city : cities) {
+            int count = random.nextInt(upperCount);
+            if (count == 0) count = 10;
+
+            if (city.getCity().contains("Cape Town")) {
+                count += 120;
+            }
+            if (city.getCity().contains("Hermanus")) {
+                count += 50;
+            }
+            if (city.getCity().contains("Jeffery")) {
+                count += 30;
+            }
+            if (city.getCity().contains("Sandton")) {
+                count += 150;
+            }
+            if (city.getCity().contains("Johannesburg")) {
+                count += 100;
+            }
+            if (city.getCity().contains("George")) {
+                count += 68;
+            }
+            if (city.getCity().contains("Rustenburg")) {
+                count += 50;
+            }
+            if (city.getCity().contains("Bloemfontein")) {
+                count += 80;
+            }
+            if (city.getCity().contains("Durban")) {
+                count += 100;
+            }
+
+            GenerationMessage gm = generateEventsByCity(city.getId(), count);
+            gms.add(gm);
+        }
+        DashboardData data = addDashboard(minutesAgo);
+        List<CityAggregate> aggregates = addAggregates(minutesAgo);
+        long end = System.currentTimeMillis();
+        double elapsed = Double.parseDouble("" + (end-start)/1000);
+        GenerationResultsBag bag = new GenerationResultsBag();
+        bag.setAggregates(aggregates);
+        bag.setMessages(gms);
+        bag.setDashboardData(data);
+        bag.setElapsedSeconds(elapsed);
+        bag.setDate(DateTime.now().toDateTimeISO().toString());
+
+
+
+        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+
+                " The job has been completed, Boss!, it took " + elapsed + " seconds");
+        return bag;
     }
 
     private final List<String> firstNames = new ArrayList<>();

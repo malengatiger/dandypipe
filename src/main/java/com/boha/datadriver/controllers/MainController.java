@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.File;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -23,13 +24,15 @@ import java.util.logging.Logger;
 public class MainController {
     private static final Logger LOGGER = Logger.getLogger(MainController.class.getSimpleName());
 
-    public MainController(CityService cityService, DashboardService dashboardService, CityAggregateService cityAggregateService) {
+    public MainController(CacheService cacheService, CityService cityService, DashboardService dashboardService, CityAggregateService cityAggregateService) {
+        this.cacheService = cacheService;
         this.cityService = cityService;
         this.dashboardService = dashboardService;
         this.cityAggregateService = cityAggregateService;
     }
 
 
+    final CacheService cacheService;
     private final CityService cityService;
     private final DashboardService dashboardService;
     private final CityAggregateService cityAggregateService;
@@ -176,6 +179,28 @@ public class MainController {
                     .body(e.getMessage());
         }
     }
+    @GetMapping("/generateData")
+    private ResponseEntity<Object> generateData( @RequestParam int minutesAgo, @RequestParam int upperCount) {
+        try {
+            GenerationResultsBag data = generator.generateData(minutesAgo,upperCount);
+            return ResponseEntity.ok(data );
+        } catch (Exception e) {
+            return ResponseEntity.status(
+                            HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
+    @GetMapping(value = "/getZipFileForCache")
+    private ResponseEntity<Object> getZipFileForCache( @RequestParam int minutesAgo) {
+        try {
+            CacheBag data = cacheService.getZipFileForCache(minutesAgo);
+            return ResponseEntity.ok(data );
+        } catch (Exception e) {
+            return ResponseEntity.status(
+                            HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
     @GetMapping("/addDashboardData")
     private ResponseEntity<Object> addDashboardData( @RequestParam int minutesAgo) {
         try {
@@ -261,6 +286,17 @@ public class MainController {
     private ResponseEntity<Object> getPlacesByCity(@RequestParam String cityId) {
         try {
             List<CityPlace> placesByCity = placesService.getPlacesByCity(cityId);
+            LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
+                    "  City Places Found: " + placesByCity.size() + " " + E.CHECK);
+            return ResponseEntity.ok(placesByCity);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e);
+        }
+    }
+    @GetMapping("/getPlaces")
+    private ResponseEntity<Object> getPlaces() {
+        try {
+            List<CityPlace> placesByCity = placesService.getPlaces();
             LOGGER.info(E.BLUE_HEART + E.BLUE_HEART + E.CHECK +
                     "  City Places Found: " + placesByCity.size() + " " + E.CHECK);
             return ResponseEntity.ok(placesByCity);

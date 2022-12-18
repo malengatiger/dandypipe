@@ -46,14 +46,16 @@ public class EventService {
         List<FlatEvent> events  = new ArrayList<>();
         Firestore c = FirestoreClient.getFirestore();
         long deltaDate = DateTime.now().minusMinutes(minutes).getMillis();
-        ApiFuture<QuerySnapshot>  future = c.collection(collectionName)
+        ApiFuture<QuerySnapshot>  future = c.collection(DB.events)
                 .whereGreaterThan("longDate", deltaDate).
                 orderBy("longDate").get();
         for (QueryDocumentSnapshot document : future.get().getDocuments()) {
             FlatEvent e = document.toObject(FlatEvent.class);
-            events.add(e);
+            if (e.getAmount() > 0.0) {
+                events.add(e);
+            }
         }
-
+        LOGGER.info("\uD83D\uDC99\uD83D\uDC99\uD83D\uDC99 Recent events found: " + events.size());
         return events;
     }
     public FlatEvent getLastEvent(int hours) throws Exception{
