@@ -345,6 +345,8 @@ public class Generator {
     private final HashMap<String, List<User>> hashMap = new HashMap<>();
 
     public List<GenerationMessage> generateEventsByCities(List<String> cityIds, int upperCount) throws Exception {
+        LOGGER.info(E.PEAR + " generateEventsByCities, cityIds: " + cityIds.size()
+                + " upperCount: " + upperCount);
         List<GenerationMessage> messages = new ArrayList<>();
         totalCount = 0;
         long start = System.currentTimeMillis();
@@ -365,14 +367,9 @@ public class Generator {
         LOGGER.info(E.LEAF+E.LEAF+" Total Cities generated: " + messages.size());
 
         Collections.sort(messages);
-        long end = System.currentTimeMillis();
-        double elapsed = Double.parseDouble("" + (end-start)/1000);
-        GenerationMessage msg = new GenerationMessage();
-        msg.setType("generateEventsByCities");
-        msg.setCount(total);
-        msg.setElapsedSeconds(elapsed);
-        msg.setMessage("Total Events");
-        messages.add(msg);
+
+        dashboardService.addDashboardData(5);
+        cityAggregateService.createAggregatesForAllCities(5);
         return messages;
     }
     public List<GenerationMessage> generateEventsByPlaces(List<String> placeIds, int upperCount) throws Exception {

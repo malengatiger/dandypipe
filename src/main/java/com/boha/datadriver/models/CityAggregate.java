@@ -9,52 +9,12 @@ public class CityAggregate implements Comparable<CityAggregate>{
     private double latitude, longitude;
     private double elapsedSeconds;
 
-    public double getElapsedSeconds() {
-        return elapsedSeconds;
-    }
-
-    public void setElapsedSeconds(double elapsedSeconds) {
-        this.elapsedSeconds = elapsedSeconds;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public int getMinutesAgo() {
-        return minutesAgo;
-    }
-
-    public void setMinutesAgo(int minutesAgo) {
-        this.minutesAgo = minutesAgo;
-    }
-
     public String getCityId() {
         return cityId;
     }
 
     public void setCityId(String cityId) {
         this.cityId = cityId;
-    }
-
-    public double getAverageRating() {
-        return averageRating;
-    }
-
-    public void setAverageRating(double averageRating) {
-        this.averageRating = averageRating;
     }
 
     public String getCityName() {
@@ -89,12 +49,52 @@ public class CityAggregate implements Comparable<CityAggregate>{
         this.numberOfEvents = numberOfEvents;
     }
 
+    public int getMinutesAgo() {
+        return minutesAgo;
+    }
+
+    public void setMinutesAgo(int minutesAgo) {
+        this.minutesAgo = minutesAgo;
+    }
+
     public double getTotalSpent() {
         return totalSpent;
     }
 
     public void setTotalSpent(double totalSpent) {
         this.totalSpent = totalSpent;
+    }
+
+    public double getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(double averageRating) {
+        this.averageRating = averageRating;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getElapsedSeconds() {
+        return elapsedSeconds;
+    }
+
+    public void setElapsedSeconds(double elapsedSeconds) {
+        this.elapsedSeconds = elapsedSeconds;
     }
 
     @Override

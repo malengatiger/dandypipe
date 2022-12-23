@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.File;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -190,10 +189,21 @@ public class MainController {
                     .body(e.getMessage());
         }
     }
-    @GetMapping(value = "/getZipFileForCache")
-    private ResponseEntity<Object> getZipFileForCache( @RequestParam int minutesAgo) {
+    @GetMapping(value = "/getDataForCache")
+    private ResponseEntity<Object> getDataForCache(@RequestParam int minutesAgo) {
         try {
-            CacheBag data = cacheService.getZipFileForCache(minutesAgo);
+            CacheBag data = cacheService.getDataForCache(minutesAgo);
+            return ResponseEntity.ok(data );
+        } catch (Exception e) {
+            return ResponseEntity.status(
+                            HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(e.getMessage());
+        }
+    }
+    @GetMapping(value = "/getEventsForCache")
+    private ResponseEntity<Object> getEventsForCache(@RequestParam String cityId,@RequestParam int minutesAgo) {
+        try {
+            List<FlatEvent> data = cacheService.getCityEvents(cityId,minutesAgo);
             return ResponseEntity.ok(data );
         } catch (Exception e) {
             return ResponseEntity.status(

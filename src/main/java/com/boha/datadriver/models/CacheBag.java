@@ -7,7 +7,6 @@ public class CacheBag {
     private List<CityPlace> places;
     private List<CityAggregate> aggregates;
     private List<DashboardData> dashboards;
-    private List<FlatEvent> events;
     private double elapsedSeconds;
     private String date;
 
@@ -41,14 +40,6 @@ public class CacheBag {
 
     public void setDashboards(List<DashboardData> dashboards) {
         this.dashboards = dashboards;
-    }
-
-    public List<FlatEvent> getEvents() {
-        return events;
-    }
-
-    public void setEvents(List<FlatEvent> events) {
-        this.events = events;
     }
 
     public double getElapsedSeconds() {

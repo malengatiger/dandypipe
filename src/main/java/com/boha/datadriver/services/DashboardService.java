@@ -44,18 +44,20 @@ public class DashboardService {
                 .whereGreaterThanOrEqualTo("longDate", dt.getMillis())
                 .orderBy("longDate", Query.Direction.DESCENDING)
                 .get().get();
+
         for (QueryDocumentSnapshot doc : snapshot.getDocuments()) {
             DashboardData data = doc.toObject(DashboardData.class);
             list.add(data);
         }
 
         long end = System.currentTimeMillis();
-        double elapsed2 = Double.parseDouble(String.valueOf((end - start) / 1000));
         LOGGER.info(E.BLUE_DOT + E.RED_DOT +
-                "DashboardData query took " + elapsed2 + " seconds");
+                "DashboardData query took " + (end - start) + " milliseconds, found: " + list.size());
 
         return list;
     }
+
+    private MyBag myBag;
 
     public DashboardData addDashboardData(int minutesAgo) throws Exception {
         Firestore c = FirestoreClient.getFirestore();
@@ -117,3 +119,5 @@ public class DashboardService {
 
 
 }
+
+
