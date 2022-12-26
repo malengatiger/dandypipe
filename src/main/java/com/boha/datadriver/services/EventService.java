@@ -79,7 +79,7 @@ public class EventService {
     }
 
     public List<FlatEvent> getCityEvents(String cityId, int minutesAgo) throws Exception {
-        LOGGER.info(E.PEAR+ " Control paging ------------------------- collect city events using pagination");
+//        LOGGER.info(E.PEAR+ " Control paging ------------------------- collect city events using pagination");
         MyBag myBag = usePagination(cityId, minutesAgo, null);
         List<FlatEvent> events = new ArrayList<>(myBag.events);
         LOGGER.info(E.PEAR+ " Control paging - first page delivered: " + myBag.getEvents().size() + " " +
@@ -102,7 +102,7 @@ public class EventService {
 
         LOGGER.info(E.PEAR+E.PEAR+E.PEAR+E.PEAR
                 +" Firestore total results,  "+E.CHECK + " "
-                + events.size() + " events; pages required: " + cnt + " " + E.ORANGE_HEART);
+                + events.size() + " events; pages required: " + (cnt+1) + " " + E.ORANGE_HEART);
         return events;
     }
 
@@ -130,7 +130,7 @@ public class EventService {
                     .limit(10000)
                     .get().get();
         }
-        LOGGER.info(E.PEAR+ " Control paging usePagination - query executed ... " + E.RED_DOT+E.RED_APPLE);
+//        LOGGER.info(E.PEAR+ " Control paging usePagination - query executed ... " + E.RED_DOT+E.RED_APPLE);
 
         DocumentReference reference = null;
         for (QueryDocumentSnapshot doc : snapshot.getDocuments()) {

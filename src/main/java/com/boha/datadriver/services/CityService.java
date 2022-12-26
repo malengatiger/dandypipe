@@ -80,7 +80,7 @@ public class CityService {
     }
 
     public List<FlatEvent> getEventsFromFirestore(int minutesAgo) throws Exception {
-        LOGGER.info(E.PEAR+ " Getting events of the past minutesAgo: " + minutesAgo);
+//        LOGGER.info(E.PEAR+ " Getting events of the past minutesAgo: " + minutesAgo);
         Firestore c = FirestoreClient.getFirestore();
         long date = DateTime.now().toDateTimeISO().minusMinutes(minutesAgo).getMillis();
         ApiFuture<QuerySnapshot> future = c.collection(DB.events)
@@ -116,7 +116,7 @@ public class CityService {
     }
 
     public List<FlatEvent> getCityEvents(String cityId, int minutes) throws Exception {
-        LOGGER.info(E.PEAR+ " Getting events of the past minutes: " + minutes);
+//        LOGGER.info(E.PEAR+ " Getting events of the past minutes: " + minutes);
         Firestore c = FirestoreClient.getFirestore();
         long date = DateTime.now().toDateTimeISO().minusMinutes(minutes).getMillis();
         ApiFuture<QuerySnapshot> future = c.collection(DB.events)
@@ -131,7 +131,7 @@ public class CityService {
             flatEvents.add(city);
         }
 
-        LOGGER.info(E.AMP + E.AMP + " Found " + flatEvents.size()  + " events from Firestore");
+//        LOGGER.info(E.AMP + E.AMP + " Found " + flatEvents.size()  + " events in Firestore");
         return flatEvents;
     }
 

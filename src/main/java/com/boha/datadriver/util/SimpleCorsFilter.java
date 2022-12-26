@@ -23,8 +23,10 @@ public class SimpleCorsFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
-        log.info(E.AMP + E.AMP + " SimpleCorsFilter doFilter ...");
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
+            throws IOException, ServletException {
+        log.info(E.AMP + E.AMP +E.AMP + E.AMP + " SimpleCorsFilter doFilter ...ServerPort : "
+                +E.AMP + E.AMP + req.getServerPort()+ " " + E.AMP + " ServerName: " + req.getServerName());
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
 

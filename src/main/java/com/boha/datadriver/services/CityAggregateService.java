@@ -10,6 +10,8 @@ import com.google.cloud.firestore.Query;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.firebase.cloud.FirestoreClient;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Service;
 
@@ -32,8 +34,8 @@ public class CityAggregateService {
         List<FlatEvent> eventList = cityService.getCityEvents(cityId,minutesAgo);
         long end1 = System.currentTimeMillis();
         double elapsed = Double.parseDouble(String.valueOf((end1-start)/1000));
-        LOGGER.info(E.RED_APPLE + " getCityEvents took " + elapsed
-                + " seconds to get "+eventList.size()+" events from Firestore, minutesAgo: " + minutesAgo + " " + E.RED_APPLE);
+//        LOGGER.info(E.RED_APPLE + " getCityEvents took " + elapsed
+//                + " seconds to get "+eventList.size()+" events from Firestore, minutesAgo: " + minutesAgo + " " + E.RED_APPLE);
 
         int numberOfEvents = eventList.size();
         int totalAmount = 0;
@@ -65,22 +67,13 @@ public class CityAggregateService {
         cityAggregate.setLatitude(cityById.getLatitude());
         cityAggregate.setLongitude(cityById.getLongitude());
 
-        LOGGER.info(E.RED_APPLE + " aggregate: "
-                + " - totalSpent: " + cityAggregate.getTotalSpent()
-                + " ratingAverage: " + cityAggregate.getAverageRating()
-                + " elapsedSeconds: " + cityAggregate.getElapsedSeconds()
-                + " for " + E.LEAF + cityById.getCity());
-        LOGGER.info(E.RED_APPLE + " adding " + cityById.getCity()
-                + " aggregate to Firestore " + E.RED_APPLE);
-        //add aggregate to Firestore
-        Firestore c = FirestoreClient.getFirestore();
-        String id = c.collection(DB.cityAggregates).add(cityAggregate).get().getId();
-        LOGGER.info(E.RED_APPLE + " added aggregate, id = " + id
-                + " to Firestore " + E.RED_APPLE);
+        Firestore firestore = FirestoreClient.getFirestore();
+        firestore.collection(DB.cityAggregates).add(cityAggregate).get().getId();
+
         long end3 = System.currentTimeMillis();
         elapsed = Double.parseDouble(String.valueOf((end3-start)/1000));
-        LOGGER.info(E.RED_APPLE + " createCityAggregate took " + elapsed
-                + " seconds to wrap up aggregate! " + E.RED_APPLE);
+        LOGGER.info(E.BLUE_DOT + " city: "+ cityAggregate.getCityName() + ", elapsed: " + elapsed
+                + " seconds, " + E.RED_APPLE + " AvgRating: " + cityAggregate.getAverageRating()  );
 
         return cityAggregate;
 

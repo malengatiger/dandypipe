@@ -74,7 +74,7 @@ public class CacheService {
     }
     public List<FlatEvent> getCityEvents(String cityId, int minutesAgo) throws Exception {
         List<FlatEvent> list = eventService.getCityEvents(cityId,minutesAgo);
-        LOGGER.info("City events found:  " + minutesAgo + " events: " + list.size());
+        LOGGER.info(E.AMP + " City events found, minutesAgo:  " + minutesAgo + " total events: " + list.size());
         return list;
     }
     private File zipSingleFile(Path source)

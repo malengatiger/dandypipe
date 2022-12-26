@@ -91,9 +91,11 @@ public class DashboardService {
         }
 
         dashboardData.setAmount(tot);
-        double avg = 0.00;
+        double avg = 0.0;
         if (eventList.size() > 0) {
-            avg = Double.parseDouble("" + (totRating / eventList.size()));
+            Double totRatingDouble = Double.parseDouble("" + totRating);
+            Double eventsDouble = Double.parseDouble("" + eventList.size());
+            avg = totRatingDouble / eventsDouble;
         }
 
         dashboardData.setAverageRating(avg);
@@ -101,7 +103,7 @@ public class DashboardService {
         long end2 = System.currentTimeMillis();
         double elapsed2 = Double.parseDouble(String.valueOf((end2 - start3) / 1000));
         LOGGER.info(E.BLUE_DOT + E.RED_DOT +
-                "DashboardData calculating took " + elapsed2 + " seconds");
+                "DashboardData calculating took " + elapsed2 + " seconds; avg rating: " + avg);
 
         elapsed2 += elapsed + elapsedGetEvents;
         dashboardData.setElapsedSeconds(elapsed2);

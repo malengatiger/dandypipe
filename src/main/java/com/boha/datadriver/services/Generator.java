@@ -76,7 +76,7 @@ public class Generator {
             if (searchCount > users.size()) {
                 String msg = "Unable to find unused random user, city: "
                         + city.getCity() + " " + city.getId();
-                LOGGER.info(E.RED_DOT + E.RED_DOT + " " + msg);
+//                LOGGER.info(E.RED_DOT + E.RED_DOT + " " + msg);
                 throw new Exception(msg);
             }
             user = getUnusedRandomUser(city);
@@ -135,7 +135,6 @@ public class Generator {
 
     private int generateEventAtPlace(CityPlace cityPlace, User user, boolean isBad) throws Exception {
 
-
         Event event;
         try {
             event = getEvent(cityPlace, user, isBad);
@@ -188,6 +187,7 @@ public class Generator {
         if (m == 0) m = 100;
         int cents = random.nextInt(99);
         if (cents < 10) cents = 50;
+
         event.setAmount(Double.parseDouble("" + m + "." + cents));
         event.setRating(isBad? getBadRating() : getGoodRating());
         event.setDate(DateTime.now().toDateTimeISO().toString());
@@ -198,10 +198,7 @@ public class Generator {
     }
     int getGoodRating() {
         int m = random.nextInt(100);
-        if (m <= 10) {
-            return 3;
-        }
-        if (m <= 70) {
+        if (m <= 50) {
             return 4;
         }
 
@@ -210,13 +207,11 @@ public class Generator {
     int getBadRating() {
         int m = random.nextInt(100);
         if (m <= 20) {
-            return 1;
-        }
-        if (m <= 80) {
-            return 2;
-        }
-        if (m <= 90) {
             return 3;
+        }
+
+        if (m <= 50) {
+            return 2;
         }
 
         return 1;
@@ -360,16 +355,17 @@ public class Generator {
                 LOGGER.info(E.RED_DOT+" Error: " + e.getMessage());
             }
         }
+        //
         int total = 0;
         for (GenerationMessage message : messages) {
             total +=  message.getCount();
         }
-        LOGGER.info(E.LEAF+E.LEAF+" Total Cities generated: " + messages.size());
+        LOGGER.info(E.LEAF+E.LEAF+" Total City generationMessages: " + messages.size() + " total events: " + total);
 
         Collections.sort(messages);
 
-        dashboardService.addDashboardData(5);
-        cityAggregateService.createAggregatesForAllCities(5);
+//        dashboardService.addDashboardData(5);
+//        cityAggregateService.createAggregatesForAllCities(5);
         return messages;
     }
     public List<GenerationMessage> generateEventsByPlaces(List<String> placeIds, int upperCount) throws Exception {
@@ -396,7 +392,7 @@ public class Generator {
     public GenerationMessage generateEventsByCity(String cityId, int count) throws Exception {
         boolean isBad;
         int m = random.nextInt(100);
-        isBad = m <= 30;
+        isBad = m <= 15;
         long start = System.currentTimeMillis();
         try {
             City city = cityService.getCityById(cityId);
@@ -414,9 +410,6 @@ public class Generator {
                     if (s.equalsIgnoreCase("school")
                             || s.equalsIgnoreCase("church")) {
                         isToBeExcluded = true;
-//                        LOGGER.info(E.YELLOW_STAR + "Ignore this place: " +
-//                                E.YELLOW_STAR + " " +
-//                                place.getName());
                         break;
                     }
                 }
@@ -424,15 +417,18 @@ public class Generator {
                     try {
                         total += generateEventAtPlace(place, getUnusedRandomUser(city), isBad);
                     } catch (Exception e) {
-                        LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());
+                        if (!e.getMessage().contains("Unable to find unused random user")) {
+                            LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());
+                        }
                     }
                 }
 
             }
-            String x = "Events generated OK: " + total + " city: " + city.getCity();
-            LOGGER.info(E.RED_APPLE + " " + x);
+
             long end = System.currentTimeMillis();
             double elapsed = Double.parseDouble("" + (end-start)/1000);
+            String x = "took "+ elapsed+" seconds to generate " + total + " events for city: " + city.getCity();
+            LOGGER.info(E.RED_APPLE + " " + x);
             GenerationMessage msg = new GenerationMessage();
             msg.setType("generateEventsByCity");
             msg.setCount(total);
@@ -475,13 +471,10 @@ public class Generator {
 
     private DashboardData addDashboard(int minutesAgo) {
         LOGGER.info("\uD83C\uDF50\uD83C\uDF50\uD83C\uDF50\uD83C\uDF50 ....... " +
-                "starting Dashboard ........... " + DateTime.now().toDateTimeISO().toString());
-        DashboardData data = null;
+                "creating Dashboard ........... " + DateTime.now().toDateTimeISO().toString());
+        DashboardData data;
         try {
             data = dashboardService.addDashboardData(minutesAgo);
-            LOGGER.info(E.ORANGE_HEART + E.ORANGE_HEART + E.ORANGE_HEART
-                    + " DashboardData: " + GSON.toJson(data));
-
         } catch (Exception e) {
             LOGGER.severe("\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 We have some problem: " + e.getMessage());
             throw new RuntimeException(e);
@@ -528,58 +521,81 @@ public class Generator {
         long start = System.currentTimeMillis();
         List<City> cities = cityService.getCities();
 
-        List<GenerationMessage> gms = new ArrayList<>();
+        List<GenerationMessage> generationMessages = new ArrayList<>();
+        int ignored = 0;
         for (City city : cities) {
             int count = random.nextInt(upperCount);
             if (count == 0) count = 10;
-
-            if (city.getCity().contains("Cape Town")) {
-                count += 120;
+            count = getCount(city, count);
+            //ignore random city
+            int fx = random.nextInt(100);
+            if (fx > 22) {
+                GenerationMessage gm = generateEventsByCity(city.getId(), count);
+                generationMessages.add(gm);
+            } else {
+                LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR+
+                        " City IGNORED for Generation: " + city.getCity());
+                ignored++;
             }
-            if (city.getCity().contains("Hermanus")) {
-                count += 50;
-            }
-            if (city.getCity().contains("Jeffery")) {
-                count += 30;
-            }
-            if (city.getCity().contains("Sandton")) {
-                count += 150;
-            }
-            if (city.getCity().contains("Johannesburg")) {
-                count += 100;
-            }
-            if (city.getCity().contains("George")) {
-                count += 68;
-            }
-            if (city.getCity().contains("Rustenburg")) {
-                count += 50;
-            }
-            if (city.getCity().contains("Bloemfontein")) {
-                count += 80;
-            }
-            if (city.getCity().contains("Durban")) {
-                count += 100;
-            }
-
-            GenerationMessage gm = generateEventsByCity(city.getId(), count);
-            gms.add(gm);
         }
-        DashboardData data = addDashboard(minutesAgo);
+        long e1 = System.currentTimeMillis();
+        long elapsedMs = (e1 - start);
+        double elapsedSecs = (double) (elapsedMs / 1000);
+        LOGGER.info(" \n\n" +E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR + ignored +
+                " Cities IGNORED for Generation; elapsed seconds for cities: " + elapsedSecs + "\n");
+
+        DashboardData dashboardData = addDashboard(minutesAgo);
+
         List<CityAggregate> aggregates = addAggregates(minutesAgo);
+
         long end = System.currentTimeMillis();
         double elapsed = Double.parseDouble("" + (end-start)/1000);
+
         GenerationResultsBag bag = new GenerationResultsBag();
         bag.setAggregates(aggregates);
-        bag.setMessages(gms);
-        bag.setDashboardData(data);
+        bag.setMessages(generationMessages);
+        bag.setDashboardData(dashboardData);
         bag.setElapsedSeconds(elapsed);
         bag.setDate(DateTime.now().toDateTimeISO().toString());
 
-
-
-        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+
-                " The job has been completed, Boss!, it took " + elapsed + " seconds");
+        LOGGER.info("\n\n" +E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+
+                "The job has been completed, Boss!, it took " + elapsed + " seconds");
+        LOGGER.info("\n\n" +E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+
+                "Generation Messages " + generationMessages.size() + " aggregates: " + aggregates.size()
+        + " dashboardData: " + dashboardData.getDate() + " elapsed: " + elapsed + " seconds\n\n");
         return bag;
+    }
+
+    private static int getCount(City city, int count) {
+        int mCount = count;
+        if (city.getCity().contains("Cape Town")) {
+            mCount = count + 400;
+        }
+        if (city.getCity().contains("Hermanus")) {
+            mCount = count + 200;
+        }
+        if (city.getCity().contains("Jeffery")) {
+            mCount = count + 160;;
+        }
+        if (city.getCity().contains("Sandton")) {
+            mCount = count + 300;;
+        }
+        if (city.getCity().contains("Johannesburg")) {
+            mCount = count + 100;
+        }
+        if (city.getCity().contains("George")) {
+            mCount = count + 100;
+        }
+        if (city.getCity().contains("Rustenburg")) {
+            mCount = count + 50;
+        }
+        if (city.getCity().contains("Bloemfontein")) {
+            mCount = count + 100;
+        }
+        if (city.getCity().contains("Durban")) {
+            mCount = count + 200;
+        }
+        return mCount;
     }
 
     private final List<String> firstNames = new ArrayList<>();
