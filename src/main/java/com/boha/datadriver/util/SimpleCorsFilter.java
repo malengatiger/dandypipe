@@ -2,7 +2,8 @@ package com.boha.datadriver.util;
 
 
 import java.io.IOException;
-        import javax.servlet.Filter;
+import java.util.Enumeration;
+import javax.servlet.Filter;
         import javax.servlet.FilterChain;
         import javax.servlet.FilterConfig;
         import javax.servlet.ServletException;
@@ -25,10 +26,21 @@ public class SimpleCorsFilter implements Filter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
             throws IOException, ServletException {
-        log.info(E.AMP + E.AMP +E.AMP + E.AMP + " SimpleCorsFilter doFilter ...ServerPort : "
-                +E.AMP + E.AMP + req.getServerPort()+ " " + E.AMP + " ServerName: " + req.getServerName());
+
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
+
+        log.info("\n\n"+E.AMP + E.AMP +E.AMP + E.AMP + " SimpleCorsFilter doFilter ...ServerPort : "
+                +E.AMP + E.AMP + req.getServerPort()+ " " + E.AMP + " ServerName: " + req.getServerName());
+        Enumeration<String> en = req.getParameterNames();
+        while (en.hasMoreElements()) {
+            String key = en.nextElement();
+            log.info(E.AMP +E.AMP + E.AMP + " Param Key:" + key + " "
+                    + E.RED_APPLE + " value: " + req.getParameter(key));
+        }
+        log.info(""+E.AMP + E.AMP +E.AMP + E.AMP + " contextPath: " + request.getContextPath()
+                + E.AMP +" requestURI: " + request.getRequestURI() + "\n\n");
+
 
         response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
         response.setHeader("Access-Control-Allow-Credentials", "true");

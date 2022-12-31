@@ -36,6 +36,8 @@ public class EventService {
 
     @Autowired
     private StorageService storageService;
+    @Autowired
+    private CityService cityService;
     @Value("${citiesFile}")
     private String citiesFile;
     public EventService() {
@@ -80,9 +82,11 @@ public class EventService {
 
     public List<FlatEvent> getCityEvents(String cityId, int minutesAgo) throws Exception {
 //        LOGGER.info(E.PEAR+ " Control paging ------------------------- collect city events using pagination");
+        City city = cityService.getCityById(cityId);
         MyBag myBag = usePagination(cityId, minutesAgo, null);
         List<FlatEvent> events = new ArrayList<>(myBag.events);
-        LOGGER.info(E.PEAR+ " Control paging - first page delivered: " + myBag.getEvents().size() + " " +
+        LOGGER.info("\n" +E.PEAR+E.PEAR+E.PEAR+" Paged events: " + city.getCity());
+        LOGGER.info(E.PEAR+ "Firestore paging - first page delivered: " + myBag.getEvents().size() + " " +
                 E.RED_APPLE);
 
         var control = 0;
@@ -100,9 +104,9 @@ public class EventService {
 
         }
 
-        LOGGER.info(E.PEAR+E.PEAR+E.PEAR+E.PEAR
-                +" Firestore total results,  "+E.CHECK + " "
-                + events.size() + " events; pages required: " + (cnt+1) + " " + E.ORANGE_HEART);
+//        LOGGER.info(E.PEAR+E.PEAR+E.PEAR+E.PEAR
+//                +" Firestore total results,  "+E.CHECK + " "
+//                + events.size() + " events; pages required: " + (cnt+1) + " " + E.ORANGE_HEART);
         return events;
     }
 
@@ -138,15 +142,15 @@ public class EventService {
             list.add(data);
             reference = doc.getReference();
         }
-        LOGGER.info(E.PEAR+ " Control paging usePagination - "+E.BLUE_HEART+" snapshot documents in my list: "
-                + list.size());
+//        LOGGER.info(E.PEAR+ " Control paging usePagination - "+E.BLUE_HEART+" snapshot documents in my list: "
+//                + list.size());
         MyBag bag;
         if (reference != null) {
             DocumentSnapshot docSnapshot = reference.get().get();
             bag = new MyBag(docSnapshot, list);
         } else {
             bag = new MyBag(null, new ArrayList<>());
-            LOGGER.info(E.PEAR +E.PEAR +E.PEAR +E.PEAR + " Control paging - WE ARE DONE! "+ E.PEAR);
+//            LOGGER.info(E.PEAR +E.PEAR +E.PEAR +E.PEAR + " Control paging - WE ARE DONE! "+ E.PEAR);
 
         }
 

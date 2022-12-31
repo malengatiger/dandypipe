@@ -1,6 +1,7 @@
 package com.boha.datadriver.services;
 
 import com.boha.datadriver.models.CacheBag;
+import com.boha.datadriver.models.City;
 import com.boha.datadriver.models.FlatEvent;
 import com.boha.datadriver.util.E;
 import com.google.gson.Gson;
@@ -11,7 +12,10 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
@@ -77,9 +81,51 @@ public class CacheService {
         LOGGER.info(E.AMP + " City events found, minutesAgo:  " + minutesAgo + " total events: " + list.size());
         return list;
     }
+    public String getEventZippedFilePath(String cityId, int minutesAgo) throws Exception {
+        long start = System.currentTimeMillis();
+        List<FlatEvent>  events = eventService.getCityEvents(cityId, minutesAgo);
+
+        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR
+                +" Total Events: " + events.size() + " from "+minutesAgo+" minutesAgo");
+        long end1 = System.currentTimeMillis();
+        long elapsed1 = (end1 - start)/1000/60;
+
+        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR
+                +" Time taken to read events from Firestore: " + elapsed1 + " elapsed minutes ");
+
+        File dir = new File("temporary");
+        if (!dir.exists()) {
+            boolean b = dir.mkdir();
+        }
+
+        String json = GSON.toJson(events);
+        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR
+                +" Size of events json string: " + json.length()
+                + " " + events.size() + " events");
+
+        File newFile = new File(dir + "/events-" + System.currentTimeMillis() + ".json");
+        FileWriter fileWriter = new FileWriter(newFile);
+        fileWriter.write(json);
+        fileWriter.close();
+        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR
+                +" create zip file from: " + newFile.toURI().getPath());
+        File zipped = zipSingleFile(Paths.get(newFile.toURI()));
+
+        long end2 = System.currentTimeMillis();
+        long elapsed2 = (end2 - start)/1000/60;
+
+        LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR
+                +" Zipped files created: " + zipped.length() + " bytes, elapsed: " + elapsed2 + " minutes");
+
+        return zipped.getPath();
+    }
     private File zipSingleFile(Path source)
             throws Exception {
-        File file = new File("" + System.currentTimeMillis() + ".zip");
+        File dir = new File("temporary");
+        if (!dir.exists()) {
+            dir.mkdir();
+        }
+        File file = new File(dir + "/events-" + System.currentTimeMillis() + ".zip");
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         try (
                 ZipOutputStream zos = new ZipOutputStream(fileOutputStream);
@@ -96,6 +142,7 @@ public class CacheService {
             zos.closeEntry();
         }
         LOGGER.info(E.BLUE_HEART + " Zip file created: " + file.length() + " name: " + file.getName());
+
         return file;
 
     }

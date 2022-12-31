@@ -13,6 +13,7 @@
 src/main/java/resources/application.properties
 src/main/java/resources/application-dev.properties
 src/main/java/resources/application-prod.properties
+temporary/
 
 
 # Package Files #

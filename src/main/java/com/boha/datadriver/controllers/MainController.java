@@ -5,14 +5,18 @@ import com.boha.datadriver.services.*;
 import com.boha.datadriver.util.E;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.apache.commons.io.IOUtils;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
+import java.io.InputStream;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -23,7 +27,9 @@ import java.util.logging.Logger;
 public class MainController {
     private static final Logger LOGGER = Logger.getLogger(MainController.class.getSimpleName());
 
-    public MainController(CacheService cacheService, CityService cityService, DashboardService dashboardService, CityAggregateService cityAggregateService) {
+    public MainController(FileService fileService, CacheService cacheService, CityService cityService,
+                          DashboardService dashboardService, CityAggregateService cityAggregateService) {
+        this.fileService = fileService;
         this.cacheService = cacheService;
         this.cityService = cityService;
         this.dashboardService = dashboardService;
@@ -31,6 +37,7 @@ public class MainController {
     }
 
 
+    final FileService fileService;
     final CacheService cacheService;
     private final CityService cityService;
     private final DashboardService dashboardService;
@@ -179,9 +186,9 @@ public class MainController {
         }
     }
     @GetMapping("/generateData")
-    private ResponseEntity<Object> generateData( @RequestParam int minutesAgo, @RequestParam int upperCount) {
+    private ResponseEntity<Object> generateData(@RequestParam int upperCount) {
         try {
-            GenerationResultsBag data = generator.generateData(minutesAgo,upperCount);
+            GenerationResultsBag data = generator.generateData(upperCount);
             return ResponseEntity.ok(data );
         } catch (Exception e) {
             return ResponseEntity.status(
@@ -220,6 +227,51 @@ public class MainController {
             return ResponseEntity.status(
                             HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/files")
+    @ResponseBody
+    public ResponseEntity<Resource> getFile(@RequestParam String filename) throws Exception {
+        Resource file = fileService.getFileResource(filename);
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"").body(file);
+    }
+    @GetMapping(
+            value = "/getFileStream",
+            produces = MediaType.APPLICATION_OCTET_STREAM_VALUE
+    )
+
+    public @ResponseBody byte[] getFileStream(@RequestParam String filename) throws Exception {
+        Resource file = fileService.getFileResource(filename);
+        InputStream in = file.getInputStream();
+        byte[] bytes = IOUtils.toByteArray(in);
+        LOGGER.info(E.LEAF+E.LEAF+" Sending bytes: "
+                + bytes.length + " comprising file: " + file.getFile().getPath());
+        return bytes;
+    }
+
+    @GetMapping("/getEventZippedFilePath")
+    private ResponseEntity<Object> getEventZippedFile( @RequestParam String cityId, @RequestParam int minutesAgo) throws Exception {
+        try {
+            String zippedFilePath = cacheService.getEventZippedFilePath(cityId, minutesAgo);
+            LOGGER.info(E.AMP+E.AMP+E.AMP+E.AMP+" returning Zipped file path: " + zippedFilePath);
+            return ResponseEntity.ok(zippedFilePath);
+        } catch (Exception e) {
+            LOGGER.severe(" We have a problem with a file");
+            return ResponseEntity.badRequest().body(e.getMessage());
+
+        }
+    }
+    @GetMapping("/deleteTemporaryFiles")
+    private ResponseEntity<Object> deleteTemporaryFiles() throws Exception {
+        try {
+            int data = fileService.deleteTemporaryFiles();
+            return ResponseEntity.ok("Temporary files deleted: " + data);
+        } catch (Exception e) {
+            LOGGER.severe(" We have a problem with a file");
+            return ResponseEntity.badRequest().body(e.getMessage());
+
         }
     }
     @GetMapping("/createAggregatesForAllCities")

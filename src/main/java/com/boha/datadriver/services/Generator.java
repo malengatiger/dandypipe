@@ -363,9 +363,6 @@ public class Generator {
         LOGGER.info(E.LEAF+E.LEAF+" Total City generationMessages: " + messages.size() + " total events: " + total);
 
         Collections.sort(messages);
-
-//        dashboardService.addDashboardData(5);
-//        cityAggregateService.createAggregatesForAllCities(5);
         return messages;
     }
     public List<GenerationMessage> generateEventsByPlaces(List<String> placeIds, int upperCount) throws Exception {
@@ -389,16 +386,37 @@ public class Generator {
         messages.add(msg);
         return messages;
     }
+
+    private boolean exclude(CityPlace place) {
+        for (String s : place.getTypes()) {
+            if (s.equalsIgnoreCase("school")
+                    || s.equalsIgnoreCase("church")) {
+                return true;
+            }
+        }
+        return false;
+    }
     public GenerationMessage generateEventsByCity(String cityId, int count) throws Exception {
         boolean isBad;
         int m = random.nextInt(100);
-        isBad = m <= 15;
+        isBad = m <= 20;
         long start = System.currentTimeMillis();
         try {
             City city = cityService.getCityById(cityId);
-            LOGGER.info(E.LEAF + " " + city.getCity() + " rating should be bad: "
-                    + isBad + " - count: " + count);
             List<CityPlace> places = placesService.getPlacesByCity(cityId);
+            List<CityPlace> favoredPlaces = new ArrayList<>();
+            for (CityPlace place : places) {
+                if (!exclude(place)) {
+                    int choose = random.nextInt(100);
+                    if (choose > 80) {
+                        favoredPlaces.add(place);
+                    }
+                }
+            }
+            LOGGER.info(E.LEAF +E.LEAF +E.LEAF + " Number of favoured places: "
+                    + favoredPlaces.size() + " in " + city.getCity() + " from total of "
+            + places.size() + " places");
+
             userMap = new HashMap<>();
             int total = 0;
 
@@ -423,6 +441,22 @@ public class Generator {
                     }
                 }
 
+            }
+
+            for (CityPlace favoredPlace : favoredPlaces) {
+                int m2 = random.nextInt(100);
+                boolean bad = m2 <= 20;
+                int counter = random.nextInt(100);
+                if (counter < 10) counter = 20;
+                for (int i = 0; i < counter; i++) {
+                    try {
+                        total += generateEventAtPlace(favoredPlace, getUnusedRandomUser(city), bad);
+                    } catch (Exception e) {
+                        if (!e.getMessage().contains("Unable to find unused random user")) {
+                            LOGGER.info(E.RED_DOT + E.RED_DOT + " " + e.getMessage());
+                        }
+                    }
+                }
             }
 
             long end = System.currentTimeMillis();
@@ -487,26 +521,13 @@ public class Generator {
         LOGGER.info("\uD83C\uDF3C\uD83C\uDF3C\uD83C\uDF3C ... creating Aggregates: "
                 + DateTime.now().toDateTimeISO().toString() + ", " +
                 "\uD83D\uDD34\uD83D\uDD34\uD83D\uDD34 this takes a few minutes to calculate ");
-        List<CityAggregate> aggregates = new ArrayList<>();
+        List<CityAggregate> aggregates;
         try {
             aggregates = cityAggregateService.createAggregatesForAllCities(minutesAgo);
 
-            LOGGER.info("\uD83C\uDF3C\uD83C\uDF3C\uD83C\uDF3C " +
-                    "Total city aggregates calculated: " + aggregates.size());
+            LOGGER.info("\n\uD83C\uDF3C\uD83C\uDF3C\uD83C\uDF3C " +
+                    "Total city aggregates calculated: " + aggregates.size() +"\n\n");
 
-            if (aggregates.size() > 0) {
-                LOGGER.info("\uD83C\uDF3C\uD83C\uDF3C\uD83C\uDF3C " +
-                        "First aggregate(sample): " + GSON.toJson(aggregates.get(0)));
-            }
-            for (CityAggregate ca : aggregates) {
-                String name = ca.getCityName();
-                if (name.contains("Cape Town")
-                        || name.contains("Sandton")
-                        || name.contains("Durban")) {
-                    LOGGER.info("\uD83C\uDF3C\uD83C\uDF3C\uD83C\uDF3C " +
-                            name + " - Aggregate: " + GSON.toJson(ca));
-                }
-            }
         } catch (Exception e) {
             LOGGER.severe("\uD83D\uDD34 \uD83D\uDD34 \uD83D\uDD34 " +
                     "We have a network or server problem: " + e.getMessage());
@@ -515,9 +536,9 @@ public class Generator {
         return aggregates;
     }
 
-    public GenerationResultsBag generateData(int minutesAgo, int upperCount) throws Exception {
+    public GenerationResultsBag generateData(int upperCount) throws Exception {
         LOGGER.info(E.YELLOW_STAR+E.YELLOW_STAR+
-                " Starting big generator job: minutesAgo: " + minutesAgo + " upperCount: " + upperCount);
+                " Starting big generator job: upperCount: " + upperCount);
         long start = System.currentTimeMillis();
         List<City> cities = cityService.getCities();
 
@@ -544,25 +565,19 @@ public class Generator {
         LOGGER.info(" \n\n" +E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR + ignored +
                 " Cities IGNORED for Generation; elapsed seconds for cities: " + elapsedSecs + "\n");
 
-        DashboardData dashboardData = addDashboard(minutesAgo);
-
-        List<CityAggregate> aggregates = addAggregates(minutesAgo);
-
         long end = System.currentTimeMillis();
         double elapsed = Double.parseDouble("" + (end-start)/1000);
 
         GenerationResultsBag bag = new GenerationResultsBag();
-        bag.setAggregates(aggregates);
         bag.setMessages(generationMessages);
-        bag.setDashboardData(dashboardData);
         bag.setElapsedSeconds(elapsed);
         bag.setDate(DateTime.now().toDateTimeISO().toString());
 
         LOGGER.info("\n\n" +E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+
                 "The job has been completed, Boss!, it took " + elapsed + " seconds");
         LOGGER.info("\n\n" +E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+E.YELLOW_STAR+
-                "Generation Messages " + generationMessages.size() + " aggregates: " + aggregates.size()
-        + " dashboardData: " + dashboardData.getDate() + " elapsed: " + elapsed + " seconds\n\n");
+                "Generation Messages " + generationMessages.size()
+        + " elapsed: " + elapsed + " seconds\n\n");
         return bag;
     }
 
